@@ -1,0 +1,231 @@
+1
+00:00:00,340 --> 00:00:01,210
+One man.
+
+2
+00:00:01,600 --> 00:00:03,330
+One red button.
+
+3
+00:00:03,410 --> 00:00:06,330
+And one decision
+that saved the world.
+
+4
+00:00:07,460 --> 00:00:10,860
+September twenty-sixth,
+nineteen eighty-three.
+
+5
+00:00:10,880 --> 00:00:12,970
+A secret bunker near Moscow.
+
+6
+00:00:13,850 --> 00:00:15,940
+Lieutenant Colonel
+Stanislav Petrov is on
+
+7
+00:00:15,960 --> 00:00:18,362
+night duty, watching
+the sky for American
+
+8
+00:00:18,382 --> 00:00:19,370
+missiles.
+
+9
+00:00:19,700 --> 00:00:21,410
+The world was on edge.
+
+10
+00:00:21,590 --> 00:00:22,770
+Three weeks earlier,
+
+11
+00:00:22,790 --> 00:00:24,260
+the Soviet Union
+had shot down a
+
+12
+00:00:24,280 --> 00:00:25,530
+passenger plane.
+
+13
+00:00:25,830 --> 00:00:27,210
+Everyone expected war.
+
+14
+00:00:28,270 --> 00:00:29,280
+Just after midnight,
+
+15
+00:00:29,300 --> 00:00:30,970
+the alarm screamed.
+
+16
+00:00:31,210 --> 00:00:32,043
+The computer said:
+
+17
+00:00:32,063 --> 00:00:34,527
+one missile, launched
+from America.
+
+18
+00:00:34,547 --> 00:00:35,723
+Then another.
+
+19
+00:00:35,743 --> 00:00:36,815
+And another.
+
+20
+00:00:36,835 --> 00:00:39,453
+Five missiles, inbound.
+
+21
+00:00:39,600 --> 00:00:40,423
+The screen read:
+
+22
+00:00:40,443 --> 00:00:41,212
+Launch.
+
+23
+00:00:41,232 --> 00:00:42,893
+Confidence:
+
+24
+00:00:43,050 --> 00:00:44,013
+high.
+
+25
+00:00:44,380 --> 00:00:45,613
+The orders were clear.
+
+26
+00:00:45,730 --> 00:00:48,031
+Report it, and Soviet
+leaders would strike
+
+27
+00:00:48,051 --> 00:00:50,013
+back with
+everything they had.
+
+28
+00:00:50,360 --> 00:00:51,343
+Petrov had minutes.
+
+29
+00:00:51,363 --> 00:00:53,453
+But something felt wrong.
+
+30
+00:00:54,043 --> 00:00:55,471
+Why would America
+start a war with
+
+31
+00:00:55,491 --> 00:00:56,943
+only five missiles?
+
+32
+00:00:56,963 --> 00:00:59,023
+And the ground
+radar saw nothing.
+
+33
+00:00:59,043 --> 00:01:00,143
+No proof.
+
+34
+00:01:00,163 --> 00:01:01,343
+Just instinct.
+
+35
+00:01:01,363 --> 00:01:03,310
+He picked up the phone...
+
+36
+00:01:03,330 --> 00:01:04,093
+and said:
+
+37
+00:01:04,340 --> 00:01:05,135
+False alarm.
+
+38
+00:01:05,155 --> 00:01:06,973
+Then he waited.
+
+39
+00:01:07,470 --> 00:01:08,550
+If he was wrong,
+
+40
+00:01:08,570 --> 00:01:10,013
+cities would burn.
+
+41
+00:01:10,420 --> 00:01:11,613
+Minutes crawled by.
+
+42
+00:01:12,220 --> 00:01:13,130
+No explosions.
+
+43
+00:01:13,150 --> 00:01:14,533
+No fire.
+
+44
+00:01:14,870 --> 00:01:16,676
+The satellites had
+mistaken sunlight,
+
+45
+00:01:16,696 --> 00:01:18,163
+glinting off high clouds,
+
+46
+00:01:18,183 --> 00:01:19,373
+for missiles.
+
+47
+00:01:20,190 --> 00:01:21,567
+Petrov was never
+made a hero at
+
+48
+00:01:21,587 --> 00:01:22,143
+home.
+
+49
+00:01:22,163 --> 00:01:24,490
+He died in two
+thousand seventeen,
+
+50
+00:01:24,510 --> 00:01:27,053
+in a quiet apartment
+outside Moscow.
+
+51
+00:01:27,510 --> 00:01:29,743
+But because one man
+doubted a machine,
+
+52
+00:01:29,763 --> 00:01:31,733
+we are all still here.
+
+53
+00:01:32,419 --> 00:01:34,333
+Sometimes the
+bravest thing...
+
+54
+00:01:34,370 --> 00:01:35,853
+is not pressing the button.
