@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>Тот же круг</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style></head>
+<body><canvas id="c" width="1920" height="1080"></canvas>
+<script>
+'use strict';
+/* ====================== ядро ====================== */
+const W=1920,H=1080,FPS=60,DUR=36;
+const out=document.getElementById('c'),octx=out.getContext('2d');
+const mk=(w=W,h=H)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c};
+const acc=mk(),accx=acc.getContext('2d');
+const frameA=mk(),fxA=frameA.getContext('2d');       // мир A (тёплый)
+const frameB=mk(),fxB=frameB.getContext('2d');       // мир B (холодный)
+const layersA=[mk(),mk(),mk()], layersB=[mk(),mk(),mk()];
+const grainC=mk(512,512);
+
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const sstep=(a,b,x)=>{const t=clamp((x-a)/(b-a));return t*t*(3-2*t)};
+const ease=t=>t*t*(3-2*t);
+const eo=t=>1-Math.pow(1-clamp(t),3);
+const ei=t=>Math.pow(clamp(t),3);
+function h1(n){n=Math.sin(n*127.1+311.7)*43758.5453;return n-Math.floor(n)}
+function vn(x){const i=Math.floor(x),f=x-i,u=f*f*(3-2*f);return h1(i)*(1-u)+h1(i+1)*u}
+function rng(seed){let s=(seed*9301+49297)>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+let BOIL=0, TT=0;
+const wob=(i,seed,a)=>(vn(i*0.77+seed*13.13+BOIL*3.7)-0.5)*2*a;
+
+/* цвета */
+const mixc=(a,b,k)=>[a[0]+(b[0]-a[0])*k,a[1]+(b[1]-a[1])*k,a[2]+(b[2]-a[2])*k];
+const css=(c,al=1)=>`rgba(${c[0]|0},${c[1]|0},${c[2]|0},${al})`;
+const WORLD={
+ A:{skyTop:[24,36,42],skyHor:[158,158,124],fog:[122,128,106],ground:[40,48,40],path:[132,124,98],ink:[13,17,19],lamp:[255,176,66],paper:[210,200,170]},
+ B:{skyTop:[14,24,44],skyHor:[128,158,190],fog:[98,124,152],ground:[28,38,56],path:[112,130,154],ink:[8,12,22],lamp:[150,200,255],paper:[170,190,210]},
+};
+let WD=WORLD.A;   // активный мир
+const fogK=d=>1-Math.exp(-d*FOGD);
+let FOGD=0.055;
+
+/* ====================== рисование «тушью» ====================== */
+function ink(c,pts,w,col,j=0.012,seed=1,closed=false){
+  c.strokeStyle=col;c.lineCap='round';c.lineJoin='round';
+  for(let pass=0;pass<2;pass++){
+    c.lineWidth=w*(pass?0.42:1);c.beginPath();
+    const P=pts.map((p,i)=>[p[0]+wob(i,seed+pass*7,j),p[1]+wob(i+50,seed+pass*7,j)]);
+    c.moveTo(P[0][0],P[0][1]);
+    for(let i=1;i<P.length-1;i++){c.quadraticCurveTo(P[i][0],P[i][1],(P[i][0]+P[i+1][0])/2,(P[i][1]+P[i+1][1])/2)}
+    c.lineTo(P[P.length-1][0],P[P.length-1][1]);
+    if(closed)c.closePath();
+    c.stroke();
+  }
+}
+function fillPoly(c,pts,col,j=0.01,seed=1){
+  c.fillStyle=col;c.beginPath();
+  pts.forEach((p,i)=>{const x=p[0]+wob(i,seed,j),y=p[1]+wob(i+40,seed,j);i?c.lineTo(x,y):c.moveTo(x,y)});
+  c.closePath();c.fill();
+}
+function hatchRect(c,x0,y0,x1,y1,ang,sp,w,col,seed,clipPts){
+  c.save();
+  if(clipPts){c.beginPath();clipPts.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));c.closePath();c.clip();}
+  c.strokeStyle=col;c.lineWidth=w;c.lineCap='round';c.beginPath();
+  const dx=Math.cos(ang),dy=Math.sin(ang),nx=-dy,ny=dx;
+  const L=Math.hypot(x1-x0,y1-y0),cx=(x0+x1)/2,cy=(y0+y1)/2;
+  for(let k=-L/2,i=0;k<L/2;k+=sp,i++){
+    const ox=cx+nx*k+wob(i,seed,sp*0.25),oy=cy+ny*k+wob(i+9,seed,sp*0.25);
+    c.moveTo(ox-dx*L/2,oy-dy*L/2);c.lineTo(ox+dx*L/2,oy+dy*L/2);
+  }
+  c.stroke();c.restore();
+}
+
+/* ====================== камера ====================== */
+const cam={x:0,y:1.6,z:-6,yaw:0,pitch:0,roll:0,f:1500,focus:8,nearBlur:0,farBlur:0};
+function P(x,y,z){
+  const dx=x-cam.x,dy=y-cam.y,dz=z-cam.z;
+  const cy=Math.cos(cam.yaw),sy=Math.sin(cam.yaw);
+  const x1=dx*cy-dz*sy,z1=dx*sy+dz*cy;
+  const cp=Math.cos(cam.pitch),sp=Math.sin(cam.pitch);
+  const y1=dy*cp-z1*sp,z2=dy*sp+z1*cp;
+  if(z2<0.15)return null;
+  const s=cam.f/z2,sx=x1*s,sy2=-y1*s;
+  const cr=Math.cos(cam.roll),sr=Math.sin(cam.roll);
+  return{x:W/2+sx*cr-sy2*sr,y:H/2+sx*sr+sy2*cr,s,d:z2};
+}
+
+/* ====================== спрайты ====================== */
+const treeCache={};
+function treeGeom(seed,bend){
+  const key=seed+'_'+bend;if(treeCache[key])return treeCache[key];
+  const r=rng(seed*77+3),segs=[];
+  function br(x,y,a,len,w,depth){
+    const x1=x+Math.sin(a)*len,y1=y-Math.cos(a)*len;segs.push([x,y,x1,y1,w,depth]);
+    if(depth>=6||w<0.006)return;
+    const n=depth<1?1:(depth<3?2:2+(r()<0.35?1:0));
+    for(let i=0;i<n;i++){
+      let da=(r()-0.5)*1.25+(n>1?(i-0.5*(n-1))*0.75:0);
+      if(depth<2)da=(r()-0.5)*0.35+bend*(depth===0?1:0.6);
+      br(x1,y1,a+da,len*(depth<2?0.95:0.66+r()*0.14),w*(depth<2?0.8:0.64),depth+1);
+    }
+  }
+  br(0,0,(r()-0.5)*0.15,0.22,0.052,0);
+  return treeCache[key]=segs;
+}
+function drawTree(c,seed,h,col,bend=0,hi=null){
+  const segs=treeGeom(seed,bend);
+  c.lineCap='round';
+  segs.forEach((s,i)=>{
+    const w=s[4]*h;
+    c.strokeStyle=col;c.lineWidth=Math.max(w,h*0.0035);
+    c.beginPath();c.moveTo(s[0]*h+wob(i,seed,h*0.004),s[1]*h);c.lineTo(s[2]*h+wob(i+30,seed,h*0.004),s[3]*h+wob(i+60,seed,h*0.004));c.stroke();
+    if(w>h*0.012){ // вторая линия — «эскизность» и блик
+      c.strokeStyle=hi||col;c.globalAlpha=hi?0.55:1;c.lineWidth=w*0.22;
+      c.beginPath();c.moveTo(s[0]*h-w*0.28,s[1]*h);c.lineTo(s[2]*h-w*0.22+wob(i+7,seed,h*0.006),s[3]*h);c.stroke();c.globalAlpha=1;
+    }
+  });
+}
+function drawTuft(c,seed,h,col){
+  const r=rng(seed*31+5);c.strokeStyle=col;c.lineCap='round';
+  for(let i=0;i<9;i++){
+    const a=(r()-0.5)*1.1,l=h*(0.5+r()*0.7),x0=(r()-0.5)*h*0.4;
+    c.lineWidth=h*0.05;c.beginPath();c.moveTo(x0,0);c.quadraticCurveTo(x0+Math.sin(a)*l*0.5+wob(i,seed,h*0.05),-l*0.6,x0+Math.sin(a)*l+wob(i+9,seed,h*0.06),-l);c.stroke();
+  }
+}
+function drawBramble(c,seed,h,col){ // передний план, колючие ветви
+  const r=rng(seed*91+1);c.strokeStyle=col;c.lineCap='round';
+  for(let i=0;i<7;i++){
+    let x=(r()-0.5)*h*0.2,y=0,a=(r()-0.5)*0.9;const pts=[[x,y]];
+    for(let k=0;k<9;k++){a+=(r()-0.5)*0.9;x+=Math.sin(a)*h*0.14;y-=Math.cos(a)*h*0.14;pts.push([x,y]);
+      if(r()<0.5){c.lineWidth=h*0.006;c.beginPath();c.moveTo(x,y);c.lineTo(x+(r()-0.5)*h*0.1,y-r()*h*0.08);c.stroke();}}
+    c.lineWidth=h*0.016;ink(c,pts,h*0.016*(1-i*0.06),col,h*0.01,seed+i);
+  }
+}
+function drawLamp(c,seed,col,glow,fl,inkc){
+  // столб 3.6 м
+  ink(c,[[0,0],[0.01,-1.2],[-0.01,-2.6],[0,-3.45]],0.1,col,0.01,seed);
+  ink(c,[[0,-3.45],[0.25,-3.72],[0.62,-3.66],[0.78,-3.5]],0.06,col,0.01,seed+2);
+  // фонарь
+  const lx=0.78,ly=-3.5;
+  fillPoly(c,[[lx-0.2,ly-0.28],[lx+0.2,ly-0.28],[lx+0.13,ly+0.05],[lx-0.13,ly+0.05]],css(mixc(mixc(col,glow,0.95*fl),[255,240,200],0.35*fl)),0.008,seed+3);
+  ink(c,[[lx-0.2,ly-0.28],[lx+0.2,ly-0.28],[lx+0.13,ly+0.05],[lx-0.13,ly+0.05]],0.04,col,0.008,seed+4,true);
+  ink(c,[[lx-0.3,ly-0.28],[lx,ly-0.55],[lx+0.3,ly-0.28]],0.05,col,0.008,seed+5);
+  return {x:lx,y:ly-0.1};
+}
+function drawBench(c,seed,col){
+  ink(c,[[-0.9,-0.46],[0.9,-0.46]],0.07,col,0.008,seed);
+  ink(c,[[-0.9,-0.82],[0.9,-0.86]],0.055,col,0.008,seed+1);
+  ink(c,[[-0.9,-0.66],[0.9,-0.68]],0.05,col,0.008,seed+2);
+  ink(c,[[-0.8,-0.46],[-0.82,0]],0.06,col,0.008,seed+3);ink(c,[[0.8,-0.46],[0.82,0]],0.06,col,0.008,seed+4);
+  ink(c,[[-0.85,-0.9],[-0.85,-0.46]],0.05,col,0.008,seed+5);ink(c,[[0.85,-0.9],[0.85,-0.46]],0.05,col,0.008,seed+6);
+}
+function drawCrow(c,seed,col,tilt){
+  c.fillStyle=col;c.beginPath();c.ellipse(0,-0.14,0.2,0.11,-0.35,0,Math.PI*2);c.fill();
+  c.beginPath();c.ellipse(0.17,-0.27,0.07,0.065,0,0,Math.PI*2);c.fill();
+  c.beginPath();c.moveTo(0.22+tilt*0.02,-0.29);c.lineTo(0.36,-0.26+tilt*0.03);c.lineTo(0.22,-0.24);c.fill();
+  ink(c,[[-0.15,-0.1],[-0.38,0.0]],0.04,col,0.005,seed);
+  ink(c,[[-0.02,-0.04],[-0.03,0.05]],0.016,col,0.003,seed+1);
+}
+
+/* фигуры */
+const FIG={
+  me:{coat:[18,22,24],trim:[214,150,60],hat:false,k:1.0},
+  friend:{coat:[16,26,28],trim:[84,138,128],hat:true,k:0.93},
+  real:{coat:[10,16,30],trim:[120,170,230],hat:true,k:0.93},
+};
+function drawFigureSide(c,o){
+  const F=FIG[o.kind],k=F.k*(o.scale||1),ph=o.phase,col=css(mixc(F.coat,WD.fog,o.fog||0)),trim=css(mixc(F.trim,WD.fog,(o.fog||0)*0.8));
+  const hip=[0,-0.86*k],sh=[0.02,-1.46*k];
+  const bob=Math.abs(Math.sin(ph))*0.025*k*(o.smooth?0:1);
+  const leg=(p)=>{
+    const a=0.5*Math.sin(p),sa=a-0.65*Math.max(0,-Math.cos(p)),L1=0.42*k,L2=0.45*k;
+    const kn=[hip[0]+Math.sin(a)*L1,hip[1]-bob+Math.cos(a)*L1];
+    const ft=[kn[0]+Math.sin(sa)*L2,kn[1]+Math.cos(sa)*L2];
+    return[hip,kn,[ft[0]+0.1*k,ft[1]-0.03]].map((q,i)=>i?q:[hip[0],hip[1]-bob]);
+  };
+  const back=leg(ph+Math.PI),front=leg(ph);
+  ink(c,back,0.085*k,col,0.006*k,o.seed||1);
+  // руки
+  const arm=(p,s)=>{const a=-0.5*Math.sin(p)*s;return[[sh[0],sh[1]-bob+0.03],[sh[0]+Math.sin(a)*0.3*k,sh[1]+Math.cos(a)*0.3*k],[sh[0]+Math.sin(a*1.3-0.25)*0.58*k,sh[1]+Math.cos(a*1.3-0.25)*0.57*k]]};
+  ink(c,arm(ph+Math.PI,1),0.065*k,col,0.006*k,(o.seed||1)+3);
+  // пальто
+  const sw=Math.sin(ph)*0.03*k;
+  const coat=[[-0.17*k,sh[1]-bob],[0.15*k,sh[1]-bob],[0.2*k+sw,-0.52*k],[-0.24*k+sw,-0.5*k]];
+  fillPoly(c,coat,col,0.006*k,(o.seed||1)+8);
+  hatchRect(c,-0.3*k,-1.5*k,0.3*k,-0.6*k,1.1,0.05*k,0.008*k,css(mixc(F.coat,[200,200,180],0.18*(1-(o.fog||0)))),(o.seed||1),coat);
+  ink(c,coat,0.014*k,col,0.006*k,(o.seed||1)+9,true);
+  ink(c,[coat[1],coat[2]],0.02*k,css(mixc(F.coat,WD.lamp,0.55*(1-(o.fog||0))),0.4),0.004*k,(o.seed||1)+20);
+  ink(c,[[sh[0],sh[1]-bob],[0.03*k,sh[1]-0.14*k-bob]],0.07*k,col,0.003*k,(o.seed||1)+21);
+  // шарф
+  ink(c,[[-0.12*k,sh[1]+0.0],[0.14*k,sh[1]+0.0]],0.075*k,trim,0.005*k,(o.seed||1)+11);
+  if(o.kind!=='real')ink(c,[[-0.1*k,sh[1]+0.02],[-0.24*k,sh[1]+0.2+Math.sin(ph*2)*0.02],[-0.28*k,sh[1]+0.36]],0.045*k,trim,0.006*k,(o.seed||1)+12);
+  // голова
+  const hd=[0.03*k,sh[1]-0.17*k-bob];
+  fillPoly(c,Array.from({length:14},(_,i)=>{const a=i/14*Math.PI*2;return[hd[0]+Math.cos(a)*0.1*k,hd[1]+Math.sin(a)*0.115*k]}),col,0.004*k,(o.seed||1)+13);
+  if(F.hat){ // капюшон
+    fillPoly(c,[[hd[0]-0.13*k,hd[1]+0.07*k],[hd[0]-0.1*k,hd[1]-0.14*k],[hd[0]+0.02*k,hd[1]-0.16*k],[hd[0]+0.1*k,hd[1]-0.06*k],[hd[0]+0.03*k,hd[1]+0.1*k]],col,0.005*k,(o.seed||1)+14);
+  }else{ ink(c,[[hd[0]-0.15*k,hd[1]-0.07*k],[hd[0]+0.15*k,hd[1]-0.1*k]],0.03*k,col,0.004*k,(o.seed||1)+15); fillPoly(c,[[hd[0]-0.1*k,hd[1]-0.08*k],[hd[0]-0.08*k,hd[1]-0.19*k],[hd[0]+0.09*k,hd[1]-0.19*k],[hd[0]+0.1*k,hd[1]-0.1*k]],col,0.004*k,(o.seed||1)+16);}
+  ink(c,front,0.09*k,col,0.006*k,(o.seed||1)+17);
+  ink(c,arm(ph,1),0.07*k,col,0.006*k,(o.seed||1)+18);
+}
+function drawFigureBack(c,o){
+  const F=FIG[o.kind],k=F.k*(o.scale||1),ph=o.phase,col=css(mixc(F.coat,WD.fog,o.fog||0)),trim=css(mixc(F.trim,WD.fog,(o.fog||0)*0.8));
+  const bob=o.smooth?0:Math.abs(Math.sin(ph))*0.03*k, sway=Math.sin(ph)*0.035*k*(o.smooth?0.4:1);
+  const hipY=-0.92*k-bob;
+  const foot=(p,side)=>{const lift=Math.max(0,Math.sin(p))*0.12*k, fw=Math.cos(p)*0.1*k;return[[side*0.085*k+sway*0.5,hipY],[side*0.09*k,-0.45*k-lift*0.5-bob*0.5],[side*0.1*k,-0.02*k-lift+fw*0.0]]};
+  ink(c,foot(ph,-1),0.1*k,col,0.006*k,(o.seed||1));
+  ink(c,foot(ph+Math.PI,1),0.1*k,col,0.006*k,(o.seed||1)+2);
+  const coat=[[-0.13*k+sway,-1.52*k-bob],[0.13*k+sway,-1.52*k-bob],[0.27*k+sway,-1.4*k-bob],[0.31*k,-0.58*k],[-0.31*k,-0.58*k],[-0.27*k+sway,-1.4*k-bob]];
+  fillPoly(c,coat,col,0.006*k,(o.seed||1)+4);
+  hatchRect(c,-0.3*k,-1.5*k,0.3*k,-0.6*k,1.2,0.05*k,0.008*k,css(mixc(F.coat,[200,200,180],0.16*(1-(o.fog||0)))),(o.seed||1),coat);
+  ink(c,coat,0.014*k,col,0.006*k,(o.seed||1)+5,true);
+  ink(c,[coat[1],coat[2]],0.022*k,css(mixc(F.coat,WD.lamp,0.55*(1-(o.fog||0))),0.45),0.004*k,(o.seed||1)+22);
+  ink(c,[[-0.22*k+sway,-1.44*k-bob],[0.22*k+sway,-1.44*k-bob]],0.08*k,trim,0.005*k,(o.seed||1)+6);
+  const swing=Math.sin(ph)*0.1*k;
+  ink(c,[[-0.25*k+sway,-1.38*k-bob],[-0.28*k,-1.0*k+swing],[-0.26*k,-0.72*k+swing]],0.07*k,col,0.006*k,(o.seed||1)+7);
+  ink(c,[[0.25*k+sway,-1.38*k-bob],[0.28*k,-1.0*k-swing],[0.26*k,-0.72*k-swing]],0.07*k,col,0.006*k,(o.seed||1)+8);
+  const hx=sway*1.4+(o.headTurn||0)*0.1*k, hy=-1.64*k-bob;
+  ink(c,[[sway,-1.5*k-bob],[hx,hy+0.08*k]],0.09*k,col,0.003*k,(o.seed||1)+30);
+  for(const sd of[-1,1]){const ff=foot(sd<0?ph:ph+Math.PI,sd)[2];c.fillStyle=col;c.beginPath();c.ellipse(ff[0]+sd*0.01*k,ff[1]+0.01*k,0.075*k,0.04*k,0,0,7);c.fill();}
+  fillPoly(c,Array.from({length:14},(_,i)=>{const a=i/14*Math.PI*2;return[hx+Math.cos(a)*0.115*k,hy+Math.sin(a)*0.125*k]}),col,0.004*k,(o.seed||1)+9);
+  if(F.hat)fillPoly(c,[[hx-0.14*k,hy+0.12*k],[hx-0.12*k,hy-0.1*k],[hx,hy-0.18*k],[hx+0.12*k,hy-0.1*k],[hx+0.14*k,hy+0.12*k]],col,0.005*k,(o.seed||1)+10);
+  else{c.fillStyle=col;c.beginPath();c.ellipse(hx,hy-0.07*k,0.21*k,0.045*k,0,0,7);c.fill();fillPoly(c,[[hx-0.11*k,hy-0.07*k],[hx-0.09*k,hy-0.2*k],[hx+0.09*k,hy-0.2*k],[hx+0.11*k,hy-0.07*k]],col,0.004*k,(o.seed||1)+11);}
+}
+
+/* ====================== сборка кадра: небо, земля, дорога ====================== */
+function drawSky(c,t,moon){
+  const hy=H/2+cam.f*Math.tan(cam.pitch);
+  c.save();c.translate(W/2,H/2);c.rotate(cam.roll);c.translate(-W/2,-H/2);
+  const big=1400;
+  let g=c.createLinearGradient(0,hy-1100,0,hy);
+  g.addColorStop(0,css(WD.skyTop));g.addColorStop(0.55,css(mixc(WD.skyTop,WD.skyHor,0.35)));g.addColorStop(1,css(WD.skyHor));
+  c.fillStyle=g;c.fillRect(-big,hy-3000,W+2*big,3000+hy+2);
+  // мазки кисти по небу
+  c.strokeStyle=css(mixc(WD.skyTop,WD.skyHor,0.7),0.07);c.lineCap='round';
+  for(let i=0;i<46;i++){
+    const r=rng(i*17+3),y=hy-r()*900,x=(r()*(W+400)-200)-(cam.yaw*cam.f*0.9)%(W+400),l=200+r()*500;
+    c.lineWidth=14+r()*40;c.beginPath();c.moveTo(x,y+wob(i,3,6));c.lineTo(x+l,y+wob(i+1,3,10));c.stroke();
+  }
+  // луна
+  const mp=P(cam.x+60,60,cam.z+260);
+  if(moon&&mp){c.save();c.setTransform(1,0,0,1,0,0);
+    const rg=c.createRadialGradient(mp.x,mp.y,10,mp.x,mp.y,260);rg.addColorStop(0,css(WD.paper,0.35));rg.addColorStop(1,css(WD.paper,0));
+    c.fillStyle=rg;c.fillRect(mp.x-300,mp.y-300,600,600);
+    ink(c,Array.from({length:18},(_,i)=>{const a=i/17*Math.PI*2;return[mp.x+Math.cos(a)*62,mp.y+Math.sin(a)*62]}),5,css(WD.paper,0.85),2,5,true);
+    c.fillStyle=css(WD.paper,0.9);c.beginPath();c.arc(mp.x,mp.y,60,0,7);c.fill();c.restore();}
+  // земля
+  g=c.createLinearGradient(0,hy,0,hy+900);
+  g.addColorStop(0,css(mixc(WD.ground,WD.fog,0.85)));g.addColorStop(0.25,css(mixc(WD.ground,WD.fog,0.38)));g.addColorStop(1,css(WD.ground));
+  c.fillStyle=g;c.fillRect(-big,hy,W+2*big,3000);
+  c.restore();
+  return hy;
+}
+function groundTexture(c){
+  const x0=cam.x-34,x1=cam.x+70,cell=0.7;
+  for(let kx=Math.floor(x0/cell);kx<x1/cell;kx++){
+    const r=rng(kx*3+11);
+    for(let n=0;n<7;n++){
+      const x=kx*cell+r()*cell,z=-9+r()*r()*80;
+      if(Math.abs(z)<1.55)continue;
+      const p=P(x,0,z);if(!p||p.y>H+40)continue;
+      const k=fogK(p.d),len=(0.35+r()*0.5)*p.s;
+      const light=r()<0.28;
+      c.strokeStyle=light?css(mixc([120,128,98],WD.fog,k),0.28):css(mixc([10,16,14],WD.fog,k*0.9),0.55);
+      c.lineWidth=Math.max(1.2,0.05*p.s);c.lineCap='round';
+      c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+len,p.y+wob(kx+n,2,0.012)*p.s*2);c.stroke();
+    }
+  }
+}
+function farForest(x0,x1,seedBase,h0=7){
+  const cell=3.2;
+  for(let k=Math.floor(x0/cell);k<x1/cell;k++){
+    const r=rng(k*29+seedBase);
+    const x=k*cell+r()*cell,z=34+r()*38,h=h0+r()*8,seed=(k*3+seedBase)%97;
+    spr(x,0,z,(c,p)=>drawTree(c,seed,h,fogSprite(WD.ink,p.d),(r()-0.5)*0.6,null));
+  }
+}
+function strip(c,pts,wd,colBase,fogOn=true,detail=true){
+  // pts: [[x,z],...] центр, wd ширина → заливка квадов
+  let prev=null;
+  for(let i=0;i<pts.length;i++){
+    const [x,z]=pts[i];let nx=0,nz=1;
+    const a=pts[Math.max(0,i-1)],b=pts[Math.min(pts.length-1,i+1)];
+    const dx=b[0]-a[0],dz=b[1]-a[1],l=Math.hypot(dx,dz)||1;nx=-dz/l;nz=dx/l;
+    const L=P(x+nx*wd/2,0,z+nz*wd/2),R=P(x-nx*wd/2,0,z-nz*wd/2);
+    if(L&&R&&prev){
+      const d=(L.d+R.d)/2,k=fogOn?fogK(d):0;
+      c.fillStyle=css(mixc(colBase,WD.fog,k*0.9));
+      c.beginPath();c.moveTo(prev[0].x,prev[0].y);c.lineTo(L.x,L.y);c.lineTo(R.x,R.y);c.lineTo(prev[1].x,prev[1].y);c.closePath();c.fill();c.strokeStyle=c.fillStyle;c.lineWidth=1.5;c.stroke();
+    }
+    prev=(L&&R)?[L,R]:null;
+  }
+}
+function pathDetail(c,x0,x1,zc,wd,seedBase){
+  groundTexture(c);
+  // гравий и камни на дороге
+  const step=0.45;
+  for(let xi=Math.floor(x0/step);xi<x1/step;xi++){
+    const r=rng(xi*7+seedBase);
+    for(let n=0;n<3;n++){
+      const x=xi*step+r()*step,z=zc+(r()-0.5)*wd;
+      const p=P(x,0,z);if(!p||p.d>38)continue;
+      const k=fogK(p.d),s=p.s;
+      c.strokeStyle=css(mixc([40,38,32],WD.fog,k*0.9),0.7);c.lineWidth=Math.max(1,0.014*s);c.lineCap='round';
+      c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+0.06*s,p.y+wob(xi+n,3,0.006)*s);c.stroke();
+      if(r()<0.2){c.strokeStyle=css(mixc([200,196,170],WD.fog,k),0.35);c.beginPath();c.moveTo(p.x,p.y-0.02*s);c.lineTo(p.x+0.06*s,p.y-0.02*s);c.stroke();}
+    }
+  }
+}
+
+/* ====================== сцена: конвейер ====================== */
+let items;
+const addItem=(d,fn)=>items.push({d,fn});
+function spr(x,y,z,fn){const p=P(x,y,z);if(!p)return;if(p.x<-1500||p.x>W+1500)return;addItem(p.d,(c)=>{c.save();c.translate(p.x,p.y);c.rotate(cam.roll);c.scale(p.s,p.s);c.lineCap='round';fn(c,p);c.restore();});}
+function band(d){return d<cam.focus*0.62?2:(d>cam.focus*2.6?0:1)}
+function flush(layers,target){
+  layers.forEach(l=>l.getContext('2d').clearRect(0,0,W,H));
+  items.sort((a,b)=>b.d-a.d);
+  for(const it of items){it.fn(layers[band(it.d)].getContext('2d'));}
+  const blurs=[cam.farBlur,0,cam.nearBlur];
+  for(let i=0;i<3;i++){target.save();if(blurs[i]>0.3)target.filter=`blur(${blurs[i].toFixed(1)}px)`;target.drawImage(layers[i],0,0);target.restore();}
+}
+function fogSprite(base,d){return css(mixc(base,WD.fog,fogK(d)*0.92))}
+
+/* лампа: свет на земле + ореол */
+function lampLight(c,x,z,fl,world=WD,radius=5.2){
+  const p=P(x,0,z);if(!p)return;
+  const pr=P(x+radius,0,z),pl=P(x-radius,0,z),pn=P(x,0,z-radius*0.9),pf=P(x,0,z+radius*0.9);
+  if(!pr||!pl||!pn||!pf)return;
+  const rx=Math.max(20,(pr.x-pl.x)/2),ry=Math.max(6,Math.abs(pn.y-pf.y)/2);
+  c.save();c.globalCompositeOperation='lighter';c.translate(p.x,p.y);c.scale(1,ry/rx);
+  const g=c.createRadialGradient(0,0,0,0,0,rx);
+  g.addColorStop(0,css(world.lamp,0.34*fl));g.addColorStop(0.5,css(world.lamp,0.13*fl));g.addColorStop(1,css(world.lamp,0));
+  c.fillStyle=g;c.beginPath();c.arc(0,0,rx,0,7);c.fill();c.restore();
+}
+function lampHalo(c,x,y,z,fl,world=WD){
+  const p=P(x,y,z);if(!p)return;
+  c.save();c.globalCompositeOperation='lighter';
+  const R=1.9*p.s;const g=c.createRadialGradient(p.x,p.y,2,p.x,p.y,R);
+  g.addColorStop(0,css(world.lamp,0.75*fl));g.addColorStop(0.25,css(world.lamp,0.28*fl));g.addColorStop(1,css(world.lamp,0));
+  c.fillStyle=g;c.fillRect(p.x-R,p.y-R,R*2,R*2);c.restore();
+}
+function lampFlicker(t){ // мягкие провалы, без стробирования
+  let f=0.86+0.1*vn(t*7.3)+0.04*vn(t*31);
+  for(const d of FLICKERS){const u=(t-d[0])/d[1];if(u>0&&u<1)f*=1-0.7*Math.sin(u*Math.PI);}
+  return f;
+}
+const FLICKERS=[[3.55,0.5],[9.85,0.4],[14.6,0.7],[26.2,0.9],[28.7,0.6]];
+
+/* ====================== ландшафт ====================== */
+function scatter(c0,x0,x1,zNear,zFar,seedBase,density=0.6,tall=1){
+  const cell=2.3;
+  if(zNear>0)farForest(x0,x1,seedBase+5,7*tall);
+  for(let k=Math.floor(x0/cell);k<x1/cell;k++){
+    const r=rng(k*13+seedBase);
+    if(r()<density){
+      const x=k*cell+r()*cell,z=zNear+r()*(zFar-zNear),h=(4+r()*5.5)*tall,seed=(k*7+seedBase)%97;
+      spr(x,0,z,(c,p)=>drawTree(c,seed,h,fogSprite(WD.ink,p.d),(r()-0.5)*0.5,null));
+    }
+    if(r()<0.5){
+      const x=k*cell+r()*cell,z=zNear*0.4+r()*3;
+      spr(x,0,z,(c,p)=>drawTuft(c,k,0.55,fogSprite([30,38,30],p.d)));
+    }
+  }
+}
+function grassEdges(x0,x1,zc,wd,seedBase){
+  const cell=0.9;
+  for(let k=Math.floor(x0/cell);k<x1/cell;k++){
+    const r=rng(k*5+seedBase);
+    for(const sd of[-1,1]){if(r()<0.7){const x=k*cell+r()*cell,z=zc+sd*(wd/2+r()*1.6);
+      spr(x,0,z,(c,p)=>drawTuft(c,k+sd,0.35+r()*0.35,fogSprite([32,40,30],p.d)));}}
+  }
+}
+const LM={x:6.4,zl:1.5};  // «то самое место»: x центра лампы
+function landmark(xL,fl,crowT=0,drawShadow=true){
+  const zl=LM.zl;
+  spr(xL-2.3,0,3.4,(c,p)=>drawTree(c,11,9.5,fogSprite(WD.ink,p.d),-0.5,fogSprite([60,70,58],p.d)));
+  spr(xL,0,LM.zl,(c,p)=>{const col=fogSprite(WD.ink,p.d);const lp=drawLamp(c,5,col,WD.lamp,fl,WD.ink);
+    c.save();c.translate(-0.35,-3.5);drawCrow(c,2,col,Math.sin(crowT*3)*0.5);c.restore();});
+  spr(xL+1.9,0,zl-0.6,(c,p)=>drawBench(c,8,fogSprite(WD.ink,p.d)));
+  const lp=P(xL+0.78,3.4,LM.zl);if(lp)addItem(lp.d-0.01,()=>{}); // порядок
+}
+function landmarkGlow(c,xL,fl){lampLight(c,xL+0.78,LM.zl,fl);lampHalo(c,xL+0.78,3.4,LM.zl,fl);}
+
+/* ====================== ходоки ====================== */
+const STRIDE=1.5;
+function walker(kind,x,z,view,o={}){
+  const ph=o.phase!==undefined?o.phase:2*Math.PI*x/STRIDE+(o.off||0);
+  spr(x,0,z,(c,p)=>{
+    const oo=Object.assign({kind,phase:ph,seed:(kind==='me'?3:kind==='friend'?9:14),fog:fogK(p.d)*0.9},o);
+    c.globalAlpha=o.alpha===undefined?1:o.alpha;
+    if(view==='side'){ if(o.dir<0){c.scale(-1,1)} drawFigureSide(c,oo); } else drawFigureBack(c,oo);
+  });
+}
+/* тени на земле */
+function shadowPoly(c,x,z,dirx,dirz,len,opts={}){
+  const body=[[-0.2,0],[-0.22,0.9],[-0.26,1.45],[-0.1,1.5],[0.1,1.5],[0.26,1.45],[0.22,0.9],[0.2,0]];
+  const toW=(u,h)=>{const side=[-dirz,dirx];return P(x+dirx*h*len+side[0]*u*1.0,0,z+dirz*h*len+side[1]*u*1.0)};
+  const poly=(pts)=>{const q=pts.map(p=>toW(p[0],p[1]));if(q.some(v=>!v))return;c.beginPath();q.forEach((v,i)=>i?c.lineTo(v.x,v.y):c.moveTo(v.x,v.y));c.closePath();c.fill();};
+  c.fillStyle=css(WD.ink,opts.a||0.72);
+  const ph=opts.phase||0;
+  // ноги
+  const sp=0.22*Math.sin(ph);
+  poly([[-0.2+sp,0],[-0.14,0.9],[-0.02,0.9],[-0.02+sp*0.5,0]]);
+  poly([[0.2-sp,0],[0.14,0.9],[0.02,0.9],[0.02-sp*0.5,0]]);
+  poly([[-0.14,0.88],[-0.26,1.45],[-0.12,1.52],[0.12,1.52],[0.26,1.45],[0.14,0.88]]);
+  // голова + «нос» (поворот)
+  const turn=opts.turn||0,hs=opts.headScale||1,neck=opts.neck||0;
+  const cx=0,cy=1.62+neck*0.9;
+  const pts=[];for(let i=0;i<16;i++){const a=i/16*Math.PI*2;pts.push([cx+Math.cos(a)*0.11*hs,cy+Math.sin(a)*0.125*hs*(1+neck*0.5)]);}
+  if(neck>0){poly([[-0.05,1.45],[0.05,1.45],[0.04,cy],[-0.04,cy]]);}
+  poly(pts);
+  if(turn>0){poly([[0.08*hs,cy+0.01],[0.08*hs+0.12*turn,cy-0.02],[0.07*hs,cy-0.06]]);}  // профиль: выступ = голова повернулась
+  if(opts.antlers){for(const sd of[-1,1]){poly([[sd*0.04,cy+0.1],[sd*0.2,cy+0.4*opts.antlers],[sd*0.12,cy+0.62*opts.antlers],[sd*0.26,cy+0.78*opts.antlers],[sd*0.1,cy+0.7*opts.antlers],[sd*0.0,cy+0.2]]);}}
+}
+
+/* ====================== тексты ====================== */
+const FONT='italic 500 {S}px "FreeSerif","DejaVu Serif",serif';
+const TEXTS=[
+ {t0:0.9,t1:5.4,s:"Если ты когда-то гулял с другом…",x:140,y:170,size:78},
+ {t0:6.6,t1:9.7,s:"…и заметил, что куда бы вы ни свернули,",x:140,y:170,size:70},
+ {t0:9.0,t1:11.8,s:"вы снова на том же месте —",x:140,y:262,size:70},
+ {t0:12.5,t1:15.2,s:"не подавай вида.",x:140,y:190,size:110},
+ {t0:15.1,t1:17.9,s:"Говори так, будто ничего не замечаешь.",x:140,y:288,size:60},
+ {t0:18.35,t1:20.7,s:"Оно — не твой друг.",x:140,y:170,size:96},
+ {t0:20.9,t1:23.7,s:"Твой друг сейчас в таком же мире. Только в другом.",x:140,y:262,size:58,wrap:30},
+ {t0:24.4,t1:29.4,s:"Никогда не смотри этому в глаза.",x:140,y:170,size:88,avert:"в глаза."},
+ {t0:30.0,t1:33.0,s:"Оно может стать чем-то другим.",x:140,y:170,size:80,morph:"другим."},
+ {t0:31.9,t1:33.6,s:"Или исчезнуть.",x:140,y:270,size:96},
+ {t0:34.0,t1:35.8,s:"Просто иди дальше.",x:960,y:330,size:118,center:true},
+];
+function drawText(c,T){
+  for(const tx of TEXTS){
+    if(T<tx.t0||T>tx.t1+0.4)continue;
+    const fade=1-sstep(tx.t1,tx.t1+0.4,T);
+    c.save();c.font=FONT.replace('{S}',tx.size);c.textBaseline='alphabetic';
+    const lines=tx.wrap?wrapText(c,tx.s,tx.wrap):[tx.s];
+    const chars=[...tx.s];
+    let ox=tx.x;
+    if(tx.center){const w=c.measureText(tx.s).width;ox=tx.x-w/2;}
+    let cx=ox,idx=0;
+    const avertStart=tx.avert?tx.s.indexOf(tx.avert):-1;
+    const morphStart=tx.morph?tx.s.indexOf(tx.morph):-1;
+    let line=0;
+    const lh=tx.size*1.15;
+    for(const ch of chars){
+      const i=idx++;
+      if(tx.wrap&&cx-ox>c.measureText('м').width*tx.wrap&&ch===' '){line++;cx=ox;continue;}
+      const w=c.measureText(ch).width;
+      const age=T-(tx.t0+i*0.05);
+      if(age<0){cx+=w;continue;}
+      const a=sstep(0,0.22,age);
+      let dy=(1-eo(age/0.3))*-22, dx=0, al=a*fade;
+      let g=ch;
+      if(avertStart>=0&&i>=avertStart){const u=clamp((T-(tx.t0+2.2+(i-avertStart)*0.1))/1.2);dy+=ease(u)*620;dx+=ease(u)*(30+i*3);al*=1-sstep(0.7,1,u);}
+      if(morphStart>=0&&i>=morphStart&&ch!=='.'){const u=T-(tx.t0+1.5);if(u>0&&u<1.1){const pool='дгкимрнпугбщ';g=pool[Math.floor(h1(i*5+Math.floor(T*14))*pool.length)];}}
+      const jx=wob(i,4,1.8),jy=wob(i+80,4,1.8);
+      const y=tx.y+line*lh+dy+jy;
+      c.globalAlpha=al*0.5;c.fillStyle='rgba(8,10,12,1)';c.shadowColor='rgba(0,0,0,.9)';c.shadowBlur=18;c.fillText(g,cx+dx+jx+3,y+3);
+      c.shadowBlur=0;c.globalAlpha=al;c.fillStyle='#ebe5d0';c.fillText(g,cx+dx+jx,y);
+      c.globalAlpha=al*0.35;c.fillText(g,cx+dx+jx+1.4,y-1.2);
+      cx+=w;
+    }
+    c.restore();
+  }
+}
+function wrapText(c,s){return[s]}
+
+/* ====================== сцены ====================== */
+const SC=[0,6,12,18,24,30,36];
+let FOCUSPULL=0;
+function fogFor(world){WD=world;}
+
+function foregroundBramble(x,z,h,seed,flip=1){spr(x,0,z,(c,p)=>{c.scale(flip,1);drawBramble(c,seed,h,fogSprite(WD.ink,p.d*0.4))});}
+
+/* ---- S1 ---- */
+const V1=1.35;
+function xm1(t){return V1*t}
+function scene1(c,T,t,layers,fxc){
+  LM.zl=1.5;WD=WORLD.A;FOGD=0.05;
+  const u=t/6;
+  cam.f=1500;cam.x=xm1(t)+1.2+ lerp(0,1.2,u);cam.z=lerp(-7.2,-4.5,ease(u));cam.y=lerp(1.75,1.25,ease(u));
+  cam.yaw=lerp(0.16,-0.16,ease(u));cam.pitch=lerp(0.0,0.025,u);cam.roll=Math.sin(t*0.5)*0.004;
+  cam.focus=Math.hypot(cam.z+0.0,0)+0;cam.focus=-cam.z+0.3;cam.nearBlur=lerp(5,12,u);cam.farBlur=lerp(2.5,3.5,u);
+  items=[];
+  drawSky(fxc,t,true);
+  strip(fxc,Array.from({length:60},(_,i)=>[cam.x-12+i*1.2,0]),2.9,WD.path);
+  pathDetail(fxc,cam.x-12,cam.x+50,0,2.6,3);
+  const fl=lampFlicker(T);
+  const x0=cam.x-14,x1=cam.x+55;
+  scatter(c,x0,x1,4,20,1,0.62);
+  grassEdges(x0,x1,0,2.9,2);
+  landmark(LM.x,fl,T);
+  walker('friend',xm1(t)+0.5,-0.35,'side',{dir:1,off:Math.PI});
+  walker('me',xm1(t),0.5,'side',{dir:1});
+  // передний план: колючки
+  for(let k=0;k<4;k++){foregroundBramble(cam.x-4+k*6.7+ (k%2)*1.1,-3.6,2.2+ (k%3)*0.4,k+20);}
+  // лунная засыпка тумана у земли
+  return{lights:()=>landmarkGlow(fxc,LM.x,fl),shadows:null};
+}
+
+/* ---- S2: четыре плана вокруг «того же места» ---- */
+function forkPts(sd){const pts=[];for(let i=0;i<=24;i++){const s=i/24;pts.push([6+ s*18, sd*(Math.pow(s,1.7)*14)])}return pts}
+function polyAt(pts,s){let acc=0;for(let i=1;i<pts.length;i++){const l=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);if(acc+l>=s){const u=(s-acc)/l;return[lerp(pts[i-1][0],pts[i][0],u),lerp(pts[i-1][1],pts[i][1],u),Math.atan2(pts[i][1]-pts[i-1][1],pts[i][0]-pts[i-1][0])]}acc+=l}const p=pts[pts.length-1];return[p[0],p[1],0]}
+function scene2(c,T,t,layers,fxc){
+  LM.zl=1.5;WD=WORLD.A;FOGD=0.05;
+  items=[];
+  const fl=lampFlicker(T);
+  let shot;
+  if(t<2.2)shot=0;else if(t<3.6)shot=1;else if(t<4.6)shot=2;else if(t<5.1)shot=3;else if(t<5.5)shot=4;else shot=5;
+  let lampX=LM.x;
+  const lx=LM.x;
+  if(shot===0){ // кран: вилка, они идут налево
+    const u=t/2.2;
+    cam.f=1400;cam.x=lerp(-1,4,ease(u));cam.y=lerp(11,7.5,ease(u));cam.z=lerp(-14,-9,ease(u));cam.pitch=-0.62;cam.yaw=lerp(0.2,-0.05,u);cam.roll=0;cam.focus=18;cam.nearBlur=3;cam.farBlur=1.5;
+    drawSky(fxc,t,false);
+    const main=Array.from({length:30},(_,i)=>[-14+i*0.667,0]);
+    strip(fxc,main,2.8,WD.path);strip(fxc,forkPts(1),2.6,WD.path);strip(fxc,forkPts(-1),2.6,WD.path);
+    scatter(c,-14,34,5,24,41,0.7);scatter(c,-14,34,-24,-5,43,0.7);
+    const s=ease(u)*14+2;const wp=s<20?[ -14+ s +4 ,0,0]:[0,0,0];
+    // идут по главной и сворачивают налево (+z)
+    const tt=t/2.2, pos=polyAt(main.concat(forkPts(1)),tt*26+6);
+    walker('friend',pos[0]+0.2,pos[1]-0.5,'back',{phase:t*6.2+Math.PI,scale:1});
+    walker('me',pos[0],pos[1]+0.3,'back',{phase:t*6.2});
+    fxc.save();fxc.restore();
+    landmark(24.5,fl,T); // далеко за поворотом: оно уже там
+  }else if(shot===1){ // низко за спинами, лампа впереди по центру
+    const u=(t-2.2)/1.4;
+    cam.f=1600;cam.x=lx-14+u*0.8;cam.y=0.95;cam.z=0.0;cam.pitch=0.03;cam.yaw=Math.PI/2+u*0.01;cam.roll=0;cam.focus=6.5;cam.nearBlur=7;cam.farBlur=2;
+    drawSky(fxc,t,true);strip(fxc,Array.from({length:50},(_,i)=>[cam.x-4+i*1.2,0]),2.9,WD.path);pathDetail(fxc,cam.x-4,cam.x+55,0,2.6,3);
+    scatter(c,cam.x-10,cam.x+55,4,20,5,0.62);grassEdges(cam.x-6,cam.x+55,0,2.9,2);
+    landmark(lx,fl,T);
+    walker('friend',cam.x+6.6,-0.5,'back',{phase:t*6.2+Math.PI});walker('me',cam.x+6.4,0.5,'back',{phase:t*6.2});
+    foregroundBramble(cam.x+0.8,-1.0,1.6,33);
+  }else if(shot===2){ // с другой стороны: лампа огромная на переднем плане
+    const u=(t-3.6)/1.0;
+    cam.f=1500;cam.x=lx-3+u*1.2;cam.y=1.2;cam.z=7.0;cam.pitch=0.02;cam.yaw=Math.PI+0.15-u*0.1;cam.roll=0.01;cam.focus=5.5;cam.nearBlur=6;cam.farBlur=5;
+    drawSky(fxc,t,false);strip(fxc,Array.from({length:50},(_,i)=>[cam.x-30+i*1.2,0]),2.9,WD.path);pathDetail(fxc,lx-12,lx+12,0,2.6,3);
+    scatter(c,lx-30,lx+30,-18,-4,9,0.7);
+    landmark(lx,fl,T);
+    walker('friend',lx-4+u*3+0.4,-0.35,'side',{dir:1,off:Math.PI});walker('me',lx-4+u*3,0.5,'side',{dir:1});
+  }else{ // быстрые ракурсы: сверху / снизу / крупно фонарь+ворон
+    cam.roll=0;cam.nearBlur=4;cam.farBlur=3;
+    drawSky(fxc,t,true);
+    if(shot===3){cam.f=1300;cam.x=lx+1;cam.y=10;cam.z=-0.2;cam.pitch=-1.45;cam.yaw=0.0;cam.focus=10;
+      strip(fxc,Array.from({length:50},(_,i)=>[lx-30+i*1.2,0]),2.9,WD.path);scatter(c,lx-14,lx+14,-6,6,9,0.5);}
+    else if(shot===4){cam.f=1300;cam.x=lx-2.4;cam.y=0.3;cam.z=-3.2;cam.pitch=0.85;cam.yaw=0.25;cam.focus=7;
+      strip(fxc,Array.from({length:50},(_,i)=>[lx-30+i*1.2,0]),2.9,WD.path);}
+    else{cam.f=2600;cam.x=lx+0.2;cam.y=3.3;cam.z=-3.4;cam.pitch=0.02;cam.yaw=0.05;cam.focus=3.8;cam.nearBlur=2;cam.farBlur=10;}
+    landmark(lx,fl,T);
+    walker('friend',lx+9,-0.5,'back',{phase:t*6.2+Math.PI});
+  }
+  return{lights:()=>landmarkGlow(fxc,lx,fl)};
+}
+
+/* ---- S3: догоняем и никогда не приходим ---- */
+const V3=1.4;
+function scene3(c,T,t,layers,fxc){
+  LM.zl=3.4;WD=WORLD.A;FOGD=0.05;
+  const u=t/6, x0=40+V3*t;
+  const dz=sstep(0.45,1,u);   // долли-зум на второй половине
+  const f=lerp(1500,2500,dz);
+  cam.f=f;const dist=lerp(4.4,4.4*2500/1500,dz);
+  cam.x=x0-dist;cam.y=lerp(1.0,1.5,dz*0.6);cam.z=0.0+Math.sin(t*0.7)*0.15;cam.pitch=lerp(0.03,-0.02,dz);cam.yaw=Math.PI/2+Math.sin(t*0.35)*0.02;cam.roll=lerp(0,0.02,dz)*Math.sin(t*0.6);
+  cam.focus=dist;cam.nearBlur=lerp(4,7,dz);cam.farBlur=lerp(2,6,dz);
+  items=[];
+  drawSky(fxc,t,true);
+  strip(fxc,Array.from({length:60},(_,i)=>[cam.x-4+i*1.2,0]),2.9,WD.path);
+  pathDetail(fxc,cam.x-5,cam.x+50,0,2.6,3);
+  const fl=lampFlicker(T);
+  scatter(c,cam.x-10,cam.x+55,3.5,18,77,0.65);grassEdges(cam.x-6,cam.x+55,0,2.9,8);
+  const lx=x0+16;               // расстояние до фонаря не меняется
+  landmark(lx,fl,T);
+  const ph=2*Math.PI*x0/STRIDE;
+  walker('friend',x0-0.1,-0.5,'back',{phase:ph,smooth:true,headTurn:Math.sin(T*1.3)*0.9});
+  walker('me',x0,0.5,'back',{phase:ph});
+  foregroundBramble(cam.x+1.5,-1.3,2.0,51);
+  return{lights:()=>landmarkGlow(fxc,lx,fl)};
+}
+
+/* ---- S4: разрыв в бумаге ---- */
+function tearEdge(u,seed){ // x-координата рваного края по вертикали y∈[0,1]
+  return W*0.5+Math.sin(u*9+seed)*38+ (vn(u*21+seed)-0.5)*90 + (vn(u*60+seed*3)-0.5)*26;
+}
+function worldA4(c,T,t,layers,fxc){
+  LM.zl=3.4;WD=WORLD.A;FOGD=0.05;
+  const x0=88+V3*(T-12);
+  cam.f=1700+t*40;cam.x=x0-3.6+t*0.0;cam.y=1.15;cam.z=-0.1;cam.pitch=0.02;cam.yaw=Math.PI/2-0.03+t*0.004;cam.roll=0;
+  cam.focus=3.6;cam.nearBlur=7;cam.farBlur=4;
+  items=[];drawSky(fxc,t,true);
+  strip(fxc,Array.from({length:60},(_,i)=>[cam.x-4+i*1.2,0]),2.9,WD.path);pathDetail(fxc,cam.x-5,cam.x+50,0,2.6,3);
+  const fl=lampFlicker(T);scatter(c,cam.x-10,cam.x+55,3.5,18,77,0.65);grassEdges(cam.x-6,cam.x+55,0,2.9,8);
+  const lx=x0+16;landmark(lx,fl,T);
+  const ph=2*Math.PI*x0/STRIDE;
+  walker('friend',x0-0.1,-0.5,'back',{phase:ph,smooth:true,headTurn:Math.sin(T*1.3)*0.9});
+  walker('me',x0,0.5,'back',{phase:ph,});
+  foregroundBramble(cam.x+1.7,-1.3,2.0,51);
+  return{lights:()=>landmarkGlow(fxc,lx,fl)};
+}
+function worldB4(c,T,t,layers,fxc){
+  LM.zl=3.4;WD=WORLD.B;FOGD=0.07;
+  const xr=40+t*0.55;           // настоящий друг почти стоит
+  cam.f=1500+t*30;cam.x=xr-9.5+t*0.3;cam.y=1.2;cam.z=-0.1;cam.pitch=0.03;cam.yaw=Math.PI/2;cam.roll=0;
+  cam.focus=9.5;cam.nearBlur=6;cam.farBlur=5;
+  items=[];drawSky(fxc,t,true);
+  strip(fxc,Array.from({length:60},(_,i)=>[cam.x-4+i*1.2,0]),2.9,WD.path);pathDetail(fxc,cam.x-5,cam.x+50,0,2.6,31);
+  const fl=0.9;scatter(c,cam.x-10,cam.x+55,3.5,18,177,0.45,1.15);
+  const lx=xr+12;landmark(lx,fl,0);
+  walker('real',xr,0.2,'back',{phase:t*3.0,headTurn:Math.sin(T*0.9)*1.2});
+  return{lights:()=>landmarkGlow(fxc,lx,fl)};
+}
+function scene4(c,T,t,layers,fxc,fxB2){
+  // мир A -> frameA ; мир B -> frameB ; смешиваются в composeTear
+  return null;
+}
+
+/* ---- S5: взгляд в землю, тени ---- */
+function scene5(c,T,t,layers,fxc){
+  LM.zl=3.4;WD=WORLD.A;FOGD=0.045;
+  const x0=130+V3*t;
+  cam.f=1500;cam.x=x0-3.6;cam.y=0.85+Math.sin(t*3.0)*0.01;cam.z=-0.1;cam.pitch=lerp(-0.24,-0.34,sstep(0,2.5,t))+ (t>3.1&&t<3.7? Math.sin((t-3.1)/0.6*Math.PI)*0.1:0);cam.yaw=Math.PI/2+lerp(0.04,-0.02,t/6);cam.roll=0.012*Math.sin(t*0.5);
+  cam.focus=3.6;cam.nearBlur=lerp(10,16,t/6);cam.farBlur=4;
+  items=[];drawSky(fxc,t,true);
+  strip(fxc,Array.from({length:60},(_,i)=>[cam.x-4+i*1.2,0]),2.9,WD.path);pathDetail(fxc,cam.x-5,cam.x+50,0,2.6,3);
+  const fl=lampFlicker(T);
+  scatter(c,cam.x-10,cam.x+55,3.5,18,77,0.65);grassEdges(cam.x-6,cam.x+55,0,2.9,8);
+  const lx=x0+16;landmark(lx,fl,T);
+  const ph=2*Math.PI*x0/STRIDE;
+  // тень от фонаря впереди-слева: падает к камере
+  const turn=sstep(1.0,3.5,t), neck=sstep(3.8,6,t)*0.6;
+  const sdir=[-0.97,-0.25];
+  return{lights:()=>landmarkGlow(fxc,lx,fl),
+    shadows:()=>{fxc.save();fxc.filter='blur(7px)';
+      shadowPoly(fxc,x0,0.5,sdir[0],sdir[1],1.5,{phase:ph,a:0.7});
+      shadowPoly(fxc,x0-0.1,-0.5,sdir[0],sdir[1],1.5,{phase:ph,a:0.74,turn,headScale:1+turn*0.18,neck});fxc.restore();
+    },
+    after:()=>{
+      walker('friend',x0-0.1,-0.5,'back',{phase:ph,smooth:true});
+      walker('me',x0,0.5,'back',{phase:ph});
+      foregroundBramble(cam.x+0.9,-1.0,3.0,61);foregroundBramble(cam.x+1.1,-0.8,2.6,62,-1);
+    }};
+}
+
+/* ---- S6: меняется, исчезает, остаёмся мы ---- */
+function scene6(c,T,t,layers,fxc){
+  LM.zl=3.4;WD=WORLD.A;FOGD=lerp(0.045,0.06,t/6);
+  const x0=170+V3*Math.min(t,4)+Math.max(0,t-4)*1.4;
+  const wide=sstep(2.9,5.6,t);          // отъезд и подъём
+  cam.f=lerp(1500,1250,wide);cam.x=x0-lerp(4.8,12,wide);cam.z=lerp(-0.2,-9,wide);
+  cam.pitch=lerp(-0.3,-0.2,wide);cam.yaw=lerp(Math.PI/2-0.02,0.95,wide);cam.y=lerp(0.85,5.8,wide);cam.roll=0.01*Math.sin(t*0.6)*(1-wide);
+  cam.focus=lerp(3,14,wide);cam.nearBlur=lerp(16,2,wide);cam.farBlur=lerp(4,2,wide);
+  items=[];drawSky(fxc,t,true);
+  strip(fxc,Array.from({length:60},(_,i)=>[cam.x-6+i*1.5,0]),2.9,WD.path);pathDetail(fxc,cam.x-5,cam.x+60,0,2.6,3);
+  const fl=lampFlicker(T);
+  scatter(c,cam.x-14,cam.x+60,3.5,20,77,0.65);grassEdges(cam.x-8,cam.x+60,0,2.9,8);
+  const lx=x0+16;landmark(lx,fl,T);
+  const ph=2*Math.PI*x0/STRIDE;
+  const morph=sstep(0.1,1.6,t), vanish=sstep(2.2,2.7,t);   // исчезновение в 32.3
+  const entityA=1-vanish;
+  const sdir=[-0.97,-0.25];
+  return{lights:()=>landmarkGlow(fxc,lx,fl),
+    shadows:()=>{fxc.save();fxc.filter='blur(7px)';
+      shadowPoly(fxc,x0,0.5,sdir[0],sdir[1],1.5,{phase:ph,a:0.7});
+      if(entityA>0.01)shadowPoly(fxc,x0-0.1,-0.5,sdir[0],sdir[1],1.5+morph*0.2,{phase:ph,a:0.74*entityA,turn:1,headScale:1+0.18+morph*0.25,neck:0.6+morph*0.9,antlers:morph});fxc.restore();
+    },
+    after:()=>{
+      if(entityA>0.01)walker('friend',x0-0.1,-0.5,'back',{phase:ph,smooth:true,alpha:entityA});
+      walker('me',x0,0.5,'back',{phase:ph});
+      if(wide<0.5){foregroundBramble(cam.x+0.9,-1.0,3.0,61);}
+    },
+    smoke:()=>{
+      // чернила, поднимающиеся от места исчезновения
+      const tv=t-2.2;if(tv<0||tv>3)return;
+      for(let i=0;i<22;i++){const r=rng(i*19+4);const age=tv-r()*0.25;if(age<0)continue;
+        const p=P(x0-0.1+(r()-0.5)*0.5+age*0.1,0.8+age*(0.8+r()*0.8)+r()*0.8,-0.5+(r()-0.5)*0.3);if(!p)continue;
+        const R=(0.14+r()*0.22)*p.s*(1+age*0.8);
+        fxc.save();const g=fxc.createRadialGradient(p.x,p.y,0,p.x,p.y,R);g.addColorStop(0,css(WD.ink,0.55*(1-age/3)));g.addColorStop(1,css(WD.ink,0));fxc.fillStyle=g;fxc.fillRect(p.x-R,p.y-R,2*R,2*R);fxc.restore();}
+    }};
+}
+
+/* ====================== вспомогательные оверлеи ====================== */
+function drawGround(fxc){ /* резерв */ }
+function groundFog(c,hy,amt=0.5){
+  const g=c.createLinearGradient(0,hy-120,0,hy+260);
+  g.addColorStop(0,css(WD.fog,0));g.addColorStop(0.5,css(WD.fog,0.28*amt));g.addColorStop(1,css(WD.fog,0));
+  c.fillStyle=g;c.fillRect(0,hy-120,W,380);
+}
+function renderWorld(sceneFn,T,t,frameCtx,layers,extra){
+  fxA_=frameCtx;
+  const r=sceneFn(frameCtx,T,t,layers,frameCtx);
+  const hy=H/2+cam.f*Math.tan(cam.pitch);
+  if(r&&r.shadows)r.shadows();
+  flush(layers,frameCtx);
+  if(r&&r.after){items=[];r.after();flush(layers,frameCtx);}
+  groundFog(frameCtx,hy,WD===WORLD.B?0.8:0.55);
+  if(r&&r.smoke)r.smoke();
+  if(r&&r.lights)r.lights();
+}
+let fxA_;
+
+/* ====================== переходы (чернильная клякса) ====================== */
+function blot(c,cx,cy,R,seed){
+  c.save();c.fillStyle='#0b0e10';c.beginPath();
+  const n=34;
+  for(let i=0;i<=n;i++){const a=i/n*Math.PI*2,rr=R*(0.82+0.3*vn(i*0.9+seed)+0.18*vn(i*3.1+seed*3+BOIL));const x=cx+Math.cos(a)*rr,y=cy+Math.sin(a)*rr*0.9;i?c.lineTo(x,y):c.moveTo(x,y);}
+  c.closePath();c.fill();
+  // брызги
+  for(let k=0;k<14;k++){const r=rng(k*13+seed);const a=r()*7,d=R*(1.0+r()*0.5);c.beginPath();c.arc(cx+Math.cos(a)*d,cy+Math.sin(a)*d*0.9,R*0.04*(0.5+r()),0,7);c.fill();}
+  c.restore();
+}
+function transitionOverlay(c,T){
+  const cuts=[[5.72,6.28,[1400,300]],[11.72,12.28,[500,760]],[23.72,24.28,[900,200]],[29.72,30.28,[1500,800]]];
+  for(const [a,b,cp] of cuts){
+    if(T<a||T>b)continue;
+    const m=(a+b)/2, u=T<m?(T-a)/(m-a):(T-m)/(b-m);
+    const R=T<m?eo(u)*1700:(1-ei(u))*1700;
+    if(T<m)blot(c,cp[0],cp[1],R,Math.floor(a)); else blot(c,W-cp[0]*0.8,H-cp[1]*0.8,R,Math.floor(a)+5);
+  }
+}
+
+/* ====================== основной рендер ====================== */
+const SCENES=[scene1,scene2,scene3,null,scene5,scene6];
+function sceneIndex(T){for(let i=0;i<6;i++)if(T<SC[i+1])return i;return 5}
+
+function drawSubframe(Ts){
+  TT=Ts;BOIL=Math.floor(Ts*12);
+  const si=sceneIndex(Ts),t=Ts-SC[si];
+  if(si===3){
+    // две вселенные + рваный край
+    renderWorld(worldA4,Ts,t,fxA,layersA);
+    // сохранить A, нарисовать B в другой буфер
+    renderWorld(worldB4,Ts,t,fxB,layersB);
+    const prog=sstep(0.9,2.2,t)*(1-sstep(4.9,5.9,t));   // раскрытие и закрытие
+    fxA.save();
+    // пишем в frameA: окно, через которое видно B
+    if(prog>0.001){
+      const cxw=W*0.6,half=prog*W*0.27;
+      const L=cxw-half,Rr=cxw+half;
+      fxA.beginPath();
+      const N=44;
+      for(let i=0;i<=N;i++){const u=i/N;fxA.lineTo(Math.max(0,L+tearEdge(u*0.9+0.1,3)-W*0.5),u*H);}
+      for(let i=N;i>=0;i--){const u=i/N;fxA.lineTo(Math.min(W,Rr+tearEdge(u*0.9+0.1,8)-W*0.5),u*H);}
+      fxA.closePath();fxA.clip();
+      fxA.drawImage(frameB,0,0);
+      fxA.restore();
+      // белая кромка бумаги
+      const edge=(sgn,seed,base)=>{
+        const pts=[];for(let i=0;i<=N;i++){const u=i/N;pts.push([base+tearEdge(u*0.9+0.1,seed)-W*0.5,u*H]);}
+        fxA.save();fxA.strokeStyle='rgba(222,214,188,.92)';fxA.lineWidth=7;fxA.lineJoin='round';fxA.beginPath();pts.forEach((p,i)=>i?fxA.lineTo(p[0],p[1]):fxA.moveTo(p[0],p[1]));fxA.stroke();
+        fxA.strokeStyle='rgba(20,22,22,.9)';fxA.lineWidth=2;fxA.beginPath();pts.forEach((p,i)=>i?fxA.lineTo(p[0]+sgn*6,p[1]):fxA.moveTo(p[0]+sgn*6,p[1]));fxA.stroke();fxA.restore();
+      };
+      edge(-1,3,L);edge(1,8,Rr);
+    }else fxA.restore();
+    accx.globalAlpha=1;
+    return frameA;
+  }
+  renderWorld(SCENES[si],Ts,t,fxA,layersA);
+  return frameA;
+}
+
+let grainReady=false;
+function makeGrain(){
+  const g=grainC.getContext('2d'),id=g.createImageData(512,512);
+  for(let i=0;i<id.data.length;i+=4){const v=128+(h1(i*0.37)-0.5)*70+(h1(i*0.011)-0.5)*40;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=255;}
+  g.putImageData(id,0,0);grainReady=true;
+}
+function renderAt(T){
+  if(!grainReady)makeGrain();
+  const N=5,shutter=0.5/FPS;
+  accx.globalAlpha=1;accx.clearRect(0,0,W,H);
+  for(let k=0;k<N;k++){
+    const Ts=T+(k/(N-1)-0.5)*shutter*(N>1?1:0);
+    const fr=drawSubframe(Math.max(0,Ts));
+    accx.globalAlpha=1/(k+1);accx.drawImage(fr,0,0);
+  }
+  accx.globalAlpha=1;
+  const c=octx;c.setTransform(1,0,0,1,0,0);c.globalAlpha=1;c.drawImage(acc,0,0);
+  // тонировка: потертая бумага, виньетка, зерно
+  BOIL=Math.floor(T*12);TT=T;
+  c.save();c.globalCompositeOperation='overlay';c.globalAlpha=0.28;
+  const gx=Math.floor(h1(BOIL*3.1)*512),gy=Math.floor(h1(BOIL*7.7)*512);
+  for(let y=-512+gy;y<H;y+=512)for(let x=-512+gx;x<W;x+=512)c.drawImage(grainC,x,y);
+  c.restore();
+  const v=c.createRadialGradient(W/2,H/2,H*0.35,W/2,H/2,H*0.95);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'rgba(0,0,0,.62)');
+  c.fillStyle=v;c.fillRect(0,0,W,H);
+  c.save();c.globalAlpha=0.07;c.globalCompositeOperation='screen';
+  for(let i=0;i<5;i++){const r=rng(i*5+BOIL);c.strokeStyle='#e8e0c8';c.lineWidth=1;c.beginPath();const x=r()*W;c.moveTo(x,0);c.lineTo(x+(r()-0.5)*30,H);c.stroke();}
+  c.restore();
+  drawText(c,T);
+  transitionOverlay(c,T);
+  // финал: в чернила
+  const fo=sstep(35.3,36,T);if(fo>0){c.fillStyle=`rgba(6,8,9,${fo})`;c.fillRect(0,0,W,H);}
+  const fi=1-sstep(0,0.6,T);if(fi>0){c.fillStyle=`rgba(6,8,9,${fi})`;c.fillRect(0,0,W,H);}
+}
+window.renderAt=renderAt;window.DUR=DUR;window.FPS=FPS;
+/* шаги для синхронизации звука */
+window.stepEvents=function(){
+  const ev=[];
+  const sx={0:t=>xm1(t),1:null,2:t=>40+V3*t,3:t=>88+V3*t,4:t=>130+V3*t,5:t=>170+V3*Math.min(t,4)+Math.max(0,t-4)*1.4};
+  for(const si of[0,2,3,4,5]){
+    for(const kind of['me','friend']){
+      const off=(kind==='friend'&&(si===0))?Math.PI:0;
+      let last=null;
+      for(let t=0;t<6;t+=1/480){
+        const x=sx[si](t)+(kind==='friend'&&si===0?0.5:0);
+        const ph=2*Math.PI*x/STRIDE+off;
+        const n=Math.floor(ph/Math.PI);
+        if(last!==null&&n!==last)ev.push({T:SC[si]+t,kind,scene:si});
+        last=n;
+      }
+    }
+  }
+  return ev;
+};
+renderAt(0);
+</script></body></html>
