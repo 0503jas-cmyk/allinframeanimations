@@ -24,10 +24,10 @@ lum = big*0.18 + fine + fib
 base += lum[..., None]*np.array([1.0, 1.05, 1.3])
 # stains
 yy, xx = np.mgrid[0:H, 0:W]
-for _ in range(7):
+for _ in range(5):
     cx, cy, r = rng.integers(0, W), rng.integers(0, H), rng.integers(80, 260)
     d = np.sqrt((xx-cx)**2+(yy-cy)**2)/r
-    ring = np.exp(-((d-1)**2)*18)*7 + np.exp(-d*d*2)*3
+    ring = np.exp(-((d-1)**2)*18)*2.2 + np.exp(-d*d*2)*0.8
     base[..., 0] -= ring*1.1; base[..., 1] -= ring*1.6; base[..., 2] -= ring*2.6
 # edge darkening
 ex = np.minimum(xx, W-1-xx)/W; ey = np.minimum(yy, H-1-yy)/H
