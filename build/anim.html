@@ -652,7 +652,7 @@ function scene6(c,T,t,layers,fxc){
   scatter(c,cam.x-14,cam.x+60,3.5,20,77,0.65);grassEdges(cam.x-8,cam.x+60,0,2.9,8);
   const lx=x0+16;landmark(lx,fl,T);
   const ph=2*Math.PI*x0/STRIDE;
-  const morph=sstep(0.1,1.6,t), vanish=sstep(2.2,2.7,t);   // исчезновение в 32.3
+  const morph=sstep(0.1,1.6,t), vanish=sstep(1.85,2.3,t);   // исчезновение в 32.3
   const entityA=1-vanish;
   const sdir=[-0.97,-0.25];
   return{lights:()=>landmarkGlow(fxc,lx,fl),
@@ -667,7 +667,7 @@ function scene6(c,T,t,layers,fxc){
     },
     smoke:()=>{
       // чернила, поднимающиеся от места исчезновения
-      const tv=t-2.2;if(tv<0||tv>3)return;
+      const tv=t-1.9;if(tv<0||tv>3.2)return;
       for(let i=0;i<22;i++){const r=rng(i*19+4);const age=tv-r()*0.25;if(age<0)continue;
         const p=P(x0-0.1+(r()-0.5)*0.5+age*0.1,0.8+age*(0.8+r()*0.8)+r()*0.8,-0.5+(r()-0.5)*0.3);if(!p)continue;
         const R=(0.14+r()*0.22)*p.s*(1+age*0.8);
