@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><title>Тот же круг</title>
 <style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style></head>
-<body><canvas id="c" width="1920" height="1080"></canvas>
+<body><canvas id="c"></canvas>
 <script>
 'use strict';
 /* ====================== ядро ====================== */
-const W=1920,H=1080,FPS=60,DUR=36;
-const out=document.getElementById('c'),octx=out.getContext('2d');
+const PORTRAIT=location.search.includes('v');
+const W=PORTRAIT?1080:1920,H=PORTRAIT?1920:1080,FPS=60,DUR=36;
+const FS=PORTRAIT?1.2:1;
+const out=document.getElementById('c');out.width=W;out.height=H;const octx=out.getContext('2d');
 const mk=(w=W,h=H)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c};
 const acc=mk(),accx=acc.getContext('2d');
 const frameA=mk(),fxA=frameA.getContext('2d');       // мир A (тёплый)
@@ -77,7 +79,7 @@ function P(x,y,z){
   const cp=Math.cos(cam.pitch),sp=Math.sin(cam.pitch);
   const y1=dy*cp-z1*sp,z2=dy*sp+z1*cp;
   if(z2<0.15)return null;
-  const s=cam.f/z2,sx=x1*s,sy2=-y1*s;
+  const s=cam.f*FS/z2,sx=x1*s,sy2=-y1*s;
   const cr=Math.cos(cam.roll),sr=Math.sin(cam.roll);
   return{x:W/2+sx*cr-sy2*sr,y:H/2+sx*sr+sy2*cr,s,d:z2};
 }
@@ -222,7 +224,7 @@ function drawFigureBack(c,o){
 
 /* ====================== сборка кадра: небо, земля, дорога ====================== */
 function drawSky(c,t,moon){
-  const hy=H/2+cam.f*Math.tan(cam.pitch);
+  const hy=H/2+cam.f*FS*Math.tan(cam.pitch);
   c.save();c.translate(W/2,H/2);c.rotate(cam.roll);c.translate(-W/2,-H/2);
   const big=1400;
   let g=c.createLinearGradient(0,hy-1100,0,hy);
@@ -231,7 +233,7 @@ function drawSky(c,t,moon){
   // мазки кисти по небу
   c.strokeStyle=css(mixc(WD.skyTop,WD.skyHor,0.7),0.07);c.lineCap='round';
   for(let i=0;i<46;i++){
-    const r=rng(i*17+3),y=hy-r()*900,x=(r()*(W+400)-200)-(cam.yaw*cam.f*0.9)%(W+400),l=200+r()*500;
+    const r=rng(i*17+3),y=hy-r()*900,x=(r()*(W+400)-200)-(cam.yaw*cam.f*FS*0.9)%(W+400),l=200+r()*500;
     c.lineWidth=14+r()*40;c.beginPath();c.moveTo(x,y+wob(i,3,6));c.lineTo(x+l,y+wob(i+1,3,10));c.stroke();
   }
   // луна
@@ -462,6 +464,48 @@ function drawText(c,T){
   }
 }
 function wrapText(c,s){return[s]}
+const LAY={};
+function layoutAll(c){
+  const placed=[];
+  TEXTS.forEach((tx,k)=>{
+    const size=tx.size*(tx.center?0.82:0.74);
+    c.save();c.font=FONT.replace('{S}',size);
+    const maxW=W-170,words=tx.s.split(' '),lines=[];let cur='';
+    for(const w of words){const t2=cur?cur+' '+w:w;if(c.measureText(t2).width>maxW&&cur){lines.push(cur);cur=w}else cur=t2}
+    lines.push(cur);
+    const lh=size*1.2;let y=tx.center?H*0.40:300;
+    if(!tx.center){for(const p of placed){if(tx.t0<p.t1+0.4&&p.t0<tx.t1)y=Math.max(y,p.y+p.n*p.lh+34);}}
+    const chars=[];let idx=0;
+    lines.forEach((ln,li)=>{
+      const wl=c.measureText(ln).width,x0=tx.center?(W-wl)/2:85;
+      for(let i=0;i<ln.length;i++){chars.push({ch:ln[i],x:x0+c.measureText(ln.slice(0,i)).width,y:y+li*lh,idx:idx+i});}
+      idx+=ln.length+1;
+    });
+    placed.push({t0:tx.t0,t1:tx.t1,y,n:lines.length,lh});
+    LAY[k]={size,chars};c.restore();
+  });
+}
+function drawTextP(c,T){
+  if(!LAY[0])layoutAll(c);
+  TEXTS.forEach((tx,k)=>{
+    if(T<tx.t0||T>tx.t1+0.4)return;
+    const L=LAY[k],fade=1-sstep(tx.t1,tx.t1+0.4,T);
+    c.save();c.font=FONT.replace('{S}',L.size);c.textBaseline='alphabetic';
+    const avertStart=tx.avert?tx.s.indexOf(tx.avert):-1,morphStart=tx.morph?tx.s.indexOf(tx.morph):-1;
+    for(const o of L.chars){
+      if(o.ch===' ')continue;
+      const i=o.idx,age=T-(tx.t0+i*0.05);if(age<0)continue;
+      const a=sstep(0,0.22,age);let dy=(1-eo(age/0.3))*-22,dx=0,al=a*fade,g=o.ch;
+      if(avertStart>=0&&i>=avertStart){const u=clamp((T-(tx.t0+2.2+(i-avertStart)*0.1))/1.2);dy+=ease(u)*900;dx+=ease(u)*(30+i*3);al*=1-sstep(0.7,1,u);}
+      if(morphStart>=0&&i>=morphStart&&g!=='.'){const u=T-(tx.t0+1.5);if(u>0&&u<1.1){const pool='дгкимрнпугбщ';g=pool[Math.floor(h1(i*5+Math.floor(T*14))*pool.length)];}}
+      const jx=wob(i,4,1.8),jy=wob(i+80,4,1.8),y=o.y+dy+jy;
+      c.globalAlpha=al*0.5;c.fillStyle='rgba(8,10,12,1)';c.shadowColor='rgba(0,0,0,.9)';c.shadowBlur=18;c.fillText(g,o.x+dx+jx+3,y+3);
+      c.shadowBlur=0;c.globalAlpha=al;c.fillStyle='#ebe5d0';c.fillText(g,o.x+dx+jx,y);
+      c.globalAlpha=al*0.35;c.fillText(g,o.x+dx+jx+1.4,y-1.2);
+    }
+    c.restore();
+  });
+}
 
 /* ====================== сцены ====================== */
 const SC=[0,6,12,18,24,30,36];
@@ -476,8 +520,8 @@ function xm1(t){return V1*t}
 function scene1(c,T,t,layers,fxc){
   LM.zl=1.5;WD=WORLD.A;FOGD=0.05;
   const u=t/6;
-  cam.f=1500;cam.x=xm1(t)+1.2+ lerp(0,1.2,u);cam.z=lerp(-7.2,-4.5,ease(u));cam.y=lerp(1.75,1.25,ease(u));
-  cam.yaw=lerp(0.16,-0.16,ease(u));cam.pitch=lerp(0.0,0.025,u);cam.roll=Math.sin(t*0.5)*0.004;
+  cam.f=1500;cam.x=xm1(t)+(PORTRAIT?0.55:1.2)+ lerp(0,PORTRAIT?0.5:1.2,u);cam.z=lerp(-7.2,-4.5,ease(u));cam.y=lerp(1.75,1.25,ease(u));
+  cam.yaw=PORTRAIT?lerp(0.0,-0.12,ease(u)):lerp(0.16,-0.16,ease(u));cam.pitch=lerp(0.0,0.025,u);cam.roll=Math.sin(t*0.5)*0.004;
   cam.focus=Math.hypot(cam.z+0.0,0)+0;cam.focus=-cam.z+0.3;cam.nearBlur=lerp(5,12,u);cam.farBlur=lerp(2.5,3.5,u);
   items=[];
   drawSky(fxc,t,true);
@@ -685,7 +729,7 @@ function groundFog(c,hy,amt=0.5){
 function renderWorld(sceneFn,T,t,frameCtx,layers,extra){
   fxA_=frameCtx;
   const r=sceneFn(frameCtx,T,t,layers,frameCtx);
-  const hy=H/2+cam.f*Math.tan(cam.pitch);
+  const hy=H/2+cam.f*FS*Math.tan(cam.pitch);
   if(r&&r.shadows)r.shadows();
   flush(layers,frameCtx);
   if(r&&r.after){items=[];r.after();flush(layers,frameCtx);}
@@ -710,8 +754,9 @@ function transitionOverlay(c,T){
   for(const [a,b,cp] of cuts){
     if(T<a||T>b)continue;
     const m=(a+b)/2, u=T<m?(T-a)/(m-a):(T-m)/(b-m);
-    const R=T<m?eo(u)*1700:(1-ei(u))*1700;
-    if(T<m)blot(c,cp[0],cp[1],R,Math.floor(a)); else blot(c,W-cp[0]*0.8,H-cp[1]*0.8,R,Math.floor(a)+5);
+    const RR=Math.hypot(W,H)*0.9;const R=T<m?eo(u)*RR:(1-ei(u))*RR;
+    const sx=W/1920,sy=H/1080;
+    if(T<m)blot(c,cp[0]*sx,cp[1]*sy,R,Math.floor(a)); else blot(c,W-cp[0]*0.8*sx,H-cp[1]*0.8*sy,R,Math.floor(a)+5);
   }
 }
 
@@ -731,7 +776,7 @@ function drawSubframe(Ts){
     fxA.save();
     // пишем в frameA: окно, через которое видно B
     if(prog>0.001){
-      const cxw=W*0.6,half=prog*W*0.27;
+      const cxw=W*(PORTRAIT?0.56:0.6),half=prog*W*(PORTRAIT?0.34:0.27);
       const L=cxw-half,Rr=cxw+half;
       fxA.beginPath();
       const N=44;
@@ -783,7 +828,7 @@ function renderAt(T){
   c.save();c.globalAlpha=0.07;c.globalCompositeOperation='screen';
   for(let i=0;i<5;i++){const r=rng(i*5+BOIL);c.strokeStyle='#e8e0c8';c.lineWidth=1;c.beginPath();const x=r()*W;c.moveTo(x,0);c.lineTo(x+(r()-0.5)*30,H);c.stroke();}
   c.restore();
-  drawText(c,T);
+  if(PORTRAIT)drawTextP(c,T);else drawText(c,T);
   transitionOverlay(c,T);
   // финал: в чернила
   const fo=sstep(35.3,36,T);if(fo>0){c.fillStyle=`rgba(6,8,9,${fo})`;c.fillRect(0,0,W,H);}
