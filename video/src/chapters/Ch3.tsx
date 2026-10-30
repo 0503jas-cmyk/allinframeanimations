@@ -136,7 +136,7 @@ const Kell: React.FC = () => {
   const sub2 = L(T.a('c3.14', 0.1));
   return (
     <AbsoluteFill style={{background: 'linear-gradient(180deg,#1a1626,#0a0d1a)'}}>
-      <Cam keys={[{t: 0, s: 1.0, x: 0, y: 0}, {t: L(T.a('c3.10', 0)), s: 1.45, x: 120, y: 120}, {t: L(T.a('c3.12', 0)), s: 1.2, x: 40, y: 30}, {t: dur, s: 1.1, x: 0, y: 0}]} drift={2}>
+      <Cam keys={[{t: 0, s: 1.0, x: 0, y: 0}, {t: L(T.a('c3.10', 0)), s: 1.3, x: 120, y: -10}, {t: L(T.a('c3.12', 0)), s: 1.15, x: 40, y: -20}, {t: dur, s: 1.1, x: 0, y: 0}]} drift={2}>
         <Layer depth={1}>
           <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: 0.6}}>
             {Array.from({length: 7}, (_, i) => (
@@ -149,8 +149,7 @@ const Kell: React.FC = () => {
               <path key={i} d={`M0 ${i * 44 + hash(i) * 12}Q480 ${i * 44 + hash(i + 3) * 30} 960 ${i * 44} T1920 ${i * 44 + hash(i + 5) * 14}`} stroke="#05070e" strokeWidth={1.5 + hash(i + 9) * 2} fill="none" />
             ))}
           </svg>
-          <LedgerPage x={760} y={170} scale={0.95} width={1200} lamp={{x: 420, y: 300}} rotate={-3} rows={[{date: '4 March', writeAt: -9}]} />
-          <InkText text="IN: 1" x={1060} y={366} size={52} start={-9} end={-8} ink="brown" hand="child" />
+          <LedgerPage x={760} y={170} scale={0.95} width={1200} lamp={{x: 420, y: 300}} rotate={-3} rows={[{date: '4 March', in: ['IN: 1'], ink: 'child', writeAt: -9}]} />
           {/* graphite thumbprint appearing on the page edge */}
           <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
             <g opacity={grey * 0.75} transform="translate(900 700) rotate(-24)">
@@ -167,18 +166,6 @@ const Kell: React.FC = () => {
               <path d="M330 -11L398 0L330 11Z" fill="#d9b98a" />
               <path d="M378 -4L398 0L378 4Z" fill="#3a3a44" />
               <rect x={-22} y={-11} width={24} height={22} rx={3} fill="#6b4a3a" />
-            </g>
-            {/* tin mug of tea */}
-            <g transform="translate(240 520)">
-              <ellipse cx={0} cy={150} rx={100} ry={22} fill="#04060c" opacity={0.6} />
-              <path d="M-80 0H80L70 150H-70Z" fill="#6a7283" />
-              <path d="M-80 0H-30L-34 150H-70Z" fill="#8c95a8" opacity={0.7} />
-              <ellipse cx={0} cy={0} rx={80} ry={20} fill="#2a1e14" />
-              <ellipse cx={0} cy={0} rx={80} ry={20} fill="none" stroke="#a9b2c4" strokeWidth={5} />
-              <path d="M80 30C140 20 140 110 72 110" fill="none" stroke="#6a7283" strokeWidth={16} />
-              {[0, 1, 2].map((i) => (
-                <path key={i} d={`M${-20 + i * 24} -26Q${-8 + i * 24} ${-60 - i * 6} ${-20 + i * 24} ${-96}`} stroke={rgba(P.bone, 0.18)} strokeWidth={5} fill="none" strokeLinecap="round" transform={`translate(${Math.sin(t * 1.5 + i) * 6} 0)`} />
-              ))}
             </g>
             {/* Kell's shadow slides across the page, then lingers on the table not the page */}
             <path d={`M${1500 - shade * 1400} 0L${2100 - shade * 1400} 0L${1700 - shade * 1400} 1080L${1100 - shade * 1400} 1080Z`} fill="#02040a" opacity={0.55 * Math.sin(Math.PI * clamp01(shade))} />
