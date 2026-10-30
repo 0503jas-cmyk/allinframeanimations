@@ -275,7 +275,7 @@ const AtlasDusk: React.FC = () => {
   const close = easeInOut(prog(t, L(T.a('c4.32', -0.4)), L(T.a('c4.32', 0.4))));
   return (
     <AbsoluteFill style={{background: P.ink0}}>
-      <Cam from={{s: 1.0}} to={{s: 1.07}} drift={2}>
+      <Cam keys={[{t: 0, s: 1.0, x: 0, y: 0}, {t: tSmall - 1, s: 1.3, x: 120, y: 160}, {t: tHeel + 0.5, s: 1.85, x: 330, y: 330}, {t: dur, s: 1.9, x: 330, y: 340}]} drift={2}>
         <div style={{position: 'absolute', inset: 0, opacity: 1 - close}}>
           <div style={{position: 'absolute', inset: 0, perspective: 2400}}>
             <div style={{position: 'absolute', inset: 0, transformOrigin: '50% 100%', transform: `rotateX(${(1 - open) * 40}deg)`, opacity: 0.2 + 0.8 * open}}>
@@ -289,13 +289,13 @@ const AtlasDusk: React.FC = () => {
             </div>
           </div>
           {heels > 0 && (
-            <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: heels}}>
-              <g transform="translate(1040 770)">
+            <Layer depth={0.9}><svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: heels}}>
+              <g transform="translate(902 812)">
                 <ellipse cx={-22} cy={0} rx={13} ry={24} fill={P.amber} />
                 <ellipse cx={22} cy={0} rx={13} ry={24} fill={P.amber} />
                 <circle cx={0} cy={0} r={70 + 10 * Math.sin(t * 3)} fill="none" stroke={P.amber} strokeDasharray="10 8" strokeWidth={3} opacity={0.8} />
               </g>
-            </svg>
+            </svg></Layer>
           )}
           {/* keeper's margin line, cramped and unreadable */}
           <div style={{position: 'absolute', left: 130, top: 120, width: 520, fontFamily: FONT.hand, fontStyle: 'italic', fontSize: 15, lineHeight: '17px', color: rgba(P.bone, 0.45), letterSpacing: '-0.5px', opacity: easeInOut(prog(t, L(T.a('c4.26', 0.2)), L(T.a('c4.26', 1.0))))}}>
