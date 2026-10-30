@@ -4,3 +4,5 @@ build/logs/
 build/spec.png
 build/mix.wav
 build/node_modules/
+build/assets/friend.wav
+build/steps.json
