@@ -1,0 +1,89 @@
+{
+ "music": [
+  {
+   "from": 0,
+   "to": 74.7,
+   "mood": "tense"
+  },
+  {
+   "from": 81.91,
+   "to": 102.209,
+   "mood": "sorrow"
+  }
+ ],
+ "beds": [
+  {
+   "from": 0,
+   "to": 102.209,
+   "name": "tide",
+   "gain": 0.35
+  }
+ ],
+ "sfx": [
+  {
+   "t": 21.16,
+   "name": "scratch",
+   "gain": 0.3
+  },
+  {
+   "t": 29.16,
+   "name": "tick",
+   "gain": 0.15
+  },
+  {
+   "t": 30.06,
+   "name": "tick",
+   "gain": 0.15
+  },
+  {
+   "t": 30.96,
+   "name": "tick",
+   "gain": 0.15
+  },
+  {
+   "t": 31.86,
+   "name": "tick",
+   "gain": 0.15
+  },
+  {
+   "t": 32.76,
+   "name": "tick",
+   "gain": 0.15
+  },
+  {
+   "t": 33.66,
+   "name": "tick",
+   "gain": 0.15
+  },
+  {
+   "t": 49.4,
+   "name": "creak",
+   "gain": 0.4
+  },
+  {
+   "t": 53.98,
+   "name": "creak",
+   "gain": 0.4
+  },
+  {
+   "t": 73.4,
+   "name": "creak",
+   "gain": 0.3
+  },
+  {
+   "t": 92.14,
+   "name": "scratch",
+   "gain": 0.5
+  },
+  {
+   "t": 95,
+   "name": "tide_wash",
+   "gain": 0.7
+  },
+  {
+   "t": 97.91,
+   "name": "bell",
+   "gain": 0.3
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "music": [
+  {
+   "from": 0,
+   "to": 42.268,
+   "mood": "release"
+  }
+ ],
+ "beds": [
+  {
+   "from": 0,
+   "to": 42.268,
+   "name": "tide",
+   "gain": 0.35
+  }
+ ],
+ "sfx": [
+  {
+   "t": 1.8,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 3.4,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 4.9,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 6.4,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 7.6,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 10.97,
+   "name": "scratch",
+   "gain": 0.3
+  },
+  {
+   "t": 14.24,
+   "name": "scratch",
+   "gain": 0.4
+  },
+  {
+   "t": 20.06,
+   "name": "scratch",
+   "gain": 0.4
+  },
+  {
+   "t": 21.53,
+   "name": "scratch",
+   "gain": 0.5
+  },
+  {
+   "t": 31.27,
+   "name": "bell",
+   "gain": 0.3
+  }
+ ]
+}

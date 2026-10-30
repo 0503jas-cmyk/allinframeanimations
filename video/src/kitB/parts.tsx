@@ -102,13 +102,14 @@ export type DuskProps = {
   hideBell?: boolean;
   darken?: number;
   skyMood?: 'dusk' | 'calm' | 'tense';
+  bellRings?: boolean;
 };
 
 export const POST = {x: 640, y: 790, size: 0.95};
 export const LAMP_XS = [1130, 1250, 1370, 1480, 1590, 1690, 1790, 1880, 1990];
 
 /** THE POST AT DUSK composition (shared by ch9 and the ch8 replay): post and bell centre-left, village lamps in a row on the right, sea behind. Wrap in <Camera>. */
-export const Dusk: React.FC<DuskProps> = ({mood = 'dusk', lit = 6, strikes = [], bellAmp = 14, tide = 0, foam = P.teal, lamps = 7, stars = 50, extra, road, fore, calm = 1, postWear = 0, hideBell = false, darken = 0, skyMood}) => {
+export const Dusk: React.FC<DuskProps> = ({mood = 'dusk', lit = 6, strikes = [], bellAmp = 14, tide = 0, foam = P.teal, lamps = 7, stars = 50, extra, road, fore, calm = 1, postWear = 0, hideBell = false, darken = 0, skyMood, bellRings = true}) => {
   const t = useT();
   const sm = skyMood ?? (mood === 'dusk' ? 'dusk' : 'calm');
   return (
@@ -141,11 +142,11 @@ export const Dusk: React.FC<DuskProps> = ({mood = 'dusk', lit = 6, strikes = [],
         {LAMP_XS.slice(0, lamps).map((x, i) => (
           <LampDisc key={i} x={x} y={744 + (i % 2) * 3} r={16} seed={i} a={0.9} />
         ))}
-        {!hideBell && <Bell x={POST.x} y={POST.y} size={POST.size} strikes={strikes} amp={bellAmp} ropeWear={postWear} />}
+        {!hideBell && <Bell x={POST.x} y={POST.y} size={POST.size} strikes={strikes} amp={bellAmp} ropeWear={postWear} rings={bellRings} />}
         {extra}
         {road}
+        {fore}
       </Layer>
-      <Layer depth={1.35}>{fore}</Layer>
       {darken > 0 && <AbsoluteFill style={{background: rgba(P.ink0, darken)}} />}
     </>
   );

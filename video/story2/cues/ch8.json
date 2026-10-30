@@ -1,0 +1,104 @@
+{
+ "music": [
+  {
+   "from": 0,
+   "to": 66.23,
+   "mood": "sorrow"
+  },
+  {
+   "from": 66.23,
+   "to": 95.19,
+   "mood": "tense"
+  },
+  {
+   "from": 97.39,
+   "to": 151.476,
+   "mood": "release"
+  }
+ ],
+ "beds": [
+  {
+   "from": 0,
+   "to": 151.476,
+   "name": "tide",
+   "gain": 0.5
+  }
+ ],
+ "sfx": [
+  {
+   "t": 11.15,
+   "name": "bell",
+   "gain": 0.7
+  },
+  {
+   "t": 14.1,
+   "name": "tide_wash",
+   "gain": 0.8
+  },
+  {
+   "t": 53.03,
+   "name": "bell",
+   "gain": 0.8
+  },
+  {
+   "t": 56.35,
+   "name": "bell",
+   "gain": 0.9
+  },
+  {
+   "t": 66.23,
+   "name": "thump",
+   "gain": 0.3
+  },
+  {
+   "t": 89.26,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 90.86,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 92.46,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 94.06,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 95.66,
+   "name": "bell",
+   "gain": 0.6
+  },
+  {
+   "t": 98.32,
+   "name": "scratch",
+   "gain": 0.3
+  },
+  {
+   "t": 105.74,
+   "name": "page_turn",
+   "gain": 0.3
+  },
+  {
+   "t": 120.35,
+   "name": "scratch",
+   "gain": 0.3
+  },
+  {
+   "t": 130.69,
+   "name": "scratch",
+   "gain": 0.5
+  },
+  {
+   "t": 145.19,
+   "name": "scratch",
+   "gain": 0.5
+  }
+ ]
+}
