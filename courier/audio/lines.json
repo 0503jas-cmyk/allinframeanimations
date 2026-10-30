@@ -1,0 +1,900 @@
+{
+ "s01_JUNO": [
+  {
+   "id": "s01.01",
+   "text": "Rule one. Never open the package.",
+   "start": 0.0,
+   "end": 2.966
+  },
+  {
+   "id": "s01.03",
+   "text": "Rule three. Never stop.",
+   "start": 3.616,
+   "end": 4.276
+  },
+  {
+   "id": "s01.06",
+   "text": "I know we are honking.",
+   "start": 4.828,
+   "end": 5.674
+  },
+  {
+   "id": "s01.08",
+   "text": "My name is Juno Vale. I deliver things. Medicine, batteries, love letters, once a goat.",
+   "start": 6.179,
+   "end": 13.908
+  },
+  {
+   "id": "s01.10",
+   "text": "The world ended three years ago. Somebody still has to bring the mail.",
+   "start": 14.21,
+   "end": 19.566
+  }
+ ],
+ "s01_BOLT": [
+  {
+   "id": "s01.02",
+   "text": "Rule two. Never ask what is in the package.",
+   "start": 0.0,
+   "end": 3.628
+  },
+  {
+   "id": "s01.04",
+   "text": "Rule four. Stop for snacks. You added that one yourself, boss.",
+   "start": 4.251,
+   "end": 8.634
+  },
+  {
+   "id": "s01.05",
+   "text": "Boss. We are honking.",
+   "start": 9.289,
+   "end": 11.201
+  },
+  {
+   "id": "s01.07",
+   "text": "The horn is a duck. The dead love ducks.",
+   "start": 11.616,
+   "end": 14.892
+  },
+  {
+   "id": "s01.09",
+   "text": "We do not talk about the goat.",
+   "start": 15.369,
+   "end": 17.633
+  }
+ ],
+ "s02_BOLT": [
+  {
+   "id": "s02.01",
+   "text": "Peaches delivered. Customer is crying. That is a four star tip.",
+   "start": 0.0,
+   "end": 5.291
+  },
+  {
+   "id": "s02.05",
+   "text": "I have a robot with very good opinions.",
+   "start": 5.859,
+   "end": 8.368
+  },
+  {
+   "id": "s02.09",
+   "text": "The Hollow has eleven thousand zombies, boss. I counted. Twice.",
+   "start": 8.924,
+   "end": 13.538
+  },
+  {
+   "id": "s02.15",
+   "text": "Boss, I have a bad feeling about this. And I do not have feelings.",
+   "start": 14.177,
+   "end": 19.331
+  }
+ ],
+ "s02_JUNO": [
+  {
+   "id": "s02.02",
+   "text": "He is crying because they are peaches.",
+   "start": 0.0,
+   "end": 2.264
+  },
+  {
+   "id": "s02.04",
+   "text": "I am never alone. I have a robot with opinions.",
+   "start": 2.872,
+   "end": 6.086
+  },
+  {
+   "id": "s02.07",
+   "text": "Haven is forty kilometres away. Through the Hollow.",
+   "start": 6.587,
+   "end": 9.874
+  },
+  {
+   "id": "s02.11",
+   "text": "One hundred days.",
+   "start": 10.396,
+   "end": 11.526
+  },
+  {
+   "id": "s02.13",
+   "text": "Which is what?",
+   "start": 11.924,
+   "end": 12.496
+  },
+  {
+   "id": "s02.16",
+   "text": "Get in the sidecar.",
+   "start": 12.95,
+   "end": 14.106
+  }
+ ],
+ "s02_ADA": [
+  {
+   "id": "s02.03",
+   "text": "Courier Vale, this is Haven dispatch. Are you alone?",
+   "start": 0.0,
+   "end": 3.493
+  },
+  {
+   "id": "s02.06",
+   "text": "I have a job. One package. Grey cooler, sealed. Pickup is the old pharmacy on Fifth. Dropoff is Haven Tower.",
+   "start": 3.973,
+   "end": 12.412
+  },
+  {
+   "id": "s02.08",
+   "text": "Forty kilometres. Before sunrise. Seven hours.",
+   "start": 12.757,
+   "end": 16.47
+  },
+  {
+   "id": "s02.10",
+   "text": "The pay is one hundred days of safety. A bed. A door that locks. Real food.",
+   "start": 16.883,
+   "end": 23.032
+  },
+  {
+   "id": "s02.12",
+   "text": "And Juno. Watch out for Mayor Crane. If he finds out what you are carrying.",
+   "start": 23.452,
+   "end": 28.219
+  },
+  {
+   "id": "s02.14",
+   "text": "I do not know. Nobody does. That is why it is fragile.",
+   "start": 28.661,
+   "end": 32.836
+  }
+ ],
+ "s03_BOLT": [
+  {
+   "id": "s03.01",
+   "text": "Boss. The cooler is humming.",
+   "start": 0.0,
+   "end": 2.285
+  },
+  {
+   "id": "s03.03",
+   "text": "I will not scan it. I am a courier robot. Scanning is not my job. Scanning is rude.",
+   "start": 2.693,
+   "end": 9.757
+  },
+  {
+   "id": "s03.05",
+   "text": "That was for safety. Pick up the package, boss.",
+   "start": 10.503,
+   "end": 13.354
+  },
+  {
+   "id": "s03.07",
+   "text": "Boss. The floor is moving.",
+   "start": 14.061,
+   "end": 16.509
+  }
+ ],
+ "s03_JUNO": [
+  {
+   "id": "s03.02",
+   "text": "Coolers do not hum.",
+   "start": 0.0,
+   "end": 1.537
+  },
+  {
+   "id": "s03.04",
+   "text": "You scan everything. You scanned my sandwich.",
+   "start": 2.149,
+   "end": 5.115
+  },
+  {
+   "id": "s03.06",
+   "text": "Four thousand, four hundred and seventeen. Cute number.",
+   "start": 5.672,
+   "end": 9.184
+  },
+  {
+   "id": "s03.08",
+   "text": "The floor is not moving.",
+   "start": 9.718,
+   "end": 11.123
+  },
+  {
+   "id": "s03.09",
+   "text": "Okay. The floor is moving.",
+   "start": 11.633,
+   "end": 13.793
+  }
+ ],
+ "s04_JUNO": [
+  {
+   "id": "s04.01",
+   "text": "Shortcut. Straight through the middle.",
+   "start": 0.0,
+   "end": 2.152
+  },
+  {
+   "id": "s04.03",
+   "text": "Then we are very polite.",
+   "start": 2.694,
+   "end": 4.409
+  },
+  {
+   "id": "s04.05",
+   "text": "Bolt. Did you press that?",
+   "start": 4.82,
+   "end": 6.604
+  },
+  {
+   "id": "s04.08",
+   "text": "Elevator music. You saved us with elevator music.",
+   "start": 7.141,
+   "end": 10.684
+  }
+ ],
+ "s04_BOLT": [
+  {
+   "id": "s04.02",
+   "text": "Boss. Hundreds of them. They are sleeping.",
+   "start": 0.0,
+   "end": 3.211
+  },
+  {
+   "id": "s04.04",
+   "text": "I did not do that.",
+   "start": 3.837,
+   "end": 4.96
+  },
+  {
+   "id": "s04.06",
+   "text": "I touched it a little.",
+   "start": 5.416,
+   "end": 6.76
+  },
+  {
+   "id": "s04.07",
+   "text": "Hacking the speakers. Playing something loud to pull them off us.",
+   "start": 7.474,
+   "end": 11.068
+  },
+  {
+   "id": "s04.09",
+   "text": "It is a classic.",
+   "start": 11.374,
+   "end": 12.591
+  }
+ ],
+ "s05_CRANE": [
+  {
+   "id": "s05.01",
+   "text": "Courier Vale. How wonderful. Allow me to introduce myself.",
+   "start": 0.0,
+   "end": 4.35
+  },
+  {
+   "id": "s05.02",
+   "text": "I am Mayor Julian Crane. And this is my parade.",
+   "start": 4.656,
+   "end": 8.997
+  },
+  {
+   "id": "s05.04",
+   "text": "They follow the music. They always follow the music. I simply picked better music.",
+   "start": 9.585,
+   "end": 12.891
+  },
+  {
+   "id": "s05.05",
+   "text": "Ada tells you nothing, does she? She never does. But I have listened to her radio for three years.",
+   "start": 13.329,
+   "end": 22.044
+  },
+  {
+   "id": "s05.06",
+   "text": "That cooler is the only cure left on this earth. And it belongs to the man who can keep it safe.",
+   "start": 22.514,
+   "end": 28.309
+  },
+  {
+   "id": "s05.09",
+   "text": "Hand it over, and I will give you a gold medal and a tiny little house.",
+   "start": 28.745,
+   "end": 32.828
+  },
+  {
+   "id": "s05.11",
+   "text": "Then I shall take it from your cold, courier hands.",
+   "start": 33.301,
+   "end": 36.833
+  }
+ ],
+ "s05_JUNO": [
+  {
+   "id": "s05.03",
+   "text": "That is a lot of zombies.",
+   "start": 0.0,
+   "end": 1.908
+  },
+  {
+   "id": "s05.07",
+   "text": "A cure?",
+   "start": 2.421,
+   "end": 2.95
+  },
+  {
+   "id": "s05.10",
+   "text": "I already have a tiny little house. It is a sidecar.",
+   "start": 3.541,
+   "end": 7.001
+  }
+ ],
+ "s05_BOLT": [
+  {
+   "id": "s05.08",
+   "text": "Boss. Do not listen. He is a man in a suit on a bus.",
+   "start": 0.0,
+   "end": 5.250612
+  }
+ ],
+ "s06_BOLT": [
+  {
+   "id": "s06.01",
+   "text": "I have propellers! I did not know I had propellers!",
+   "start": 0.0,
+   "end": 4.005
+  },
+  {
+   "id": "s06.03",
+   "text": "I am full of surprises!",
+   "start": 4.378,
+   "end": 6.228
+  },
+  {
+   "id": "s06.05",
+   "text": "Ten metres. We can clear eight.",
+   "start": 6.805,
+   "end": 9.243
+  },
+  {
+   "id": "s06.07",
+   "text": "How do we get two more?",
+   "start": 9.746,
+   "end": 11.154
+  }
+ ],
+ "s06_JUNO": [
+  {
+   "id": "s06.02",
+   "text": "You have a lot of secrets, Bolt!",
+   "start": 0.0,
+   "end": 2.094
+  },
+  {
+   "id": "s06.04",
+   "text": "Bolt. How big is the gap?",
+   "start": 2.669,
+   "end": 4.626
+  },
+  {
+   "id": "s06.06",
+   "text": "Then we need two more.",
+   "start": 5.141,
+   "end": 6.155
+  },
+  {
+   "id": "s06.08",
+   "text": "Hold on to the bike and flap.",
+   "start": 6.647,
+   "end": 8.516
+  }
+ ],
+ "s06_CRANE": [
+  {
+   "id": "s06.09",
+   "text": "Oh, that is rude!",
+   "start": 0.0,
+   "end": 1.799
+  },
+  {
+   "id": "s06.10",
+   "text": "Never mind. They have to go through the Rail Yard.",
+   "start": 2.453,
+   "end": 5.642
+  }
+ ],
+ "s07_JUNO": [
+  {
+   "id": "s07.01",
+   "text": "It is quiet.",
+   "start": 0.0,
+   "end": 0.998
+  },
+  {
+   "id": "s07.03",
+   "text": "Do you think there is a cure in there?",
+   "start": 1.754,
+   "end": 3.22
+  },
+  {
+   "id": "s07.05",
+   "text": "You think about everything. You think about the colour of my socks.",
+   "start": 3.747,
+   "end": 9.138
+  },
+  {
+   "id": "s07.07",
+   "text": "I got bitten once. When I was eight. I should have turned. I did not. Ada says some people are lucky.",
+   "start": 9.657,
+   "end": 15.228
+  },
+  {
+   "id": "s07.09",
+   "text": "Do you ever wonder why? Why I am here?",
+   "start": 15.751,
+   "end": 18.152
+  },
+  {
+   "id": "s07.12",
+   "text": "Rule one is dumb.",
+   "start": 18.661,
+   "end": 19.939
+  },
+  {
+   "id": "s07.14",
+   "text": "Come on. Dawn is five hours away.",
+   "start": 20.237,
+   "end": 22.909
+  }
+ ],
+ "s07_BOLT": [
+  {
+   "id": "s07.02",
+   "text": "That is good. Quiet is good.",
+   "start": 0.0,
+   "end": 2.616
+  },
+  {
+   "id": "s07.04",
+   "text": "I do not think about it.",
+   "start": 3.254,
+   "end": 4.248
+  },
+  {
+   "id": "s07.06",
+   "text": "Your socks are orange and one has a hole.",
+   "start": 5.083,
+   "end": 7.702
+  },
+  {
+   "id": "s07.08",
+   "text": "Some people are.",
+   "start": 8.217,
+   "end": 9.033
+  },
+  {
+   "id": "s07.10",
+   "text": "Every day, boss.",
+   "start": 9.596,
+   "end": 10.788
+  },
+  {
+   "id": "s07.11",
+   "text": "Rule one.",
+   "start": 11.179,
+   "end": 11.817
+  },
+  {
+   "id": "s07.13",
+   "text": "Rule one keeps you alive. Please. Trust me.",
+   "start": 12.329,
+   "end": 16.353
+  }
+ ],
+ "s08_BOLT": [
+  {
+   "id": "s08.01",
+   "text": "Quiet. Quiet. Quiet.",
+   "start": 0.0,
+   "end": 2.478
+  },
+  {
+   "id": "s08.03",
+   "text": "That is not a statue. That is Betty.",
+   "start": 2.917,
+   "end": 6.112
+  },
+  {
+   "id": "s08.05",
+   "text": "I name everything I am afraid of.",
+   "start": 6.673,
+   "end": 9.586
+  },
+  {
+   "id": "s08.07",
+   "text": "One. Do not die. Two. See one.",
+   "start": 10.19,
+   "end": 13.126
+  },
+  {
+   "id": "s08.09",
+   "text": "I do not like this plan!",
+   "start": 13.728,
+   "end": 15.647
+  }
+ ],
+ "s08_JUNO": [
+  {
+   "id": "s08.02",
+   "text": "Bolt. Please say that is a statue.",
+   "start": 0.0,
+   "end": 2.793
+  },
+  {
+   "id": "s08.04",
+   "text": "You named her?",
+   "start": 3.41,
+   "end": 4.044
+  },
+  {
+   "id": "s08.06",
+   "text": "Bolt! Plan!",
+   "start": 4.501,
+   "end": 5.674
+  },
+  {
+   "id": "s08.08",
+   "text": "Bolt, get on the hook!",
+   "start": 6.121,
+   "end": 8.129
+  },
+  {
+   "id": "s08.10",
+   "text": "Bolt! Bolt!",
+   "start": 8.546,
+   "end": 9.404
+  }
+ ],
+ "s08_CRANE": [
+  {
+   "id": "s08.11",
+   "text": "Got you, little man.",
+   "start": 0.0,
+   "end": 1.880816
+  }
+ ],
+ "s09_CRANE": [
+  {
+   "id": "s09.01",
+   "text": "Courier Vale. Such a good robot. Such a loyal little machine. It would be a shame to melt him for scrap.",
+   "start": 0.0,
+   "end": 7.626
+  },
+  {
+   "id": "s09.06",
+   "text": "It is empty.",
+   "start": 8.49,
+   "end": 9.353
+  },
+  {
+   "id": "s09.08",
+   "text": "Deliver her alive.",
+   "start": 9.846,
+   "end": 11.15
+  },
+  {
+   "id": "s09.10",
+   "text": "Bring her to me. All of them. Now.",
+   "start": 11.465,
+   "end": 14.289
+  }
+ ],
+ "s09_BOLT": [
+  {
+   "id": "s09.02",
+   "text": "Boss, do not give him the cooler. Please. Do not.",
+   "start": 0.0,
+   "end": 4.283
+  },
+  {
+   "id": "s09.04",
+   "text": "Boss, I mean it. Do not.",
+   "start": 4.802,
+   "end": 6.923
+  },
+  {
+   "id": "s09.12",
+   "text": "I do not know, boss.",
+   "start": 7.555,
+   "end": 9.169
+  }
+ ],
+ "s09_JUNO": [
+  {
+   "id": "s09.03",
+   "text": "Shut up, Bolt.",
+   "start": 0.0,
+   "end": 0.952
+  },
+  {
+   "id": "s09.05",
+   "text": "He is my friend. He is the only one I have.",
+   "start": 1.311,
+   "end": 4.15
+  },
+  {
+   "id": "s09.07",
+   "text": "What?",
+   "start": 4.904,
+   "end": 5.325
+  },
+  {
+   "id": "s09.09",
+   "text": "Deliver who alive?",
+   "start": 5.801,
+   "end": 6.856
+  },
+  {
+   "id": "s09.11",
+   "text": "Bolt. What does that mean?",
+   "start": 7.497,
+   "end": 9.226
+  },
+  {
+   "id": "s09.13",
+   "text": "You are lying. You have never lied. You are bad at it.",
+   "start": 9.674,
+   "end": 13.244
+  }
+ ],
+ "s10_JUNO": [
+  {
+   "id": "s10.01",
+   "text": "Ada. The cooler is empty.",
+   "start": 0.0,
+   "end": 2.138
+  },
+  {
+   "id": "s10.03",
+   "text": "You knew?",
+   "start": 2.647,
+   "end": 3.133
+  },
+  {
+   "id": "s10.05",
+   "text": "Then what was it?",
+   "start": 3.688,
+   "end": 4.405
+  },
+  {
+   "id": "s10.08",
+   "text": "Bolt.",
+   "start": 4.975,
+   "end": 5.322
+  },
+  {
+   "id": "s10.10",
+   "text": "Eleven years. You knew for eleven years.",
+   "start": 5.833,
+   "end": 9.312
+  },
+  {
+   "id": "s10.13",
+   "text": "So I am the package.",
+   "start": 9.847,
+   "end": 11.538
+  },
+  {
+   "id": "s10.15",
+   "text": "Same thing, in this economy.",
+   "start": 11.921,
+   "end": 13.627
+  },
+  {
+   "id": "s10.16",
+   "text": "Fine. Deliver me.",
+   "start": 14.148,
+   "end": 15.882
+  }
+ ],
+ "s10_ADA": [
+  {
+   "id": "s10.02",
+   "text": "I know.",
+   "start": 0.0,
+   "end": 0.671
+  },
+  {
+   "id": "s10.04",
+   "text": "The cooler was a decoy. For Crane. For anyone listening. Juno, the package was never the box.",
+   "start": 1.149,
+   "end": 7.516
+  },
+  {
+   "id": "s10.06",
+   "text": "Package four thousand, four hundred and seventeen is a file number. It is your file number. You were born in Haven. Your mother was our lead scientist.",
+   "start": 7.615,
+   "end": 19.306
+  },
+  {
+   "id": "s10.07",
+   "text": "She found out the bite did not kill you. Your blood fights the virus. It is the only cure we have ever found. So she hid you in the city, and built a guardian.",
+   "start": 19.69,
+   "end": 30.247
+  },
+  {
+   "id": "s10.12",
+   "text": "Juno. Haven can make the cure from your blood. It takes one hour. If you come to the gate, we can save everyone. If you do not, there is nothing left.",
+   "start": 30.841,
+   "end": 41.195
+  },
+  {
+   "id": "s10.14",
+   "text": "You are not a package. You are a person we need.",
+   "start": 41.797,
+   "end": 45.558
+  }
+ ],
+ "s10_BOLT": [
+  {
+   "id": "s10.09",
+   "text": "I was built to keep you alive, boss. And to bring you home. That is all I was ever meant to do.",
+   "start": 0.0,
+   "end": 6.777
+  },
+  {
+   "id": "s10.11",
+   "text": "I also learned to like you. That was not in the instructions.",
+   "start": 7.551,
+   "end": 11.468
+  }
+ ],
+ "s11_CRANE": [
+  {
+   "id": "s11.01",
+   "text": "Courier Vale! The world needs you in one piece. And I need you in mine!",
+   "start": 0.0,
+   "end": 5.25
+  },
+  {
+   "id": "s11.12",
+   "text": "No. No, no, wait. Turn off the music! Turn off the music!",
+   "start": 5.763,
+   "end": 9.953
+  }
+ ],
+ "s11_BOLT": [
+  {
+   "id": "s11.02",
+   "text": "Boss. The gate is closing. They only open it for sixty seconds.",
+   "start": 0.0,
+   "end": 4.668
+  },
+  {
+   "id": "s11.04",
+   "text": "Eight hundred metres. And Crane's drums are louder than we are.",
+   "start": 5.102,
+   "end": 9.296
+  },
+  {
+   "id": "s11.06",
+   "text": "Boss. I know a way.",
+   "start": 9.863,
+   "end": 11.426
+  },
+  {
+   "id": "s11.07",
+   "text": "I am the loudest thing in this city. I have a duck horn, an alarm, and a very dramatic voice.",
+   "start": 11.905,
+   "end": 18.338
+  },
+  {
+   "id": "s11.09",
+   "text": "Boss. Someone has to be the noise.",
+   "start": 18.838,
+   "end": 21.27
+  },
+  {
+   "id": "s11.11",
+   "text": "Rule five, boss. Always deliver the package.",
+   "start": 21.81,
+   "end": 25.234
+  }
+ ],
+ "s11_JUNO": [
+  {
+   "id": "s11.03",
+   "text": "How far?",
+   "start": 0.0,
+   "end": 0.842
+  },
+  {
+   "id": "s11.05",
+   "text": "Then we need to be louder than the drums.",
+   "start": 1.27,
+   "end": 5.158
+  },
+  {
+   "id": "s11.08",
+   "text": "No. No no no.",
+   "start": 5.626,
+   "end": 5.871
+  },
+  {
+   "id": "s11.10",
+   "text": "Bolt!",
+   "start": 5.98,
+   "end": 6.348
+  }
+ ],
+ "s12_ADA": [
+  {
+   "id": "s12.01",
+   "text": "You are Juno. Your mother would be so proud.",
+   "start": 0.0,
+   "end": 3.824
+  },
+  {
+   "id": "s12.03",
+   "text": "Juno. I am so sorry.",
+   "start": 4.387,
+   "end": 4.879
+  },
+  {
+   "id": "s12.05",
+   "text": "A hundred days of safety, as promised. And the world is waking up.",
+   "start": 5.441,
+   "end": 12.199
+  }
+ ],
+ "s12_JUNO": [
+  {
+   "id": "s12.02",
+   "text": "Where is Bolt?",
+   "start": 0.0,
+   "end": 0.91
+  },
+  {
+   "id": "s12.04",
+   "text": "He said I was a person. Not a package.",
+   "start": 1.336,
+   "end": 3.872
+  },
+  {
+   "id": "s12.06",
+   "text": "I never even said thank you.",
+   "start": 4.504,
+   "end": 5.93
+  },
+  {
+   "id": "s12.08",
+   "text": "I was never the one delivering. I was the one being delivered. And I still tipped the driver.",
+   "start": 6.557,
+   "end": 12.278
+  }
+ ],
+ "s12_BOLT": [
+  {
+   "id": "s12.07",
+   "text": "Boss. You are honking.",
+   "start": 0.0,
+   "end": 2.586122
+  }
+ ]
+}

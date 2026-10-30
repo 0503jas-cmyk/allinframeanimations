@@ -1,0 +1,1981 @@
+[
+ {
+  "id": "s01",
+  "title": "DEAD CITY MORNING (cold open)",
+  "start": 6.0,
+  "end": 74.02,
+  "items": [
+   {
+    "type": "action",
+    "text": "Black. Engine cough. Dead city at dawn, Juno on Biscuit zips between wrecked cars. Bolt in the sidecar.",
+    "start": 6.0,
+    "end": 11.5
+   },
+   {
+    "type": "line",
+    "id": "s01.01",
+    "who": "JUNO",
+    "text": "Rule one. Never open the package.",
+    "file": "s01_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 2.966,
+    "start": 11.5,
+    "end": 14.466
+   },
+   {
+    "type": "line",
+    "id": "s01.02",
+    "who": "BOLT",
+    "text": "Rule two. Never ask what is in the package.",
+    "file": "s01_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 3.628,
+    "start": 14.816,
+    "end": 18.444
+   },
+   {
+    "type": "line",
+    "id": "s01.03",
+    "who": "JUNO",
+    "text": "Rule three. Never stop.",
+    "file": "s01_JUNO.mp3",
+    "src_start": 3.616,
+    "src_end": 4.276,
+    "start": 18.794,
+    "end": 19.454
+   },
+   {
+    "type": "line",
+    "id": "s01.04",
+    "who": "BOLT",
+    "text": "Rule four. Stop for snacks. You added that one yourself, boss.",
+    "file": "s01_BOLT.mp3",
+    "src_start": 4.251,
+    "src_end": 8.634,
+    "start": 19.804,
+    "end": 24.187
+   },
+   {
+    "type": "action",
+    "text": "Zombie shamblers lurch out of a bus. Juno swerves, duck horn blares, every head turns.",
+    "start": 24.537,
+    "end": 30.037
+   },
+   {
+    "type": "line",
+    "id": "s01.05",
+    "who": "BOLT",
+    "text": "Boss. We are honking.",
+    "file": "s01_BOLT.mp3",
+    "src_start": 9.289,
+    "src_end": 11.201,
+    "start": 30.037,
+    "end": 31.949
+   },
+   {
+    "type": "line",
+    "id": "s01.06",
+    "who": "JUNO",
+    "text": "I know we are honking.",
+    "file": "s01_JUNO.mp3",
+    "src_start": 4.828,
+    "src_end": 5.674,
+    "start": 32.299,
+    "end": 33.145
+   },
+   {
+    "type": "line",
+    "id": "s01.07",
+    "who": "BOLT",
+    "text": "The horn is a duck. The dead love ducks.",
+    "file": "s01_BOLT.mp3",
+    "src_start": 11.616,
+    "src_end": 14.892,
+    "start": 33.495,
+    "end": 36.771
+   },
+   {
+    "type": "action",
+    "text": "Big chase through the street, shamblers pile into each other, jump over a car, land on a rooftop.",
+    "start": 37.121,
+    "end": 46.121
+   },
+   {
+    "type": "line",
+    "id": "s01.08",
+    "who": "JUNO",
+    "text": "My name is Juno Vale. I deliver things. Medicine, batteries, love letters, once a goat.",
+    "file": "s01_JUNO.mp3",
+    "src_start": 6.179,
+    "src_end": 13.908,
+    "start": 46.121,
+    "end": 53.85
+   },
+   {
+    "type": "line",
+    "id": "s01.09",
+    "who": "BOLT",
+    "text": "We do not talk about the goat.",
+    "file": "s01_BOLT.mp3",
+    "src_start": 15.369,
+    "src_end": 17.633,
+    "start": 54.2,
+    "end": 56.464
+   },
+   {
+    "type": "line",
+    "id": "s01.10",
+    "who": "JUNO",
+    "text": "The world ended three years ago. Somebody still has to bring the mail.",
+    "file": "s01_JUNO.mp3",
+    "src_start": 14.21,
+    "src_end": 19.566,
+    "start": 56.814,
+    "end": 62.17
+   },
+   {
+    "type": "action",
+    "text": "Title card: THE LAST COURIER.",
+    "start": 62.52,
+    "end": 71.52
+   }
+  ]
+ },
+ {
+  "id": "s02",
+  "title": "THE JOB",
+  "start": 74.02,
+  "end": 164.047,
+  "items": [
+   {
+    "type": "action",
+    "text": "Rooftop garden. An old man waves. Juno drops a can of peaches in his bucket on a rope.",
+    "start": 74.02,
+    "end": 79.52
+   },
+   {
+    "type": "line",
+    "id": "s02.01",
+    "who": "BOLT",
+    "text": "Peaches delivered. Customer is crying. That is a four star tip.",
+    "file": "s02_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 5.291,
+    "start": 79.52,
+    "end": 84.811
+   },
+   {
+    "type": "line",
+    "id": "s02.02",
+    "who": "JUNO",
+    "text": "He is crying because they are peaches.",
+    "file": "s02_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 2.264,
+    "start": 85.161,
+    "end": 87.425
+   },
+   {
+    "type": "action",
+    "text": "Radio crackles.",
+    "start": 87.775,
+    "end": 93.275
+   },
+   {
+    "type": "line",
+    "id": "s02.03",
+    "who": "ADA",
+    "text": "Courier Vale, this is Haven dispatch. Are you alone?",
+    "file": "s02_ADA.mp3",
+    "src_start": 0.0,
+    "src_end": 3.493,
+    "start": 93.275,
+    "end": 96.768
+   },
+   {
+    "type": "line",
+    "id": "s02.04",
+    "who": "JUNO",
+    "text": "I am never alone. I have a robot with opinions.",
+    "file": "s02_JUNO.mp3",
+    "src_start": 2.872,
+    "src_end": 6.086,
+    "start": 97.118,
+    "end": 100.332
+   },
+   {
+    "type": "line",
+    "id": "s02.05",
+    "who": "BOLT",
+    "text": "I have a robot with very good opinions.",
+    "file": "s02_BOLT.mp3",
+    "src_start": 5.859,
+    "src_end": 8.368,
+    "start": 100.682,
+    "end": 103.191
+   },
+   {
+    "type": "line",
+    "id": "s02.06",
+    "who": "ADA",
+    "text": "I have a job. One package. Grey cooler, sealed. Pickup is the old pharmacy on Fifth. Dropoff is Haven Tower.",
+    "file": "s02_ADA.mp3",
+    "src_start": 3.973,
+    "src_end": 12.412,
+    "start": 103.541,
+    "end": 111.98
+   },
+   {
+    "type": "line",
+    "id": "s02.07",
+    "who": "JUNO",
+    "text": "Haven is forty kilometres away. Through the Hollow.",
+    "file": "s02_JUNO.mp3",
+    "src_start": 6.587,
+    "src_end": 9.874,
+    "start": 112.33,
+    "end": 115.617
+   },
+   {
+    "type": "line",
+    "id": "s02.08",
+    "who": "ADA",
+    "text": "Forty kilometres. Before sunrise. Seven hours.",
+    "file": "s02_ADA.mp3",
+    "src_start": 12.757,
+    "src_end": 16.47,
+    "start": 115.967,
+    "end": 119.68
+   },
+   {
+    "type": "line",
+    "id": "s02.09",
+    "who": "BOLT",
+    "text": "The Hollow has eleven thousand zombies, boss. I counted. Twice.",
+    "file": "s02_BOLT.mp3",
+    "src_start": 8.924,
+    "src_end": 13.538,
+    "start": 120.03,
+    "end": 124.644
+   },
+   {
+    "type": "line",
+    "id": "s02.10",
+    "who": "ADA",
+    "text": "The pay is one hundred days of safety. A bed. A door that locks. Real food.",
+    "file": "s02_ADA.mp3",
+    "src_start": 16.883,
+    "src_end": 23.032,
+    "start": 124.994,
+    "end": 131.143
+   },
+   {
+    "type": "action",
+    "text": "Juno stares at her own cracked boots.",
+    "start": 131.493,
+    "end": 136.993
+   },
+   {
+    "type": "line",
+    "id": "s02.11",
+    "who": "JUNO",
+    "text": "One hundred days.",
+    "file": "s02_JUNO.mp3",
+    "src_start": 10.396,
+    "src_end": 11.526,
+    "start": 136.993,
+    "end": 138.123
+   },
+   {
+    "type": "line",
+    "id": "s02.12",
+    "who": "ADA",
+    "text": "And Juno. Watch out for Mayor Crane. If he finds out what you are carrying.",
+    "file": "s02_ADA.mp3",
+    "src_start": 23.452,
+    "src_end": 28.219,
+    "start": 138.473,
+    "end": 143.24
+   },
+   {
+    "type": "line",
+    "id": "s02.13",
+    "who": "JUNO",
+    "text": "Which is what?",
+    "file": "s02_JUNO.mp3",
+    "src_start": 11.924,
+    "src_end": 12.496,
+    "start": 143.59,
+    "end": 144.162
+   },
+   {
+    "type": "line",
+    "id": "s02.14",
+    "who": "ADA",
+    "text": "I do not know. Nobody does. That is why it is fragile.",
+    "file": "s02_ADA.mp3",
+    "src_start": 28.661,
+    "src_end": 32.836,
+    "start": 144.512,
+    "end": 148.687
+   },
+   {
+    "type": "line",
+    "id": "s02.15",
+    "who": "BOLT",
+    "text": "Boss, I have a bad feeling about this. And I do not have feelings.",
+    "file": "s02_BOLT.mp3",
+    "src_start": 14.177,
+    "src_end": 19.331,
+    "start": 149.037,
+    "end": 154.191
+   },
+   {
+    "type": "line",
+    "id": "s02.16",
+    "who": "JUNO",
+    "text": "Get in the sidecar.",
+    "file": "s02_JUNO.mp3",
+    "src_start": 12.95,
+    "src_end": 14.106,
+    "start": 154.541,
+    "end": 155.697
+   },
+   {
+    "type": "action",
+    "text": "Kick-start. The duck horn. Smash cut.",
+    "start": 156.047,
+    "end": 161.547
+   }
+  ]
+ },
+ {
+  "id": "s03",
+  "title": "THE PHARMACY",
+  "start": 164.047,
+  "end": 230.425,
+  "items": [
+   {
+    "type": "action",
+    "text": "Dark pharmacy, shelves, one cooler glowing faintly on the counter, a warm hum.",
+    "start": 164.047,
+    "end": 169.547
+   },
+   {
+    "type": "line",
+    "id": "s03.01",
+    "who": "BOLT",
+    "text": "Boss. The cooler is humming.",
+    "file": "s03_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 2.285,
+    "start": 169.547,
+    "end": 171.832
+   },
+   {
+    "type": "line",
+    "id": "s03.02",
+    "who": "JUNO",
+    "text": "Coolers do not hum.",
+    "file": "s03_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 1.537,
+    "start": 172.182,
+    "end": 173.719
+   },
+   {
+    "type": "line",
+    "id": "s03.03",
+    "who": "BOLT",
+    "text": "I will not scan it. I am a courier robot. Scanning is not my job. Scanning is rude.",
+    "file": "s03_BOLT.mp3",
+    "src_start": 2.693,
+    "src_end": 9.757,
+    "start": 174.069,
+    "end": 181.133
+   },
+   {
+    "type": "line",
+    "id": "s03.04",
+    "who": "JUNO",
+    "text": "You scan everything. You scanned my sandwich.",
+    "file": "s03_JUNO.mp3",
+    "src_start": 2.149,
+    "src_end": 5.115,
+    "start": 181.483,
+    "end": 184.449
+   },
+   {
+    "type": "line",
+    "id": "s03.05",
+    "who": "BOLT",
+    "text": "That was for safety. Pick up the package, boss.",
+    "file": "s03_BOLT.mp3",
+    "src_start": 10.503,
+    "src_end": 13.354,
+    "start": 184.799,
+    "end": 187.65
+   },
+   {
+    "type": "action",
+    "text": "Juno lifts it. The label: FRAGILE. DO NOT OPEN. PACKAGE 4,417.",
+    "start": 188.0,
+    "end": 193.5
+   },
+   {
+    "type": "line",
+    "id": "s03.06",
+    "who": "JUNO",
+    "text": "Four thousand, four hundred and seventeen. Cute number.",
+    "file": "s03_JUNO.mp3",
+    "src_start": 5.672,
+    "src_end": 9.184,
+    "start": 193.5,
+    "end": 197.012
+   },
+   {
+    "type": "action",
+    "text": "Lights flicker. Shelves rattle. A long groan from the dark.",
+    "start": 197.362,
+    "end": 202.862
+   },
+   {
+    "type": "line",
+    "id": "s03.07",
+    "who": "BOLT",
+    "text": "Boss. The floor is moving.",
+    "file": "s03_BOLT.mp3",
+    "src_start": 14.061,
+    "src_end": 16.509,
+    "start": 202.862,
+    "end": 205.31
+   },
+   {
+    "type": "line",
+    "id": "s03.08",
+    "who": "JUNO",
+    "text": "The floor is not moving.",
+    "file": "s03_JUNO.mp3",
+    "src_start": 9.718,
+    "src_end": 11.123,
+    "start": 205.66,
+    "end": 207.065
+   },
+   {
+    "type": "action",
+    "text": "Hands burst through the floor tiles. A dozen zombies crawl up from the basement.",
+    "start": 207.415,
+    "end": 216.415
+   },
+   {
+    "type": "line",
+    "id": "s03.09",
+    "who": "JUNO",
+    "text": "Okay. The floor is moving.",
+    "file": "s03_JUNO.mp3",
+    "src_start": 11.633,
+    "src_end": 13.793,
+    "start": 216.415,
+    "end": 218.575
+   },
+   {
+    "type": "action",
+    "text": "Juno vaults over the counter, kicks a trolley, Bolt zips along shelves, Juno hurls pills at the shamblers, they slip, she slides out the door under a closing shutter. Bike roars.",
+    "start": 218.925,
+    "end": 227.925
+   }
+  ]
+ },
+ {
+  "id": "s04",
+  "title": "THE DEAD MALL (chase 1)",
+  "start": 230.425,
+  "end": 295.758,
+  "items": [
+   {
+    "type": "action",
+    "text": "Mall atrium, dead fountain, neon signs, hundreds of shamblers asleep standing up.",
+    "start": 230.425,
+    "end": 235.925
+   },
+   {
+    "type": "line",
+    "id": "s04.01",
+    "who": "JUNO",
+    "text": "Shortcut. Straight through the middle.",
+    "file": "s04_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 2.152,
+    "start": 235.925,
+    "end": 238.077
+   },
+   {
+    "type": "line",
+    "id": "s04.02",
+    "who": "BOLT",
+    "text": "Boss. Hundreds of them. They are sleeping.",
+    "file": "s04_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 3.211,
+    "start": 238.427,
+    "end": 241.638
+   },
+   {
+    "type": "line",
+    "id": "s04.03",
+    "who": "JUNO",
+    "text": "Then we are very polite.",
+    "file": "s04_JUNO.mp3",
+    "src_start": 2.694,
+    "src_end": 4.409,
+    "start": 241.988,
+    "end": 243.703
+   },
+   {
+    "type": "action",
+    "text": "Engine off. They push the bike silently. Tension. A shopping cart wheel squeaks.",
+    "start": 244.053,
+    "end": 249.553
+   },
+   {
+    "type": "line",
+    "id": "s04.04",
+    "who": "BOLT",
+    "text": "I did not do that.",
+    "file": "s04_BOLT.mp3",
+    "src_start": 3.837,
+    "src_end": 4.96,
+    "start": 249.553,
+    "end": 250.676
+   },
+   {
+    "type": "action",
+    "text": "The wheel squeak echoes. A hundred heads snap. Silence. Then a baby doll starts laughing from a toy store.",
+    "start": 251.026,
+    "end": 256.526
+   },
+   {
+    "type": "line",
+    "id": "s04.05",
+    "who": "JUNO",
+    "text": "Bolt. Did you press that?",
+    "file": "s04_JUNO.mp3",
+    "src_start": 4.82,
+    "src_end": 6.604,
+    "start": 256.526,
+    "end": 258.31
+   },
+   {
+    "type": "line",
+    "id": "s04.06",
+    "who": "BOLT",
+    "text": "I touched it a little.",
+    "file": "s04_BOLT.mp3",
+    "src_start": 5.416,
+    "src_end": 6.76,
+    "start": 258.66,
+    "end": 260.004
+   },
+   {
+    "type": "action",
+    "text": "Total chaos. Zombies stampede. Juno starts the bike, escalator ride, jump over the fountain, Bolt hacks the mall speakers.",
+    "start": 260.354,
+    "end": 269.354
+   },
+   {
+    "type": "line",
+    "id": "s04.07",
+    "who": "BOLT",
+    "text": "Hacking the speakers. Playing something loud to pull them off us.",
+    "file": "s04_BOLT.mp3",
+    "src_start": 7.474,
+    "src_end": 11.068,
+    "start": 269.354,
+    "end": 272.948
+   },
+   {
+    "type": "action",
+    "text": "A cheerful elevator jingle blares at the far end. The horde turns away like confused ducks and marches toward it.",
+    "start": 273.298,
+    "end": 278.798
+   },
+   {
+    "type": "line",
+    "id": "s04.08",
+    "who": "JUNO",
+    "text": "Elevator music. You saved us with elevator music.",
+    "file": "s04_JUNO.mp3",
+    "src_start": 7.141,
+    "src_end": 10.684,
+    "start": 278.798,
+    "end": 282.341
+   },
+   {
+    "type": "line",
+    "id": "s04.09",
+    "who": "BOLT",
+    "text": "It is a classic.",
+    "file": "s04_BOLT.mp3",
+    "src_start": 11.374,
+    "src_end": 12.591,
+    "start": 282.691,
+    "end": 283.908
+   },
+   {
+    "type": "action",
+    "text": "They burst out through the glass front into the sunrise... no, into the night, onto the highway ramp.",
+    "start": 284.258,
+    "end": 293.258
+   }
+  ]
+ },
+ {
+  "id": "s05",
+  "title": "THE PARADE (Crane)",
+  "start": 295.758,
+  "end": 363.878,
+  "items": [
+   {
+    "type": "action",
+    "text": "Highway at night. A giant armoured bus rolls out of the dark with loudspeaker towers, lights, banners: THE PARADE. A river of zombies follows it like a conga line.",
+    "start": 295.758,
+    "end": 301.258
+   },
+   {
+    "type": "line",
+    "id": "s05.01",
+    "who": "CRANE",
+    "text": "Courier Vale. How wonderful. Allow me to introduce myself.",
+    "file": "s05_CRANE.mp3",
+    "src_start": 0.0,
+    "src_end": 4.35,
+    "start": 301.258,
+    "end": 305.608
+   },
+   {
+    "type": "line",
+    "id": "s05.02",
+    "who": "CRANE",
+    "text": "I am Mayor Julian Crane. And this is my parade.",
+    "file": "s05_CRANE.mp3",
+    "src_start": 4.656,
+    "src_end": 8.997,
+    "start": 305.958,
+    "end": 310.299
+   },
+   {
+    "type": "line",
+    "id": "s05.03",
+    "who": "JUNO",
+    "text": "That is a lot of zombies.",
+    "file": "s05_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 1.908,
+    "start": 310.649,
+    "end": 312.557
+   },
+   {
+    "type": "line",
+    "id": "s05.04",
+    "who": "CRANE",
+    "text": "They follow the music. They always follow the music. I simply picked better music.",
+    "file": "s05_CRANE.mp3",
+    "src_start": 9.585,
+    "src_end": 12.891,
+    "start": 312.907,
+    "end": 316.213
+   },
+   {
+    "type": "action",
+    "text": "Speaker towers play a waltz. The horde sways in time.",
+    "start": 316.563,
+    "end": 322.063
+   },
+   {
+    "type": "line",
+    "id": "s05.05",
+    "who": "CRANE",
+    "text": "Ada tells you nothing, does she? She never does. But I have listened to her radio for three years.",
+    "file": "s05_CRANE.mp3",
+    "src_start": 13.329,
+    "src_end": 22.044,
+    "start": 322.063,
+    "end": 330.778
+   },
+   {
+    "type": "line",
+    "id": "s05.06",
+    "who": "CRANE",
+    "text": "That cooler is the only cure left on this earth. And it belongs to the man who can keep it safe.",
+    "file": "s05_CRANE.mp3",
+    "src_start": 22.514,
+    "src_end": 28.309,
+    "start": 331.128,
+    "end": 336.923
+   },
+   {
+    "type": "line",
+    "id": "s05.07",
+    "who": "JUNO",
+    "text": "A cure?",
+    "file": "s05_JUNO.mp3",
+    "src_start": 2.421,
+    "src_end": 2.95,
+    "start": 337.273,
+    "end": 337.802
+   },
+   {
+    "type": "line",
+    "id": "s05.08",
+    "who": "BOLT",
+    "text": "Boss. Do not listen. He is a man in a suit on a bus.",
+    "file": "s05_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 5.250612,
+    "start": 338.152,
+    "end": 343.403
+   },
+   {
+    "type": "line",
+    "id": "s05.09",
+    "who": "CRANE",
+    "text": "Hand it over, and I will give you a gold medal and a tiny little house.",
+    "file": "s05_CRANE.mp3",
+    "src_start": 28.745,
+    "src_end": 32.828,
+    "start": 343.753,
+    "end": 347.836
+   },
+   {
+    "type": "line",
+    "id": "s05.10",
+    "who": "JUNO",
+    "text": "I already have a tiny little house. It is a sidecar.",
+    "file": "s05_JUNO.mp3",
+    "src_start": 3.541,
+    "src_end": 7.001,
+    "start": 348.186,
+    "end": 351.646
+   },
+   {
+    "type": "line",
+    "id": "s05.11",
+    "who": "CRANE",
+    "text": "Then I shall take it from your cold, courier hands.",
+    "file": "s05_CRANE.mp3",
+    "src_start": 33.301,
+    "src_end": 36.833,
+    "start": 351.996,
+    "end": 355.528
+   },
+   {
+    "type": "action",
+    "text": "Crane presses a button. The waltz becomes a heavy drum beat. The whole horde breaks into a run.",
+    "start": 355.878,
+    "end": 361.378
+   }
+  ]
+ },
+ {
+  "id": "s06",
+  "title": "THE BRIDGE (chase 2)",
+  "start": 363.878,
+  "end": 420.501,
+  "items": [
+   {
+    "type": "action",
+    "text": "Biscuit flies down the highway. Runners leap from the roof of the bus. Crane's guards fire nets. Bolt launches himself, unfolds propeller arms, cuts nets.",
+    "start": 363.878,
+    "end": 372.878
+   },
+   {
+    "type": "line",
+    "id": "s06.01",
+    "who": "BOLT",
+    "text": "I have propellers! I did not know I had propellers!",
+    "file": "s06_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 4.005,
+    "start": 372.878,
+    "end": 376.883
+   },
+   {
+    "type": "line",
+    "id": "s06.02",
+    "who": "JUNO",
+    "text": "You have a lot of secrets, Bolt!",
+    "file": "s06_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 2.094,
+    "start": 377.233,
+    "end": 379.327
+   },
+   {
+    "type": "line",
+    "id": "s06.03",
+    "who": "BOLT",
+    "text": "I am full of surprises!",
+    "file": "s06_BOLT.mp3",
+    "src_start": 4.378,
+    "src_end": 6.228,
+    "start": 379.677,
+    "end": 381.527
+   },
+   {
+    "type": "action",
+    "text": "The bridge ahead is collapsed, a ten metre gap. The Parade right behind.",
+    "start": 381.877,
+    "end": 387.377
+   },
+   {
+    "type": "line",
+    "id": "s06.04",
+    "who": "JUNO",
+    "text": "Bolt. How big is the gap?",
+    "file": "s06_JUNO.mp3",
+    "src_start": 2.669,
+    "src_end": 4.626,
+    "start": 387.377,
+    "end": 389.334
+   },
+   {
+    "type": "line",
+    "id": "s06.05",
+    "who": "BOLT",
+    "text": "Ten metres. We can clear eight.",
+    "file": "s06_BOLT.mp3",
+    "src_start": 6.805,
+    "src_end": 9.243,
+    "start": 389.684,
+    "end": 392.122
+   },
+   {
+    "type": "line",
+    "id": "s06.06",
+    "who": "JUNO",
+    "text": "Then we need two more.",
+    "file": "s06_JUNO.mp3",
+    "src_start": 5.141,
+    "src_end": 6.155,
+    "start": 392.472,
+    "end": 393.486
+   },
+   {
+    "type": "line",
+    "id": "s06.07",
+    "who": "BOLT",
+    "text": "How do we get two more?",
+    "file": "s06_BOLT.mp3",
+    "src_start": 9.746,
+    "src_end": 11.154,
+    "start": 393.836,
+    "end": 395.244
+   },
+   {
+    "type": "line",
+    "id": "s06.08",
+    "who": "JUNO",
+    "text": "Hold on to the bike and flap.",
+    "file": "s06_JUNO.mp3",
+    "src_start": 6.647,
+    "src_end": 8.516,
+    "start": 395.594,
+    "end": 397.463
+   },
+   {
+    "type": "action",
+    "text": "Biscuit launches off a wrecked truck ramp. Bolt flaps. Slow motion. Miss by a hair, rear wheel catches the edge, they scramble up. Behind them the Parade smashes through the barrier and the first zombies tumble into the river.",
+    "start": 397.813,
+    "end": 406.813
+   },
+   {
+    "type": "line",
+    "id": "s06.09",
+    "who": "CRANE",
+    "text": "Oh, that is rude!",
+    "file": "s06_CRANE.mp3",
+    "src_start": 0.0,
+    "src_end": 1.799,
+    "start": 406.813,
+    "end": 408.612
+   },
+   {
+    "type": "action",
+    "text": "The Parade brakes at the edge. Crane watches them vanish. Smiles.",
+    "start": 408.962,
+    "end": 414.462
+   },
+   {
+    "type": "line",
+    "id": "s06.10",
+    "who": "CRANE",
+    "text": "Never mind. They have to go through the Rail Yard.",
+    "file": "s06_CRANE.mp3",
+    "src_start": 2.453,
+    "src_end": 5.642,
+    "start": 414.462,
+    "end": 417.651
+   }
+  ]
+ },
+ {
+  "id": "s07",
+  "title": "THE TUNNEL (quiet)",
+  "start": 420.501,
+  "end": 482.577,
+  "items": [
+   {
+    "type": "action",
+    "text": "A dark service tunnel. Biscuit parked. Juno and Bolt sit by a tiny lantern. The cooler hums between them.",
+    "start": 420.501,
+    "end": 426.001
+   },
+   {
+    "type": "line",
+    "id": "s07.01",
+    "who": "JUNO",
+    "text": "It is quiet.",
+    "file": "s07_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 0.998,
+    "start": 426.001,
+    "end": 426.999
+   },
+   {
+    "type": "line",
+    "id": "s07.02",
+    "who": "BOLT",
+    "text": "That is good. Quiet is good.",
+    "file": "s07_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 2.616,
+    "start": 427.349,
+    "end": 429.965
+   },
+   {
+    "type": "line",
+    "id": "s07.03",
+    "who": "JUNO",
+    "text": "Do you think there is a cure in there?",
+    "file": "s07_JUNO.mp3",
+    "src_start": 1.754,
+    "src_end": 3.22,
+    "start": 430.315,
+    "end": 431.781
+   },
+   {
+    "type": "line",
+    "id": "s07.04",
+    "who": "BOLT",
+    "text": "I do not think about it.",
+    "file": "s07_BOLT.mp3",
+    "src_start": 3.254,
+    "src_end": 4.248,
+    "start": 432.131,
+    "end": 433.125
+   },
+   {
+    "type": "line",
+    "id": "s07.05",
+    "who": "JUNO",
+    "text": "You think about everything. You think about the colour of my socks.",
+    "file": "s07_JUNO.mp3",
+    "src_start": 3.747,
+    "src_end": 9.138,
+    "start": 433.475,
+    "end": 438.866
+   },
+   {
+    "type": "line",
+    "id": "s07.06",
+    "who": "BOLT",
+    "text": "Your socks are orange and one has a hole.",
+    "file": "s07_BOLT.mp3",
+    "src_start": 5.083,
+    "src_end": 7.702,
+    "start": 439.216,
+    "end": 441.835
+   },
+   {
+    "type": "action",
+    "text": "Juno touches the scar on her neck.",
+    "start": 442.185,
+    "end": 447.685
+   },
+   {
+    "type": "line",
+    "id": "s07.07",
+    "who": "JUNO",
+    "text": "I got bitten once. When I was eight. I should have turned. I did not. Ada says some people are lucky.",
+    "file": "s07_JUNO.mp3",
+    "src_start": 9.657,
+    "src_end": 15.228,
+    "start": 447.685,
+    "end": 453.256
+   },
+   {
+    "type": "line",
+    "id": "s07.08",
+    "who": "BOLT",
+    "text": "Some people are.",
+    "file": "s07_BOLT.mp3",
+    "src_start": 8.217,
+    "src_end": 9.033,
+    "start": 453.606,
+    "end": 454.422
+   },
+   {
+    "type": "line",
+    "id": "s07.09",
+    "who": "JUNO",
+    "text": "Do you ever wonder why? Why I am here?",
+    "file": "s07_JUNO.mp3",
+    "src_start": 15.751,
+    "src_end": 18.152,
+    "start": 454.772,
+    "end": 457.173
+   },
+   {
+    "type": "line",
+    "id": "s07.10",
+    "who": "BOLT",
+    "text": "Every day, boss.",
+    "file": "s07_BOLT.mp3",
+    "src_start": 9.596,
+    "src_end": 10.788,
+    "start": 457.523,
+    "end": 458.715
+   },
+   {
+    "type": "action",
+    "text": "Juno reaches for the cooler latch. Bolt rolls between her hand and the cooler.",
+    "start": 459.065,
+    "end": 464.565
+   },
+   {
+    "type": "line",
+    "id": "s07.11",
+    "who": "BOLT",
+    "text": "Rule one.",
+    "file": "s07_BOLT.mp3",
+    "src_start": 11.179,
+    "src_end": 11.817,
+    "start": 464.565,
+    "end": 465.203
+   },
+   {
+    "type": "line",
+    "id": "s07.12",
+    "who": "JUNO",
+    "text": "Rule one is dumb.",
+    "file": "s07_JUNO.mp3",
+    "src_start": 18.661,
+    "src_end": 19.939,
+    "start": 465.553,
+    "end": 466.831
+   },
+   {
+    "type": "line",
+    "id": "s07.13",
+    "who": "BOLT",
+    "text": "Rule one keeps you alive. Please. Trust me.",
+    "file": "s07_BOLT.mp3",
+    "src_start": 12.329,
+    "src_end": 16.353,
+    "start": 467.181,
+    "end": 471.205
+   },
+   {
+    "type": "action",
+    "text": "Juno lowers her hand. Far away, a metal clank. A distant drum beat. Crane is coming.",
+    "start": 471.555,
+    "end": 477.055
+   },
+   {
+    "type": "line",
+    "id": "s07.14",
+    "who": "JUNO",
+    "text": "Come on. Dawn is five hours away.",
+    "file": "s07_JUNO.mp3",
+    "src_start": 20.237,
+    "src_end": 22.909,
+    "start": 477.055,
+    "end": 479.727
+   }
+  ]
+ },
+ {
+  "id": "s08",
+  "title": "THE RAIL YARD (boss)",
+  "start": 482.577,
+  "end": 560.714,
+  "items": [
+   {
+    "type": "action",
+    "text": "Huge rail yard, rusty train cars, fog. Hundreds of zombies stand still among the trains. Biscuit pushes through quietly.",
+    "start": 482.577,
+    "end": 488.077
+   },
+   {
+    "type": "line",
+    "id": "s08.01",
+    "who": "BOLT",
+    "text": "Quiet. Quiet. Quiet.",
+    "file": "s08_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 2.478,
+    "start": 488.077,
+    "end": 490.555
+   },
+   {
+    "type": "action",
+    "text": "The ground shakes. A train car lifts. BIG BETTY rises, forty feet tall, covered in luggage and signs, holding a broken crossing gate like a club.",
+    "start": 490.905,
+    "end": 499.905
+   },
+   {
+    "type": "line",
+    "id": "s08.02",
+    "who": "JUNO",
+    "text": "Bolt. Please say that is a statue.",
+    "file": "s08_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 2.793,
+    "start": 499.905,
+    "end": 502.698
+   },
+   {
+    "type": "line",
+    "id": "s08.03",
+    "who": "BOLT",
+    "text": "That is not a statue. That is Betty.",
+    "file": "s08_BOLT.mp3",
+    "src_start": 2.917,
+    "src_end": 6.112,
+    "start": 503.048,
+    "end": 506.243
+   },
+   {
+    "type": "line",
+    "id": "s08.04",
+    "who": "JUNO",
+    "text": "You named her?",
+    "file": "s08_JUNO.mp3",
+    "src_start": 3.41,
+    "src_end": 4.044,
+    "start": 506.593,
+    "end": 507.227
+   },
+   {
+    "type": "line",
+    "id": "s08.05",
+    "who": "BOLT",
+    "text": "I name everything I am afraid of.",
+    "file": "s08_BOLT.mp3",
+    "src_start": 6.673,
+    "src_end": 9.586,
+    "start": 507.577,
+    "end": 510.49
+   },
+   {
+    "type": "action",
+    "text": "Betty swings, rail cars shatter. Juno drives under her legs, through a tunnel of train cars, Bolt drops smoke bombs. Betty smashes through cars after them.",
+    "start": 510.84,
+    "end": 519.84
+   },
+   {
+    "type": "line",
+    "id": "s08.06",
+    "who": "JUNO",
+    "text": "Bolt! Plan!",
+    "file": "s08_JUNO.mp3",
+    "src_start": 4.501,
+    "src_end": 5.674,
+    "start": 519.84,
+    "end": 521.013
+   },
+   {
+    "type": "line",
+    "id": "s08.07",
+    "who": "BOLT",
+    "text": "One. Do not die. Two. See one.",
+    "file": "s08_BOLT.mp3",
+    "src_start": 10.19,
+    "src_end": 13.126,
+    "start": 521.363,
+    "end": 524.299
+   },
+   {
+    "type": "action",
+    "text": "Juno spots a crane hook over a tank car of old train horns. She aims Biscuit at the ramp.",
+    "start": 524.649,
+    "end": 530.149
+   },
+   {
+    "type": "line",
+    "id": "s08.08",
+    "who": "JUNO",
+    "text": "Bolt, get on the hook!",
+    "file": "s08_JUNO.mp3",
+    "src_start": 6.121,
+    "src_end": 8.129,
+    "start": 530.149,
+    "end": 532.157
+   },
+   {
+    "type": "line",
+    "id": "s08.09",
+    "who": "BOLT",
+    "text": "I do not like this plan!",
+    "file": "s08_BOLT.mp3",
+    "src_start": 13.728,
+    "src_end": 15.647,
+    "start": 532.507,
+    "end": 534.426
+   },
+   {
+    "type": "action",
+    "text": "Bolt grabs the hook, swings, slams the chain onto the tank. The horns blare. Every zombie in the yard turns to the sound. Betty turns too, and the whole herd piles onto her and drags her into the pit.",
+    "start": 534.776,
+    "end": 543.776
+   },
+   {
+    "type": "line",
+    "id": "s08.10",
+    "who": "JUNO",
+    "text": "Bolt! Bolt!",
+    "file": "s08_JUNO.mp3",
+    "src_start": 8.546,
+    "src_end": 9.404,
+    "start": 543.776,
+    "end": 544.634
+   },
+   {
+    "type": "action",
+    "text": "Crane's armoured jeep skids out of the fog. Nets. A magnetic grabber snatches Bolt off the hook.",
+    "start": 544.984,
+    "end": 550.484
+   },
+   {
+    "type": "line",
+    "id": "s08.11",
+    "who": "CRANE",
+    "text": "Got you, little man.",
+    "file": "s08_CRANE.mp3",
+    "src_start": 0.0,
+    "src_end": 1.880816,
+    "start": 550.484,
+    "end": 552.364
+   },
+   {
+    "type": "action",
+    "text": "Bolt dangles, kicking. Crane's guards surround Juno. The Parade rolls in behind, speakers silent.",
+    "start": 552.714,
+    "end": 558.214
+   }
+  ]
+ },
+ {
+  "id": "s09",
+  "title": "THE TRADE (twist 1)",
+  "start": 560.714,
+  "end": 633.465,
+  "items": [
+   {
+    "type": "action",
+    "text": "Juno on her knees, cooler in her arms. Bolt in a cage on the Parade.",
+    "start": 560.714,
+    "end": 566.214
+   },
+   {
+    "type": "line",
+    "id": "s09.01",
+    "who": "CRANE",
+    "text": "Courier Vale. Such a good robot. Such a loyal little machine. It would be a shame to melt him for scrap.",
+    "file": "s09_CRANE.mp3",
+    "src_start": 0.0,
+    "src_end": 7.626,
+    "start": 566.214,
+    "end": 573.84
+   },
+   {
+    "type": "line",
+    "id": "s09.02",
+    "who": "BOLT",
+    "text": "Boss, do not give him the cooler. Please. Do not.",
+    "file": "s09_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 4.283,
+    "start": 574.19,
+    "end": 578.473
+   },
+   {
+    "type": "line",
+    "id": "s09.03",
+    "who": "JUNO",
+    "text": "Shut up, Bolt.",
+    "file": "s09_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 0.952,
+    "start": 578.823,
+    "end": 579.775
+   },
+   {
+    "type": "line",
+    "id": "s09.04",
+    "who": "BOLT",
+    "text": "Boss, I mean it. Do not.",
+    "file": "s09_BOLT.mp3",
+    "src_start": 4.802,
+    "src_end": 6.923,
+    "start": 580.125,
+    "end": 582.246
+   },
+   {
+    "type": "line",
+    "id": "s09.05",
+    "who": "JUNO",
+    "text": "He is my friend. He is the only one I have.",
+    "file": "s09_JUNO.mp3",
+    "src_start": 1.311,
+    "src_end": 4.15,
+    "start": 582.596,
+    "end": 585.435
+   },
+   {
+    "type": "action",
+    "text": "She slides the cooler over. Crane snaps the latches. The lid rises with a hiss of cold air. He leans in. Silence. A long silence.",
+    "start": 585.785,
+    "end": 594.785
+   },
+   {
+    "type": "line",
+    "id": "s09.06",
+    "who": "CRANE",
+    "text": "It is empty.",
+    "file": "s09_CRANE.mp3",
+    "src_start": 8.49,
+    "src_end": 9.353,
+    "start": 594.785,
+    "end": 595.648
+   },
+   {
+    "type": "line",
+    "id": "s09.07",
+    "who": "JUNO",
+    "text": "What?",
+    "file": "s09_JUNO.mp3",
+    "src_start": 4.904,
+    "src_end": 5.325,
+    "start": 595.998,
+    "end": 596.419
+   },
+   {
+    "type": "action",
+    "text": "Crane lifts a single folded note out of the empty box. He reads. His face goes white.",
+    "start": 596.769,
+    "end": 602.269
+   },
+   {
+    "type": "line",
+    "id": "s09.08",
+    "who": "CRANE",
+    "text": "Deliver her alive.",
+    "file": "s09_CRANE.mp3",
+    "src_start": 9.846,
+    "src_end": 11.15,
+    "start": 602.269,
+    "end": 603.573
+   },
+   {
+    "type": "action",
+    "text": "Everyone looks at Juno.",
+    "start": 603.923,
+    "end": 609.423
+   },
+   {
+    "type": "line",
+    "id": "s09.09",
+    "who": "JUNO",
+    "text": "Deliver who alive?",
+    "file": "s09_JUNO.mp3",
+    "src_start": 5.801,
+    "src_end": 6.856,
+    "start": 609.423,
+    "end": 610.478
+   },
+   {
+    "type": "line",
+    "id": "s09.10",
+    "who": "CRANE",
+    "text": "Bring her to me. All of them. Now.",
+    "file": "s09_CRANE.mp3",
+    "src_start": 11.465,
+    "src_end": 14.289,
+    "start": 610.828,
+    "end": 613.652
+   },
+   {
+    "type": "action",
+    "text": "Guards lunge. Juno bites a guard's hand, kicks the cage open, Bolt tumbles out, Biscuit roars, they escape through the fog with the Parade drumming behind them.",
+    "start": 614.002,
+    "end": 623.002
+   },
+   {
+    "type": "line",
+    "id": "s09.11",
+    "who": "JUNO",
+    "text": "Bolt. What does that mean?",
+    "file": "s09_JUNO.mp3",
+    "src_start": 7.497,
+    "src_end": 9.226,
+    "start": 623.002,
+    "end": 624.731
+   },
+   {
+    "type": "line",
+    "id": "s09.12",
+    "who": "BOLT",
+    "text": "I do not know, boss.",
+    "file": "s09_BOLT.mp3",
+    "src_start": 7.555,
+    "src_end": 9.169,
+    "start": 625.081,
+    "end": 626.695
+   },
+   {
+    "type": "line",
+    "id": "s09.13",
+    "who": "JUNO",
+    "text": "You are lying. You have never lied. You are bad at it.",
+    "file": "s09_JUNO.mp3",
+    "src_start": 9.674,
+    "src_end": 13.244,
+    "start": 627.045,
+    "end": 630.615
+   }
+  ]
+ },
+ {
+  "id": "s10",
+  "title": "THE RADIO (twist 2)",
+  "start": 633.465,
+  "end": 729.958,
+  "items": [
+   {
+    "type": "action",
+    "text": "A quiet overpass. Juno holds the radio. Bolt looks at his feet.",
+    "start": 633.465,
+    "end": 638.965
+   },
+   {
+    "type": "line",
+    "id": "s10.01",
+    "who": "JUNO",
+    "text": "Ada. The cooler is empty.",
+    "file": "s10_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 2.138,
+    "start": 638.965,
+    "end": 641.103
+   },
+   {
+    "type": "line",
+    "id": "s10.02",
+    "who": "ADA",
+    "text": "I know.",
+    "file": "s10_ADA.mp3",
+    "src_start": 0.0,
+    "src_end": 0.671,
+    "start": 641.453,
+    "end": 642.124
+   },
+   {
+    "type": "line",
+    "id": "s10.03",
+    "who": "JUNO",
+    "text": "You knew?",
+    "file": "s10_JUNO.mp3",
+    "src_start": 2.647,
+    "src_end": 3.133,
+    "start": 642.474,
+    "end": 642.96
+   },
+   {
+    "type": "line",
+    "id": "s10.04",
+    "who": "ADA",
+    "text": "The cooler was a decoy. For Crane. For anyone listening. Juno, the package was never the box.",
+    "file": "s10_ADA.mp3",
+    "src_start": 1.149,
+    "src_end": 7.516,
+    "start": 643.31,
+    "end": 649.677
+   },
+   {
+    "type": "line",
+    "id": "s10.05",
+    "who": "JUNO",
+    "text": "Then what was it?",
+    "file": "s10_JUNO.mp3",
+    "src_start": 3.688,
+    "src_end": 4.405,
+    "start": 650.027,
+    "end": 650.744
+   },
+   {
+    "type": "line",
+    "id": "s10.06",
+    "who": "ADA",
+    "text": "Package four thousand, four hundred and seventeen is a file number. It is your file number. You were born in Haven. Your mother was our lead scientist.",
+    "file": "s10_ADA.mp3",
+    "src_start": 7.615,
+    "src_end": 19.306,
+    "start": 651.094,
+    "end": 662.785
+   },
+   {
+    "type": "action",
+    "text": "Flashback, flat storybook style: a woman in a lab coat building a small yellow robot, putting a baby girl in his arms.",
+    "start": 663.135,
+    "end": 668.635
+   },
+   {
+    "type": "line",
+    "id": "s10.07",
+    "who": "ADA",
+    "text": "She found out the bite did not kill you. Your blood fights the virus. It is the only cure we have ever found. So she hid you in the city, and built a guardian.",
+    "file": "s10_ADA.mp3",
+    "src_start": 19.69,
+    "src_end": 30.247,
+    "start": 668.635,
+    "end": 679.192
+   },
+   {
+    "type": "line",
+    "id": "s10.08",
+    "who": "JUNO",
+    "text": "Bolt.",
+    "file": "s10_JUNO.mp3",
+    "src_start": 4.975,
+    "src_end": 5.322,
+    "start": 679.542,
+    "end": 679.889
+   },
+   {
+    "type": "line",
+    "id": "s10.09",
+    "who": "BOLT",
+    "text": "I was built to keep you alive, boss. And to bring you home. That is all I was ever meant to do.",
+    "file": "s10_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 6.777,
+    "start": 680.239,
+    "end": 687.016
+   },
+   {
+    "type": "line",
+    "id": "s10.10",
+    "who": "JUNO",
+    "text": "Eleven years. You knew for eleven years.",
+    "file": "s10_JUNO.mp3",
+    "src_start": 5.833,
+    "src_end": 9.312,
+    "start": 687.366,
+    "end": 690.845
+   },
+   {
+    "type": "line",
+    "id": "s10.11",
+    "who": "BOLT",
+    "text": "I also learned to like you. That was not in the instructions.",
+    "file": "s10_BOLT.mp3",
+    "src_start": 7.551,
+    "src_end": 11.468,
+    "start": 691.195,
+    "end": 695.112
+   },
+   {
+    "type": "action",
+    "text": "Juno stares at the dawn glow on the horizon. Far away, the drumbeat grows.",
+    "start": 695.462,
+    "end": 700.962
+   },
+   {
+    "type": "line",
+    "id": "s10.12",
+    "who": "ADA",
+    "text": "Juno. Haven can make the cure from your blood. It takes one hour. If you come to the gate, we can save everyone. If you do not, there is nothing left.",
+    "file": "s10_ADA.mp3",
+    "src_start": 30.841,
+    "src_end": 41.195,
+    "start": 700.962,
+    "end": 711.316
+   },
+   {
+    "type": "line",
+    "id": "s10.13",
+    "who": "JUNO",
+    "text": "So I am the package.",
+    "file": "s10_JUNO.mp3",
+    "src_start": 9.847,
+    "src_end": 11.538,
+    "start": 711.666,
+    "end": 713.357
+   },
+   {
+    "type": "line",
+    "id": "s10.14",
+    "who": "ADA",
+    "text": "You are not a package. You are a person we need.",
+    "file": "s10_ADA.mp3",
+    "src_start": 41.797,
+    "src_end": 45.558,
+    "start": 713.707,
+    "end": 717.468
+   },
+   {
+    "type": "line",
+    "id": "s10.15",
+    "who": "JUNO",
+    "text": "Same thing, in this economy.",
+    "file": "s10_JUNO.mp3",
+    "src_start": 11.921,
+    "src_end": 13.627,
+    "start": 717.818,
+    "end": 719.524
+   },
+   {
+    "type": "action",
+    "text": "Juno climbs onto Biscuit and slaps the handlebars.",
+    "start": 719.874,
+    "end": 725.374
+   },
+   {
+    "type": "line",
+    "id": "s10.16",
+    "who": "JUNO",
+    "text": "Fine. Deliver me.",
+    "file": "s10_JUNO.mp3",
+    "src_start": 14.148,
+    "src_end": 15.882,
+    "start": 725.374,
+    "end": 727.108
+   }
+  ]
+ },
+ {
+  "id": "s11",
+  "title": "THE LAST MILE (final chase)",
+  "start": 729.958,
+  "end": 817.655,
+  "items": [
+   {
+    "type": "action",
+    "text": "Sunrise on the horizon. The final road to Haven Tower: a long white wall, a gate, a thousand zombies drawn by Crane's drums rolling in from both sides. Biscuit blasts forward. Crane's Parade appears on the hillside above.",
+    "start": 729.958,
+    "end": 735.458
+   },
+   {
+    "type": "line",
+    "id": "s11.01",
+    "who": "CRANE",
+    "text": "Courier Vale! The world needs you in one piece. And I need you in mine!",
+    "file": "s11_CRANE.mp3",
+    "src_start": 0.0,
+    "src_end": 5.25,
+    "start": 735.458,
+    "end": 740.708
+   },
+   {
+    "type": "action",
+    "text": "Juno dodges flaming barrels, Runners, a collapsing overpass. Bolt rides on her shoulder, throwing smoke bombs.",
+    "start": 741.058,
+    "end": 750.058
+   },
+   {
+    "type": "line",
+    "id": "s11.02",
+    "who": "BOLT",
+    "text": "Boss. The gate is closing. They only open it for sixty seconds.",
+    "file": "s11_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 4.668,
+    "start": 750.058,
+    "end": 754.726
+   },
+   {
+    "type": "line",
+    "id": "s11.03",
+    "who": "JUNO",
+    "text": "How far?",
+    "file": "s11_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 0.842,
+    "start": 755.076,
+    "end": 755.918
+   },
+   {
+    "type": "line",
+    "id": "s11.04",
+    "who": "BOLT",
+    "text": "Eight hundred metres. And Crane's drums are louder than we are.",
+    "file": "s11_BOLT.mp3",
+    "src_start": 5.102,
+    "src_end": 9.296,
+    "start": 756.268,
+    "end": 760.462
+   },
+   {
+    "type": "line",
+    "id": "s11.05",
+    "who": "JUNO",
+    "text": "Then we need to be louder than the drums.",
+    "file": "s11_JUNO.mp3",
+    "src_start": 1.27,
+    "src_end": 5.158,
+    "start": 760.812,
+    "end": 764.7
+   },
+   {
+    "type": "line",
+    "id": "s11.06",
+    "who": "BOLT",
+    "text": "Boss. I know a way.",
+    "file": "s11_BOLT.mp3",
+    "src_start": 9.863,
+    "src_end": 11.426,
+    "start": 765.05,
+    "end": 766.613
+   },
+   {
+    "type": "action",
+    "text": "Bolt looks at Crane's speaker tower on the hillside. He looks at Juno. He smiles with his eye.",
+    "start": 766.963,
+    "end": 772.463
+   },
+   {
+    "type": "line",
+    "id": "s11.07",
+    "who": "BOLT",
+    "text": "I am the loudest thing in this city. I have a duck horn, an alarm, and a very dramatic voice.",
+    "file": "s11_BOLT.mp3",
+    "src_start": 11.905,
+    "src_end": 18.338,
+    "start": 772.463,
+    "end": 778.896
+   },
+   {
+    "type": "line",
+    "id": "s11.08",
+    "who": "JUNO",
+    "text": "No. No no no.",
+    "file": "s11_JUNO.mp3",
+    "src_start": 5.626,
+    "src_end": 5.871,
+    "start": 779.246,
+    "end": 779.491
+   },
+   {
+    "type": "line",
+    "id": "s11.09",
+    "who": "BOLT",
+    "text": "Boss. Someone has to be the noise.",
+    "file": "s11_BOLT.mp3",
+    "src_start": 18.838,
+    "src_end": 21.27,
+    "start": 779.841,
+    "end": 782.273
+   },
+   {
+    "type": "action",
+    "text": "Bolt launches, props spinning, toward the tower. Juno screams.",
+    "start": 782.623,
+    "end": 791.623
+   },
+   {
+    "type": "line",
+    "id": "s11.10",
+    "who": "JUNO",
+    "text": "Bolt!",
+    "file": "s11_JUNO.mp3",
+    "src_start": 5.98,
+    "src_end": 6.348,
+    "start": 791.623,
+    "end": 791.991
+   },
+   {
+    "type": "line",
+    "id": "s11.11",
+    "who": "BOLT",
+    "text": "Rule five, boss. Always deliver the package.",
+    "file": "s11_BOLT.mp3",
+    "src_start": 21.81,
+    "src_end": 25.234,
+    "start": 792.341,
+    "end": 795.765
+   },
+   {
+    "type": "action",
+    "text": "Bolt reaches the tower, rips its wires and plugs in his own speaker. His body blares a screaming duck horn and a siren. Every zombie turns toward the tower, away from the road. Crane stares at his own horde, rolling toward him.",
+    "start": 796.115,
+    "end": 801.615
+   },
+   {
+    "type": "line",
+    "id": "s11.12",
+    "who": "CRANE",
+    "text": "No. No, no, wait. Turn off the music! Turn off the music!",
+    "file": "s11_CRANE.mp3",
+    "src_start": 5.763,
+    "src_end": 9.953,
+    "start": 801.615,
+    "end": 805.805
+   },
+   {
+    "type": "action",
+    "text": "The horde swallows the Parade. Juno rides through the gate. It slams shut behind her. Behind it, a column of fire from the hillside tower, then silence.",
+    "start": 806.155,
+    "end": 815.155
+   }
+  ]
+ },
+ {
+  "id": "s12",
+  "title": "HAVEN",
+  "start": 817.655,
+  "end": 892.709,
+  "items": [
+   {
+    "type": "action",
+    "text": "Inside Haven. White corridors. People look at her in awe. Ada, grey-haired, takes her hand. Lab, needle, bright light.",
+    "start": 817.655,
+    "end": 823.155
+   },
+   {
+    "type": "line",
+    "id": "s12.01",
+    "who": "ADA",
+    "text": "You are Juno. Your mother would be so proud.",
+    "file": "s12_ADA.mp3",
+    "src_start": 0.0,
+    "src_end": 3.824,
+    "start": 823.155,
+    "end": 826.979
+   },
+   {
+    "type": "line",
+    "id": "s12.02",
+    "who": "JUNO",
+    "text": "Where is Bolt?",
+    "file": "s12_JUNO.mp3",
+    "src_start": 0.0,
+    "src_end": 0.91,
+    "start": 827.329,
+    "end": 828.239
+   },
+   {
+    "type": "line",
+    "id": "s12.03",
+    "who": "ADA",
+    "text": "Juno. I am so sorry.",
+    "file": "s12_ADA.mp3",
+    "src_start": 4.387,
+    "src_end": 4.879,
+    "start": 828.589,
+    "end": 829.081
+   },
+   {
+    "type": "action",
+    "text": "A long quiet shot of Juno at a window watching the sunrise.",
+    "start": 829.431,
+    "end": 834.931
+   },
+   {
+    "type": "line",
+    "id": "s12.04",
+    "who": "JUNO",
+    "text": "He said I was a person. Not a package.",
+    "file": "s12_JUNO.mp3",
+    "src_start": 1.336,
+    "src_end": 3.872,
+    "start": 834.931,
+    "end": 837.467
+   },
+   {
+    "type": "action",
+    "text": "Time cut: weeks later. Doctors hand out vials. Crowds of people at the Haven gates, safe, laughing, children playing in the sun.",
+    "start": 837.817,
+    "end": 846.817
+   },
+   {
+    "type": "line",
+    "id": "s12.05",
+    "who": "ADA",
+    "text": "A hundred days of safety, as promised. And the world is waking up.",
+    "file": "s12_ADA.mp3",
+    "src_start": 5.441,
+    "src_end": 12.199,
+    "start": 846.817,
+    "end": 853.575
+   },
+   {
+    "type": "action",
+    "text": "Juno walks to the gate. A battered yellow thing lies at the foot of the wall, an old duck horn in the grass.",
+    "start": 853.925,
+    "end": 859.425
+   },
+   {
+    "type": "line",
+    "id": "s12.06",
+    "who": "JUNO",
+    "text": "I never even said thank you.",
+    "file": "s12_JUNO.mp3",
+    "src_start": 4.504,
+    "src_end": 5.93,
+    "start": 859.425,
+    "end": 860.851
+   },
+   {
+    "type": "action",
+    "text": "She kneels, picks up the horn, squeezes it. It quacks. Behind her, a single round eye flickers on inside the wreck.",
+    "start": 861.201,
+    "end": 866.701
+   },
+   {
+    "type": "line",
+    "id": "s12.07",
+    "who": "BOLT",
+    "text": "Boss. You are honking.",
+    "file": "s12_BOLT.mp3",
+    "src_start": 0.0,
+    "src_end": 2.586122,
+    "start": 866.701,
+    "end": 869.288
+   },
+   {
+    "type": "action",
+    "text": "Juno laughs and cries. Cut to black.",
+    "start": 869.638,
+    "end": 875.138
+   },
+   {
+    "type": "line",
+    "id": "s12.08",
+    "who": "JUNO",
+    "text": "I was never the one delivering. I was the one being delivered. And I still tipped the driver.",
+    "file": "s12_JUNO.mp3",
+    "src_start": 6.557,
+    "src_end": 12.278,
+    "start": 875.138,
+    "end": 880.859
+   },
+   {
+    "type": "action",
+    "text": "Epilogue card: a new radio crackle. ADA: Courier Vale, I have a job. Package four thousand, four hundred and eighteen. Cut to black. THE END.",
+    "start": 881.209,
+    "end": 890.209
+   }
+  ]
+ }
+]
