@@ -1,0 +1,140 @@
+{
+ "music": [
+  {
+   "from": 0,
+   "to": 61.702,
+   "mood": "calm"
+  },
+  {
+   "from": 61.702,
+   "to": 99.626,
+   "mood": "tense"
+  }
+ ],
+ "beds": [
+  {
+   "from": 0,
+   "to": 99.626,
+   "name": "tide",
+   "gain": 0.35
+  },
+  {
+   "from": 16.899,
+   "to": 21.551,
+   "name": "tide",
+   "gain": 0.9
+  }
+ ],
+ "sfx": [
+  {
+   "t": 5.8,
+   "name": "scratch",
+   "gain": 0.5
+  },
+  {
+   "t": 10.576,
+   "name": "scratch",
+   "gain": 0.5
+  },
+  {
+   "t": 17.199,
+   "name": "tide_wash",
+   "gain": 0.9
+  },
+  {
+   "t": 18.099,
+   "name": "creak",
+   "gain": 0.4
+  },
+  {
+   "t": 21.751,
+   "name": "page_turn",
+   "gain": 0.7
+  },
+  {
+   "t": 23.62,
+   "name": "page_turn",
+   "gain": 0.6
+  },
+  {
+   "t": 37.845,
+   "name": "bell",
+   "gain": 0.8
+  },
+  {
+   "t": 39.844,
+   "name": "creak",
+   "gain": 0.3
+  },
+  {
+   "t": 49.84,
+   "name": "scratch",
+   "gain": 0.45
+  },
+  {
+   "t": 54.506,
+   "name": "scratch",
+   "gain": 0.45
+  },
+  {
+   "t": 58.077,
+   "name": "tick",
+   "gain": 0.4
+  },
+  {
+   "t": 58.377,
+   "name": "tick",
+   "gain": 0.4
+  },
+  {
+   "t": 63.902,
+   "name": "scratch",
+   "gain": 0.3
+  },
+  {
+   "t": 68.051,
+   "name": "bell",
+   "gain": 0.5
+  },
+  {
+   "t": 73.066,
+   "name": "scratch",
+   "gain": 0.4
+  },
+  {
+   "t": 75.011,
+   "name": "scratch",
+   "gain": 0.35
+  },
+  {
+   "t": 76.711,
+   "name": "scratch",
+   "gain": 0.35
+  },
+  {
+   "t": 80.387,
+   "name": "thump",
+   "gain": 0.6
+  },
+  {
+   "t": 88.274,
+   "name": "page_turn",
+   "gain": 0.5
+  },
+  {
+   "t": 94.248,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 94.398,
+   "name": "tick",
+   "gain": 0.6
+  },
+  {
+   "t": 94.548,
+   "name": "tick",
+   "gain": 0.6
+  }
+ ]
+}

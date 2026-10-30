@@ -1,0 +1,34 @@
+{
+ "music": [
+  {"from": 0, "to": {"id": "c2.17", "end": true}, "mood": "sorrow"},
+  {"from": {"id": "c2.18"}, "to": "END", "mood": "tense"}
+ ],
+ "beds": [
+  {"from": 0, "to": "END", "name": "tide", "gain": 0.3}
+ ],
+ "sfx": [
+  {"at": {"id": "c2.02", "off": 0.2}, "name": "scratch", "gain": 0.45},
+  {"at": {"id": "c2.03", "off": 1.2}, "name": "scratch", "gain": 0.5},
+  {"at": {"id": "c2.09", "off": 0.4}, "name": "tick", "gain": 0.2},
+  {"at": {"id": "c2.09", "off": 0.8}, "name": "tick", "gain": 0.2},
+  {"at": {"id": "c2.09", "off": 1.2}, "name": "tick", "gain": 0.2},
+  {"at": {"id": "c2.09", "off": 1.6}, "name": "tick", "gain": 0.2},
+  {"at": {"id": "c2.09", "off": 2.0}, "name": "tick", "gain": 0.2},
+  {"at": {"id": "c2.09", "off": 2.4}, "name": "tick", "gain": 0.2},
+  {"at": {"id": "c2.10", "off": 0.1}, "name": "page_turn", "gain": 0.7},
+  {"at": {"id": "c2.11", "off": 0.2}, "name": "scratch", "gain": 0.4},
+  {"at": {"id": "c2.13", "off": -0.1}, "name": "scratch", "gain": 0.55},
+  {"at": {"id": "c2.13", "off": 1.4}, "name": "thump", "gain": 0.4},
+  {"at": {"id": "c2.19", "off": 0.2}, "name": "scratch", "gain": 0.4},
+  {"at": {"id": "c2.20", "off": 0.2}, "name": "scratch", "gain": 0.4},
+  {"at": {"id": "c2.21", "off": 0.2}, "name": "scratch", "gain": 0.4},
+  {"at": {"id": "c2.23", "off": 0.9}, "name": "scratch", "gain": 0.3},
+  {"at": {"id": "c2.23", "off": 4.4}, "name": "scratch", "gain": 0.35},
+  {"at": {"id": "c2.23", "off": 5.2}, "name": "scratch", "gain": 0.35},
+  {"at": {"id": "c2.23", "off": 6.0}, "name": "scratch", "gain": 0.35},
+  {"at": {"id": "c2.25", "off": 0.1}, "name": "bell", "gain": 0.45},
+  {"at": {"id": "c2.25", "off": 1.4}, "name": "creak", "gain": 0.4},
+  {"at": {"id": "c2.27", "off": 1.2}, "name": "bell", "gain": 0.35},
+  {"at": {"id": "c2.29", "off": 0.1}, "name": "thump", "gain": 0.5}
+ ]
+}
