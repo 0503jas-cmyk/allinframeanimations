@@ -3,7 +3,7 @@ import {useCurrentFrame, useVideoConfig} from 'remotion';
 import {FONT, P, clamp01, easeInOut, hash, mix, prog} from './theme';
 import {glyphFor, polyLen, Pt} from './glyphs';
 
-export type InkKind = 'night' | 'bone' | 'pencil' | 'amber' | 'blood' | 'stone';
+export type InkKind = 'night' | 'bone' | 'pencil' | 'amber' | 'blood' | 'stone' | 'brown';
 const INK: Record<InkKind, {dry: string; wet: string; width: number}> = {
   night: {dry: P.penInk, wet: '#3b4b7e', width: 1},
   bone: {dry: P.bone, wet: P.amberHot, width: 1},
@@ -11,6 +11,7 @@ const INK: Record<InkKind, {dry: string; wet: string; width: number}> = {
   amber: {dry: P.amber, wet: P.amberHot, width: 1},
   blood: {dry: P.blood, wet: '#e08a73', width: 1},
   stone: {dry: P.boneDim, wet: P.bone, width: 0.9},
+  brown: {dry: '#4e3220', wet: '#9a6a3c', width: 1},
 };
 export const inkColor = (k: InkKind) => INK[k].dry;
 

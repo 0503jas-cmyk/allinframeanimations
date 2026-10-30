@@ -118,3 +118,15 @@ def save_wav(path, x):
         w.setsampwidth(2)
         w.setframerate(SR)
         w.writeframes((x * 32767).astype(np.int16).tobytes())
+
+
+def pluck(f, sec=4.0, gain=0.06):
+    """Soft bell-like pluck with two echoes, for sparse melodic motifs."""
+    t = t_axis(sec)
+    x = np.sin(2 * np.pi * f * t) + 0.35 * np.sin(2 * np.pi * 2 * f * t) + 0.12 * np.sin(2 * np.pi * 3.01 * f * t)
+    x *= np.minimum(1, t / 0.03) * np.exp(-t / 1.4)
+    out = np.zeros_like(x)
+    for d, g in ((0.0, 1.0), (0.52, 0.42), (1.04, 0.2)):
+        i = int(d * SR)
+        out[i:] += x[: len(x) - i] * g
+    return (out / np.abs(out).max() * gain).astype(np.float32)
