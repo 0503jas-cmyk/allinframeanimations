@@ -1,0 +1,18 @@
+{
+  "name": "one-keypress",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render:test": "remotion render src/index.ts Test out/test.mp4 --browser-executable=/opt/pw-browsers/chromium",
+    "render:full": "remotion render src/index.ts Full out/full.mp4 --browser-executable=/opt/pw-browsers/chromium"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.539",
+    "@types/react": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.539",
+    "typescript": "^7.0.2"
+  }
+}
