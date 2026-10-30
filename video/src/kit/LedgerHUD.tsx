@@ -88,8 +88,8 @@ const Card: React.FC<{p: LedgerHUDProps; color: string; frameOffset?: number}> =
         </div>
       )}
       <div style={{display: 'flex', gap: mini ? 22 : 34, alignItems: 'flex-start'}}>
-        {cell('OUT', <Counter value={p.out} digits={1} h={h} color={color} />)}
-        {cell('IN', <Counter value={p.in} digits={1} h={h} color={color} />)}
+        {cell('OUT', <Counter value={p.out} digits={Math.max(1, String(Math.floor(p.out)).length)} h={h} color={color} />)}
+        {cell('IN', <Counter value={p.in} digits={Math.max(1, String(Math.floor(p.in)).length)} h={h} color={color} />)}
         {cell('NIGHT', <Counter value={p.night} digits={5} h={h} color={color} comma text={p.nightText} />)}
         {cell('DELTA', <Counter value={Math.abs(delta)} digits={1} h={h} color={deltaColor} />, delta !== 0 ? rgba(P.blood, 0.9) : rgba(P.bone, 0.6))}
       </div>

@@ -1,0 +1,116 @@
+{
+ "duration": 89.626,
+ "found_gaps": 44,
+ "sentences": [
+  {
+   "text": "Fourteen thousand, nine hundred and seventy-five nights, and the ledger is one short.",
+   "start": 0.0,
+   "end": 3.776
+  },
+  {
+   "text": "I know who is missing.",
+   "start": 3.776,
+   "end": 6.13
+  },
+  {
+   "text": "I counted her out myself, when I was seven, and I let her drown.",
+   "start": 6.13,
+   "end": 8.056
+  },
+  {
+   "text": "I am Maren Voss, the tide clerk of Harrow Deep.",
+   "start": 8.056,
+   "end": 11.199
+  },
+  {
+   "text": "Tonight a storm tide broke into the strongroom, and the oldest ledger floated off its shelf, smelling of lamp oil.",
+   "start": 11.199,
+   "end": 13.151
+  },
+  {
+   "text": "I opened it to the night it happened, expecting one line in a child's hand.",
+   "start": 13.151,
+   "end": 17.52
+  },
+  {
+   "text": "I found two pages.",
+   "start": 17.52,
+   "end": 25.552
+  },
+  {
+   "text": "Twice a day, for about six hours each time, a stone road lies open to the mainland.",
+   "start": 25.552,
+   "end": 30.945
+  },
+  {
+   "text": "A bell on a post rings when the water turns.",
+   "start": 30.945,
+   "end": 33.344
+  },
+  {
+   "text": "Beside it hangs a short rope, for anyone the sea has caught.",
+   "start": 33.344,
+   "end": 39.968
+  },
+  {
+   "text": "My work is two columns.",
+   "start": 39.968,
+   "end": 43.44
+  },
+  {
+   "text": "A person who walks out is a stroke on the left, and that is OUT.",
+   "start": 43.44,
+   "end": 48.206
+  },
+  {
+   "text": "A person who walks home is a name on the right, and that is IN.",
+   "start": 48.206,
+   "end": 50.877
+  },
+  {
+   "text": "The columns must agree, and they have not agreed since I was seven.",
+   "start": 50.877,
+   "end": 55.702
+  },
+  {
+   "text": "The village calls the difference the Ghost.",
+   "start": 55.702,
+   "end": 60.651
+  },
+  {
+   "text": "They say the drowned clerk walks the road at night and rings for the one who is not home.",
+   "start": 60.651,
+   "end": 65.466
+  },
+  {
+   "text": "I do not believe in the Ghost.",
+   "start": 65.466,
+   "end": 68.511
+  },
+  {
+   "text": "I believe in arithmetic.",
+   "start": 68.511,
+   "end": 74.287
+  },
+  {
+   "text": "One went out.",
+   "start": 74.287,
+   "end": 78.467
+  },
+  {
+   "text": "One did not come back.",
+   "start": 78.467,
+   "end": 82.274
+  },
+  {
+   "text": "The first page was my mother's last night.",
+   "start": 82.274,
+   "end": 85.648
+  },
+  {
+   "text": "The second was dated for a night that had not happened yet.",
+   "start": 85.648,
+   "end": 89.626
+  }
+ ]
+}

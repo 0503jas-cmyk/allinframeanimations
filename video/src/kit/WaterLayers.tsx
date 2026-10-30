@@ -88,11 +88,11 @@ export const WaterLayers: React.FC<WaterProps> = ({layers = DEFAULT_WATER, tide 
               const w = r.width ?? 16;
               return (
                 <g key={k}>
-                  {Array.from({length: 9}, (_, j) => {
-                    const yy = rf + 10 + j * (len / 9);
-                    const sx = Math.sin(t * 1.7 + j * 0.9 + k) * (3 + j * 1.6);
-                    const ww = w * (0.45 + j * 0.14);
-                    return <rect key={j} x={r.x + sx - ww / 2} y={yy} width={ww} height={len / 9 - 6} rx={2} fill={r.color ?? P.amber} opacity={0.55 * (1 - j / 10)} />;
+                  {Array.from({length: 16}, (_, j) => {
+                    const yy = rf + 8 + j * (len / 16);
+                    const sx = Math.sin(t * 1.5 + j * 0.8 + k * 2) * (2 + j * 0.9);
+                    const ww = w * (0.35 + 0.9 * Math.abs(Math.sin(j * 2.3 + k + t * 0.6)) + j * 0.05);
+                    return <rect key={j} x={r.x + sx - ww / 2} y={yy} width={ww} height={3.2} rx={1.6} fill={r.color ?? P.amber} opacity={0.7 * (1 - j / 17)} />;
                   })}
                 </g>
               );

@@ -87,6 +87,15 @@ export const Sky: React.FC<SkyProps> = ({mood = 'calm', stars = 110, moon = {x: 
             opacity={0.35 + 0.55 * (0.5 + 0.5 * Math.sin(t * (0.6 + i * 0.35) + i * 1.7))}
           />
         ))}
+        {cloudPaths.map((c, i) => {
+          const x = ((c.x0 + t * c.speed) % (W + 900)) - 450;
+          return (
+            <g key={i} transform={`translate(${x},${c.y})`} opacity={c.o}>
+              <path d={c.d} fill={P.ink3} />
+              <path d={c.d} fill={P.ink2} transform="translate(30,16) scale(0.9,0.6)" opacity={0.7} />
+            </g>
+          );
+        })}
         {moon && (
           <g>
             <defs>
@@ -102,15 +111,6 @@ export const Sky: React.FC<SkyProps> = ({mood = 'calm', stars = 110, moon = {x: 
             <circle cx={moon.x + (moon.r ?? 60) * 0.3} cy={moon.y + (moon.r ?? 60) * 0.3} r={(moon.r ?? 60) * 0.13} fill={P.boneShade} opacity={0.5} />
           </g>
         )}
-        {cloudPaths.map((c, i) => {
-          const x = ((c.x0 + t * c.speed) % (W + 900)) - 450;
-          return (
-            <g key={i} transform={`translate(${x},${c.y})`} opacity={c.o}>
-              <path d={c.d} fill={P.ink3} />
-              <path d={c.d} fill={P.ink2} transform="translate(30,16) scale(0.9,0.6)" opacity={0.7} />
-            </g>
-          );
-        })}
       </svg>
     </AbsoluteFill>
   );

@@ -46,7 +46,7 @@ export const LedgerPage: React.FC<LedgerPageProps> = ({rows, x = 360, y = 130, s
   const t = frame / fps;
   const dateW = 210;
   const colW = (width - 90 - dateW - 40) / 2;
-  const top = 150;
+  const top = 124;
   const jag = torn
     ? `polygon(0 0, 100% 0, 100% 8%, 98% 14%, 100% 22%, 97% 31%, 99% 40%, 96% 50%, 99% 58%, 97% 68%, 100% 78%, 98% 88%, 100% 100%, 0 100%)`
     : undefined;

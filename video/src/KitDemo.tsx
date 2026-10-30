@@ -61,8 +61,15 @@ const Scene1: React.FC = () => {
             </defs>
             <path d="M1160 1080 L1160 840 Q1180 792 1250 782 L1330 770 Q1420 760 1500 764 L1920 760 V1080Z" fill="url(#hl)" />
             <path d="M1160 840 Q1180 792 1250 782 L1330 770 Q1420 760 1500 764 L1920 760" fill="none" stroke={rgba(P.teal, 0.3)} strokeWidth={2} />
+            <path d="M1190 960 C1290 880 1380 940 1480 880 S1700 860 1780 900 S1880 880 1920 870 V1080 H1160Z" fill="#0a1328" />
+            <path d="M1160 1010 L1320 985 L1480 1010 L1650 975 L1920 1000 V1080 H1160Z" fill="#050a16" />
+            
           </svg>
           <Bell x={1235} y={786} size={0.78} strikes={[1.0, 2.8]} />
+          <div style={{position: 'absolute', left: 1440, top: 766, width: 500, height: 70, background: `radial-gradient(ellipse 50% 50% at 50% 30%, ${rgba(P.amber, 0.3)}, rgba(0,0,0,0) 100%)`}} />
+          <svg width={1920} height={1080} style={{position: 'absolute', inset: 0}}>
+            <path d="M1218 484 H1160 V504" stroke="#03060e" strokeWidth={5} fill="none" />
+          </svg>
           <Silhouette kind="clerkHut" x={1690} y={764} scale={1.05} fill="#03060e" lit={1} />
           <Lantern x={1160} y={548} glow={170} scale={0.8} seed={1} />
         </Layer>
@@ -139,7 +146,7 @@ const Scene3: React.FC = () => {
         </Layer>
       </Camera>
       <TideClock x={960} y={930} size={190} minutesToClose={lerp(300, 8, tide)} />
-      <InkText mode="clip" text="the sea closes from both sides" x={140} y={1010} size={36} start={0.5} end={2.8} ink="bone" settle={0} />
+      <InkText mode="clip" text="the sea closes from both sides" x={1130} y={1012} size={36} start={0.5} end={2.8} ink="bone" settle={0} />
       <LedgerHUD out={prints.length} in={40} night={14975} delta={0} corner="bl" mode="mini" />
       <Finish />
     </AbsoluteFill>
@@ -161,11 +168,19 @@ const Scene4: React.FC = () => {
         <Layer depth={0.6}>
           <Causeway mode="world" tide={0.15 + 0.4 * wp} now={t} prints={[...Array.from({length: 50}, (_, i): Footprint => ({x: 0.02 + i * 0.019, t: 0.2 + i * 0.05, dir: 'out', size: 'adult', lane: -0.18 + (i % 2) * 0.04})), ...Array.from({length: 24}, (_, i): Footprint => ({x: 0.02 + i * 0.03, t: 1 + i * 0.07, dir: 'out', size: 'small', lane: 0.2}))]} />
         </Layer>
+        <Layer depth={0.5}>
+          <div style={{position: 'absolute', left: 0, top: 380, width: 1920, height: 110, background: `linear-gradient(180deg, rgba(0,0,0,0), ${rgba(P.teal, 0.1)} 55%, rgba(0,0,0,0))`}} />
+          <svg width={1920} height={1080} style={{position: 'absolute', inset: 0}}>
+            {Array.from({length: 12}, (_, j) => (
+              <rect key={j} x={1185 - (14 + j * 7) / 2 + Math.sin(t * 1.6 + j) * (2 + j)} y={440 + j * 26} width={14 + j * 7} height={9} rx={4} fill={P.bone} opacity={0.34 * (1 - j / 13)} />
+            ))}
+          </svg>
+        </Layer>
         <Layer depth={0.9}>
           <Silhouette kind="walker" x={900 - wp * 120} y={620 + wp * 150} scale={0.4 + wp * 0.6} walk={{speed: 1.3, bob: 4}} lantern={1} rim={P.amber} />
           <Silhouette kind="child" x={1020 - wp * 130} y={622 + wp * 148} scale={0.4 + wp * 0.6} walk={{speed: 1.8, bob: 3}} />
           <Lantern x={960 - wp * 120 + 28 * (0.4 + wp * 0.6)} y={560 + wp * 140} glowOnly glow={180} seed={3} scale={0.8} />
-          <Silhouette kind="mother" x={1530} y={745} scale={0.8} walk={{speed: 1.2, bob: 3}} flip />
+          <Silhouette kind="mother" x={1110} y={705} scale={0.55} walk={{speed: 1.2, bob: 2}} flip />
         </Layer>
       </Camera>
       <div style={{position: 'absolute', left: 80, bottom: 70, opacity: easeInOut(prog(t, 0.8, 1.6))}}>
@@ -235,7 +250,7 @@ const Scene6: React.FC = () => {
           </svg>
         </Layer>
       </Camera>
-      <InkText mode="stroke" text="MAREN" x={1000} y={300} size={120} start={0.8} end={3.0} ink="pencil" penHead tracking={0.2} />
+      <InkText mode="stroke" text="MAREN" x={1000} y={300} size={120} start={0.8} end={3.0} ink="amber" penHead tracking={0.2} />
       <TideClock x={1740} y={160} size={190} minutesToClose={lerp(14, 3, t / 3.5)} cracked={t > 2.7} />
       <LedgerHUD out={1} in={1} night={14977} delta={0} glitch={glitch} nightText={t > 2.0 && t < 2.8 ? '---' : undefined} />
       <Finish wash={t > 3.1 ? rgba(P.bone, 0.06) : undefined} />

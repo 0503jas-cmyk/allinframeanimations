@@ -116,7 +116,7 @@ const Village: React.FC<{fill: string; litCount: number; litList?: number[]; t: 
             const f = flicker(t, id);
             return (
               <g key={k}>
-                <circle cx={w.x} cy={w.y} r={24} fill={rgba(P.amber, 0.1 * f)} />
+                <g>{[44, 30, 18].map((r, q) => <circle key={q} cx={w.x} cy={w.y} r={r} fill={rgba(P.amber, 0.045 * f)} />)}</g>
                 <rect x={w.x - 6} y={w.y - 8} width={12} height={16} fill={P.amber} opacity={0.85 * clamp01(f)} />
               </g>
             );
@@ -136,7 +136,7 @@ const Hut: React.FC<{fill: string; lit: number; t: number}> = ({fill, lit, t}) =
       <path d="M-150 -118 L0 -210 L150 -118 L150 -108 L-150 -108Z" fill={fill} />
       <rect x={-34} y={-98} width={68} height={52} rx={2} fill={rgba(P.amber, 0.12 + 0.82 * lit)} />
       <path d="M-34 -72 H34 M0 -98 V-46" stroke={fill} strokeWidth={3} />
-      <circle cx={0} cy={-72} r={90} fill={rgba(P.amber, 0.1 * f)} />
+      {[130, 100, 74, 52].map((r, q) => <circle key={q} cx={0} cy={-72} r={r} fill={rgba(P.amber, 0.04 * f)} />)}
       <rect x={96} y={-70} width={14} height={70} fill={fill} />
     </g>
   );
@@ -189,6 +189,7 @@ const StoneShape: React.FC<{fill: string; tally: number; tide: number}> = ({fill
       </defs>
       <path d="M-78 0 L-64 -250 L-48 -318 L10 -336 L58 -304 L72 -240 L82 0Z" fill="url(#stg)" />
       <path d="M-48 -318 L10 -336 L58 -304 L72 -240" stroke={rgba(P.teal, 0.35)} strokeWidth={2} fill="none" />
+      <path d="M-78 0 L-64 -250 L-48 -318" stroke={rgba(P.bone, 0.22)} strokeWidth={2.5} fill="none" />
       <path d="M-30 -300 l8 90 M20 -318 l-6 120 M44 -280 l6 80 M-60 -120 l120 8 M-66 -60 l130 6" stroke={rgba(P.ink4, 0.6)} strokeWidth={1.5} />
       {marks}
       <path d={`M-80 ${waterY} H84 V0 H-80Z`} fill={rgba(P.ink0, 0.5)} />
@@ -241,7 +242,7 @@ export type AnkleShotProps = {
 };
 
 /** Floor-level shot: ledger-desk leg, iron ring, 9-link chain on a sagging curve, cut-off stockinged foot. Full-frame element. */
-export const AnkleShot: React.FC<AnkleShotProps> = ({tension = 0.2, jingle = 0, links = 9, lamp = 1}) => {
+export const AnkleShot: React.FC<AnkleShotProps> = ({tension = 0.2, jingle = 0, links = 10, lamp = 1}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const t = frame / fps;
@@ -266,9 +267,14 @@ export const AnkleShot: React.FC<AnkleShotProps> = ({tension = 0.2, jingle = 0, 
           <stop offset="1" stopColor={P.ink0} />
         </linearGradient>
         <linearGradient id="legg" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor={P.boneDim} />
-          <stop offset="0.45" stopColor={P.bone} />
-          <stop offset="1" stopColor={P.boneShade} />
+          <stop offset="0" stopColor="#6e6753" />
+          <stop offset="0.42" stopColor="#cfc4a8" />
+          <stop offset="1" stopColor="#8d836b" />
+        </linearGradient>
+        <linearGradient id="sock" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stopColor="#2d3759" />
+          <stop offset="0.5" stopColor="#1a2340" />
+          <stop offset="1" stopColor="#0e1429" />
         </linearGradient>
         <radialGradient id="lampfloor" cx="0.5" cy="0.5" r="0.5">
           <stop offset="0" stopColor={P.amber} stopOpacity={0.35 * lamp} />
@@ -282,8 +288,9 @@ export const AnkleShot: React.FC<AnkleShotProps> = ({tension = 0.2, jingle = 0, 
         <path key={i} d={`M0 ${floorY + 26 + i * 46 * (1 + i * 0.4)} H1920`} stroke={P.ink0} strokeWidth={2 + i} opacity={0.6} />
       ))}
       {/* desk leg */}
-      <rect x={410} y={150} width={150} height={floorY - 150} fill="url(#legg)" />
-      <rect x={400} y={floorY - 38} width={170} height={38} fill={P.boneShade} />
+      <path d="M410 150 H560 V200 L520 150Z" fill="#0b1124" />
+      <rect x={415} y={150} width={140} height={floorY - 150} fill="url(#legg)" />
+      <rect x={400} y={floorY - 38} width={170} height={38} fill="#a89d82" />
       <path d="M410 300 H560 M410 560 H560" stroke={P.boneDim} strokeWidth={2} opacity={0.5} />
       <ellipse cx={485} cy={floorY} rx={110} ry={10} fill={P.ink0} opacity={0.7} />
       {/* ring on leg */}
@@ -292,16 +299,25 @@ export const AnkleShot: React.FC<AnkleShotProps> = ({tension = 0.2, jingle = 0, 
       {/* chain */}
       {items.map((l, i) => (
         <g key={i} transform={`translate(${l.x},${l.y}) rotate(${l.ang})`}>
-          <ellipse rx={l.edge ? 8 : 25} ry={l.edge ? 14 : 14} fill="none" stroke="#2c3345" strokeWidth={8} />
-          <ellipse rx={l.edge ? 8 : 25} ry={l.edge ? 14 : 14} fill="none" stroke="#7b8399" strokeWidth={2} strokeDasharray="22 90" />
+          <ellipse rx={l.edge ? 8 : 25} ry={l.edge ? 14 : 14} fill="none" stroke="#39425a" strokeWidth={9} />
+          <ellipse rx={l.edge ? 8 : 25} ry={l.edge ? 14 : 14} fill="none" stroke="#a3abc0" strokeWidth={2.4} strokeDasharray="22 90" />
         </g>
       ))}
       {/* foot cut off at the frame's right */}
-      <path d={`M${ax - 70} ${floorY - 330} L${ax + 60} ${floorY - 330} L${ax + 75} ${floorY - 135} L${ax + 380} ${floorY - 75} Q${ax + 430} ${floorY - 20} ${ax + 380} ${floorY} L${ax - 80} ${floorY} Z`} fill="#0b101f" />
-      <path d={`M${ax - 70} ${floorY - 330} L${ax - 80} ${floorY - 4}`} stroke={rgba(P.amber, 0.35 * lamp)} strokeWidth={3} />
+      <path d={`M${ax - 90} 140 L${ax + 80} 140 L${ax + 72} ${floorY - 330} L${ax + 75} ${floorY - 135} L${ax + 380} ${floorY - 75} Q${ax + 430} ${floorY - 20} ${ax + 380} ${floorY} L${ax - 80} ${floorY} L${ax - 70} ${floorY - 330} Z`} fill="url(#sock)" />
+      <path d={`M${ax - 90} 140 L${ax - 80} ${floorY - 4}`} stroke={rgba(P.amber, 0.35 * lamp)} strokeWidth={3} />
       <path d={`M${ax - 76} ${floorY - 146} H${ax + 70}`} stroke={P.boneShade} strokeWidth={4} opacity={0.35} />
       <ellipse cx={ax} cy={ay} rx={72} ry={21} fill="none" stroke="#2c3345" strokeWidth={14} />
       <ellipse cx={ax} cy={ay} rx={72} ry={21} fill="none" stroke="#7b8399" strokeWidth={3} strokeDasharray="60 300" strokeDashoffset={-60} />
+      <defs>
+        <linearGradient id="slab" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#04070f" />
+          <stop offset="1" stopColor="#0d1428" />
+        </linearGradient>
+      </defs>
+      <rect x={250} y={0} width={1350} height={150} fill="url(#slab)" />
+      <rect x={250} y={144} width={1350} height={6} fill={rgba(P.amber, 0.55 * lamp)} />
+      <rect x={250} y={150} width={1350} height={26} fill={rgba(P.amber, 0.07 * lamp)} />
     </svg>
   );
 };

@@ -83,8 +83,8 @@ export const Bell: React.FC<BellProps> = ({strikes = [], swing, amp = 18, ropeWe
         {/* rope */}
         {showRope && (
           <g>
-            <path d={`M${pivotX + 2} ${pivotY + 20} C${pivotX + 40} ${pivotY + 120} ${pivotX + 120} ${-200} ${pivotX + 160} ${-110}`} stroke={P.amberDeep} strokeWidth={macro ? 18 : 6} fill="none" strokeLinecap="round" strokeDasharray={macro ? '4 2' : undefined} />
-            {ropeWear > 0 && <path d={`M${pivotX + 130} -165 C${pivotX + 148} -138 ${pivotX + 156} -122 ${pivotX + 160} -110`} stroke={P.amberHot} strokeWidth={(macro ? 18 : 6) * 0.45} fill="none" strokeLinecap="round" opacity={0.4 + 0.5 * ropeWear} />}
+            <path d={`M${pivotX + 90} -452 Q${pivotX + 90 + ang * 1.2} -300 ${pivotX + 90 + ang * 2.2} -110`} stroke={P.amberDeep} strokeWidth={macro ? 18 : 6} fill="none" strokeLinecap="round" strokeDasharray={macro ? '4 2' : undefined} />
+            {ropeWear > 0 && <path d={`M${pivotX + 90 + ang * 1.4} -330 Q${pivotX + 90 + ang * 1.8} -230 ${pivotX + 90 + ang * 2.2} -140`} stroke={P.amberHot} strokeWidth={(macro ? 18 : 6) * 0.45} fill="none" strokeLinecap="round" opacity={0.4 + 0.5 * ropeWear} />}
           </g>
         )}
       </g>

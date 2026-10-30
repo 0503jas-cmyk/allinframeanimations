@@ -66,24 +66,29 @@ export const Causeway: React.FC<CausewayProps> = ({mode = 'map', tide = 0, print
       const lane = (p.lane ?? 0) + (i % 2 ? 0.07 : -0.07);
       const q = pos(u, lane);
       const small = p.size === 'small';
-      const rx = (small ? 9 : 15) * q.k + 0.5;
-      const ry = rx * 1.6;
+      const rx = (small ? 7 : 11) * q.k + 0.5;
+      const ry = rx * 1.5;
       const key = (small ? 's' : 'a') + (p.dir === 'in' ? 'i' : 'o');
       groups[key] += printPath(q.x, q.y, rx, ry, 0);
     });
-    const edge = 300 + tide * 520;
-    const wob = (y: number, s: number) => Math.sin(y * 0.03 + t * 1.4 + s) * 9 * (1 - tide * 0.3);
-    let wl = `M0 ${vp.y}`;
-    let wr = `M${W} ${vp.y}`;
+    const wob = (y: number, s: number) => Math.sin(y * 0.03 + t * 1.4 + s) * 8;
+    // lapping water: from each road edge inward by tide * 45% of the road half width
+    let wl = '';
+    let wr = '';
+    const innerL: string[] = [];
+    const innerR: string[] = [];
     const lanes: string[] = [];
-    for (let y = vp.y; y <= H; y += 20) {
+    for (let y = vp.y; y <= H + 20; y += 20) {
       const u = (y - vp.y) / (H - vp.y);
-      const xl = vp.x - (rw / 2) * u + (edge - 300) * u * 0.9;
-      wl += `L${xl + wob(y, 0)} ${y}`;
-      wr += `L${W - (W - (vp.x + (rw / 2) * u - (edge - 300) * u * 0.9)) + wob(y, 2)} ${y}`;
+      const half = (rw / 2) * u + 6;
+      const reach = tide * 0.5 * half * 1.9 * (0.55 + 0.45 * u) + wob(y, 0) * u;
+      innerL.push(`${(vp.x - half + reach).toFixed(1)} ${y}`);
+      innerR.push(`${(vp.x + half - reach - wob(y, 2) * u).toFixed(1)} ${y}`);
     }
-    wl += `L0 ${H}Z`;
-    wr += `L${W} ${H}Z`;
+    wl = 'M' + innerL.join('L');
+    wr = 'M' + innerR.join('L');
+    const wlFill = wl + `L${vp.x - rw / 2 - 40} ${H + 20}L${vp.x - 6} ${vp.y}Z`;
+    const wrFill = wr + `L${vp.x + rw / 2 + 40} ${H + 20}L${vp.x + 6} ${vp.y}Z`;
     for (let i = 1; i < 14; i++) {
       const u = Math.pow(i / 14, 1.7);
       const y = vp.y + (H - vp.y) * u;
@@ -97,7 +102,8 @@ export const Causeway: React.FC<CausewayProps> = ({mode = 'map', tide = 0, print
             <stop offset="1" stopColor="#2b3a5c" />
           </linearGradient>
           <linearGradient id="cwsea" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor={P.ink3} />
+            <stop offset="0" stopColor="#35527f" />
+            <stop offset="0.25" stopColor="#1f3562" />
             <stop offset="1" stopColor={P.ink1} />
           </linearGradient>
           <linearGradient id="cwsheen" x1="0" y1="0" x2="0" y2="1">
@@ -114,10 +120,10 @@ export const Causeway: React.FC<CausewayProps> = ({mode = 'map', tide = 0, print
           const y = vp.y + (H - vp.y) * u;
           return <rect key={i} x={vp.x - (rw / 2) * u * 0.9} y={y} width={rw * u * 0.9} height={18 * u + 2} fill="url(#cwsheen)" />;
         })}
-        <path d={wl} fill={rgba(P.tealDeep, 0.85)} />
-        <path d={wr} fill={rgba(P.tealDeep, 0.85)} />
-        <path d={wl} fill="none" stroke={P.teal} strokeWidth={3} strokeDasharray="30 22" strokeDashoffset={-t * 30} opacity={0.6} />
-        <path d={wr} fill="none" stroke={P.teal} strokeWidth={3} strokeDasharray="30 22" strokeDashoffset={t * 30} opacity={0.6} />
+        <path d={wlFill} fill={rgba(P.tealDeep, 0.55)} />
+        <path d={wrFill} fill={rgba(P.tealDeep, 0.55)} />
+        <path d={wl} fill="none" stroke={P.teal} strokeWidth={3} strokeDasharray="30 22" strokeDashoffset={-t * 30} opacity={0.65} />
+        <path d={wr} fill="none" stroke={P.teal} strokeWidth={3} strokeDasharray="30 22" strokeDashoffset={t * 30} opacity={0.65} />
         <path d={groups.ao} fill={P.amber} opacity={0.9} />
         <path d={groups.ai} fill={P.teal} opacity={0.9} />
         <path d={groups.so} fill={P.amberHot} opacity={0.9} />
@@ -179,6 +185,9 @@ export const Causeway: React.FC<CausewayProps> = ({mode = 'map', tide = 0, print
             {Array.from({length: 9}, (_, i) => <path key={'h' + i} d={`M${b.x} ${b.y + (i * b.h) / 8}H${b.x + b.w}`} />)}
           </g>
         )}
+        {chart && [0.16, 0.3, 0.7, 0.84].map((f, i) => (
+          <path key={'c' + i} d={`M${b.x + 190} ${b.y + b.h * f} C${b.x + b.w * 0.3} ${b.y + b.h * (f - 0.06)} ${b.x + b.w * 0.6} ${b.y + b.h * (f + 0.07)} ${b.x + b.w - 190} ${b.y + b.h * f}`} fill="none" stroke={rgba(P.bone, 0.1)} strokeWidth={1.4} strokeDasharray={i % 2 ? '4 7' : undefined} />
+        ))}
         {/* shores */}
         <path d={`M${b.x} ${b.y} V${b.y + b.h} H${b.x + 190} Q${b.x + 120} ${y0 + 90} ${b.x + 150} ${y0} Q${b.x + 110} ${y0 - 120} ${b.x + 200} ${b.y}Z`} fill="#26324f" />
         <path d={`M${b.x + b.w} ${b.y} V${b.y + b.h} H${b.x + b.w - 190} Q${b.x + b.w - 120} ${y0 + 80} ${b.x + b.w - 150} ${y0} Q${b.x + b.w - 100} ${y0 - 110} ${b.x + b.w - 200} ${b.y}Z`} fill="#26324f" />
@@ -203,8 +212,8 @@ export const Causeway: React.FC<CausewayProps> = ({mode = 'map', tide = 0, print
         <path d={groups.so} fill={P.amberHot} />
         <path d={groups.si} fill={P.teal} />
         {/* the sea closing in */}
-        <path d={topFill} fill={rgba(P.tealDeep, 0.78)} />
-        <path d={botFill} fill={rgba(P.tealDeep, 0.78)} />
+        <path d={topFill} fill={rgba(P.tealDeep, 0.5)} />
+        <path d={botFill} fill={rgba(P.tealDeep, 0.5)} />
         <path d={topLine} fill="none" stroke={P.teal} strokeWidth={2.5} strokeDasharray="22 16" strokeDashoffset={-t * 25} opacity={0.9} />
         <path d={botLine} fill="none" stroke={P.teal} strokeWidth={2.5} strokeDasharray="22 16" strokeDashoffset={t * 25} opacity={0.9} />
       </g>
