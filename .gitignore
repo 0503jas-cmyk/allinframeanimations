@@ -6,3 +6,6 @@ build/mix.wav
 build/node_modules/
 build/assets/friend.wav
 build/steps.json
+build/chk/
+build/same_place.mp4
+build/same_place_small.mp4
