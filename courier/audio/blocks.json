@@ -1,0 +1,568 @@
+[
+ {
+  "id": "s01_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s01.01",
+   "s01.03",
+   "s01.06",
+   "s01.08",
+   "s01.10"
+  ],
+  "lines": [
+   "Rule one. Never open the package.",
+   "Rule three. Never stop.",
+   "I know we are honking.",
+   "My name is Juno Vale. I deliver things. Medicine, batteries, love letters, once a goat.",
+   "The world ended three years ago. Somebody still has to bring the mail."
+  ],
+  "chars": 235
+ },
+ {
+  "id": "s01_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s01.02",
+   "s01.04",
+   "s01.05",
+   "s01.07",
+   "s01.09"
+  ],
+  "lines": [
+   "Rule two. Never ask what is in the package.",
+   "Rule four. Stop for snacks. You added that one yourself, boss.",
+   "Boss. We are honking.",
+   "The horn is a duck. The dead love ducks.",
+   "We do not talk about the goat."
+  ],
+  "chars": 196
+ },
+ {
+  "id": "s02_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s02.01",
+   "s02.05",
+   "s02.09",
+   "s02.15"
+  ],
+  "lines": [
+   "Peaches delivered. Customer is crying. That is a four star tip.",
+   "I have a robot with very good opinions.",
+   "The Hollow has eleven thousand zombies, boss. I counted. Twice.",
+   "Boss, I have a bad feeling about this. And I do not have feelings."
+  ],
+  "chars": 231
+ },
+ {
+  "id": "s02_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s02.02",
+   "s02.04",
+   "s02.07",
+   "s02.11",
+   "s02.13",
+   "s02.16"
+  ],
+  "lines": [
+   "He is crying because they are peaches.",
+   "I am never alone. I have a robot with opinions.",
+   "Haven is forty kilometres away. Through the Hollow.",
+   "One hundred days.",
+   "Which is what?",
+   "Get in the sidecar."
+  ],
+  "chars": 186
+ },
+ {
+  "id": "s02_ADA",
+  "who": "ADA",
+  "ids": [
+   "s02.03",
+   "s02.06",
+   "s02.08",
+   "s02.10",
+   "s02.12",
+   "s02.14"
+  ],
+  "lines": [
+   "Courier Vale, this is Haven dispatch. Are you alone?",
+   "I have a job. One package. Grey cooler, sealed. Pickup is the old pharmacy on Fifth. Dropoff is Haven Tower.",
+   "Forty kilometres. Before sunrise. Seven hours.",
+   "The pay is one hundred days of safety. A bed. A door that locks. Real food.",
+   "And Juno. Watch out for Mayor Crane. If he finds out what you are carrying.",
+   "I do not know. Nobody does. That is why it is fragile."
+  ],
+  "chars": 410
+ },
+ {
+  "id": "s03_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s03.01",
+   "s03.03",
+   "s03.05",
+   "s03.07"
+  ],
+  "lines": [
+   "Boss. The cooler is humming.",
+   "I will not scan it. I am a courier robot. Scanning is not my job. Scanning is rude.",
+   "That was for safety. Pick up the package, boss.",
+   "Boss. The floor is moving."
+  ],
+  "chars": 184
+ },
+ {
+  "id": "s03_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s03.02",
+   "s03.04",
+   "s03.06",
+   "s03.08",
+   "s03.09"
+  ],
+  "lines": [
+   "Coolers do not hum.",
+   "You scan everything. You scanned my sandwich.",
+   "Four thousand, four hundred and seventeen. Cute number.",
+   "The floor is not moving.",
+   "Okay. The floor is moving."
+  ],
+  "chars": 169
+ },
+ {
+  "id": "s04_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s04.01",
+   "s04.03",
+   "s04.05",
+   "s04.08"
+  ],
+  "lines": [
+   "Shortcut. Straight through the middle.",
+   "Then we are very polite.",
+   "Bolt. Did you press that?",
+   "Elevator music. You saved us with elevator music."
+  ],
+  "chars": 136
+ },
+ {
+  "id": "s04_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s04.02",
+   "s04.04",
+   "s04.06",
+   "s04.07",
+   "s04.09"
+  ],
+  "lines": [
+   "Boss. Hundreds of them. They are sleeping.",
+   "I did not do that.",
+   "I touched it a little.",
+   "Hacking the speakers. Playing something loud to pull them off us.",
+   "It is a classic."
+  ],
+  "chars": 163
+ },
+ {
+  "id": "s05_CRANE",
+  "who": "CRANE",
+  "ids": [
+   "s05.01",
+   "s05.02",
+   "s05.04",
+   "s05.05",
+   "s05.06",
+   "s05.09",
+   "s05.11"
+  ],
+  "lines": [
+   "Courier Vale. How wonderful. Allow me to introduce myself.",
+   "I am Mayor Julian Crane. And this is my parade.",
+   "They follow the music. They always follow the music. I simply picked better music.",
+   "Ada tells you nothing, does she? She never does. But I have listened to her radio for three years.",
+   "That cooler is the only cure left on this earth. And it belongs to the man who can keep it safe.",
+   "Hand it over, and I will give you a gold medal and a tiny little house.",
+   "Then I shall take it from your cold, courier hands."
+  ],
+  "chars": 503
+ },
+ {
+  "id": "s05_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s05.03",
+   "s05.07",
+   "s05.10"
+  ],
+  "lines": [
+   "That is a lot of zombies.",
+   "A cure?",
+   "I already have a tiny little house. It is a sidecar."
+  ],
+  "chars": 84
+ },
+ {
+  "id": "s05_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s05.08"
+  ],
+  "lines": [
+   "Boss. Do not listen. He is a man in a suit on a bus."
+  ],
+  "chars": 52
+ },
+ {
+  "id": "s06_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s06.01",
+   "s06.03",
+   "s06.05",
+   "s06.07"
+  ],
+  "lines": [
+   "I have propellers! I did not know I had propellers!",
+   "I am full of surprises!",
+   "Ten metres. We can clear eight.",
+   "How do we get two more?"
+  ],
+  "chars": 128
+ },
+ {
+  "id": "s06_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s06.02",
+   "s06.04",
+   "s06.06",
+   "s06.08"
+  ],
+  "lines": [
+   "You have a lot of secrets, Bolt!",
+   "Bolt. How big is the gap?",
+   "Then we need two more.",
+   "Hold on to the bike and flap."
+  ],
+  "chars": 108
+ },
+ {
+  "id": "s06_CRANE",
+  "who": "CRANE",
+  "ids": [
+   "s06.09",
+   "s06.10"
+  ],
+  "lines": [
+   "Oh, that is rude!",
+   "Never mind. They have to go through the Rail Yard."
+  ],
+  "chars": 67
+ },
+ {
+  "id": "s07_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s07.01",
+   "s07.03",
+   "s07.05",
+   "s07.07",
+   "s07.09",
+   "s07.12",
+   "s07.14"
+  ],
+  "lines": [
+   "It is quiet.",
+   "Do you think there is a cure in there?",
+   "You think about everything. You think about the colour of my socks.",
+   "I got bitten once. When I was eight. I should have turned. I did not. Ada says some people are lucky.",
+   "Do you ever wonder why? Why I am here?",
+   "Rule one is dumb.",
+   "Come on. Dawn is five hours away."
+  ],
+  "chars": 306
+ },
+ {
+  "id": "s07_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s07.02",
+   "s07.04",
+   "s07.06",
+   "s07.08",
+   "s07.10",
+   "s07.11",
+   "s07.13"
+  ],
+  "lines": [
+   "That is good. Quiet is good.",
+   "I do not think about it.",
+   "Your socks are orange and one has a hole.",
+   "Some people are.",
+   "Every day, boss.",
+   "Rule one.",
+   "Rule one keeps you alive. Please. Trust me."
+  ],
+  "chars": 177
+ },
+ {
+  "id": "s08_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s08.01",
+   "s08.03",
+   "s08.05",
+   "s08.07",
+   "s08.09"
+  ],
+  "lines": [
+   "Quiet. Quiet. Quiet.",
+   "That is not a statue. That is Betty.",
+   "I name everything I am afraid of.",
+   "One. Do not die. Two. See one.",
+   "I do not like this plan!"
+  ],
+  "chars": 143
+ },
+ {
+  "id": "s08_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s08.02",
+   "s08.04",
+   "s08.06",
+   "s08.08",
+   "s08.10"
+  ],
+  "lines": [
+   "Bolt. Please say that is a statue.",
+   "You named her?",
+   "Bolt! Plan!",
+   "Bolt, get on the hook!",
+   "Bolt! Bolt!"
+  ],
+  "chars": 92
+ },
+ {
+  "id": "s08_CRANE",
+  "who": "CRANE",
+  "ids": [
+   "s08.11"
+  ],
+  "lines": [
+   "Got you, little man."
+  ],
+  "chars": 20
+ },
+ {
+  "id": "s09_CRANE",
+  "who": "CRANE",
+  "ids": [
+   "s09.01",
+   "s09.06",
+   "s09.08",
+   "s09.10"
+  ],
+  "lines": [
+   "Courier Vale. Such a good robot. Such a loyal little machine. It would be a shame to melt him for scrap.",
+   "It is empty.",
+   "Deliver her alive.",
+   "Bring her to me. All of them. Now."
+  ],
+  "chars": 168
+ },
+ {
+  "id": "s09_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s09.02",
+   "s09.04",
+   "s09.12"
+  ],
+  "lines": [
+   "Boss, do not give him the cooler. Please. Do not.",
+   "Boss, I mean it. Do not.",
+   "I do not know, boss."
+  ],
+  "chars": 93
+ },
+ {
+  "id": "s09_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s09.03",
+   "s09.05",
+   "s09.07",
+   "s09.09",
+   "s09.11",
+   "s09.13"
+  ],
+  "lines": [
+   "Shut up, Bolt.",
+   "He is my friend. He is the only one I have.",
+   "What?",
+   "Deliver who alive?",
+   "Bolt. What does that mean?",
+   "You are lying. You have never lied. You are bad at it."
+  ],
+  "chars": 160
+ },
+ {
+  "id": "s10_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s10.01",
+   "s10.03",
+   "s10.05",
+   "s10.08",
+   "s10.10",
+   "s10.13",
+   "s10.15",
+   "s10.16"
+  ],
+  "lines": [
+   "Ada. The cooler is empty.",
+   "You knew?",
+   "Then what was it?",
+   "Bolt.",
+   "Eleven years. You knew for eleven years.",
+   "So I am the package.",
+   "Same thing, in this economy.",
+   "Fine. Deliver me."
+  ],
+  "chars": 161
+ },
+ {
+  "id": "s10_ADA",
+  "who": "ADA",
+  "ids": [
+   "s10.02",
+   "s10.04",
+   "s10.06",
+   "s10.07",
+   "s10.12",
+   "s10.14"
+  ],
+  "lines": [
+   "I know.",
+   "The cooler was a decoy. For Crane. For anyone listening. Juno, the package was never the box.",
+   "Package four thousand, four hundred and seventeen is a file number. It is your file number. You were born in Haven. Your mother was our lead scientist.",
+   "She found out the bite did not kill you. Your blood fights the virus. It is the only cure we have ever found. So she hid you in the city, and built a guardian.",
+   "Juno. Haven can make the cure from your blood. It takes one hour. If you come to the gate, we can save everyone. If you do not, there is nothing left.",
+   "You are not a package. You are a person we need."
+  ],
+  "chars": 608
+ },
+ {
+  "id": "s10_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s10.09",
+   "s10.11"
+  ],
+  "lines": [
+   "I was built to keep you alive, boss. And to bring you home. That is all I was ever meant to do.",
+   "I also learned to like you. That was not in the instructions."
+  ],
+  "chars": 156
+ },
+ {
+  "id": "s11_CRANE",
+  "who": "CRANE",
+  "ids": [
+   "s11.01",
+   "s11.12"
+  ],
+  "lines": [
+   "Courier Vale! The world needs you in one piece. And I need you in mine!",
+   "No. No, no, wait. Turn off the music! Turn off the music!"
+  ],
+  "chars": 128
+ },
+ {
+  "id": "s11_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s11.02",
+   "s11.04",
+   "s11.06",
+   "s11.07",
+   "s11.09",
+   "s11.11"
+  ],
+  "lines": [
+   "Boss. The gate is closing. They only open it for sixty seconds.",
+   "Eight hundred metres. And Crane's drums are louder than we are.",
+   "Boss. I know a way.",
+   "I am the loudest thing in this city. I have a duck horn, an alarm, and a very dramatic voice.",
+   "Boss. Someone has to be the noise.",
+   "Rule five, boss. Always deliver the package."
+  ],
+  "chars": 316
+ },
+ {
+  "id": "s11_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s11.03",
+   "s11.05",
+   "s11.08",
+   "s11.10"
+  ],
+  "lines": [
+   "How far?",
+   "Then we need to be louder than the drums.",
+   "No. No no no.",
+   "Bolt!"
+  ],
+  "chars": 67
+ },
+ {
+  "id": "s12_ADA",
+  "who": "ADA",
+  "ids": [
+   "s12.01",
+   "s12.03",
+   "s12.05"
+  ],
+  "lines": [
+   "You are Juno. Your mother would be so proud.",
+   "Juno. I am so sorry.",
+   "A hundred days of safety, as promised. And the world is waking up."
+  ],
+  "chars": 130
+ },
+ {
+  "id": "s12_JUNO",
+  "who": "JUNO",
+  "ids": [
+   "s12.02",
+   "s12.04",
+   "s12.06",
+   "s12.08"
+  ],
+  "lines": [
+   "Where is Bolt?",
+   "He said I was a person. Not a package.",
+   "I never even said thank you.",
+   "I was never the one delivering. I was the one being delivered. And I still tipped the driver."
+  ],
+  "chars": 173
+ },
+ {
+  "id": "s12_BOLT",
+  "who": "BOLT",
+  "ids": [
+   "s12.07"
+  ],
+  "lines": [
+   "Boss. You are honking."
+  ],
+  "chars": 22
+ }
+]
