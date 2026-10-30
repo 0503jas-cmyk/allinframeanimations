@@ -11,7 +11,7 @@ export const Kinetic: React.FC<{line: LineItem; t: number}> = ({line, t}) => {
   for (let i = 0; i < words.length; ) { const n = words.length - i <= 3 ? words.length - i : (words[i].length + words[i + 1].length > 12 ? 2 : 3); chunks.push(words.slice(i, i + n)); i += n; }
   const dur = line.end - line.start, per = dur / chunks.length;
   const local = t - line.start;
-  const ci = Math.min(chunks.length - 1, Math.floor(local / per));
+  const ci = Math.max(0, Math.min(chunks.length - 1, Math.floor(local / per)));
   const c = chunks[ci];
   const cu = (local - ci * per) / per;
   const sc = 0.85 + 0.15 * easeOut(clamp(cu * 6));

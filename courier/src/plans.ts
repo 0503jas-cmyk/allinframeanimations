@@ -38,7 +38,7 @@ export const PLANS: Record<string, Shot[]> = {
     {at: 14, bg: 'roof', z: [1.05, 1], a: [juno(430, 600, 1.3), bolt(980, 740, 1.2, 'normal'), radio(1500, 640, 1.5)]},
     {at: 34, bg: 'overpass', z: [1, 1.1], a: [juno(560, 620, 1.5, 'normal'), radio(1450, 560, 2.1), bolt(1000, 860, 0.9)]},
     {at: 51, bg: 'roof', a: [bolt(1000, 640, 1.6, 'scared', {rot: [0, -6]}), juno(420, 640, 1.2, 'sad'), radio(1560, 660, 1.4)]},
-    {at: 57, bg: 'roof', dim: 0.15, z: [1, 1.2], a: [juno(960, 620, 1.9, 'sad', {rot: [0, 3]}), text('ONE HUNDRED DAYS', 960, 940, {size: 80, col: '#f2b84b', stroke: 6}, {vis: [3, 25]})]},
+    {at: 57, bg: 'roof', dim: 0.15, z: [1, 1.2], a: [juno(960, 620, 1.9, 'sad', {rot: [0, 3]})]},
     {at: 82, bg: 'dawnCity', sp: 2, fx: ['speed'], a: [bike([-300, 2300], {speed: 2})]},
   ],
   s03: [
