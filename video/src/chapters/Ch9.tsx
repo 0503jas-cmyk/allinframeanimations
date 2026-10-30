@@ -72,7 +72,7 @@ const PageShot: React.FC = () => {
   const ringA = easeInOut(prog(t, f2(0.9), f2(1.0) + 0.5));
   return (
     <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 80% at 50% 40%, ${P.ink2}, ${P.ink0})`}}>
-      <ShotCam keys={[{t: 0, x: -60, y: -60, s: 1.25}, {t: 3.6, x: -130, y: -140, s: 1.55}, {t: 5.0, x: 300, y: -230, s: 1.6}, {t: 12.7, x: 340, y: -250, s: 1.78}]} drift={2}>
+      <ShotCam keys={[{t: 0, x: -250, y: -150, s: 1.35}, {t: 5.2, x: -120, y: -190, s: 1.5}, {t: 6.4, x: 60, y: -240, s: 1.5}, {t: 12.7, x: 120, y: -250, s: 1.6}]} drift={2}>
         <Layer depth={1}>
         {/* page A */}
         <PageSheet x={330} y={110} lamp={{x: 520 + 180 * Math.sin(t * 0.3), y: 330}}>
@@ -132,8 +132,8 @@ const Finale: React.FC = () => {
           }
         />
       </ShotCam>
-      <InkText mode="clip" text="I was never the one who failed to count." x={960} y={236} size={70} align="center" start={cue('c9.05') - 0.3} end={end('c9.05')} ink="bone" settle={1.4} />
-      <InkText mode="clip" text="I was the one who was counted." x={960} y={346} size={84} align="center" start={cue('c9.06') - 0.2} end={end('c9.06') - 0.1} ink="bone" settle={2} />
+      <InkText mode="clip" text="I was never the one who failed to count." x={1180} y={236} size={70} align="center" start={cue('c9.05') - 0.3} end={end('c9.05')} ink="bone" settle={1.4} />
+      <InkText mode="clip" text="I was the one who was counted." x={1180} y={346} size={84} align="center" start={cue('c9.06') - 0.2} end={end('c9.06') - 0.1} ink="bone" settle={2} />
       <div style={{position: 'absolute', inset: 0, background: `radial-gradient(ellipse 70% 40% at 50% 28%, ${rgba(P.ink0, 0.5)}, rgba(0,0,0,0))`, opacity: 0, pointerEvents: 'none'}} />
     </AbsoluteFill>
   );

@@ -278,7 +278,7 @@ const Raking: React.FC = () => {
   const labels = [cue('c7.14'), cue('c7.15'), cue('c7.16') + 0.4];
   return (
     <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 70% at 30% 40%, ${P.ink2}, ${P.ink0})`}}>
-      <ShotCam keys={[{t: 0, x: 220, y: 90, s: 1.9}, {t: dur, x: 300, y: 120, s: 2.25}]} drift={2}>
+      <ShotCam keys={[{t: 0, x: 60, y: -100, s: 1.7}, {t: dur, x: 120, y: -105, s: 2.0}]} drift={2}>
         <Layer depth={1}>
           {[0, 1, 2].map((k) => (
             <PageSheet key={k} x={300 + (1 - slide[k]) * 1500 * (k ? 1 : 0)} y={120 + (1 - slide[k]) * 60 * (k ? 1 : 0)} rotate={(1 - slide[k]) * 3 * (k ? 1 : 0) + (k - 1) * 0.4} lamp={{x: 100 + sweep * 1000, y: 700}} opacity={k <= idx ? 1 : 0}>
@@ -314,7 +314,7 @@ const Smear: React.FC = () => {
   const smear = 'M0 20Q60 -10 130 14T290 8Q330 20 360 4';
   return (
     <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 80% at 50% 40%, ${P.ink2}, ${P.ink0})`}}>
-      <ShotCam from={{s: 1.7, x: 240, y: 0}} to={{s: 1.5, x: 180, y: 10}} drift={2}>
+      <ShotCam from={{s: 1.7, x: 80, y: -250}} to={{s: 1.5, x: 120, y: -245}} drift={2}>
         <Layer depth={1}>
           <PageSheet x={300} y={110} lamp={{x: 760, y: 220}}>
             <svg width={1200} height={820} style={{position: 'absolute', inset: 0}}>
@@ -511,7 +511,7 @@ const Writes: React.FC = () => {
   const tipX = lerp(COL.in + 30, COL.in + 40 + 250, prgs);
   return (
     <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 80% at 50% 40%, ${P.ink2}, ${P.ink0})`}}>
-      <ShotCam keys={[{t: 0, x: 140, y: 40, s: 1.5}, {t: dur, x: 300, y: 0, s: 2.1}]} drift={2}>
+      <ShotCam keys={[{t: 0, x: 60, y: -250, s: 1.5}, {t: dur, x: 130, y: -255, s: 1.9}]} drift={2}>
         <Layer depth={1}>
           <PageSheet x={300} y={110} lamp={{x: 760, y: 260}}>
             <InkText mode="stroke" text="14,978" x={COL.out - 226} y={COL.row(0)} size={34} start={-5} end={-4} ink="night" penHead={false} />

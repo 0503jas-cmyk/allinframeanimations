@@ -8,7 +8,6 @@ import {LAYOUT, chapterSeconds} from '../data/layout';
 import {Cam, Scenes, SoundSpec, mkT, sfxTimes, useS} from '../kitA/scene';
 import {Chalk, Motes, Tally} from '../kitA/parts';
 import {WomanBack} from '../kitA/figures';
-import {HandShape} from './Ch2';
 import SND from '../kitA/sound/ch3.json';
 
 const timing = loadTiming(raw as any);
@@ -132,40 +131,63 @@ const Wenna: React.FC = () => {
 const Kell: React.FC = () => {
   const {t, L, dur} = useS();
   const grey = easeInOut(prog(t, L(T.a('c3.10', 0.3)), L(T.a('c3.10', 1.2))));
+  const shade = prog(t, L(T.a('c3.11', 0)), L(T.a('c3.12', 2.6)));
   const sub1 = L(T.a('c3.13', 0.1));
   const sub2 = L(T.a('c3.14', 0.1));
   return (
     <AbsoluteFill style={{background: 'linear-gradient(180deg,#1a1626,#0a0d1a)'}}>
-      <Cam keys={[{t: 0, s: 1.0, x: 0, y: 0}, {t: L(T.a('c3.10', 0)), s: 1.5, x: -380, y: 130}, {t: L(T.a('c3.12', 0)), s: 1.25, x: -150, y: 60}, {t: dur, s: 1.1, x: 0, y: 0}]} drift={2}>
+      <Cam keys={[{t: 0, s: 1.0, x: 0, y: 0}, {t: L(T.a('c3.10', 0)), s: 1.45, x: 120, y: 120}, {t: L(T.a('c3.12', 0)), s: 1.2, x: 40, y: 30}, {t: dur, s: 1.1, x: 0, y: 0}]} drift={2}>
         <Layer depth={1}>
           <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: 0.6}}>
             {Array.from({length: 7}, (_, i) => (
               <path key={i} d={`M0 ${i * 170}H1920`} stroke="#03050c" strokeWidth={5} />
             ))}
           </svg>
-          <LedgerPage x={900} y={150} scale={0.8} width={1200} lamp={{x: 400, y: 300}} rotate={-3} rows={[{date: '4 March', writeAt: -9}]} />
-          {/* pencil behind the ear, resting on the table */}
-          <svg width={1920} height={1080} style={{position: 'absolute', inset: 0}}>
-            <g transform="translate(420 800) rotate(-14)">
-              <rect x={0} y={-9} width={260} height={18} fill="#9a917c" />
-              <path d="M260 -9L320 0L260 9Z" fill="#d9b98a" />
-              <path d="M304 -3L320 0L304 3Z" fill="#3a3a44" />
-            </g>
-            <ellipse cx={640} cy={470} rx={54} ry={28} fill="#6f7688" opacity={0.6 * grey} transform="rotate(-24 640 470)" />
+          {/* table grain */}
+          <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, opacity: 0.5}}>
+            {Array.from({length: 26}, (_, i) => (
+              <path key={i} d={`M0 ${i * 44 + hash(i) * 12}Q480 ${i * 44 + hash(i + 3) * 30} 960 ${i * 44} T1920 ${i * 44 + hash(i + 5) * 14}`} stroke="#05070e" strokeWidth={1.5 + hash(i + 9) * 2} fill="none" />
+            ))}
           </svg>
+          <LedgerPage x={760} y={170} scale={0.95} width={1200} lamp={{x: 420, y: 300}} rotate={-3} rows={[{date: '4 March', writeAt: -9}]} />
+          <InkText text="IN: 1" x={1060} y={366} size={52} start={-9} end={-8} ink="brown" hand="child" />
+          {/* graphite thumbprint appearing on the page edge */}
           <svg width={1920} height={1080} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
-            <g transform="translate(1500 880) rotate(196) scale(0.8)">
-              <HandShape x={0} y={0} holding="none" />
+            <g opacity={grey * 0.75} transform="translate(900 700) rotate(-24)">
+              {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+                <ellipse key={i} cx={0} cy={0} rx={22 + i * 9} ry={30 + i * 12} fill="none" stroke="#6f7688" strokeWidth={2.6} strokeDasharray={i % 2 ? '50 14' : undefined} />
+              ))}
+              <ellipse cx={0} cy={0} rx={60} ry={80} fill="#6f7688" opacity={0.2} />
             </g>
-            <g transform="translate(160 420) rotate(12) scale(0.8)">
-              <HandShape x={0} y={0} holding="none" />
-              <ellipse cx={92} cy={-10} rx={40} ry={26} fill={'#7a8196'} opacity={grey} transform="rotate(-20 92 -10)" />
+            {/* the pencil, with a worn point and a smudged tip */}
+            <g transform="translate(260 840) rotate(-12)">
+              <rect x={0} y={-11} width={330} height={22} rx={3} fill="#a99a6b" />
+              <rect x={0} y={-11} width={330} height={7} fill="#d3c48e" />
+              <rect x={0} y={4} width={330} height={7} fill="#7d6f46" opacity={0.7} />
+              <path d="M330 -11L398 0L330 11Z" fill="#d9b98a" />
+              <path d="M378 -4L398 0L378 4Z" fill="#3a3a44" />
+              <rect x={-22} y={-11} width={24} height={22} rx={3} fill="#6b4a3a" />
             </g>
+            {/* tin mug of tea */}
+            <g transform="translate(240 520)">
+              <ellipse cx={0} cy={150} rx={100} ry={22} fill="#04060c" opacity={0.6} />
+              <path d="M-80 0H80L70 150H-70Z" fill="#6a7283" />
+              <path d="M-80 0H-30L-34 150H-70Z" fill="#8c95a8" opacity={0.7} />
+              <ellipse cx={0} cy={0} rx={80} ry={20} fill="#2a1e14" />
+              <ellipse cx={0} cy={0} rx={80} ry={20} fill="none" stroke="#a9b2c4" strokeWidth={5} />
+              <path d="M80 30C140 20 140 110 72 110" fill="none" stroke="#6a7283" strokeWidth={16} />
+              {[0, 1, 2].map((i) => (
+                <path key={i} d={`M${-20 + i * 24} -26Q${-8 + i * 24} ${-60 - i * 6} ${-20 + i * 24} ${-96}`} stroke={rgba(P.bone, 0.18)} strokeWidth={5} fill="none" strokeLinecap="round" transform={`translate(${Math.sin(t * 1.5 + i) * 6} 0)`} />
+              ))}
+            </g>
+            {/* Kell's shadow slides across the page, then lingers on the table not the page */}
+            <path d={`M${1500 - shade * 1400} 0L${2100 - shade * 1400} 0L${1700 - shade * 1400} 1080L${1100 - shade * 1400} 1080Z`} fill="#02040a" opacity={0.55 * Math.sin(Math.PI * clamp01(shade))} />
           </svg>
         </Layer>
       </Cam>
       <InkText mode="clip" text={'"Nobody came home that night, Maren,"'} x={960} y={930} size={44} align="center" start={sub1} end={sub1 + 2.0} ink="bone" settle={0} penHead={false} style={{opacity: 1 - easeInOut(prog(t, sub2 - 0.3, sub2))}} />
       <InkText mode="clip" text={'"That is why you keep the book."'} x={960} y={930} size={44} align="center" start={sub2} end={sub2 + 2.2} ink="bone" settle={0} penHead={false} />
+      <Lantern x={560} y={380} glowOnly glow={420} seed={3} />
       <Motes n={16} seed={33} opacity={0.4} />
     </AbsoluteFill>
   );
