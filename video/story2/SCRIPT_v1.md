@@ -14,21 +14,19 @@ Fourteen thousand, nine hundred and seventy-five nights, and the ledger is one s
 
 I know who is missing. I counted her out myself, when I was seven, and I let her drown.
 
-My name is Maren Voss. I am the tide clerk of Harrow Deep, an island that is an island for eighteen hours a day. For six hours between tides, a stone road lies open to the mainland. Then the sea comes back, and the road goes under in the time it takes to boil a kettle.
+My name is Maren Voss. I am the tide clerk of Harrow Deep, an island for eighteen hours a day. For six hours between tides, a stone road lies open to the mainland. Then the sea returns, and the road goes under in the time it takes to boil a kettle.
 
-At the dry end of the road a bell hangs on a post. It rings from my hut, along a line that runs the length of the harbour wall, when the water turns. At the post the same line hangs down as a short rope, for anyone the sea has caught. Whoever is still out there has until the last note.
+A bell hangs on a post at the dry end of the road. I ring it from my hut, along a line on the harbour wall, when the water turns. At the post the same line hangs down as a short rope, for anyone the sea has caught.
 
-My work is two columns. A person who walks out is a stroke on the left. That is OUT. A person who walks home is a name on the right. That is IN. At the close of every tide, the columns must agree.
+My work is two columns. Each person who walks out is a stroke on the left. That is OUT. Each person who walks home is a name on the right. That is IN. At the close of every tide, the columns must agree.
 
-They have not agreed since I was seven years old.
+They have not agreed since I was seven.
 
-The village has a name for the difference. They call it the Ghost. They say the drowned clerk walks the road at night and rings the bell for the one who is not home. They say it gently, the way people speak of weather.
+The village calls the difference the Ghost. They say the drowned clerk walks the road at night and rings for the one who is not home. They say it gently, the way people speak of weather.
 
-I do not believe in the Ghost. I believe in arithmetic. One went out. One did not come back. I wrote the first half of that sentence when I was seven, and I have been trying to write the second half ever since.
+I do not believe in the Ghost. I believe in arithmetic. One went out. One did not come back.
 
-Tonight a storm tide climbed the harbour wall and opened the strongroom door. The oldest ledger was floating on its shelf, swollen, smelling of salt and lamp oil.
-
-I had never opened it. I opened it now, to the night it happened. I expected one line in a child's hand.
+Tonight a storm tide climbed the harbour wall and opened the strongroom. The oldest ledger lay swollen on its shelf, smelling of salt and lamp oil. I had never opened it. I opened it now, to the night it happened, expecting one line in a child's hand.
 
 I found two pages.
 
@@ -47,27 +45,27 @@ CLIFFHANGER: I found two pages.
 ## CHAPTER 2 — The Second Page  (target seconds: 108)
 
 NARRATION:
-The first page is plain. The date is in my mother's hand, because she dated the week ahead every Sunday, to save time. Below it, one stroke in the OUT column, in mine. That stroke is her. She had crossed to the mainland at dusk for medicine, because I had a fever. She told me to ring at the turn and not to sleep. I counted her out, and I was proud of the stroke, because it was straight.
+The first page is plain. The date is in my mother's hand, because she dated the week ahead every Sunday. Below it, one stroke in the OUT column, in mine. That stroke is her. She had crossed to the mainland at dusk for medicine, because I had a fever. She told me to ring at the turn and not to sleep. I counted her out, and I was proud of the stroke, because it was straight.
 
-The right-hand column is empty. It has been empty for forty-one years.
+The IN column is empty. It has been empty for forty-one years.
 
-The second page is the one I never knew existed.
+The second page I never knew existed.
 
-It carries the date of the following night. My mother had dated it ahead, so it was waiting there when she left. It is not blank. In the IN column, in brown ink, in a hand that is mine at seven, all loops and pressure, it says, In, one. Beside it, where a name belongs, there is a space.
+It carries the date of the following night. In the IN column, in brown ink, in a hand that is mine at seven, all loops and pressure, it says, In, one. Beside it, where a name belongs, there is a space.
 
-I do not remember writing it. I remember the hut, the lamp, the fever, the rope in my fist. I remember being told not to sleep. I remember nothing after that.
+I do not remember writing it. I remember the lamp, the fever, the rope in my fist. After that, nothing.
 
-So I reasoned as a clerk reasons. Somebody came home that night, and I wrote the figure and could not write the name. A walker I failed to count. A name I owe the book.
+So I reasoned as a clerk reasons. Somebody came home that night. I wrote the figure and could not write the name. A walker I failed to count. A name I owe the book.
 
-I closed the ledger and carried it home through the wet street. The ink had not run. Ink holds. Only pencil lifts, and I allow no pencil in my book. Every morning I find a grey smear on the new page, in the right column, and every morning I rub it out with a crust of bread. Children lean on things.
+I carried the ledger home through the wet street. Ink holds. Only pencil lifts, and I allow no pencil in my book. Yet every morning there is a grey smear on the new page, in the right column, and every morning I rub it out with a crust of bread. Children lean on things.
 
-At home I washed the salt from my hem. It is always there in the mornings. My feet ache as well, as they have since I was a girl. I have blamed my boots for forty years.
+I washed the salt from my hem. It is always there in the mornings. My feet ache, as they have since I was a girl. I have blamed my boots for forty years.
 
-The Ghost keeps the tide's hours, not the clock's. She rings at the dead of low water, wherever the moon has put it. Tonight it fell in the small hours.
+The Ghost keeps the tide's hours, not the clock's. She rings at the dead of low water, wherever the moon has put it.
 
-The bell rang.
+Tonight, the bell rang.
 
-I have heard it every night since I was seven. Tonight I went to the window and watched the road.
+I went to the window and watched the road.
 
 Nobody was on it.
 
@@ -88,27 +86,25 @@ CLIFFHANGER: The bell rang, and nobody was on the road.
 NARRATION:
 In the morning I took the second page to the people who had known my mother. The village keeps its history in a few mouths, and the oldest are at the harbour.
 
-Tobias Kell works the ferry boat when the road is under. He is nearly sixty and has hands like knotted rope. I put the page on his table. He looked at the table. He did not look at the page.
+Tobias Kell works the ferry when the road is under. He is nearly sixty and has hands like knotted rope. I put the page on his table. He looked at the table. He did not look at the page.
 
 His thumb was grey. Graphite, from the pencil he keeps behind his ear for the nets.
 
-I asked him who came home that night. He said nobody came home, Maren. That is why you keep the book.
+I asked who came home that night. He said nobody came home, Maren. That is why you keep the book.
 
-I asked Wenna at the lamp shop. She trimmed a wick with her back to me and said I had been a child, and that nobody holds a child to a column.
+Wenna at the lamp shop trimmed a wick with her back to me and said I had been a child, and nobody holds a child to a column.
 
-I asked about the bell. Everyone has an answer for the bell. Visitors see lights on the causeway some nights, small and slow and in a row, and the village shrugs, as though lights were a kind of weather.
+Everyone has an answer for the bell. Visitors see lights on the causeway some nights, small and slow, in a row. The village shrugs, as though lights were a kind of weather.
 
-I do not accept lights. I accept evidence. I keep an atlas of the causeway, tide by tide, because the wet sand holds a print for hours, and a print is a fact. In forty-one years the atlas has recorded every boot, every dog, and one cart. It has recorded no ghost.
+I do not accept lights. I accept evidence. I keep an atlas of the causeway, because wet sand holds a print for hours, and a print is a fact. In forty-one years the atlas has recorded every boot, every dog, and one cart. It has recorded no ghost.
 
-So the bell rang, and the road was empty, and the ledger was one short. Three facts that cannot all be true.
+So the bell rang, the road was empty, and the ledger was one short. Three facts that cannot all be true.
 
 I decided to remove the one fact I could control. Myself.
 
-I fell asleep once, in a hut like this one, with the rope in my hand. I would not sleep again. That evening I filled the lamp, took a length of chain from the harbour store, and set the desk by the wall where the line comes through. One end went round the leg of the desk. The other went round my left ankle.
+I fell asleep once, with the rope in my hand. I would not sleep again. That evening I filled the lamp, took a length of chain from the harbour store, and set my desk where the line comes through the wall. One end went round the desk leg. The other went round my left ankle.
 
-The lock was brass and cold. I turned the key and hung it on a cord round my neck, where I could free myself and could not forget it.
-
-A chain is not for keeping something out. It is for staying put when the body would rather go.
+I turned the key and hung it on a cord round my neck. A chain is not for keeping something out. It is for staying put when the body would rather go.
 
 The tide clock read six hours. I began to count.
 
@@ -127,35 +123,31 @@ CLIFFHANGER: The tide clock read six hours. I began to count.
 ## CHAPTER 4 — The Longest Night  (target seconds: 120)
 
 NARRATION:
-A hut at night has its own arithmetic. The lamp burns a thimble of oil an hour. The tide clock loses a finger of water every ten minutes. The sea outside shushes against the stone like someone telling it to be quiet.
+The lamp burns a thimble of oil an hour. The tide clock loses a finger of water every ten minutes. The sea shushes against the stone like someone asking it to be quiet.
 
-At ten the road opened, dry and empty. I logged the last two fishermen out, and later I logged them home. Two strokes, two names. The page closed clean. For six hours it was a perfect page, and I did not trust it. I waited for the sea to turn.
+At ten the road opened, dry and empty. I logged the last two fishermen out, and later I logged them home. Two strokes, two names. The page closed clean, and I did not trust it.
 
-At the turn the water came back over the stone in flat sheets. I pulled the line, and the bell spoke from its post, and the note went out across the black water. Nobody was out there to hear it. I wrote, nobody.
+When the tide turned, the water came back over the stone in flat sheets. I pulled the line, the bell spoke from its post, and the note went out across the black water. Nobody was out there to hear it. I wrote, nobody.
 
 At the dead of low water, the lamps came.
 
-I saw them through the shutter, eleven small flames walking down from the village in no hurry. They stopped at my door. I heard breathing, and a murmur, and a woman say, not tonight. Then the lamps turned and went back up the hill. I took it for the village checking on its clerk. They do that in bad weather.
+Through the shutter I saw eleven small flames walking down from the village in no hurry. They stopped at my door. I heard breathing, and a murmur, and a woman say, not tonight. Then the lamps turned and went back up the hill. I took it for the village checking on its clerk.
 
 The bell did not ring.
 
-I sat with the pen over the page and waited for the sound I had heard every night since I was seven. It did not come. By the small hours I had stopped hearing the silence and started hearing my own pulse. In the margin I wrote, bell, silent. The Ghost's first mercy.
+I waited for the sound I had heard every night since I was seven. By the small hours I had stopped hearing the silence and started hearing my own pulse. In the margin I wrote, bell, silent. The Ghost's first mercy.
 
-At dawn I turned the key. My ankle was raw, a red band like a bracelet. I did not remember pulling. I put it down to the chair.
+At dawn I turned the key. My ankle was raw, a red band like a bracelet. I did not remember pulling. I blamed the chair.
 
 The new page had no grey smear. I noticed, and did not think.
 
-Then I read the old one. OUT, one. IN, none. Outstanding, one.
-
-I had shut every door. No prankster. No walker. No rope pulled by any hand I could see. And the ledger had not moved by a single stroke.
-
-So the gap was not a nightly crime. It was one night, old and fixed, and I would have to go back and stand in it.
+I had shut every door. No prankster. No walker. No hand on the rope. And the ledger had not moved by a single stroke. So the gap was not a nightly crime. It was one night, old and fixed, and I would have to go back and stand in it.
 
 I opened the atlas to that dawn. The harbour keeper had drawn the dry stone above the bell, where the road keeps what it is given. Two sets of prints came in from the sea. A woman's boots, the left heel worn. Beside them, small and bare, a child's.
 
 At the bell, the small prints went on toward the village. The large ones stopped. Two heels, planted, toes to the sea.
 
-A village child, I decided, who had dared the road and come home. There was my missing name. I did not like what the large prints did next, so I closed the atlas, and went out to the Drowning Stone.
+A village child, I decided, who had dared the road and come home. There was my missing name. I did not like what the large prints did next. I closed the atlas and went out to the Drowning Stone.
 
 SCREEN BEATS:
 - Hut interior, lamp oil level drops as a thin glass gauge; tide clock arc loses a finger of water; sea shush layered under narration (SFX).
@@ -177,27 +169,23 @@ The Drowning Stone stands beyond the bell, where the road dips. At low water it 
 
 Up close, it was covered in cuts.
 
-Short strokes, packed edge to edge, in rows. Forty-one rows, one for each year, and in every row a stroke for every night. The whole stone was ruled like a ledger. The old strokes were worn smooth and green. The new ones were sharp and white and still bright with salt.
+Short strokes, packed edge to edge, in rows. Forty-one rows, one for each year, and in each row a stroke for every night. The whole stone was ruled like a ledger. The old strokes were worn smooth and green. The new ones were sharp and white, and bright with salt.
 
-Someone had been keeping a count on this stone for a very long time.
+I walked to the end of the newest row. Two nights ago, a stroke. Before that, stroke after stroke. Then, in the row, a space the width of one missing night.
 
-I walked to the end of the last row, the newest. Two nights ago there was a stroke. One night ago, a stroke. Before that, stroke after stroke, without a break. Then, in the row, a space the width of one missing night.
-
-I knew which night it was. I had a red band round my ankle to tell me.
+I knew which night. I had a red band round my ankle to tell me.
 
 I walked back along the road to the bell.
 
-I have pulled that line from the hut ten thousand times. I had never stood where the short rope hangs and looked at it from the sea. It hangs at the height of a chest. And the rope was worn. Not frayed. Polished, flat, as if a thumb had been drawn along it for decades. On one side only. The sea side.
+I have pulled that line from the hut ten thousand times. I had never stood where the short rope hangs and looked at it from the sea. It hangs at the height of a chest, and it was worn. Not frayed. Polished flat, as if a thumb had been drawn along it for decades. On one side only. The sea side.
 
-A rope rung from the hut wears all round. This rope had been pulled by someone standing out on the road with her back to the water, and always with the same hand. I put my palm to the groove, and my fingers closed over the shine as though it had been cut for them.
+A rope pulled from the hut wears all round. This one had been pulled by someone standing out on the road with her back to the water, always with the same hand. I laid my palm in the groove, and my fingers closed over the shine as though it had been cut for them.
 
 I am left-handed.
 
-I stood in the wet and let the facts come in, one after another, politely, in no hurry. The lamps at my door at the dead of low water. The voice that said, not tonight. The bell that did not ring on the one night I was chained.
+The facts came in, one after another, politely, in no hurry. The salt on my hem. The lamps at my door. The bell that did not ring on the one night I was chained.
 
-For forty-one years I had listened for a ghost on the road. I had listened to her ring, every night, from the other side of a shutter.
-
-Nobody had ever walked out and vanished. The one who walks the causeway every night, and is never written down, is the clerk. The OUT that was never counted was me. The one I had been looking for was in my own boots.
+For forty-one years I had listened for a ghost on the road. Nobody had ever walked out and vanished. The one who walks the causeway every night, and is never written down, is the clerk. The OUT that was never counted was me.
 
 The tide clock turned. I did not hear the bell.
 
@@ -216,33 +204,31 @@ CLIFFHANGER: The tide clock turned. I did not hear the bell.
 ## CHAPTER 6 — Flour  (target seconds: 125)
 
 NARRATION:
-I do not accept conclusions on one witness. I had a stone, a rope and a pair of feet. I wanted the feet.
+I do not accept conclusions on one witness. I had a stone and a rope. I wanted the feet.
 
-That evening I scattered flour across the hut floor, from the bed to the door, and a ribbon of it down the steps. I did not chain my ankle. I wrote the last line of the day, drank cold tea, and lay down in my clothes with my eyes open as long as I could keep them.
+That evening I scattered flour across the hut floor, from the bed to the door, and a ribbon of it down the steps. I did not chain my ankle. I lay down in my clothes with my eyes open as long as I could keep them.
 
 I do not remember going to sleep. That is the nature of sleep.
 
 In the morning the flour had a path in it.
 
-Bare feet, long and narrow, with the second toe longer than the first, like mine. From the bed to the door. The door was latched, from outside, and I had no memory of the latch.
+Bare feet, long and narrow, the second toe longer than the first, like mine. From the bed to the door. The door was latched from outside, and I had no memory of the latch.
 
-Down the steps. Out along the dry stone. I followed it on my knees with the atlas open, setting each print down in ink, and the road wrote itself in my hand. Every fifth step the prints leaned a little to the left, as if someone were walking with one hand held out.
+I followed the prints out along the dry stone on my knees, setting each one down in the atlas in ink. Every fifth step they leaned a little to the left, as if someone were walking with a hand held out.
 
 They reached the bell. They turned and faced the sea.
 
-Then more prints. Boots, a ring of them, around mine. A dozen pairs, all sizes, close together. They had come out to me and they had gone back with me. Whoever they were, they were careful. They had not trodden on one print of mine.
+Then more prints. Boots, a ring of them, around mine. A dozen pairs, all sizes. They had come out to me, and they had gone back with me. They had not trodden on one print of mine.
 
 I gave them no thought. I had my own to think about.
 
-I sat on the wet stone and made myself say it as a clerk would. Subject, Maren Voss. Occupation, tide clerk. Observed, walks the causeway barefoot every night, asleep. Rings the bell from the sea side. Cuts one stroke in the Stone. Returns. Has done so since the age of seven. Has recorded herself nowhere.
+I sat on the wet stone and said it as a clerk would. Subject, Maren Voss. Observed, walks the causeway barefoot every night, asleep. Cuts one stroke in the Stone. Rings the bell from the sea side. Returns. Has done so since the age of seven. Has recorded herself nowhere.
 
 The sentence I wrote at seven was false. I did not let my mother drown by falling asleep at a desk. I let her drown by walking.
 
-The small bare prints beside my mother's boots, in the atlas, were never a village child. They were a girl with a fever, asleep on her feet, out on a road the sea was about to close. And my mother had gone out after her.
+The small bare prints beside her boots in the atlas were never a village child. They were a girl with a fever, asleep on her feet, on a road the sea was about to close. And my mother had gone out after her.
 
-That was the whole of it. I had the cause. I had the footprints. I had the weight of it. What I did not have was what my mother did at the bell, in the rising water, with her heels planted and her face to the sea.
-
-I went to find out.
+I had the cause. I had the weight of it. What I did not have was what my mother did at the bell, in the rising water, with her heels planted and her face to the sea.
 
 SCREEN BEATS:
 - Flour on the hut floor: a pale ribbon from bed to door, tiny dust motes in lamp light. She lies down; the lamp flame shrinks to a point.
@@ -261,33 +247,33 @@ CLIFFHANGER: I did not know what my mother did at the bell, so I went to find ou
 NARRATION:
 A clerk reads backwards. If the road had been kind to me, then someone had been kind first.
 
-I went down to the strongroom with a lamp and held it flat to the page, low, so the light skimmed the paper. That is how one reads what has been erased. Ink sits on paper. Pencil sinks into it.
+In the strongroom I held a lamp flat to the page, low, so the light skimmed the paper. That is how one reads what has been erased. Ink sits on paper. Pencil sinks into it.
 
-On the second page, in the IN column, there was a groove. Not my child's loops. A straight, level stroke, a mark, and a figure. In, one. I turned to the next page. The same groove. The next. The same.
+On the second page, in the IN column, beside my child's loops, there was a groove. A straight, level stroke, a mark, a figure. In, one. I turned the page. The same groove. And the next.
 
-I turned pages for four hours. On every one I tried, the same pressed line. And I understood the grey smear on my new page each dawn. It was the ghost of a pencil stroke. For forty-one years I had rubbed it out with bread, and not once asked who had written it.
+I turned pages for four hours. Every page I tried carried the same pressed line. And I understood the grey smear on my new page each dawn. A pencil stroke, which I had rubbed out with bread for forty-one years without once asking who had written it.
 
-Somebody had written, in, one, in my book, every night. In the right column, before the tide. Somebody had counted something home.
+Somebody had written, in, one, in my book, every night, before the tide. Somebody had counted something home.
 
-That night I did the only thing left. I did not go to bed. I sat on the Stone with a dark lantern, and I watched my own hut.
+That night I did not go to bed. I sat on the Stone with a dark lantern and watched my own hut.
 
 At the dead of low water, the door opened.
 
-A woman came out in a white nightdress, barefoot, her left hand held a little out from her side. She did not hurry. She went down the steps and along the road. She walked like someone being led by the smell of home.
+A woman came out in a white nightdress, barefoot, her left hand held a little away from her side. She did not hurry. She walked like someone being led by the smell of home.
 
-She was fifty feet from me. She went to the post. She took the short rope in her left hand and she rang the bell.
+She passed within fifty feet of me. She went to the post. She took the short rope in her left hand and rang the bell.
 
-It rang across black water. It rang for a long time, and the note I had hated for forty-one years sounded like what it was. A call to somebody still out in the dark.
+It rang across black water for a long time, and the note I had hated for forty-one years sounded like what it was. A call to somebody still out in the dark.
 
-Then the lamps came down the hill. Eleven of them. They did not hurry either. They made a ring around her, not touching, and Kell took her elbow so gently that she did not stir, and Wenna held a lamp to her face and said, there you are.
+Then the lamps came down the hill. Eleven of them. They made a ring around her, not touching. Kell took her elbow so gently that she did not stir. Wenna held a lamp to her face and said, there you are.
 
-They walked her home. Past me, close enough to touch. Past the bell. Up the dry stone, up the steps, into the hut.
+They walked her home. Past me, close enough to touch. Up the dry stone, up the steps, into the hut.
 
 Kell stayed. He took the pencil from behind his ear. He opened my book on the desk, found the new page, and wrote in the right column. In, one.
 
 He wrote it the way a man writes his own name.
 
-I stood in the doorway, and he turned, and he saw me. Neither of us moved.
+I stood in the doorway. He turned and saw me. Neither of us moved.
 
 Then he held out the pencil.
 
@@ -308,25 +294,25 @@ CLIFFHANGER: Then he held out the pencil.
 NARRATION:
 Kell did not make a speech. He is not a man for it. He told me in the order a ferryman would, tide by tide.
 
-At dusk, forty-one years ago, my mother came home from the mainland with medicine in her coat. The hut was empty. The line hung slack. She found small bare prints going out along the road.
+At dusk, forty-one years ago, my mother came home with medicine in her coat. The hut was empty. The line hung slack. She found small bare prints going out along the road.
 
-She followed them. She found me at the Stone, he said, standing in the water to my shins, ringing a bell that was not there.
+She found me at the Stone, he said, standing in the water to my shins, ringing a bell that was not there.
 
-She carried me back to the post. She set me down on the dry side and turned me to face the lamps of the village, and she took hold of the short rope. The sea was already at her knees. She rang and rang. I walked toward the sound, asleep, and I did not stop, and the sea came up around the post.
+She carried me back to the post. She set me down on the dry side, turned me toward the lamps of the village, and took hold of the short rope. The sea was already at her knees. She rang, and rang. I walked toward the sound, asleep, and the sea came up around the post.
 
-Kell was nineteen, running the wall with a lantern. He heard the bell until the water reached the clapper, and he said a drowned bell speaks once more. He heard it speak.
+Kell was nineteen, running the wall with a lantern. He heard the bell until the water reached the clapper. He said a drowned bell speaks once more. He heard it speak.
 
 I was across. She was not.
 
-That was the night I wrote, in, one. I had drawn the closing rule under the page, as a clerk does, and a clerk does not write under the rule. So I turned the leaf. I was seven, awake enough to hold a pen and not awake enough to know whom I was counting. I left the space for the name because I did not have one yet to give.
+That was the night I wrote, in, one. I had drawn the closing rule under the page, as a clerk does, and a clerk does not write beneath the rule, so I turned the leaf. I was seven, awake enough to hold a pen, and not awake enough to know whom I was counting. I left a space for the name, as the book does, and went to bed.
 
 The gap in the ledger was never a person lost. It was a person not recorded. Me.
 
-The village decided that night that the book would never be short of me again. Kell wrote the figure in pencil on the first page of the new night, and Wenna on the second, and one of them, every night, for forty-one years. I had rubbed out every one.
+The village decided that night that the book would never be short of me again. Kell wrote the figure in pencil on the first page of the new night, and Wenna on the next, and one of them, every night, for forty-one years. I had rubbed out every one.
 
 I had never asked who was on the road. I had only asked who was missing.
 
-I put the pencil down. I took the pen.
+I put down the pencil and took the pen.
 
 I opened the book to the night's page. In the left column, in ink, in a hand that did not shake, I wrote the first name the OUT column has ever held. Elin Voss.
 
@@ -349,7 +335,7 @@ CLIFFHANGER: In the right column, in the space that had been waiting since I was
 NARRATION:
 At dusk a boy was late back from the cockle beds. He stood at the far end of the road and looked at the water the way boys do. I rang the bell. I rang until he was across.
 
-That night the page closed. One out, one in. For the first time since I was seven, the two columns agreed.
+That night the page closed. One out, one in. For the first time since I was seven, the columns agreed.
 
 Then I took the pencil, and on tomorrow's page I wrote, in, one, in case.
 
@@ -388,3 +374,17 @@ CLIFFHANGER: (Closing line) I was never the one who failed to count. I was the o
 
 ## WORD COUNT
 
+| Section | Words |
+|---|---|
+| Ch1 | 288 |
+| Ch2 | 317 |
+| Ch3 | 344 |
+| Ch4 | 417 |
+| Ch5 | 359 |
+| Ch6 | 379 |
+| Ch7 | 397 |
+| Ch8 | 384 |
+| Epilogue | 90 |
+| TOTAL | 2975 |
+
+At about 160 words per minute, the total runs near 18.6 minutes. Target seconds in the chapter headings are set so that twist 1 lands near 9:30 (end of chapter 5) and twist 2 near 14:30 (first third of chapter 8).
