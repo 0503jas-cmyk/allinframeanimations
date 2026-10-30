@@ -1,0 +1,139 @@
+{
+ "music": [
+  {
+   "from": 0,
+   "to": 62.716,
+   "mood": "sorrow"
+  },
+  {
+   "from": 62.716,
+   "to": 108.922,
+   "mood": "tense"
+  }
+ ],
+ "beds": [
+  {
+   "from": 0,
+   "to": 108.922,
+   "name": "tide",
+   "gain": 0.3
+  }
+ ],
+ "sfx": [
+  {
+   "t": 4.142,
+   "name": "scratch",
+   "gain": 0.45
+  },
+  {
+   "t": 10.211,
+   "name": "scratch",
+   "gain": 0.5
+  },
+  {
+   "t": 29.606,
+   "name": "tick",
+   "gain": 0.2
+  },
+  {
+   "t": 30.006,
+   "name": "tick",
+   "gain": 0.2
+  },
+  {
+   "t": 30.406,
+   "name": "tick",
+   "gain": 0.2
+  },
+  {
+   "t": 30.806,
+   "name": "tick",
+   "gain": 0.2
+  },
+  {
+   "t": 31.206,
+   "name": "tick",
+   "gain": 0.2
+  },
+  {
+   "t": 31.606,
+   "name": "tick",
+   "gain": 0.2
+  },
+  {
+   "t": 33.848,
+   "name": "page_turn",
+   "gain": 0.7
+  },
+  {
+   "t": 38.458,
+   "name": "scratch",
+   "gain": 0.4
+  },
+  {
+   "t": 43.568,
+   "name": "scratch",
+   "gain": 0.55
+  },
+  {
+   "t": 45.068,
+   "name": "thump",
+   "gain": 0.4
+  },
+  {
+   "t": 65.028,
+   "name": "scratch",
+   "gain": 0.4
+  },
+  {
+   "t": 67.644,
+   "name": "scratch",
+   "gain": 0.4
+  },
+  {
+   "t": 69.757,
+   "name": "scratch",
+   "gain": 0.4
+  },
+  {
+   "t": 78.068,
+   "name": "scratch",
+   "gain": 0.3
+  },
+  {
+   "t": 81.568,
+   "name": "scratch",
+   "gain": 0.35
+  },
+  {
+   "t": 82.368,
+   "name": "scratch",
+   "gain": 0.35
+  },
+  {
+   "t": 83.168,
+   "name": "scratch",
+   "gain": 0.35
+  },
+  {
+   "t": 89.345,
+   "name": "bell",
+   "gain": 0.45
+  },
+  {
+   "t": 90.645,
+   "name": "creak",
+   "gain": 0.4
+  },
+  {
+   "t": 96.686,
+   "name": "bell",
+   "gain": 0.35
+  },
+  {
+   "t": 103.548,
+   "name": "thump",
+   "gain": 0.5
+  }
+ ]
+}

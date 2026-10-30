@@ -299,7 +299,7 @@ const Fragments: React.FC = () => {
 };
 
 // ---------------------------------------------------------------- one continuous macro move: the smear
-const HandShape: React.FC<{x: number; y: number; rot?: number; holding?: 'pen' | 'crust' | 'none'; scale?: number}> = ({x, y, rot = 0, holding = 'pen', scale = 1}) => {
+export const HandShape: React.FC<{x: number; y: number; rot?: number; holding?: 'pen' | 'crust' | 'none'; scale?: number}> = ({x, y, rot = 0, holding = 'pen', scale = 1}) => {
   const skin = '#1a2347';
   const rim = rgba(P.amberHot, 0.35);
   const finger = (x1: number, y1: number, x2: number, y2: number, w: number) => (
