@@ -27,6 +27,8 @@ for sc in scenes:
             items.append({'type':'line','id':l['id'],'who':l['who'],'text':l['text'],'file':l['file'],'src_start':l['start'],'src_end':l['end'],'start':round(t,3),'end':round(t+d,3)}); t+=d+0.35
     t+=2.5
     out.append({'id':sc['id'],'title':sc['title'],'start':round(sc_start,3),'end':round(t,3),'items':items})
+t+=12
+out[-1]["end"]=round(t,3)
 json.dump(out,open('audio/timeline.json','w'),indent=1)
 print('total',round(t,1),'s =',round(t/60,2),'min')
 for s in out: print(s['id'],s['title'],round(s['end']-s['start'],1))
