@@ -1,0 +1,4 @@
+build/
+out/
+audio/*.wav
+node_modules/

@@ -1,0 +1,34 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>What If You Lived 1000 Years</title>
+<style>
+@font-face{font-family:'Fraunces';src:url('../fonts/Fraunces.woff2') format('woff2');font-weight:100 900;}
+@font-face{font-family:'Caveat';src:url('../fonts/Caveat.woff2') format('woff2');font-weight:400 700;}
+html,body{margin:0;background:#111;}
+canvas{display:block;width:100vw;height:auto;}
+#ui{position:fixed;left:8px;bottom:8px;color:#fff;font:12px monospace;background:#0008;padding:6px;}
+</style></head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui"></div>
+<script src="timeline.js"></script>
+<script src="engine.js"></script>
+<script src="lib.js"></script>
+<script src="scenes_a.js"></script>
+<script src="scenes_b.js"></script>
+<script src="scenes_c.js"></script>
+<script>
+window.READY = (async () => {
+  await document.fonts.load("800 100px Fraunces"); await document.fonts.load("600 60px Caveat");
+  await document.fonts.ready; finalizeScenes(); return true;
+})();
+window.renderAt = renderAt;
+// preview mode: ?t=SECONDS for a still, ?play for realtime
+const q = new URLSearchParams(location.search);
+if (!q.has('render')) READY.then(() => {
+  const ui = document.getElementById('ui');
+  if (q.has('play')) { const st = performance.now() - (+q.get('t') || 0) * 1000;
+    const loop = () => { const t = (performance.now() - st) / 1000; renderAt(t); ui.textContent = t.toFixed(2); requestAnimationFrame(loop); }; loop(); }
+  else { const t = +q.get('t') || 0; renderAt(t); ui.textContent = t; }
+});
+</script>
+</body></html>
