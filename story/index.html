@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><title>Фонарь</title>
 <style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block;width:100vw;height:auto}</style></head>
-<body><canvas id="c" width="1920" height="1080"></canvas>
+<body><canvas id="c"></canvas>
 <script>
 "use strict";
 // ---------- базовые утилиты ----------
-const W=1920,H=1080,D=60,FPS=60,HOR=560,M=420,BKS=0.5;
+const Q=new URLSearchParams(location.search), V=Q.get('v')==='1', LANG=Q.get('lang')||'ru';
+const W=V?1080:1920,H=V?1920:1080,D=60,FPS=60,HOR=V?1060:560,M=420,BKS=0.5;
+const _c=document.getElementById('c');_c.width=W;_c.height=H;
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
 const lerp=(a,b,t)=>a+(b-a)*t;
 const sm=(a,b,t)=>{const u=clamp((t-a)/(b-a));return u*u*(3-2*u)};
@@ -95,12 +97,12 @@ function drawBack(t,S,C){
     }
   }
   // луна
-  const mv=(1-cc)*(1-d*0.9), mx=W*0.70-C.cx*0.12, my=205+t*0.8;
+  const mv=(1-cc)*(1-d*0.9), mx=W*0.70-C.cx*0.12, my=(V?340:205)+t*0.8;
   if(mv>0.01){
     let gl=b.createRadialGradient(mx,my,0,mx,my,380);
     gl.addColorStop(0,`rgba(190,210,255,${0.42*mv})`);gl.addColorStop(0.3,`rgba(120,150,220,${0.16*mv})`);gl.addColorStop(1,'rgba(90,120,200,0)');
     b.fillStyle=gl;b.fillRect(mx-380,my-380,760,760);
-    b.fillStyle=`rgba(238,243,255,${mv})`;b.beginPath();b.arc(mx,my,62,0,6.283);b.fill();
+    b.fillStyle=`rgba(238,243,255,${mv})`;b.beginPath();b.arc(mx,my,V?78:62,0,6.283);b.fill();
     b.fillStyle=`rgba(190,203,228,${0.5*mv})`;
     for(const [dx,dy,r] of [[-18,-14,13],[22,10,17],[-6,28,9],[26,-26,8]]){b.beginPath();b.arc(mx+dx,my+dy,r,0,6.283);b.fill()}
   }
@@ -133,7 +135,7 @@ function drawBack(t,S,C){
   for(let i=0;i<FLASH.length;i++){
     const t0=FLASH[i][0];
     if(i===1||t<t0||t>t0+0.14)continue;
-    const bx=[1250,0,1560][i], a=1-(t-t0)/0.14;
+    const bx=[W*0.65,0,W*0.85][i], a=1-(t-t0)/0.14;
     let x=bx,y=-M; const pts=[[x,y]];
     for(let k=1;k<=16;k++){x+=(rnd(i*100+k)-0.5)*90;y=-M+k*(HOR+M)/16;pts.push([x,y])}
     for(const [lw,al] of [[16,0.12],[7,0.3],[2.5,0.95]]){
@@ -194,8 +196,8 @@ function drawLighthouse(t,S,G,lum){
 // ---------- лодка ----------
 function boatState(t,S,C){
   const rough=0.35+0.9*S.st, st=S.st;
-  const sc=1.15;
-  const x=W*0.40-C.cx*0.9+25*Math.sin(t*0.3)+40*st*Math.sin(t*0.9);
+  const sc=V?1.55:1.15;
+  const x=W*(V?0.42:0.40)-C.cx*0.9+25*Math.sin(t*0.3)+40*st*Math.sin(t*0.9);
   const yb=rowY(SB)+10+amp(SB,rough)*wv(x,SB,7,t)+st*(40*Math.sin(t*1.1+0.5)+18*Math.sin(t*2.3))+4*Math.sin(t*0.8);
   const ang=0.045*Math.sin(t*0.9)+st*(0.2*Math.sin(t*1.1+1.1)+0.09*Math.sin(t*2.3+1));
   const sw=-ang*0.8+0.12*Math.sin(t*2.0)*(0.5+st*1.5);
@@ -270,11 +272,21 @@ const CAPS=[
  {t0:41.6,t1:51.6,lines:["Маяк поделился","своим светом."],warm:{"светом.":"ignite"}},
  {t0:53.0,t1:999,lines:["Свет нужен,","чтобы им делиться."],warm:{"Свет":"on","делиться.":"on"},big:true}
 ];
+const CAPS_EN=[
+ ["Once there was","a little boat."],
+ ["But the wind came","and blew out","her lantern."],
+ ["It got dark.","And very lonely."],
+ ["But far away,","a tiny light","blinked."],
+ ["The lighthouse","shared its light."],
+ ["Light is meant","to be shared."]
+];
+const WARM_EN=[null,{"lantern.":"lantern"},null,{"light":"lamp"},{"light.":"ignite"},{"Light":"on","shared.":"on"}];
+if(LANG==='en')CAPS.forEach((c,i)=>{c.lines=CAPS_EN[i];c.warm=WARM_EN[i]||undefined});
 let capReady=false;
 function layoutCaps(){
   A.save();
   for(const c of CAPS){
-    const fs=c.big?92:80; c.fs=fs; A.font=`700 ${fs}px "Inter Display","Inter",sans-serif`;
+    const fs=V?(c.big?84:76):(c.big?92:80); c.fs=fs; A.font=`700 ${fs}px "Inter Display","Inter",sans-serif`;
     c.letters=[];let idx=0;
     c.lines.forEach((ln,li)=>{
       let x=0;
@@ -302,7 +314,7 @@ function drawCaps(t,S){
     if(t<c.t0-0.1||t>c.t1+2.5)continue;
     A.save();
     A.font=`700 ${c.fs}px "Inter Display","Inter",sans-serif`;A.textBaseline='alphabetic';
-    const lh=c.fs*1.22, X0=150+Math.sin(t*0.4)*3, Y0=c.big?190:170;
+    const lh=c.fs*1.22, X0=(V?84:150)+Math.sin(t*0.4)*3, Y0=V?270:(c.big?190:170);
     for(const L of c.letters){
       const tin=c.t0+L.idx*0.032, u=clamp((t-tin)/0.75);
       if(u<=0)continue;
@@ -510,7 +522,7 @@ window.renderFrame=function(i,samples){
   }
   A.globalAlpha=1;
   // виньетка
-  const vg=A.createRadialGradient(W/2,H/2,H*0.42,W/2,H/2,H*1.0);
+  const vg=A.createRadialGradient(W/2,H/2,Math.min(W,H)*0.42,W/2,H/2,(V?H*0.62:H));
   vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,0.55)');
   A.fillStyle=vg;A.fillRect(0,0,W,H);
   // зерно (дизеринг против бэндинга)
