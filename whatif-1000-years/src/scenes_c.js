@@ -12,7 +12,7 @@ defScene(12, {
   free() { freeSprites('s12'); },
   camera(lt, t) {
     const out = eio(inv(this.cSep - .4, this.cYou + .6, t));
-    setCam({ x: Math.sin(lt * .4) * 50, y: lerp(360, 560, out) + Math.sin(lt * .5) * 15, z: lerp(-620, -1900, out) + Math.sin(lt * .3) * 30, roll: Math.sin(lt * .35) * .015, aperture: .5, focus: lerp(920, 2200, out) });
+    setCam({ x: Math.sin(lt * .4) * 50, y: lerp(250, 520, out) + Math.sin(lt * .5) * 15, z: lerp(-620, -1900, out) + Math.sin(lt * .3) * 30, roll: Math.sin(lt * .35) * .015, aperture: .5, focus: lerp(920, 2200, out) });
   },
   draw(lt, t) {
     sky([[0, '#3A2A22'], [.6, '#5A4032'], [1, '#2A1E18']]);
@@ -51,7 +51,7 @@ defScene(12, {
           g.save(); g.translate(0, -10); g.scale(1, e); g.globalAlpha *= clamp(k * 3); scenesDraw[chapter](g); g.restore();
           g.fillStyle = '#5A3A2E'; g.font = '700 54px Caveat'; g.textAlign = 'center'; g.globalAlpha = clamp(k * 2); g.fillText(titles[chapter], -380, 10 + 0); g.globalAlpha = 1;
         } else {
-          const k = pop(t, this.cCh - .2, .6); g.globalAlpha *= k; paperText(g, 'MY LIVES', 120, { color: '#7A2E2A', shadow: false, anim: riseAnim(t, this.cCh - .2, .5, .05) }); g.globalAlpha = 1;
+          const k = pop(t, this.cCh - .2, .6); g.globalAlpha *= k; g.translate(0, -170); paperText(g, 'MY LIVES', 120, { color: '#7A2E2A', shadow: false, anim: riseAnim(t, this.cCh - .2, .5, .05) }); g.globalAlpha = 1;
         }
       }, { order: 2 });
       // page turning on each chapter change
