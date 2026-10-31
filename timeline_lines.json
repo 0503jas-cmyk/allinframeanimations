@@ -1,0 +1,570 @@
+[
+ {
+  "id": "s01a",
+  "sp": "N",
+  "t": 2.5,
+  "text": "They say the sea keeps its own accounts. Every ship it takes, every soul... it writes them down.",
+  "dur": 7.392653,
+  "st": 2.5
+ },
+ {
+  "id": "s01b",
+  "sp": "MARA",
+  "t": 15.0,
+  "text": "Captain's log. Day nine aboard the Meridian Star. The engines failed at midnight. The wind failed with them.",
+  "dur": 8.672653,
+  "st": 15.0
+ },
+ {
+  "id": "s01c",
+  "sp": "MARA",
+  "t": 26.5,
+  "text": "The compass will not settle. The charts say open water. But we are not moving... and we are not alone.",
+  "dur": 8.594286,
+  "st": 26.5
+ },
+ {
+  "id": "s02a",
+  "sp": "JONAS",
+  "t": 57.0,
+  "text": "Captain, every gauge says the engines are running. But the shaft won't turn. Something is holding us.",
+  "dur": 7.079184,
+  "st": 57.0
+ },
+ {
+  "id": "s02b",
+  "sp": "MARA",
+  "t": 66.0,
+  "text": "Holding us? In open water?",
+  "dur": 2.76898,
+  "st": 66.0
+ },
+ {
+  "id": "s02c",
+  "sp": "ELI",
+  "t": 71.0,
+  "text": "Captain. Look at the sky.",
+  "dur": 2.115918,
+  "st": 71.0
+ },
+ {
+  "id": "s02d",
+  "sp": "NOOR",
+  "t": 77.0,
+  "text": "Those are not our stars. The constellations are mirrored. Everything above us is backwards.",
+  "dur": 6.426122,
+  "st": 77.0
+ },
+ {
+  "id": "s02e",
+  "sp": "N",
+  "t": 88.0,
+  "text": "Seventeen souls aboard. One ship. And a horizon that had begun to breathe.",
+  "dur": 6.269388,
+  "st": 88.0
+ },
+ {
+  "id": "s03a",
+  "sp": "ELI",
+  "t": 112.0,
+  "text": "Contact on the horizon. No... it's not a ship. It's a wall.",
+  "dur": 5.146122,
+  "st": 112.0
+ },
+ {
+  "id": "s03b",
+  "sp": "N",
+  "t": 120.0,
+  "text": "A curtain of pale light, a mile high, rippling like silk. And beyond it, the sea ran backwards.",
+  "dur": 8.280816,
+  "st": 120.0
+ },
+ {
+  "id": "s03c",
+  "sp": "MARA",
+  "t": 132.0,
+  "text": "All hands, brace! Jonas, whatever you have left, give it to me!",
+  "dur": 5.146122,
+  "st": 132.0
+ },
+ {
+  "id": "s03d",
+  "sp": "JONAS",
+  "t": 139.0,
+  "text": "I have nothing, Captain! The current is taking us!",
+  "dur": 3.552653,
+  "st": 139.0
+ },
+ {
+  "id": "s03e",
+  "sp": "WREN",
+  "t": 146.0,
+  "text": "Captain... my watch just stopped. All the clocks have stopped.",
+  "dur": 4.205714,
+  "st": 146.0
+ },
+ {
+  "id": "s03f",
+  "sp": "N",
+  "t": 154.0,
+  "text": "And the Meridian Star crossed a line that no chart will ever show. The Zone of Anomalies.",
+  "dur": 6.60898,
+  "st": 154.0
+ },
+ {
+  "id": "s04a",
+  "sp": "NOOR",
+  "t": 173.0,
+  "text": "The radio is only static. The compass is spinning. Even the seawater is giving off light.",
+  "dur": 7.000816,
+  "st": 173.0
+ },
+ {
+  "id": "s04b",
+  "sp": "WREN",
+  "t": 184.0,
+  "text": "Captain! Land! There's an island!",
+  "dur": 3.004082,
+  "st": 184.0
+ },
+ {
+  "id": "s04c",
+  "sp": "MARA",
+  "t": 190.0,
+  "text": "There is no island on this chart. Not here. Not anywhere.",
+  "dur": 5.067755,
+  "st": 190.0
+ },
+ {
+  "id": "s04d",
+  "sp": "N",
+  "t": 197.0,
+  "text": "A black spire rose from the mist, ringed with pale fires. A lighthouse, built by something that had never seen a ship... only the drowned.",
+  "dur": 10.44898,
+  "st": 197.0
+ },
+ {
+  "id": "s04e",
+  "sp": "ELI",
+  "t": 216.0,
+  "text": "Those lights... they're moving. Captain, they're moving toward us.",
+  "dur": 4.597551,
+  "st": 216.0
+ },
+ {
+  "id": "s05a",
+  "sp": "N",
+  "t": 232.0,
+  "text": "Night fell without a sunset. And below the deck, the ship began to speak.",
+  "dur": 5.564082,
+  "st": 232.0
+ },
+ {
+  "id": "s05b",
+  "sp": "GHOST",
+  "t": 241.0,
+  "text": "Turn back... turn back... do not sleep.",
+  "dur": 4.127347,
+  "st": 241.0
+ },
+ {
+  "id": "s05c",
+  "sp": "WREN",
+  "t": 250.0,
+  "text": "Jonas... did you hear that?",
+  "dur": 2.35102,
+  "st": 250.0
+ },
+ {
+  "id": "s05d",
+  "sp": "JONAS",
+  "t": 254.5,
+  "text": "It's the pipes, kid. Just the old pipes.",
+  "dur": 3.004082,
+  "st": 254.5
+ },
+ {
+  "id": "s05e",
+  "sp": "GHOST",
+  "t": 262.0,
+  "text": "Do not sleep. They are listening.",
+  "dur": 2.690612,
+  "st": 262.0
+ },
+ {
+  "id": "s05f",
+  "sp": "WREN",
+  "t": 270.0,
+  "text": "Jonas. There's someone in the wall.",
+  "dur": 2.76898,
+  "st": 270.0
+ },
+ {
+  "id": "s05g",
+  "sp": "N",
+  "t": 278.0,
+  "text": "And the wall answered.",
+  "dur": 1.645714,
+  "st": 278.0
+ },
+ {
+  "id": "s06a",
+  "sp": "NOOR",
+  "t": 292.0,
+  "text": "My instruments are going mad. The temperature has dropped thirty degrees in this room. Something is here.",
+  "dur": 7.627755,
+  "st": 292.0
+ },
+ {
+  "id": "s06b",
+  "sp": "GHOST",
+  "t": 303.5,
+  "text": "We were the Albatross. We were the Santa Maren. We were forty ships... and now we are only the walls.",
+  "dur": 8.907755,
+  "st": 303.5
+ },
+ {
+  "id": "s06c",
+  "sp": "MARA",
+  "t": 317.0,
+  "text": "Who are you? What does this place want from us?",
+  "dur": 3.474286,
+  "st": 317.0
+ },
+ {
+  "id": "s06d",
+  "sp": "GHOST",
+  "t": 324.0,
+  "text": "The lamp. The lamp calls the ships. The lamp feeds the deep. Put it out... or become the wall.",
+  "dur": 8.437551,
+  "st": 324.0
+ },
+ {
+  "id": "s06e",
+  "sp": "GHOST",
+  "t": 336.0,
+  "text": "Wren Hale. Little one. Your grandfather is still at the helm of the Albatross.",
+  "dur": 6.19102,
+  "st": 336.0
+ },
+ {
+  "id": "s06f",
+  "sp": "WREN",
+  "t": 344.0,
+  "text": "Grandpa...?",
+  "dur": 0.992653,
+  "st": 344.0
+ },
+ {
+  "id": "s07a",
+  "sp": "NOOR",
+  "t": 352.0,
+  "text": "Captain... look at the water.",
+  "dur": 2.429388,
+  "st": 352.0
+ },
+ {
+  "id": "s07b",
+  "sp": "N",
+  "t": 358.0,
+  "text": "Beneath the hull, a light drifted past. Then another. Then a shape so vast that the ship was only a leaf above it.",
+  "dur": 8.907755,
+  "st": 358.0
+ },
+ {
+  "id": "s07c",
+  "sp": "WREN",
+  "t": 373.0,
+  "text": "It's bigger than the ship. It's bigger than everything.",
+  "dur": 3.709388,
+  "st": 373.0
+ },
+ {
+  "id": "s07d",
+  "sp": "ELI",
+  "t": 381.0,
+  "text": "Nobody breathe. It hasn't noticed us.",
+  "dur": 3.004082,
+  "st": 381.0
+ },
+ {
+  "id": "s07e",
+  "sp": "N",
+  "t": 389.0,
+  "text": "The leviathan passed beneath them for four full minutes... and still it had not ended.",
+  "dur": 6.269388,
+  "st": 389.0
+ },
+ {
+  "id": "s08a",
+  "sp": "N",
+  "t": 412.0,
+  "text": "But the leviathan was not alone. And the deep was not finished.",
+  "dur": 4.754286,
+  "st": 412.0
+ },
+ {
+  "id": "s08b",
+  "sp": "WREN",
+  "t": 421.0,
+  "text": "Captain! The water is moving!",
+  "dur": 2.429388,
+  "st": 421.0
+ },
+ {
+  "id": "s08c",
+  "sp": "ELI",
+  "t": 427.0,
+  "text": "Tentacles! Starboard side!",
+  "dur": 2.115918,
+  "st": 427.0
+ },
+ {
+  "id": "s08d",
+  "sp": "MARA",
+  "t": 433.0,
+  "text": "Cut the lines! Jonas, start the engines. Now!",
+  "dur": 4.362449,
+  "st": 433.0
+ },
+ {
+  "id": "s08e",
+  "sp": "JONAS",
+  "t": 440.0,
+  "text": "Come on, old girl... wake up! Wake up!",
+  "dur": 3.866122,
+  "st": 440.0
+ },
+ {
+  "id": "s08f",
+  "sp": "N",
+  "t": 449.0,
+  "text": "The kraken wrapped the hull, and the Meridian Star groaned like a living thing.",
+  "dur": 5.407347,
+  "st": 449.0
+ },
+ {
+  "id": "s08g",
+  "sp": "ELI",
+  "t": 459.0,
+  "text": "Flares! Light the sea! It can't stand the light!",
+  "dur": 3.552653,
+  "st": 459.0
+ },
+ {
+  "id": "s08h",
+  "sp": "MARA",
+  "t": 468.0,
+  "text": "The engines are alive! But the helm only turns one way... toward the island.",
+  "dur": 6.765714,
+  "st": 468.0
+ },
+ {
+  "id": "s09a",
+  "sp": "NOOR",
+  "t": 482.0,
+  "text": "The ghosts told us the truth. The lamp holds this whole Zone together. If it goes out, it all collapses.",
+  "dur": 8.045714,
+  "st": 482.0
+ },
+ {
+  "id": "s09b",
+  "sp": "JONAS",
+  "t": 493.0,
+  "text": "And the monsters?",
+  "dur": 1.48898,
+  "st": 493.0
+ },
+ {
+  "id": "s09c",
+  "sp": "NOOR",
+  "t": 497.0,
+  "text": "They only follow the light. Without it, they sleep.",
+  "dur": 4.04898,
+  "st": 497.0
+ },
+ {
+  "id": "s09d",
+  "sp": "MARA",
+  "t": 503.0,
+  "text": "Then we go ashore. Eli, you have the ship. Noor, Jonas, Wren... with me.",
+  "dur": 6.687347,
+  "st": 503.0
+ },
+ {
+  "id": "s09e",
+  "sp": "WREN",
+  "t": 512.0,
+  "text": "My grandfather is in that wall, Captain. I'm going.",
+  "dur": 3.787755,
+  "st": 512.0
+ },
+ {
+  "id": "s09f",
+  "sp": "N",
+  "t": 520.0,
+  "text": "A boat was lowered. Four small lights crossed a black and glassy sea.",
+  "dur": 5.146122,
+  "st": 520.0
+ },
+ {
+  "id": "s10a",
+  "sp": "N",
+  "t": 537.0,
+  "text": "The island was not rock. It was ships. Thousands of them, fused by centuries into a single wrecked coast.",
+  "dur": 8.594286,
+  "st": 537.0
+ },
+ {
+  "id": "s10b",
+  "sp": "NOOR",
+  "t": 549.0,
+  "text": "Longships. Galleons. That's a steamer from nineteen twelve. They all came here.",
+  "dur": 6.426122,
+  "st": 549.0
+ },
+ {
+  "id": "s10c",
+  "sp": "GRAND",
+  "t": 560.0,
+  "text": "Wren? My little Wren... you should not have come.",
+  "dur": 4.127347,
+  "st": 560.0
+ },
+ {
+  "id": "s10d",
+  "sp": "WREN",
+  "t": 568.0,
+  "text": "Grandpa...",
+  "dur": 0.992653,
+  "st": 568.0
+ },
+ {
+  "id": "s10e",
+  "sp": "GRAND",
+  "t": 573.0,
+  "text": "Climb the stair. Turn the crystal toward the sea. And run, child. Don't look back.",
+  "dur": 6.112653,
+  "st": 573.0
+ },
+ {
+  "id": "s11a",
+  "sp": "N",
+  "t": 597.0,
+  "text": "Four hundred steps. And on every step, a hand reaching out of the wall.",
+  "dur": 5.642449,
+  "st": 597.0
+ },
+ {
+  "id": "s11b",
+  "sp": "JONAS",
+  "t": 606.0,
+  "text": "Captain... this is not a lamp. It's an eye. The island is alive.",
+  "dur": 6.19102,
+  "st": 606.0
+ },
+ {
+  "id": "s11c",
+  "sp": "MARA",
+  "t": 614.0,
+  "text": "Then the light is a lure. And we are the bait.",
+  "dur": 4.440816,
+  "st": 614.0
+ },
+ {
+  "id": "s11d",
+  "sp": "NOOR",
+  "t": 620.0,
+  "text": "If we turn the crystal outward, the beam will cut through the wall of the Zone.",
+  "dur": 4.675918,
+  "st": 620.0
+ },
+ {
+  "id": "s11e",
+  "sp": "JONAS",
+  "t": 628.0,
+  "text": "It's stuck! Help me push!",
+  "dur": 2.429388,
+  "st": 628.0
+ },
+ {
+  "id": "s11f",
+  "sp": "N",
+  "t": 634.0,
+  "text": "A hundred pale hands pressed against the wheel, beside theirs.",
+  "dur": 4.362449,
+  "st": 634.0
+ },
+ {
+  "id": "s11g",
+  "sp": "N",
+  "t": 643.0,
+  "text": "And the lamp turned.",
+  "dur": 1.645714,
+  "st": 643.0
+ },
+ {
+  "id": "s11h",
+  "sp": "MARA",
+  "t": 651.0,
+  "text": "Run! Back to the boat! Run!",
+  "dur": 2.925714,
+  "st": 651.0
+ },
+ {
+  "id": "s12a",
+  "sp": "ELI",
+  "t": 662.0,
+  "text": "Captain! The wall is opening! There's a gap in the light!",
+  "dur": 3.63102,
+  "st": 662.0
+ },
+ {
+  "id": "s12b",
+  "sp": "N",
+  "t": 668.0,
+  "text": "The island shuddered. The leviathans parted. The kraken let go.",
+  "dur": 5.250612,
+  "st": 668.0
+ },
+ {
+  "id": "s12c",
+  "sp": "MARA",
+  "t": 676.0,
+  "text": "Full ahead!",
+  "dur": 1.07102,
+  "st": 676.0
+ },
+ {
+  "id": "s12d",
+  "sp": "WREN",
+  "t": 681.0,
+  "text": "Goodbye, Grandpa.",
+  "dur": 1.48898,
+  "st": 681.0
+ },
+ {
+  "id": "s12e",
+  "sp": "GRAND",
+  "t": 686.0,
+  "text": "Fair winds, my girl.",
+  "dur": 1.645714,
+  "st": 686.0
+ },
+ {
+  "id": "s12f",
+  "sp": "N",
+  "t": 692.0,
+  "text": "Dawn broke on an ordinary sea.",
+  "dur": 2.429388,
+  "st": 692.0
+ },
+ {
+  "id": "s12g",
+  "sp": "MARA",
+  "t": 699.0,
+  "text": "Captain's log. Day ten. We are alive. But the compass still points toward the Zone... and every night, I hear the sea writing our names.",
+  "dur": 11.389388,
+  "st": 699.0
+ }
+]
