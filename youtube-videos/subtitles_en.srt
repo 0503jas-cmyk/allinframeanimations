@@ -1,689 +1,689 @@
 1
-00:00:03,000 --> 00:00:06,147
+00:00:03,000 --> 00:00:06,175
 What if you could live
 for a thousand years?
 
 2
-00:00:06,197 --> 00:00:07,258
+00:00:06,225 --> 00:00:07,296
 Not forever.
 
 3
-00:00:07,308 --> 00:00:08,966
+00:00:07,346 --> 00:00:09,019
 Just one thousand years.
 
 4
-00:00:09,016 --> 00:00:11,531
+00:00:09,069 --> 00:00:11,607
 Ten full centuries of sunrises, birthdays,
 
 5
-00:00:11,581 --> 00:00:12,535
+00:00:11,657 --> 00:00:12,619
 and goodbyes.
 
 6
-00:00:12,585 --> 00:00:16,568
+00:00:12,669 --> 00:00:16,688
 It sounds like the greatest
 gift anyone could ever receive.
 
 7
-00:00:16,618 --> 00:00:19,277
+00:00:16,738 --> 00:00:19,421
 But what would it actually feel like?
 
 8
-00:00:19,327 --> 00:00:20,571
+00:00:19,471 --> 00:00:20,723
 Let's find out.
 
 9
-00:00:21,571 --> 00:00:23,848
+00:00:21,571 --> 00:00:23,843
 Imagine you were born today.
 
 10
-00:00:23,898 --> 00:00:27,190
+00:00:23,893 --> 00:00:27,178
 For the first few decades,
 nothing seems unusual.
 
 11
-00:00:27,240 --> 00:00:31,044
+00:00:27,228 --> 00:00:31,024
 You go to school, you make
 friends, you fall in love,
 
 12
-00:00:31,094 --> 00:00:32,834
+00:00:31,074 --> 00:00:32,810
 you find your first job.
 
 13
-00:00:32,884 --> 00:00:35,758
+00:00:32,860 --> 00:00:35,728
 You grow up just like everyone else.
 
 14
-00:00:35,808 --> 00:00:38,311
+00:00:35,778 --> 00:00:38,275
 But somewhere around
 your thirtieth birthday,
 
 15
-00:00:38,361 --> 00:00:40,424
+00:00:38,325 --> 00:00:40,384
 your body quietly stops aging.
 
 16
-00:00:40,474 --> 00:00:45,471
+00:00:40,434 --> 00:00:45,420
 Your heart, your skin, your brain,
 all of it stays exactly as it is.
 
 17
-00:00:45,521 --> 00:00:47,811
+00:00:45,470 --> 00:00:47,755
 And at first, nobody notices.
 
 18
-00:00:47,861 --> 00:00:49,213
+00:00:47,805 --> 00:00:49,155
 Not even you.
 
 19
-00:00:50,213 --> 00:00:52,872
+00:00:50,213 --> 00:00:52,799
 So how could this even be possible?
 
 20
-00:00:52,922 --> 00:00:56,966
+00:00:52,849 --> 00:00:56,782
 In nature, some creatures
 already come surprisingly close.
 
 21
-00:00:57,016 --> 00:01:00,497
+00:00:56,832 --> 00:01:00,217
 The Greenland shark can live
 for around four hundred years,
 
 22
-00:01:00,547 --> 00:01:03,122
+00:01:00,267 --> 00:01:02,771
 swimming slowly through
 freezing Arctic waters.
 
 23
-00:01:03,172 --> 00:01:07,834
+00:01:02,821 --> 00:01:07,356
 A clam nicknamed Ming was found
 to be over five hundred years old.
 
 24
-00:01:07,884 --> 00:01:13,082
+00:01:07,406 --> 00:01:12,462
 And a tiny jellyfish called Turritopsis
 can turn back into a younger version of
 
 25
-00:01:13,132 --> 00:01:15,600
+00:01:12,512 --> 00:01:14,912
 itself when it's injured or stressed.
 
 26
-00:01:15,650 --> 00:01:20,169
+00:01:14,962 --> 00:01:19,357
 For you, the secret would be cells that
 repair themselves almost perfectly,
 
 27
-00:01:20,219 --> 00:01:22,795
+00:01:19,407 --> 00:01:21,912
 fixing damage before it builds up.
 
 28
-00:01:22,845 --> 00:01:25,604
+00:01:21,962 --> 00:01:24,656
 Your body would simply stop wearing out.
 
 29
-00:01:26,604 --> 00:01:28,666
+00:01:26,604 --> 00:01:28,467
 But here's the first surprise.
 
 30
-00:01:28,716 --> 00:01:32,604
+00:01:28,517 --> 00:01:32,035
 Even if you never grow
 old, you are not immortal.
 
 31
-00:01:32,654 --> 00:01:34,395
+00:01:32,085 --> 00:01:33,658
 You can still get sick.
 
 32
-00:01:34,445 --> 00:01:36,507
+00:01:33,708 --> 00:01:35,571
 You can still have accidents.
 
 33
-00:01:36,557 --> 00:01:40,707
+00:01:35,621 --> 00:01:39,376
 Some scientists have estimated that
 if aging disappeared completely,
 
 34
-00:01:40,757 --> 00:01:45,657
+00:01:39,426 --> 00:01:43,861
 the average person would still only
 live for about a thousand years before
 
 35
-00:01:45,707 --> 00:01:47,496
+00:01:43,911 --> 00:01:45,527
 something unlucky happened.
 
 36
-00:01:47,546 --> 00:01:50,360
+00:01:45,577 --> 00:01:48,122
 So every single day, for ten centuries,
 
 37
-00:01:50,410 --> 00:01:52,472
+00:01:48,172 --> 00:01:50,035
 you'd have to be careful.
 
 38
-00:01:52,522 --> 00:01:53,791
+00:01:50,085 --> 00:01:51,268
 Very careful.
 
 39
-00:01:54,791 --> 00:01:56,341
+00:01:54,791 --> 00:01:56,166
 Now let's jump ahead.
 
 40
-00:01:56,391 --> 00:01:59,766
+00:01:56,216 --> 00:01:59,215
 You're eighty years old,
 but you still look thirty.
 
 41
-00:01:59,816 --> 00:02:01,580
+00:01:59,265 --> 00:02:00,830
 Your friends are retiring.
 
 42
-00:02:01,630 --> 00:02:03,478
+00:02:00,880 --> 00:02:02,520
 Their hair has turned grey.
 
 43
-00:02:03,528 --> 00:02:05,185
+00:02:02,570 --> 00:02:04,040
 Their steps are slower.
 
 44
-00:02:05,235 --> 00:02:07,000
+00:02:04,090 --> 00:02:05,655
 People start asking questions.
 
 45
-00:02:07,050 --> 00:02:09,005
+00:02:05,705 --> 00:02:07,441
 Doctors want to study you.
 
 46
-00:02:09,055 --> 00:02:11,606
+00:02:07,491 --> 00:02:09,756
 Strangers stare at you in the street.
 
 47
-00:02:11,656 --> 00:02:17,318
+00:02:09,806 --> 00:02:14,842
 So you make a choice that you'll have
 to make again and again for the rest of
 
 48
-00:02:17,368 --> 00:02:18,321
+00:02:14,892 --> 00:02:15,735
 your life.
 
 49
-00:02:18,371 --> 00:02:21,972
+00:02:15,785 --> 00:02:18,985
 You move to a new city, take a new name,
 
 50
-00:02:22,022 --> 00:02:23,374
+00:02:19,035 --> 00:02:20,277
 and start over.
 
 51
-00:02:24,373 --> 00:02:26,960
+00:02:24,373 --> 00:02:26,796
 By your one hundred
 and twentieth birthday,
 
 52
-00:02:27,010 --> 00:02:29,776
+00:02:26,846 --> 00:02:29,436
 everyone you grew up with is gone.
 
 53
-00:02:29,826 --> 00:02:32,725
+00:02:29,486 --> 00:02:32,201
 Your parents, your teachers,
 your childhood friends.
 
 54
-00:02:32,775 --> 00:02:37,650
+00:02:32,251 --> 00:02:36,819
 Maybe even your own children have grown
 old and passed away while you stayed
 
 55
-00:02:37,700 --> 00:02:38,248
+00:02:36,869 --> 00:02:37,380
 young.
 
 56
-00:02:38,298 --> 00:02:42,149
+00:02:37,430 --> 00:02:41,038
 This is the hardest part of
 living for a thousand years.
 
 57
-00:02:42,199 --> 00:02:44,262
+00:02:41,088 --> 00:02:43,019
 You never stop loving people.
 
 58
-00:02:44,312 --> 00:02:46,259
+00:02:43,069 --> 00:02:44,916
 You just keep losing them.
 
 59
-00:02:47,259 --> 00:02:51,563
+00:02:47,259 --> 00:02:51,270
 Some long-lived people might choose
 to stay away from close relationships
 
 60
-00:02:51,613 --> 00:02:52,483
+00:02:51,320 --> 00:02:52,129
 altogether.
 
 61
-00:02:52,533 --> 00:02:58,114
+00:02:52,179 --> 00:02:57,381
 Others might decide that a few decades
 of love is worth any amount of pain.
 
 62
-00:02:58,164 --> 00:03:03,376
+00:02:57,431 --> 00:03:02,290
 Either way, you would become an expert
 in something nobody wants to master.
 
 63
-00:03:03,426 --> 00:03:04,480
+00:03:02,340 --> 00:03:03,346
 Saying goodbye.
 
 64
-00:03:05,480 --> 00:03:07,948
+00:03:05,480 --> 00:03:07,707
 But there are amazing parts too.
 
 65
-00:03:07,998 --> 00:03:09,655
+00:03:07,757 --> 00:03:09,250
 Let's talk about money.
 
 66
-00:03:09,705 --> 00:03:14,473
+00:03:09,300 --> 00:03:13,606
 If you put just one thousand dollars
 in the bank and earned five percent
 
 67
-00:03:14,523 --> 00:03:19,244
+00:03:13,656 --> 00:03:17,920
 interest every year, after two hundred
 years you'd have more than seventeen
 
 68
-00:03:19,294 --> 00:03:20,355
+00:03:17,970 --> 00:03:18,924
 million dollars.
 
 69
-00:03:20,405 --> 00:03:23,995
+00:03:18,974 --> 00:03:22,215
 After three hundred years,
 you'd have over two billion.
 
 70
-00:03:24,045 --> 00:03:26,240
+00:03:22,265 --> 00:03:24,245
 Patience becomes your superpower.
 
 71
-00:03:26,290 --> 00:03:31,248
+00:03:24,295 --> 00:03:28,773
 You could plant a forest and actually
 walk through it when the trees are fully
 
 72
-00:03:31,298 --> 00:03:31,846
+00:03:28,823 --> 00:03:29,314
 grown.
 
 73
-00:03:31,896 --> 00:03:35,521
+00:03:29,364 --> 00:03:32,636
 You could learn every instrument,
 speak dozens of languages,
 
 74
-00:03:35,571 --> 00:03:40,358
+00:03:32,686 --> 00:03:37,048
 and earn a degree in every subject
 you've ever been curious about.
 
 75
-00:03:41,357 --> 00:03:44,459
+00:03:41,357 --> 00:03:44,204
 And speaking of languages,
 here's something wild.
 
 76
-00:03:44,509 --> 00:03:48,978
+00:03:44,254 --> 00:03:48,357
 The world around you would slowly start
 speaking a language you don't fully
 
 77
-00:03:49,028 --> 00:03:49,791
+00:03:48,407 --> 00:03:49,104
 understand.
 
 78
-00:03:49,841 --> 00:03:55,124
+00:03:49,154 --> 00:03:54,005
 English from a thousand years ago is
 almost impossible for us to read today.
 
 79
-00:03:55,174 --> 00:03:58,370
+00:03:54,055 --> 00:03:56,988
 It looks like a completely
 different language.
 
 80
-00:03:58,420 --> 00:04:01,424
+00:03:57,038 --> 00:03:59,795
 So over the centuries,
 the way people talk,
 
 81
-00:04:01,474 --> 00:04:06,364
+00:03:59,845 --> 00:04:04,335
 the slang, even the meaning of everyday
 words would drift away from you.
 
 82
-00:04:06,414 --> 00:04:11,624
+00:04:04,385 --> 00:04:09,169
 Every hundred years or so, you'd basically
 have to learn your own language all
 
 83
-00:04:11,674 --> 00:04:12,836
+00:04:09,219 --> 00:04:10,315
 over again.
 
 84
-00:04:13,835 --> 00:04:17,532
+00:04:13,835 --> 00:04:17,366
 By your three hundredth year,
 the world is unrecognizable.
 
 85
-00:04:17,582 --> 00:04:22,269
+00:04:17,416 --> 00:04:21,893
 Think about how much changed between
 the year seventeen twenty-six and today.
 
 86
-00:04:22,319 --> 00:04:26,362
+00:04:21,943 --> 00:04:25,805
 Back then, there were no
 cars, no electricity in homes,
 
 87
-00:04:26,412 --> 00:04:28,189
+00:04:25,855 --> 00:04:27,551
 no phones, no planes.
 
 88
-00:04:28,239 --> 00:04:32,329
+00:04:27,601 --> 00:04:31,507
 Now imagine three hundred more
 years of change after today.
 
 89
-00:04:32,379 --> 00:04:36,338
+00:04:31,557 --> 00:04:35,339
 Cities might float on oceans
 or rise high into the clouds.
 
 90
-00:04:36,388 --> 00:04:39,535
+00:04:35,389 --> 00:04:38,394
 People might live on the Moon or on Mars.
 
 91
-00:04:39,585 --> 00:04:44,473
+00:04:38,444 --> 00:04:43,113
 Maybe you'd be one of the first humans
 to see Earth from another planet,
 
 92
-00:04:44,523 --> 00:04:47,986
+00:04:43,163 --> 00:04:46,488
 and still have seven
 hundred years left to live.
 
 93
-00:04:48,985 --> 00:04:52,050
+00:04:48,985 --> 00:04:51,754
 But there's a problem
 inside your own head.
 
 94
-00:04:52,100 --> 00:04:55,164
+00:04:51,804 --> 00:04:54,573
 Your brain can only hold so many memories.
 
 95
-00:04:55,214 --> 00:04:59,507
+00:04:54,623 --> 00:04:58,504
 Even today, you don't remember
 most of the days you've lived.
 
 96
-00:04:59,557 --> 00:05:03,362
+00:04:58,554 --> 00:05:01,993
 Over a thousand years, you
 would forget almost everything.
 
 97
-00:05:03,412 --> 00:05:05,856
+00:05:02,043 --> 00:05:04,251
 The face of your first best friend.
 
 98
-00:05:05,906 --> 00:05:08,159
+00:05:04,301 --> 00:05:06,335
 The sound of your mother's voice.
 
 99
-00:05:08,209 --> 00:05:10,355
+00:05:06,385 --> 00:05:08,323
 The house you grew up in.
 
 100
-00:05:10,405 --> 00:05:13,194
+00:05:08,373 --> 00:05:10,893
 To protect your past,
 you might keep diaries,
 
 101
-00:05:13,244 --> 00:05:14,831
+00:05:10,943 --> 00:05:12,374
 recordings, and photos.
 
 102
-00:05:14,881 --> 00:05:16,132
+00:05:12,424 --> 00:05:13,552
 Thousands of them.
 
 103
-00:05:16,182 --> 00:05:18,876
+00:05:13,602 --> 00:05:16,035
 Your memories would turn into a library,
 
 104
-00:05:18,926 --> 00:05:23,498
+00:05:16,085 --> 00:05:20,257
 and you'd be the only one who
 could ever truly understand it.
 
 105
-00:05:24,498 --> 00:05:26,751
+00:05:24,498 --> 00:05:26,465
 And what about your mind itself?
 
 106
-00:05:26,801 --> 00:05:31,891
+00:05:26,515 --> 00:05:30,967
 Some psychologists believe that a lot
 of the meaning in our lives comes from
 
 107
-00:05:31,941 --> 00:05:34,111
+00:05:31,017 --> 00:05:32,912
 knowing our time is limited.
 
 108
-00:05:34,161 --> 00:05:37,011
+00:05:32,962 --> 00:05:35,452
 We rush to see the people we love.
 
 109
-00:05:37,061 --> 00:05:41,425
+00:05:35,502 --> 00:05:39,318
 We chase our dreams because
 one day we won't be able to.
 
 110
-00:05:41,475 --> 00:05:44,144
+00:05:39,368 --> 00:05:41,699
 But with a thousand years ahead of you,
 
 111
-00:05:44,194 --> 00:05:46,447
+00:05:41,749 --> 00:05:43,716
 would you still feel that urgency?
 
 112
-00:05:46,497 --> 00:05:49,692
+00:05:43,766 --> 00:05:46,558
 Or would you keep putting
 things off, telling yourself,
 
 113
-00:05:49,742 --> 00:05:51,797
+00:05:46,608 --> 00:05:48,452
 I'll do it next century?
 
 114
-00:05:52,797 --> 00:05:56,089
+00:05:52,797 --> 00:05:55,819
 To stay sane, you'd
 probably live in chapters.
 
 115
-00:05:56,139 --> 00:05:58,500
+00:05:55,869 --> 00:05:58,035
 One hundred years as a doctor.
 
 116
-00:05:58,550 --> 00:06:01,018
+00:05:58,085 --> 00:06:00,350
 One hundred years as a musician.
 
 117
-00:06:01,068 --> 00:06:03,644
+00:06:00,400 --> 00:06:02,764
 One hundred years exploring the oceans.
 
 118
-00:06:03,694 --> 00:06:07,271
+00:06:02,814 --> 00:06:06,098
 One hundred years building
 a home on another world.
 
 119
-00:06:07,321 --> 00:06:10,826
+00:06:06,148 --> 00:06:09,366
 Each life would feel almost
 like a separate person,
 
 120
-00:06:10,876 --> 00:06:12,741
+00:06:09,416 --> 00:06:11,158
 connected only by you.
 
 121
-00:06:13,741 --> 00:06:18,332
+00:06:13,741 --> 00:06:18,269
 By your five hundredth year, you
 have seen empires rise and fall.
 
 122
-00:06:18,382 --> 00:06:21,889
+00:06:18,319 --> 00:06:21,778
 You've watched history being
 written, and then rewritten.
 
 123
-00:06:21,939 --> 00:06:26,624
+00:06:21,828 --> 00:06:26,449
 People would read about events in their
 history books that you remember living
 
 124
-00:06:26,674 --> 00:06:27,222
+00:06:26,499 --> 00:06:27,039
 through.
 
 125
-00:06:27,272 --> 00:06:31,040
+00:06:27,089 --> 00:06:30,805
 You might be the last living
 witness to entire eras.
 
 126
-00:06:31,090 --> 00:06:32,962
+00:06:30,855 --> 00:06:32,701
 Historians could interview you.
 
 127
-00:06:33,012 --> 00:06:36,772
+00:06:32,751 --> 00:06:36,465
 Or you could stay silent and
 keep your secret forever.
 
 128
-00:06:37,772 --> 00:06:40,956
+00:06:37,772 --> 00:06:40,778
 By your eight hundredth
 year, maybe you're tired.
 
 129
-00:06:41,006 --> 00:06:43,880
+00:06:40,828 --> 00:06:43,541
 Or maybe you're more curious than ever.
 
 130
-00:06:43,930 --> 00:06:48,700
+00:06:43,591 --> 00:06:48,096
 Nobody knows how a human mind would
 really feel after this much time.
 
 131
-00:06:48,750 --> 00:06:50,729
+00:06:48,146 --> 00:06:50,013
 It's never happened before.
 
 132
-00:06:50,779 --> 00:06:54,249
+00:06:50,063 --> 00:06:53,340
 You might become the wisest
 person on the planet.
 
 133
-00:06:54,299 --> 00:06:55,758
+00:06:53,390 --> 00:06:54,788
 Or the loneliest.
 
 134
-00:06:56,758 --> 00:06:59,442
+00:06:56,758 --> 00:06:59,460
 And then, one day, you reach it.
 
 135
-00:06:59,492 --> 00:07:01,257
+00:06:59,510 --> 00:07:01,287
 Your one thousandth birthday.
 
 136
-00:07:01,307 --> 00:07:03,668
+00:07:01,337 --> 00:07:03,714
 The year is three thousand twenty-six.
 
 137
-00:07:03,718 --> 00:07:06,722
+00:07:03,764 --> 00:07:06,788
 You stand somewhere
 quiet, maybe on a hill,
 
 138
-00:07:06,772 --> 00:07:10,469
+00:07:06,838 --> 00:07:10,560
 maybe on another planet,
 and you watch the sunrise.
 
 139
-00:07:10,519 --> 00:07:14,478
+00:07:10,610 --> 00:07:14,596
 It's the same Sun that rose
 on your very first morning.
 
 140
-00:07:14,528 --> 00:07:18,916
+00:07:14,646 --> 00:07:19,063
 You've seen it more than three
 hundred and sixty-five thousand times.
 
 141
-00:07:18,966 --> 00:07:21,356
+00:07:19,113 --> 00:07:21,517
 And somehow, it's still beautiful.
 
 142
-00:07:22,356 --> 00:07:25,742
+00:07:22,356 --> 00:07:25,183
 So, would living for a
 thousand years be a gift,
 
 143
-00:07:25,792 --> 00:07:27,043
+00:07:25,233 --> 00:07:26,272
 or a curse?
 
 144
-00:07:27,093 --> 00:07:29,347
+00:07:26,322 --> 00:07:28,201
 Maybe a little bit of both.
 
 145
-00:07:29,397 --> 00:07:30,946
+00:07:28,251 --> 00:07:29,540
 But here's the thing.
 
 146
-00:07:30,996 --> 00:07:34,477
+00:07:29,590 --> 00:07:32,497
 Whether you live for a
 thousand years or for eighty,
 
 147
-00:07:34,527 --> 00:07:38,295
+00:07:32,547 --> 00:07:35,694
 you can only ever live one day at a time.
 
 148
-00:07:38,345 --> 00:07:40,698
+00:07:35,744 --> 00:07:37,771
 And today is one of them.
 
 149
-00:07:41,698 --> 00:07:43,761
+00:07:41,698 --> 00:07:43,466
 So call someone you love.
 
 150
-00:07:43,811 --> 00:07:45,170
+00:07:43,516 --> 00:07:44,678
 Learn something new.
 
 151
-00:07:45,220 --> 00:07:46,579
+00:07:44,728 --> 00:07:45,890
 Watch the sunrise.
 
 152
-00:07:46,629 --> 00:07:51,100
+00:07:45,940 --> 00:07:49,779
 Because a long life isn't just
 about how many years you have.
 
 153
-00:07:51,150 --> 00:07:53,694
+00:07:49,829 --> 00:07:52,067
 It's about what you do with them.
 
 154
-00:07:54,694 --> 00:07:55,946
+00:07:54,694 --> 00:07:55,772
 Thanks for watching.
 
 155
-00:07:55,996 --> 00:07:58,730
+00:07:55,822 --> 00:07:58,238
 And see you in the next "what if."
