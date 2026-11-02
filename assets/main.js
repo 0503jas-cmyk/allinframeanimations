@@ -88,6 +88,23 @@
     rv.forEach(function (el) { if (!el.classList.contains("is-in") && el.getBoundingClientRect().top < innerHeight) el.classList.add("is-in"); });
   }, { passive: true });
 
+  // выбор одного из двух номеров WhatsApp
+  var pick = document.getElementById("wa-pick"), pickFrom = null;
+  function closePick() { if (!pick || pick.hidden) return; pick.hidden = true; if (pickFrom) pickFrom.focus(); }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="https://wa.me/"]');
+    if (a && pick && !a.closest("#wa-pick")) {
+      e.preventDefault();
+      var q = a.href.indexOf("?") > -1 ? a.href.slice(a.href.indexOf("?")) : "";
+      pick.querySelectorAll(".wa-pick__opt").forEach(function (o) { o.href = "https://wa.me/" + o.getAttribute("data-num") + q; });
+      pickFrom = a; pick.hidden = false;
+      pick.querySelector(".wa-pick__opt").focus();
+      return;
+    }
+    if (e.target.closest("[data-wa-close]") || e.target.closest(".wa-pick__opt")) setTimeout(closePick, 0);
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closePick(); });
+
   var fromUrl = new URLSearchParams(location.search).get("lang");
   apply(fromUrl || getSaved() || "ru");
 })();

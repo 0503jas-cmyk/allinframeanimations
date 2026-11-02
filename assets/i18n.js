@@ -95,6 +95,7 @@ window.I18N = {
     "office.hours": "Режим работы", "office.weekdays": "Понедельник – пятница", "office.weekend": "Суббота и воскресенье",
     "office.weekendVal": "уточняйте по телефону", "office.phones": "Телефоны", "office.email": "Почта", "office.online": "Онлайн",
     "office.onlineVal": "WhatsApp, по всему Казахстану", "office.open": "Сейчас открыто", "office.closed": "Сейчас закрыто",
+    "wa.pick": "Выберите номер WhatsApp", "foot.req": "Реквизиты", "foot.kind": "Визовое агентство", "foot.reqAddr": "Республика Казахстан, г. Астана, ул. Бейимбет Майлина, 19, офис 304",
     "wa.text": "Здравствуйте! Хочу проконсультироваться по визе."
   },
   kk: {
@@ -192,6 +193,7 @@ window.I18N = {
     "office.hours": "Жұмыс уақыты", "office.weekdays": "Дүйсенбі – жұма", "office.weekend": "Сенбі және жексенбі",
     "office.weekendVal": "телефон арқылы нақтылаңыз", "office.phones": "Телефондар", "office.email": "Пошта", "office.online": "Онлайн",
     "office.onlineVal": "WhatsApp, бүкіл Қазақстан бойынша", "office.open": "Қазір ашық", "office.closed": "Қазір жабық",
+    "wa.pick": "WhatsApp нөмірін таңдаңыз", "foot.req": "Деректемелер", "foot.kind": "Виза агенттігі", "foot.reqAddr": "Қазақстан Республикасы, Астана қ., Бейімбет Майлин к-сі, 19, 304 кеңсе",
     "wa.text": "Сәлеметсіз бе! Виза бойынша кеңес алғым келеді."
   }
 };

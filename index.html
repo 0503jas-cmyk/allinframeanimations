@@ -27,6 +27,7 @@
         <a href="#process" data-i18n="nav.process">Как работаем</a>
         <a href="#reviews" data-i18n="nav.reviews">Отзывы</a>
         <a href="#office" data-i18n="nav.office">Офис</a>
+        <a href="#help" class="nav__help" data-open-help data-i18n="nav.help">Справка</a>
       </nav>
 
       <div class="top__tools">
@@ -35,7 +36,7 @@
           <button type="button" data-lang="ru" aria-pressed="true">РУС</button>
           <button type="button" data-lang="kk" lang="kk" aria-pressed="false">ҚАЗ</button>
         </div>
-        <a class="top__phone" href="tel:+77075123838">+7 707 512 38 38</a>
+        <a class="top__wa" data-wa href="https://wa.me/77075123838" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -237,6 +238,10 @@
         <p><a href="https://2gis.kz/astana/firm/70000001025605617" target="_blank" rel="noopener" data-i18n="card.map">Открыть в 2ГИС</a></p>
       </div>
       <div>
+        <p class="foot__h" data-i18n="foot.req">Реквизиты</p>
+        <p>ИП «VisaFast kz»<br><span data-i18n="foot.kind">Визовое агентство</span><br><span data-i18n="foot.reqAddr">Республика Казахстан, г. Астана, ул. Бейимбет Майлина, 19, офис 304</span><!-- ИИН/БИН: добавить после получения от владельцев --></p>
+      </div>
+      <div>
         <p class="foot__h" data-i18n="foot.docs">Документы</p>
         <p><a href="privacy.html" data-i18n="foot.privacy">Политика конфиденциальности</a><br><a href="terms.html" data-i18n="foot.terms">Пользовательское соглашение</a></p>
       </div>
@@ -260,6 +265,15 @@
     </div>
   </div>
 
+  <div class="wa-pick" id="wa-pick" role="dialog" aria-modal="true" aria-labelledby="wa-pick-title" hidden>
+    <div class="wa-pick__shade" data-wa-close></div>
+    <div class="wa-pick__box">
+      <p class="wa-pick__title" id="wa-pick-title" data-i18n="wa.pick">Выберите номер WhatsApp</p>
+      <a class="wa-pick__opt" data-num="77079527050" href="https://wa.me/77079527050" target="_blank" rel="noopener"><span>WhatsApp 1</span><b>+7 707 952 70 50</b></a>
+      <a class="wa-pick__opt" data-num="77075123838" href="https://wa.me/77075123838" target="_blank" rel="noopener"><span>WhatsApp 2</span><b>+7 707 512 38 38</b></a>
+      <button type="button" class="wa-pick__x" data-wa-close data-i18n="nav.close">Закрыть</button>
+    </div>
+  </div>
   <div class="dock" data-i18n-aria="aria.dock" aria-label="Быстрая связь">
     <a class="btn btn--main" data-wa href="https://wa.me/77075123838" target="_blank" rel="noopener">WhatsApp</a>
     <a class="btn btn--line" href="tel:+77075123838" data-i18n="cta.call">Позвонить</a>

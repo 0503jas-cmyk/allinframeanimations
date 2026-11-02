@@ -42,8 +42,8 @@ img { max-width: 100%; display: block; }
 .nav a { text-decoration: none; font-size: 15px; color: var(--ink-2); }
 .nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 .top__tools { margin-left: auto; display: flex; align-items: center; gap: 20px; }
-.top__phone { display: none; text-decoration: none; font-weight: 500; font-size: 15px; white-space: nowrap; }
-.top__phone:hover { text-decoration: underline; text-underline-offset: 4px; }
+.top__wa { display: none; align-items: center; min-height: 44px; padding: 0 16px; background: var(--paper); color: var(--night); text-decoration: none; font-weight: 500; font-size: 14px; border-radius: 2px; white-space: nowrap; }
+.top__wa:hover { background: var(--gold); }
 .menu-btn {
   min-height: 44px; min-width: 44px; padding: 0 12px;
   font: 500 15px/1 var(--sans); color: var(--ink);
@@ -59,7 +59,7 @@ img { max-width: 100%; display: block; }
   .nav.is-open a:last-child { border-bottom: 0; }
 }
 @media (min-width: 980px) { .nav { display: flex; } .menu-btn { display: none; } }
-@media (min-width: 640px) { .top__phone { display: inline; } }
+@media (min-width: 640px) { .top__wa { display: inline-flex; } }
 
 .lang { display: flex; border: 1px solid var(--ink); }
 .lang button {
@@ -463,3 +463,26 @@ a.ptable__row:hover { background: var(--paper-2); }
 .drawer__head, .drawer__search, .drawer__list { padding-left: 32px; padding-right: 32px; }
 @media (max-width: 639px) { .drawer__head, .drawer__search, .drawer__list { padding-left: 20px; padding-right: 20px; } }
 @media (prefers-reduced-motion: reduce) { .hero .stars svg { animation: none; } }
+
+/* WhatsApp number chooser */
+.wa-pick { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 16px; }
+.wa-pick__shade { position: absolute; inset: 0; background: rgba(20,39,61,.55); }
+.wa-pick__box { position: relative; width: min(380px, 100%); background: var(--paper); border: 1px solid var(--ink); padding: 24px; display: grid; gap: 10px; }
+.wa-pick__title { margin: 0 0 6px; font: 500 22px/1.2 var(--serif); }
+.wa-pick__opt { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 56px; padding: 0 18px; border: 1px solid var(--ink); text-decoration: none; color: var(--ink); border-radius: 2px; }
+.wa-pick__opt span { font-size: 13px; color: var(--ink-2); letter-spacing: .04em; }
+.wa-pick__opt b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.wa-pick__opt:hover { background: var(--night); color: var(--paper); border-color: var(--night); }
+.wa-pick__opt:hover span { color: var(--gold); }
+.wa-pick__x { justify-self: end; margin-top: 4px; min-height: 44px; padding: 0 14px; background: transparent; border: 0; font: 500 14px var(--sans); color: var(--ink-2); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 639px) { .wa-pick { place-items: end stretch; padding: 0; } .wa-pick__box { width: 100%; padding: 22px 16px calc(22px + env(safe-area-inset-bottom)); } }
+.wa-pick[hidden], .drawer[hidden] { display: none; }
+.nav__help { display: none !important; }
+@media (max-width: 639px) {
+  .help-btn { display: none; }
+  .nav.is-open .nav__help { display: block !important; }
+  .top__row { flex-wrap: nowrap; }
+  .nav.is-open { position: absolute; left: 0; right: 0; top: 100%; background: var(--night); padding: 0 16px 8px; margin: 0; border-bottom: 1px solid rgba(242,238,230,.14); }
+  .top { position: sticky; }
+  .top__row { position: relative; }
+}
