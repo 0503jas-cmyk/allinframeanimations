@@ -273,3 +273,33 @@ body { padding-bottom: 80px; }
   .pp__stamp { opacity: .9; transform: rotate(var(--sr)); }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* illustrated journey */
+.route { padding: 88px 0 40px; }
+.route__text { display: grid; gap: 0; margin-bottom: 32px; }
+@media (min-width: 980px) { .route__text { grid-template-columns: 1fr 1fr; column-gap: 56px; align-items: end; } .route__text .kicker { grid-column: 1 / -1; } .route__text h2 { margin: 0; } }
+.route__text > p:not(.kicker) { color: var(--ink-2); max-width: 54ch; margin: 0; }
+.route .kicker { color: var(--stamp); font-weight: 500; }
+.jr { border: 1px solid var(--ink); }
+.jr__scene { position: relative; aspect-ratio: 2 / 1; max-width: 100%; overflow: hidden; background: #D6E4EA; }
+@media (max-width: 759px) { .jr__scene { aspect-ratio: 4 / 3.4; } }
+.jr__svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.jr__stamp {
+  position: absolute; right: 4%; top: 7%; display: grid; justify-items: center; gap: 2px;
+  padding: 10px 16px; border: 2.5px solid var(--stamp); outline: 1px solid var(--stamp); outline-offset: 3px;
+  color: var(--stamp); background: rgba(242,238,230,.55);
+  font: 600 11px/1.2 var(--sans); letter-spacing: .2em; text-transform: uppercase;
+  opacity: 0; transform: rotate(-8deg) scale(1.7); pointer-events: none;
+}
+.jr__stamp b { font: 600 clamp(16px, 2vw, 22px)/1.1 var(--serif); letter-spacing: .06em; }
+.jr__stamp.is-on { animation: stampIn2 .4s cubic-bezier(.3,1.5,.5,1) both; }
+.jr__stamp.is-off { opacity: 0; transition: opacity .4s; transform: rotate(-8deg); }
+@keyframes stampIn2 { from { opacity: 0; transform: rotate(-8deg) scale(1.7); } to { opacity: 1; transform: rotate(-8deg) scale(1); } }
+.jr__stops { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
+.jr__stops li { padding: 14px 16px; border-left: 1px solid var(--line); display: grid; gap: 2px; color: var(--ink-2); transition: background .3s, color .3s; min-width: 0; }
+.jr__stops li:first-child { border-left: 0; }
+.jr__stops b { font: 500 17px/1.2 var(--serif); }
+.jr__stops span { font-size: 11px; letter-spacing: .16em; }
+.jr__stops li.is-on { background: var(--night); color: var(--paper); }
+@media (max-width: 479px) { .jr__stops li { padding: 12px 10px; } .jr__stops b { font-size: 15px; } }
+@media (prefers-reduced-motion: reduce) { .jr__stamp.is-on { animation: none; opacity: 1; transform: rotate(-8deg); } }
