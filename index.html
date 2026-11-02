@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VisaFast · визовый центр в Астане</title>
   <meta name="description" content="Оформление виз в Астане: страны Шенгена, Великобритания и другие направления. Онлайн через WhatsApp или в офисе на ул. Бейимбет Майлина, 19.">
-  <meta name="theme-color" content="#F2EEE6">
+  <meta name="theme-color" content="#14273D">
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&display=swap" rel="stylesheet">
@@ -16,15 +17,15 @@
 
   <header class="top">
     <div class="wrap top__row">
-      <a class="logo" href="#">Visa<span>Fast</span></a>
+      <a class="logo" href="#main">Visa<span>Fast</span></a>
 
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-i18n="nav.menu">Меню</button>
 
       <nav class="nav" id="nav" data-i18n-aria="aria.nav" aria-label="Разделы">
-        <a href="#prices" data-i18n="nav.prices">Страны и цены</a>
-        <a href="#docs" data-i18n="nav.docs">Документы</a>
-        <a href="#process" data-i18n="nav.process">Как работаем</a>
-        <a href="#office" data-i18n="nav.office">Офис</a>
+        <a href="#route" data-i18n="nav.route">Направления</a>
+        <a href="#about" data-i18n="nav.about">О нас</a>
+        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+        <!-- После готовности секций: #prices, #docs, #process, #office -->
       </nav>
 
       <div class="top__tools">
@@ -83,12 +84,12 @@
             <svg class="jr__svg" viewBox="0 0 1000 500" preserveAspectRatio="xMinYMid slice"></svg>
             <div class="jr__stamp"><span class="jr__stamp-city"></span><b>APPROVED</b><span class="jr__stamp-code"></span></div>
           </div>
-          <ol class="jr__stops" data-i18n-aria="aria.stops" aria-label="Остановки маршрута">
-            <li data-stop="0"><b data-i18n="jr.nqz">Астана</b><span>NQZ</span></li>
-            <li data-stop="1"><b data-i18n="jr.lhr">Лондон</b><span>LHR</span></li>
-            <li data-stop="2"><b data-i18n="jr.cdg">Париж</b><span>CDG</span></li>
-            <li data-stop="3"><b data-i18n="jr.fco">Рим</b><span>FCO</span></li>
-          </ol>
+          <div class="jr__stops" role="group" data-i18n-aria="aria.stops" aria-label="Остановки маршрута">
+            <button type="button" data-stop="0"><b data-i18n="jr.nqz">Астана</b><span>NQZ</span></button>
+            <button type="button" data-stop="1"><b data-i18n="jr.lhr">Лондон</b><span>LHR</span></button>
+            <button type="button" data-stop="2"><b data-i18n="jr.cdg">Париж</b><span>CDG</span></button>
+            <button type="button" data-stop="3"><b data-i18n="jr.fco">Рим</b><span>FCO</span></button>
+          </div>
         </div>
       </div>
     </section>
@@ -101,18 +102,18 @@
           <p data-i18n="about.p1">Мы давно работаем с визами и хорошо знаем, как меняются требования консульств, из-за чего чаще всего отказывают и как подготовиться, чтобы этого не случилось.</p>
           <p data-i18n="about.p2">К нам обращаются студенты, семьи с детьми, предприниматели, пенсионеры. Решение по визе всегда принимает консульство. Наша задача: честно оценить шансы до подачи и подготовить документы так, чтобы к ним не возникло вопросов.</p>
           <dl class="facts">
-            <div><dt>5,0</dt><dd data-i18n="about.f1">средняя оценка в 2ГИС</dd></div>
-            <div><dt>350+</dt><dd data-i18n="about.f2">отзывов от клиентов</dd></div>
+            <div><dt data-i18n="about.f1t">Шенген и UK</dt><dd data-i18n="about.f1">основные направления, с которыми работаем</dd></div>
+            <div><dt data-i18n="about.f2t">Проверка</dt><dd data-i18n="about.f2">каждый документ смотрим до подачи в консульство</dd></div>
             <div><dt data-i18n="about.f3t">Офис и онлайн</dt><dd data-i18n="about.f3">работаем с клиентами по всему Казахстану</dd></div>
           </dl>
         </div>
-        <aside class="card" aria-labelledby="card-title">
+        <aside class="card" id="contacts" aria-labelledby="card-title">
           <div class="card__head">
             <p id="card-title" class="card__title" data-i18n="card.title">Контакты</p>
           </div>
           <dl class="card__rows">
             <div><dt data-i18n="card.address">Адрес</dt><dd data-i18n="card.addressVal">Астана, ул. Бейимбет Майлина, 19, офис 304, 3 этаж</dd></div>
-            <div><dt data-i18n="card.hours">Часы</dt><dd data-i18n="card.hoursVal">Пн–Пт, 09:00–18:00</dd></div>
+            <!-- Часы работы: добавить после подтверждения владельцами -->
             <div><dt data-i18n="card.phones">Телефоны</dt><dd><a href="tel:+77079527050">+7 707 952 70 50</a><br><a href="tel:+77075123838">+7 707 512 38 38</a></dd></div>
             <div><dt data-i18n="card.format">Формат</dt><dd data-i18n="card.formatVal">Онлайн по всему Казахстану или лично в офисе</dd></div>
           </dl>

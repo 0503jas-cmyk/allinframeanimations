@@ -31,7 +31,7 @@
 
   // слои
   var sky = rect(0, 0, 1000, 500, "#D6E4EA", svg);
-  var sun = el("circle", { cx: 820, cy: 110, r: 38, fill: "#F3E3BE", opacity: .9 }, svg);
+  var sun = el("circle", { cx: 120, cy: 95, r: 36, fill: "#F3E3BE", opacity: .9 }, svg);
   var far = el("g", {}, svg);    // дальний план, параллакс 0.45
   var clouds = el("g", {}, svg); // облака, параллакс 0.65
   var world = el("g", {}, svg);  // основной план
@@ -52,12 +52,15 @@
   }
 
   // ---------- земля по регионам ----------
-  var REG = [
-    [0, 720, P.steppe2], [720, 1700, P.steppe], [1700, 2050, P.water], [2050, 2350, P.rock2],
-    [2350, 3150, P.meadow], [3150, 3780, P.meadow2], [3780, 3930, P.water], [3930, 4800, P.meadow2],
-    [4800, 5350, P.rock2], [5350, WORLD, "#C9B48A"]
-  ];
-  REG.forEach(function (r) { rect(r[0], G, r[1] - r[0] + 1, 100, r[2], world); });
+  // земля одним слоем с мягкими переходами между регионами
+  var LAND = [[0, "#C5AC71"], [650, "#C5AC71"], [820, "#D8C38E"], [1640, "#D8C38E"], [1760, "#C9BC8A"], [2050, "#A3A88A"], [2300, "#9DA58A"], [2450, "#8FAE76"], [3100, "#8FAE76"], [3200, "#7A9B63"], [4800, "#7A9B63"], [4900, "#9DA58A"], [5300, "#A9A585"], [5420, "#C9B48A"], [WORLD, "#C9B48A"]];
+  var defs = el("defs", {}, svg);
+  var lg = el("linearGradient", { id: "land", gradientUnits: "userSpaceOnUse", x1: 0, y1: 0, x2: WORLD, y2: 0 }, defs);
+  LAND.forEach(function (st) { el("stop", { offset: (st[0] / WORLD).toFixed(4), "stop-color": st[1] }, lg); });
+  rect(0, G, WORLD, 100, "url(#land)", world);
+  // Каспий и Ла-Манш с изогнутыми берегами
+  path("M1690 " + G + " C1660 " + (G + 30) + " 1720 " + (G + 70) + " 1700 " + (G + 100) + " L2070 " + (G + 100) + " C2040 " + (G + 60) + " 2080 " + (G + 30) + " 2050 " + G + " Z", P.water, world);
+  path("M3770 " + G + " C3745 " + (G + 40) + " 3800 " + (G + 70) + " 3780 " + (G + 100) + " L3950 " + (G + 100) + " C3925 " + (G + 60) + " 3960 " + (G + 30) + " 3935 " + G + " Z", P.water, world);
   // мягкие холмы над землёй
   function hills(x0, x1, color, amp, wl, base) {
     var d = "M" + x0 + " " + (base || G);
@@ -107,6 +110,20 @@
     var gx = 730 + rnd() * 960, gy = G + 6 + rnd() * 80;
     path("M" + gx + " " + gy + " l-3 -9 M" + gx + " " + gy + " l2 -11 M" + gx + " " + gy + " l6 -8", "none", world, { stroke: P.grass, "stroke-width": 1.4, "stroke-linecap": "round" });
   }
+  // линия электропередачи
+  var tops = [];
+  for (var px2 = 790; px2 < 1680; px2 += 180) {
+    var pg = el("g", { transform: "translate(" + px2 + " " + G + ")" }, world);
+    path("M-12 0 L-2 -92 L2 -92 L12 0 M-9 -26 L9 -26 M-6 -54 L6 -54 M-9 -26 L6 -54 M9 -26 L-6 -54 M-16 -78 L16 -78 M-12 -66 L12 -66", "none", pg, { stroke: "#7D7A6E", "stroke-width": 1.6 });
+    tops.push(px2);
+  }
+  var wires = "";
+  for (var tI = 0; tI < tops.length - 1; tI++) [-16, 16, -12, 12].forEach(function (o, j) {
+    var y = G - (j < 2 ? 78 : 66), x0 = tops[tI] + o, x1 = tops[tI + 1] + o;
+    wires += "M" + x0 + " " + y + " Q" + ((x0 + x1) / 2) + " " + (y + 16) + " " + x1 + " " + y + " ";
+  });
+  path(wires, "none", world, { stroke: "#7D7A6E", "stroke-width": .8, opacity: .8 });
+
   // юрты
   [[1000, 1], [1060, .8], [1450, 1]].forEach(function (y) {
     var x = y[0], s = y[1];
@@ -157,7 +174,7 @@
   // ---------- ЛОНДОН ----------
   for (var lb = 0; lb < 14; lb++) { var bx = 3160 + lb * 44 + rnd() * 10; building(bx, 30 + rnd() * 14, 40 + rnd() * 60, lb % 2 ? P.ink3 : "#8193A6"); }
   // Темза
-  rect(3150, G + 30, 630, 26, P.water, world);
+  path("M3150 " + (G + 70) + " C3260 " + (G + 30) + " 3380 " + (G + 64) + " 3480 " + (G + 44) + " S3680 " + (G + 30) + " 3775 " + (G + 46), "none", world, { stroke: P.water, "stroke-width": 16, "stroke-linecap": "round" });
   // Вестминстер + Биг-Бен
   (function (x) {
     rect(x + 14, G - 70, 150, 70, P.stone2, world);
@@ -237,7 +254,7 @@
     path(lt, "none", world, { stroke: P.ink2, "stroke-width": .9 });
   })(4560);
   // Сена
-  rect(3930, G + 40, 870, 20, P.water2, world);
+  path("M3945 " + (G + 40) + " C4060 " + (G + 70) + " 4180 " + (G + 30) + " 4300 " + (G + 52) + " S4560 " + (G + 76) + " 4790 " + (G + 48), "none", world, { stroke: P.water2, "stroke-width": 14, "stroke-linecap": "round" });
 
   // ---------- АЛЬПЫ ----------
   mountain(4930, 190, 140, P.rock2); mountain(5060, 250, 160); mountain(5200, 180, 130, P.rock2);
@@ -311,11 +328,15 @@
     { cam: 5200, city: "Рим", code: "FCO · ITALIA" }
   ];
   var stampEl = document.querySelector(".jr__stamp");
-  var stopsEl = document.querySelectorAll(".jr__stops li");
+  var stopsEl = document.querySelectorAll(".jr__stops button");
   function showStop(i) {
-    stopsEl.forEach(function (li) { li.classList.toggle("is-on", +li.getAttribute("data-stop") === i); });
-    if (!stampEl || i === 0) { if (stampEl) stampEl.className = "jr__stamp is-off"; return; }
-    var nm = document.querySelector('.jr__stops li[data-stop="' + i + '"] b');
+    stopsEl.forEach(function (b) {
+      var on = +b.getAttribute("data-stop") === i;
+      b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", String(on));
+    });
+    if (!stampEl) return;
+    if (i === 0) { stampEl.className = "jr__stamp is-off"; return; }
+    var nm = document.querySelector('.jr__stops button[data-stop="' + i + '"] b');
     stampEl.querySelector(".jr__stamp-city").textContent = nm ? nm.textContent : STOPS[i].city;
     stampEl.querySelector(".jr__stamp-code").textContent = STOPS[i].code;
     stampEl.className = "jr__stamp"; void stampEl.offsetWidth; stampEl.className = "jr__stamp is-on";
@@ -323,36 +344,48 @@
   function hideStamp() { if (stampEl) stampEl.className = "jr__stamp is-off"; }
 
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce) { setCam(STOPS[2].cam, 0); showStop(2); return; }
+  var cur = 0, idx = 0;
+  if (reduce) {
+    setCam(STOPS[2].cam, 0); showStop(2);
+    stopsEl.forEach(function (b) { b.addEventListener("click", function () { var i = +b.getAttribute("data-stop"); trailPts = []; setCam(STOPS[i].cam, 0); showStop(i); }); });
+    return;
+  }
 
-  var SPEED = 0.30;  // единиц мира за мс
-  var HOLD = 2200;
-  var seg = 0, segStart = null, holding = true, holdStart = null, visible = false, raf = null;
+  var SPEED = 0.30, HOLD = 2200;
+  var mode = "hold", t0 = null, from = 0, to = 0, toIdx = 0, raf = null, visible = false;
   function ease(k) { return k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; }
+  function goTo(i) {
+    from = cur; to = STOPS[i].cam; toIdx = i; mode = "fly"; t0 = null; hideStamp();
+    if (i < idx) trailPts = [];
+  }
   function frame(ts) {
     raf = requestAnimationFrame(frame);
-    if (holding) {
-      if (holdStart === null) { holdStart = ts; showStop(seg); }
-      setCam(STOPS[seg].cam, ts);
-      if (ts - holdStart > HOLD) {
-        holding = false; segStart = ts; hideStamp();
-        if (seg === STOPS.length - 1) { seg = -1; trailPts = []; }
+    if (t0 === null) { t0 = ts; if (mode === "hold") showStop(idx); }
+    if (mode === "hold") {
+      setCam(cur, ts);
+      if (ts - t0 > HOLD) {
+        if (idx === STOPS.length - 1) { trailPts = []; cur = 0; idx = 0; t0 = null; hideStamp(); }
+        else goTo(idx + 1);
       }
       return;
     }
-    if (segStart === null) segStart = ts;
-    var from = seg === -1 ? STOPS[0].cam : STOPS[seg].cam, toI = seg + 1, to = STOPS[toI].cam;
-    if (seg === -1) { seg = 0; holding = true; holdStart = null; setCam(0, ts); return; }
-    var dur = Math.max(1600, (to - from) / SPEED), k = Math.min(1, (ts - segStart) / dur);
-    setCam(from + (to - from) * ease(k), ts);
-    if (k >= 1) { seg = toI; holding = true; holdStart = null; }
+    var dur = Math.max(1200, Math.abs(to - from) / SPEED), k = Math.min(1, (ts - t0) / dur);
+    cur = from + (to - from) * ease(k);
+    setCam(cur, ts);
+    if (k >= 1) { idx = toIdx; mode = "hold"; t0 = null; }
   }
+  stopsEl.forEach(function (b) {
+    b.addEventListener("click", function () {
+      goTo(+b.getAttribute("data-stop"));
+      if (!raf) raf = requestAnimationFrame(frame);
+    });
+  });
   setCam(0, 0);
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (es) {
       visible = es[0].isIntersecting;
-      if (visible && !raf) raf = requestAnimationFrame(frame);
-      if (!visible && raf) { cancelAnimationFrame(raf); raf = null; holdStart = null; segStart = null; }
+      if (visible && !raf) { if (mode === "fly") from = cur; t0 = null; raf = requestAnimationFrame(frame); }
+      if (!visible && raf) { cancelAnimationFrame(raf); raf = null; }
     }, { threshold: 0.2 }).observe(svg);
   } else { raf = requestAnimationFrame(frame); }
 })();

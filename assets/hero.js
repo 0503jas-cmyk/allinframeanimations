@@ -76,7 +76,7 @@
   function renderFlags() {
     if (!track) return;
     var html = "";
-    for (var r = 0; r < 2; r++) COUNTRIES.forEach(function (c, i) {
+    for (var r = 0; r < 3; r++) COUNTRIES.forEach(function (c, i) {
       html += '<span class="fl" style="--i:' + i + '">' + F[c.k] + c[lang] + '</span>';
     });
     track.innerHTML = html;
@@ -111,12 +111,18 @@
   if (pile) {
     if (reduce) { for (var i = 0; i < 3; i++) addPassport(); }
     else {
-      addPassport();
-      var timer = setInterval(addPassport, 2300);
-      document.addEventListener("visibilitychange", function () {
-        if (document.hidden) clearInterval(timer);
-        else timer = setInterval(addPassport, 2300);
-      });
+      var timer = null, onScreen = true, hero = document.querySelector(".hero");
+      function run() { if (!timer && onScreen && !document.hidden) timer = setInterval(addPassport, 2300); }
+      function stop() { clearInterval(timer); timer = null; }
+      addPassport(); run();
+      document.addEventListener("visibilitychange", function () { document.hidden ? stop() : run(); });
+      if ("IntersectionObserver" in window && hero) {
+        new IntersectionObserver(function (es) {
+          onScreen = es[0].isIntersecting;
+          hero.classList.toggle("is-paused", !onScreen);
+          onScreen ? run() : stop();
+        }).observe(hero);
+      }
     }
   }
 
