@@ -30,6 +30,9 @@
 
     document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = waHref; });
 
+    var mq = document.querySelector(".marquee__track");
+    if (mq) mq.textContent = mq.textContent + mq.textContent;
+
     document.querySelectorAll("[data-lang]").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
     });
@@ -63,6 +66,29 @@
       apply(lang);
     });
   });
+
+  // guilloche lines on the passport page
+  var g = document.querySelector(".pass__guil");
+  if (g) {
+    var NS = "http://www.w3.org/2000/svg";
+    for (var i = 0; i < 26; i++) {
+      var d = "", y0 = 90 + i * 18, amp = 10 + (i % 5) * 3, ph = i * 0.55;
+      for (var x = 0; x <= 480; x += 6) {
+        var y = y0 + Math.sin(x / 38 + ph) * amp + Math.sin(x / 13 + ph * 2) * 2.5;
+        d += (x ? " L" : "M") + x + " " + y.toFixed(1);
+      }
+      var p = document.createElementNS(NS, "path"); p.setAttribute("d", d); g.appendChild(p);
+    }
+  }
+
+  // scroll reveal
+  var rv = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add("is-in"); }); }
 
   var fromUrl = new URLSearchParams(location.search).get("lang");
   apply(fromUrl || getSaved() || "ru");
