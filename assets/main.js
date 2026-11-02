@@ -1,5 +1,6 @@
 (function () {
   var WA_NUMBER = "77075123838";
+  window.VF_WA = WA_NUMBER;
   var dict = window.I18N;
 
   function getSaved() {
@@ -30,7 +31,15 @@
 
     document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = waHref; });
 
+    document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-ph"); if (t[k] != null) el.setAttribute("placeholder", t[k]);
+    });
+    document.querySelectorAll("[data-wa-country]").forEach(function (a) {
+      var k = "wa." + a.getAttribute("data-wa-country");
+      a.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t[k] || t["wa.text"]);
+    });
     if (window.VF_HERO) window.VF_HERO.setLang(lang);
+    if (window.VF_CONTENT) window.VF_CONTENT.setLang(lang);
 
     document.querySelectorAll("[data-lang]").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
@@ -74,6 +83,10 @@
     }, { rootMargin: "0px 0px -10% 0px" });
     rv.forEach(function (el) { io.observe(el); });
   } else { rv.forEach(function (el) { el.classList.add("is-in"); }); }
+  // подстраховка при быстрой прокрутке: всё, что выше нижнего края экрана, показываем
+  window.addEventListener("scroll", function () {
+    rv.forEach(function (el) { if (!el.classList.contains("is-in") && el.getBoundingClientRect().top < innerHeight) el.classList.add("is-in"); });
+  }, { passive: true });
 
   var fromUrl = new URLSearchParams(location.search).get("lang");
   apply(fromUrl || getSaved() || "ru");

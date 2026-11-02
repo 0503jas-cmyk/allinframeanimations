@@ -126,6 +126,7 @@
     }
   }
 
+  window.VF_FLAGS = F;
   window.VF_HERO = { setLang: function (l) { lang = l === "kk" ? "kk" : "ru"; renderFlags(); } };
   renderFlags();
 })();

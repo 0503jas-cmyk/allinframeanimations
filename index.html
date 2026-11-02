@@ -22,13 +22,15 @@
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-i18n="nav.menu">Меню</button>
 
       <nav class="nav" id="nav" data-i18n-aria="aria.nav" aria-label="Разделы">
-        <a href="#route" data-i18n="nav.route">Направления</a>
-        <a href="#about" data-i18n="nav.about">О нас</a>
-        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
-        <!-- После готовности секций: #prices, #docs, #process, #office -->
+        <a href="#prices" data-i18n="nav.prices">Страны и цены</a>
+        <a href="#docs" data-i18n="nav.docs">Документы</a>
+        <a href="#process" data-i18n="nav.process">Как работаем</a>
+        <a href="#reviews" data-i18n="nav.reviews">Отзывы</a>
+        <a href="#office" data-i18n="nav.office">Офис</a>
       </nav>
 
       <div class="top__tools">
+        <button type="button" class="help-btn" data-open-help aria-controls="help" data-i18n="nav.help">Справка</button>
         <div class="lang" role="group" aria-label="Язык / Тіл">
           <button type="button" data-lang="ru" aria-pressed="true">РУС</button>
           <button type="button" data-lang="kk" lang="kk" aria-pressed="false">ҚАЗ</button>
@@ -62,15 +64,77 @@
       </div>
     </section>
 
-    <section class="prices-teaser reveal">
+    <section class="prices reveal" id="prices">
       <div class="wrap">
-        <ul class="strip" data-i18n-aria="aria.strip" aria-label="Стоимость услуг">
-          <li><span data-i18n="strip.schengen">Шенген</span><b data-i18n="strip.from30">от 30 000 ₸</b></li>
-          <li><span data-i18n="strip.uk">Великобритания</span><b data-i18n="strip.from55">от 55 000 ₸</b></li>
-          <li class="strip__note"><span data-i18n="strip.fee">Консульский сбор</span><b data-i18n="strip.separate">оплачивается отдельно</b></li>
-        </ul>
+        <div class="sec-head">
+          <p class="kicker" data-i18n="prices.kicker">Страны и цены</p>
+          <h2 data-i18n="prices.title">Стоимость наших услуг</h2>
+          <p class="sec-lead" data-i18n="prices.lead">В цену входит подготовка анкеты, проверка документов и запись на подачу. Консульский сбор оплачивается отдельно по тарифу консульства.</p>
+        </div>
+        <div class="ptable" role="table" data-i18n-aria="prices.title" aria-label="Стоимость наших услуг">
+          <div class="ptable__row ptable__row--head" role="row">
+            <span role="columnheader" data-i18n="prices.c1">Направление</span>
+            <span role="columnheader" data-i18n="prices.c2">Наша услуга</span>
+            <span role="columnheader" data-i18n="prices.c3">Консульский сбор</span>
+            <span role="columnheader" aria-hidden="true"></span>
+          </div>
+          <a class="ptable__row" role="row" data-wa-country="schengen" href="https://wa.me/77075123838" target="_blank" rel="noopener">
+            <span role="cell" class="ptable__name"><span class="ptable__flag" data-flag="eu"></span><span><b data-i18n="prices.schengen">Шенгенская виза</b><small data-i18n="prices.schengenSub">Франция, Италия, Испания, Германия и другие страны Шенгена</small></span></span>
+            <span role="cell" class="ptable__price">30 000 – 40 000 ₸</span>
+            <span role="cell" class="ptable__fee" data-i18n="prices.fee">отдельно</span>
+            <span role="cell" class="ptable__go" data-i18n="prices.ask">Написать</span>
+          </a>
+          <a class="ptable__row" role="row" data-wa-country="uk" href="https://wa.me/77075123838" target="_blank" rel="noopener">
+            <span role="cell" class="ptable__name"><span class="ptable__flag" data-flag="gb"></span><span><b data-i18n="prices.uk">Великобритания</b><small data-i18n="prices.ukSub">Туристическая, гостевая и деловая виза</small></span></span>
+            <span role="cell" class="ptable__price">55 000 – 80 000 ₸</span>
+            <span role="cell" class="ptable__fee" data-i18n="prices.fee">отдельно</span>
+            <span role="cell" class="ptable__go" data-i18n="prices.ask">Написать</span>
+          </a>
+          <a class="ptable__row" role="row" data-wa-country="other" href="https://wa.me/77075123838" target="_blank" rel="noopener">
+            <span role="cell" class="ptable__name"><span class="ptable__flag ptable__flag--blank"></span><span><b data-i18n="prices.other">Другие страны</b><small data-i18n="prices.otherSub">Напишите, куда собираетесь, и мы скажем, сможем ли помочь</small></span></span>
+            <span role="cell" class="ptable__price" data-i18n="prices.onreq">по запросу</span>
+            <span role="cell" class="ptable__fee"></span>
+            <span role="cell" class="ptable__go" data-i18n="prices.ask">Написать</span>
+          </a>
+        </div>
       </div>
     </section>
+
+    <section class="docs reveal" id="docs">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker" data-i18n="docs.kicker">Подбор документов</p>
+          <h2 data-i18n="docs.title">Узнайте, какие документы нужны именно вам</h2>
+          <p class="sec-lead" data-i18n="docs.lead">Выберите направление, цель поездки и ваш статус. Список можно сразу отправить нам в WhatsApp, мы проверим его под ваш случай.</p>
+        </div>
+        <div class="picker">
+          <form class="picker__form" id="picker" novalidate>
+            <fieldset><legend><span>1</span><b data-i18n="docs.q1">Куда едете</b></legend><div class="seg" data-name="country"></div></fieldset>
+            <fieldset><legend><span>2</span><b data-i18n="docs.q2">Цель поездки</b></legend><div class="seg" data-name="purpose"></div></fieldset>
+            <fieldset><legend><span>3</span><b data-i18n="docs.q3">Ваш статус</b></legend><div class="seg" data-name="status"></div></fieldset>
+          </form>
+          <div class="sheet" aria-live="polite">
+            <div class="sheet__head"><span class="sheet__label" data-i18n="docs.sheet">Список документов</span><span class="sheet__for"></span></div>
+            <ol class="sheet__list"></ol>
+            <p class="sheet__note" data-i18n="docs.note">Это общий список. Требования зависят от консульства и вашей ситуации, поэтому перед подачей мы сверим всё лично с вами.</p>
+            <a class="btn btn--main sheet__send" data-wa-docs href="https://wa.me/77075123838" target="_blank" rel="noopener" data-i18n="docs.send">Отправить список в WhatsApp</a>
+            <p class="sheet__legal"><span data-i18n="docs.legal">Отправляя сообщение, вы соглашаетесь с</span> <a href="privacy.html" data-i18n="docs.legalLink">политикой конфиденциальности</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process reveal" id="process">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker" data-i18n="process.kicker">Как проходит работа</p>
+          <h2 data-i18n="process.title">Пять шагов от заявки до решения</h2>
+          <p class="sec-lead" data-i18n="process.lead">Большую часть работы берём на себя. От вас понадобится собрать документы по нашему списку и прийти на подачу. Чем быстрее соберёте бумаги, тем раньше подадимся.</p>
+        </div>
+        <ol class="steps"></ol>
+      </div>
+    </section>
+
 
     <section class="route reveal" id="route">
       <div class="wrap route__grid">
@@ -89,30 +153,104 @@
           <p class="kicker" data-i18n="about.kicker">О нас</p>
           <h2 data-i18n="about.title">Проверено временем и сотнями клиентов</h2>
           <p data-i18n="about.p1">Мы давно работаем с визами и хорошо знаем, как меняются требования консульств, из-за чего чаще всего отказывают и как подготовиться, чтобы этого не случилось.</p>
-          <p data-i18n="about.p2">К нам обращаются студенты, семьи с детьми, предприниматели, пенсионеры. Решение по визе всегда принимает консульство. Наша задача: честно оценить шансы до подачи и подготовить документы так, чтобы к ним не возникло вопросов.</p>
-          <dl class="facts">
-            <div><dt data-i18n="about.f1t">Шенген и UK</dt><dd data-i18n="about.f1">основные направления, с которыми работаем</dd></div>
-            <div><dt data-i18n="about.f2t">Проверка</dt><dd data-i18n="about.f2">каждый документ смотрим до подачи в консульство</dd></div>
-            <div><dt data-i18n="about.f3t">Офис и онлайн</dt><dd data-i18n="about.f3">работаем с клиентами по всему Казахстану</dd></div>
-          </dl>
+          <p data-i18n="about.p2">К нам обращаются студенты, предприниматели, пенсионеры, туристы и те, кто едет по работе. Решение по визе всегда принимает консульство. Наша задача: честно оценить шансы до подачи и подготовить документы так, чтобы к ним не возникло вопросов.</p>
         </div>
-        <aside class="card" id="contacts" aria-labelledby="card-title">
-          <div class="card__head">
-            <p id="card-title" class="card__title" data-i18n="card.title">Контакты</p>
-          </div>
-          <dl class="card__rows">
-            <div><dt data-i18n="card.address">Адрес</dt><dd data-i18n="card.addressVal">Астана, ул. Бейимбет Майлина, 19, офис 304, 3 этаж</dd></div>
-            <!-- Часы работы: добавить после подтверждения владельцами -->
-            <div><dt data-i18n="card.phones">Телефоны</dt><dd><a href="tel:+77079527050">+7 707 952 70 50</a><br><a href="tel:+77075123838">+7 707 512 38 38</a></dd></div>
-            <div><dt data-i18n="card.format">Формат</dt><dd data-i18n="card.formatVal">Онлайн по всему Казахстану или лично в офисе</dd></div>
-          </dl>
-          <a class="card__link" href="https://2gis.kz/astana/firm/70000001025605617" target="_blank" rel="noopener" data-i18n="card.map">Открыть в 2ГИС</a>
-        </aside>
+        <dl class="facts">
+          <div><dt data-i18n="about.f1t">Шенген и UK</dt><dd data-i18n="about.f1">основные направления, с которыми работаем</dd></div>
+          <div><dt data-i18n="about.f2t">Проверка</dt><dd data-i18n="about.f2">каждый документ смотрим до подачи в консульство</dd></div>
+          <div><dt data-i18n="about.f3t">Офис и онлайн</dt><dd data-i18n="about.f3">работаем с клиентами по всему Казахстану</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- Следующие секции: prices, docs, process, approvals, reviews, office -->
+    <!-- Одобрения: добавить, когда будут фото с замазанными данными -->
+    <section class="reviews reveal" id="reviews">
+      <div class="wrap reviews__grid">
+        <div>
+          <p class="kicker" data-i18n="rev.kicker">Отзывы</p>
+          <h2 data-i18n="rev.title">Что говорят клиенты</h2>
+          <p class="sec-lead" data-i18n="rev.lead">Все отзывы собраны в 2ГИС. Там их пишут только реальные посетители, и их нельзя удалить.</p>
+        </div>
+        <a class="rev-card" href="https://2gis.kz/astana/firm/70000001025605617/tab/reviews" target="_blank" rel="noopener">
+          <span class="rev-card__num">5,0</span>
+          <span class="rev-card__txt" data-i18n="rev.card">средняя оценка, более 350 отзывов</span>
+          <span class="rev-card__go" data-i18n="rev.go">Читать отзывы в 2ГИС</span>
+        </a>
+      </div>
+    </section>
+    <section class="office reveal" id="office">
+      <div class="wrap office__grid">
+        <div>
+          <p class="kicker" data-i18n="office.kicker">Офис</p>
+          <h2 data-i18n="office.title">Ждём вас на Майлина, 19</h2>
+          <address class="office__addr">
+            <span data-i18n="office.city">Астана</span>
+            <b data-i18n="office.street">ул. Бейимбет Майлина, 19</b>
+            <span data-i18n="office.room">3 этаж, офис 304</span>
+          </address>
+          <div class="office__btns">
+            <a class="btn btn--main" href="https://2gis.kz/astana/firm/70000001025605617" target="_blank" rel="noopener" data-i18n="office.route2gis">Маршрут в 2ГИС</a>
+            <a class="btn btn--line" href="https://yandex.kz/maps/?text=%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%91%D0%B5%D0%B9%D0%B8%D0%BC%D0%B1%D0%B5%D1%82%20%D0%9C%D0%B0%D0%B9%D0%BB%D0%B8%D0%BD%D0%B0%2C%2019" target="_blank" rel="noopener" data-i18n="office.routeYa">Яндекс Карты</a>
+          </div>
+        </div>
+        <div class="hours">
+          <div class="hours__head">
+            <span class="hours__title" data-i18n="office.hours">Режим работы</span>
+            <span class="hours__now" id="open-now"></span>
+          </div>
+          <dl class="hours__list">
+            <div data-days="1,2,3,4,5"><dt data-i18n="office.weekdays">Понедельник – пятница</dt><dd>09:00 – 18:00</dd></div>
+            <div data-days="6,0"><dt data-i18n="office.weekend">Суббота и воскресенье</dt><dd data-i18n="office.weekendVal">уточняйте по телефону</dd></div>
+          </dl>
+          <dl class="hours__list hours__list--contacts">
+            <div><dt data-i18n="office.phones">Телефоны</dt><dd><a href="tel:+77079527050">+7 707 952 70 50</a><br><a href="tel:+77075123838">+7 707 512 38 38</a></dd></div>
+            <div><dt data-i18n="office.online">Онлайн</dt><dd data-i18n="office.onlineVal">WhatsApp, по всему Казахстану</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div class="foot__brand">
+        <a class="logo" href="#main">Visa<span>Fast</span></a>
+        <p data-i18n="foot.about">Визовый центр в Астане. Онлайн по всему Казахстану и в офисе.</p>
+      </div>
+      <div>
+        <p class="foot__h" data-i18n="foot.contacts">Контакты</p>
+        <p><a href="tel:+77079527050">+7 707 952 70 50</a><br><a href="tel:+77075123838">+7 707 512 38 38</a><br><a href="mailto:visafast.kz@gmail.com">visafast.kz@gmail.com</a></p>
+      </div>
+      <div>
+        <p class="foot__h" data-i18n="foot.office">Офис</p>
+        <p data-i18n="card.addressVal">Астана, ул. Бейимбет Майлина, 19, офис 304, 3 этаж</p>
+        <p><a href="https://2gis.kz/astana/firm/70000001025605617" target="_blank" rel="noopener" data-i18n="card.map">Открыть в 2ГИС</a></p>
+      </div>
+      <div>
+        <p class="foot__h" data-i18n="foot.docs">Документы</p>
+        <p><a href="privacy.html" data-i18n="foot.privacy">Политика конфиденциальности</a><br><a href="terms.html" data-i18n="foot.terms">Пользовательское соглашение</a></p>
+      </div>
+    </div>
+    <div class="wrap foot__bottom">
+      <span>© 2026 VisaFast</span>
+      <!-- Реквизиты (ТОО/ИП, БИН) добавить после получения от владельцев -->
+      <span data-i18n="foot.disclaimer">Решение о выдаче визы принимает консульство.</span>
+    </div>
+  </footer>
+
+  <div class="drawer" id="help" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden>
+    <div class="drawer__shade" data-close></div>
+    <div class="drawer__panel" tabindex="-1">
+      <div class="drawer__head">
+        <h2 id="help-title" data-i18n="faq.title">Справка</h2>
+        <button type="button" class="drawer__x" data-close data-i18n="nav.close">Закрыть</button>
+      </div>
+      <label class="drawer__search"><span class="sr" data-i18n="faq.searchLabel">Поиск по вопросам</span><input id="faq-q" type="search" autocomplete="off" data-i18n-ph="faq.search" placeholder="Поиск: отказ, сроки, справка с работы"></label>
+      <div class="drawer__list" id="faq-list"></div>
+      <p class="drawer__empty" id="faq-empty" hidden><span data-i18n="faq.empty">Ничего не нашлось. Спросите нас напрямую:</span> <a data-wa href="https://wa.me/77075123838" target="_blank" rel="noopener">WhatsApp</a></p>
+    </div>
+  </div>
 
   <div class="dock" data-i18n-aria="aria.dock" aria-label="Быстрая связь">
     <a class="btn btn--main" data-wa href="https://wa.me/77075123838" target="_blank" rel="noopener">WhatsApp</a>
@@ -122,6 +260,7 @@
   <script src="assets/i18n.js"></script>
   <script src="assets/hero.js"></script>
   <script src="assets/route.js"></script>
+  <script src="assets/content.js"></script>
   <script src="assets/main.js"></script>
 </body>
 </html>
