@@ -93,7 +93,7 @@ window.I18N = {
     "office.city": "Астана", "office.street": "ул. Бейимбет Майлина, 19", "office.room": "3 этаж, офис 304",
     "office.route2gis": "Маршрут в 2ГИС", "office.routeYa": "Яндекс Карты",
     "office.hours": "Режим работы", "office.weekdays": "Понедельник – пятница", "office.weekend": "Суббота и воскресенье",
-    "office.weekendVal": "уточняйте по телефону", "office.phones": "Телефоны", "office.online": "Онлайн",
+    "office.weekendVal": "уточняйте по телефону", "office.phones": "Телефоны", "office.email": "Почта", "office.online": "Онлайн",
     "office.onlineVal": "WhatsApp, по всему Казахстану", "office.open": "Сейчас открыто", "office.closed": "Сейчас закрыто",
     "wa.text": "Здравствуйте! Хочу проконсультироваться по визе."
   },
@@ -190,7 +190,7 @@ window.I18N = {
     "office.city": "Астана", "office.street": "Бейімбет Майлин көшесі, 19", "office.room": "3 қабат, 304 кеңсе",
     "office.route2gis": "2ГИС-те бағыт", "office.routeYa": "Яндекс Карталар",
     "office.hours": "Жұмыс уақыты", "office.weekdays": "Дүйсенбі – жұма", "office.weekend": "Сенбі және жексенбі",
-    "office.weekendVal": "телефон арқылы нақтылаңыз", "office.phones": "Телефондар", "office.online": "Онлайн",
+    "office.weekendVal": "телефон арқылы нақтылаңыз", "office.phones": "Телефондар", "office.email": "Пошта", "office.online": "Онлайн",
     "office.onlineVal": "WhatsApp, бүкіл Қазақстан бойынша", "office.open": "Қазір ашық", "office.closed": "Қазір жабық",
     "wa.text": "Сәлеметсіз бе! Виза бойынша кеңес алғым келеді."
   }

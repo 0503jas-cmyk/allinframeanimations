@@ -442,3 +442,24 @@ a.ptable__row:hover { background: var(--paper-2); }
   .drawer__panel { top: auto; height: 92%; width: 100%; transform: translateY(100%); }
 }
 @media (prefers-reduced-motion: reduce) { .drawer__panel, .drawer__shade { transition: none; } }
+
+/* v5: stars, contacts, wider help */
+.stars { display: inline-flex; gap: 3px; align-self: center; }
+.stars svg { width: 22px; height: 22px; fill: var(--gold); }
+.hero .stars svg { filter: drop-shadow(0 0 6px rgba(232,200,120,.55)); animation: twinkle 3.2s ease-in-out infinite; }
+.hero .stars svg:nth-child(2) { animation-delay: .25s; } .hero .stars svg:nth-child(3) { animation-delay: .5s; }
+.hero .stars svg:nth-child(4) { animation-delay: .75s; } .hero .stars svg:nth-child(5) { animation-delay: 1s; }
+@keyframes twinkle { 0%, 100% { filter: drop-shadow(0 0 4px rgba(232,200,120,.35)); } 50% { filter: drop-shadow(0 0 10px rgba(240,210,130,.85)); } }
+.rating { flex-wrap: wrap; row-gap: 6px; }
+.rev-card { grid-template-columns: auto auto 1fr; }
+.rev-card__num { grid-row: span 2; }
+.rev-card .stars { grid-row: span 2; }
+.rev-card .stars svg { width: 20px; height: 20px; fill: #B8893B; }
+@media (max-width: 479px) { .rev-card { grid-template-columns: auto 1fr; } .rev-card .stars { grid-row: auto; grid-column: 2; } .rev-card__txt, .rev-card__go { grid-column: 1 / -1; } }
+.hero__contacts { list-style: none; margin: 24px 0 0; padding: 18px 0 0; border-top: 1px solid rgba(242,238,230,.18); display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.hero__contacts a { color: var(--paper); text-decoration: none; font-weight: 500; font-variant-numeric: tabular-nums; display: inline-block; padding: 6px 0; }
+.hero__contacts a:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 4px; }
+.drawer__panel { width: min(680px, 100%); }
+.drawer__head, .drawer__search, .drawer__list { padding-left: 32px; padding-right: 32px; }
+@media (max-width: 639px) { .drawer__head, .drawer__search, .drawer__list { padding-left: 20px; padding-right: 20px; } }
+@media (prefers-reduced-motion: reduce) { .hero .stars svg { animation: none; } }
