@@ -39,6 +39,7 @@
 
   <main id="main">
     <section class="hero">
+      <div class="flags" aria-hidden="true"><div class="flags__track"></div></div>
       <div class="wrap hero__grid">
         <div class="hero__text">
           <p class="kicker" data-i18n="hero.kicker">Визовый центр в Астане · онлайн и в офисе</p>
@@ -56,67 +57,9 @@
           </a>
         </div>
 
-        <div class="pass" aria-hidden="true">
-          <svg class="pass__svg" viewBox="0 0 480 600">
-            <defs>
-              <clipPath id="page"><rect x="0" y="0" width="480" height="600"/></clipPath>
-              <path id="ringA" d="M0 0 m-58 0 a58 58 0 1 1 116 0 a58 58 0 1 1 -116 0"/>
-              <path id="ringB" d="M0 0 m-50 0 a50 50 0 1 1 100 0 a50 50 0 1 1 -100 0"/>
-            </defs>
-            <rect class="pass__page" x="0" y="0" width="480" height="600"/>
-            <g class="pass__guil" clip-path="url(#page)"></g>
-            <line class="pass__rule" x1="32" y1="72" x2="448" y2="72"/>
-            <text class="pass__label" x="32" y="52">ВИЗА · VISA · ВИЗА</text>
-            <text class="pass__label pass__label--r" x="448" y="52">№ 01</text>
-
-            <path id="route" class="pass__route" d="M78 486 C 150 380, 250 420, 300 300 S 380 150, 402 128"/>
-            <circle class="pass__pin" cx="78" cy="486" r="5"/>
-            <text class="pass__city" x="92" y="512">Астана · NQZ</text>
-            <circle class="pass__pin pass__pin--end" cx="402" cy="128" r="5"/>
-            <text class="pass__city" x="392" y="112" text-anchor="end">Париж · CDG</text>
-            <g class="pass__plane">
-              <path d="M-11 0 L5 -2 L11 0 L5 2 Z M-2 -1 L-5 -9 L-1 -9 L4 -1 Z M-2 1 L-5 9 L-1 9 L4 1 Z M-10 0 L-12 -4 L-9 -4 L-7 0 L-9 4 L-12 4 Z"/>
-              <animateMotion dur="7s" begin="1.2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#route"/></animateMotion>
-            </g>
-
-            <g class="st st--1" transform="translate(150 200) rotate(-12)">
-              <g class="st__in">
-                <circle r="66" class="st__line st__line--w"/><circle r="44" class="st__line"/>
-                <text class="st__ring"><textPath href="#ringA">SCHENGEN · APPROVED · SCHENGEN ·</textPath></text>
-                <text class="st__big" y="6" text-anchor="middle">ВИЗА</text>
-              </g>
-            </g>
-            <g class="st st--2" transform="translate(340 330) rotate(9)">
-              <g class="st__in">
-                <rect x="-92" y="-44" width="184" height="88" class="st__line st__line--w"/>
-                <rect x="-84" y="-36" width="168" height="72" class="st__line"/>
-                <text class="st__small" y="-12" text-anchor="middle">UNITED KINGDOM</text>
-                <text class="st__big" y="20" text-anchor="middle">ENTRY</text>
-              </g>
-            </g>
-            <g class="st st--3" transform="translate(130 400) rotate(6)">
-              <g class="st__in">
-                <rect x="-64" y="-30" width="128" height="60" class="st__line st__line--w"/>
-                <text class="st__small" y="-6" text-anchor="middle">ASTANA</text>
-                <text class="st__mid" y="16" text-anchor="middle">VISAFAST</text>
-              </g>
-            </g>
-            <g class="st st--4" transform="translate(360 500) rotate(-18)">
-              <g class="st__in">
-                <circle r="56" class="st__line st__line--w"/>
-                <text class="st__ring st__ring--s"><textPath href="#ringB">ÉTATS SCHENGEN · ENTRÉE ·</textPath></text>
-                <text class="st__mid" y="6" text-anchor="middle">PARIS</text>
-              </g>
-            </g>
-            <text class="pass__mrz" x="32" y="574">VISAFAST&lt;&lt;ASTANA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</text>
-          </svg>
-        </div>
+        <div class="pile" aria-hidden="true"></div>
       </div>
     </section>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track" data-i18n="marquee">Франция · Италия · Германия · Испания · Великобритания · Чехия · Греция · Австрия · Нидерланды · Венгрия · Польша · Швейцария · </div>
-    </div>
 
     <section class="prices-teaser reveal">
       <div class="wrap">
@@ -165,6 +108,7 @@
   </div>
 
   <script src="assets/i18n.js"></script>
+  <script src="assets/hero.js"></script>
   <script src="assets/main.js"></script>
 </body>
 </html>

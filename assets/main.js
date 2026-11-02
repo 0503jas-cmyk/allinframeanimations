@@ -30,8 +30,7 @@
 
     document.querySelectorAll("[data-wa]").forEach(function (a) { a.href = waHref; });
 
-    var mq = document.querySelector(".marquee__track");
-    if (mq) mq.textContent = mq.textContent + mq.textContent;
+    if (window.VF_HERO) window.VF_HERO.setLang(lang);
 
     document.querySelectorAll("[data-lang]").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
@@ -66,20 +65,6 @@
       apply(lang);
     });
   });
-
-  // guilloche lines on the passport page
-  var g = document.querySelector(".pass__guil");
-  if (g) {
-    var NS = "http://www.w3.org/2000/svg";
-    for (var i = 0; i < 26; i++) {
-      var d = "", y0 = 90 + i * 18, amp = 10 + (i % 5) * 3, ph = i * 0.55;
-      for (var x = 0; x <= 480; x += 6) {
-        var y = y0 + Math.sin(x / 38 + ph) * amp + Math.sin(x / 13 + ph * 2) * 2.5;
-        d += (x ? " L" : "M") + x + " " + y.toFixed(1);
-      }
-      var p = document.createElementNS(NS, "path"); p.setAttribute("d", d); g.appendChild(p);
-    }
-  }
 
   // scroll reveal
   var rv = document.querySelectorAll(".reveal");
