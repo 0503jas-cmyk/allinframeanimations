@@ -56,18 +56,21 @@
           </a>
         </div>
 
-        <aside class="card" aria-labelledby="card-title">
-          <div class="card__head">
-            <p id="card-title" class="card__title" data-i18n="card.title">Контакты</p>
-                      </div>
-          <dl class="card__rows">
-            <div><dt data-i18n="card.address">Адрес</dt><dd data-i18n="card.addressVal">Астана, ул. Бейимбет Майлина, 19, офис 304, 3 этаж</dd></div>
-            <div><dt data-i18n="card.hours">Часы</dt><dd data-i18n="card.hoursVal">Пн–Пт, 09:00–18:00</dd></div>
-            <div><dt data-i18n="card.phones">Телефоны</dt><dd><a href="tel:+77075123838">+7 707 512 38 38</a><br><a href="tel:+77079527050">+7 707 952 70 50</a></dd></div>
-            <div><dt data-i18n="card.format">Формат</dt><dd data-i18n="card.formatVal">Онлайн по всему Казахстану или лично в офисе</dd></div>
-          </dl>
-          <a class="card__link" href="https://2gis.kz/astana/firm/70000001025605617" target="_blank" rel="noopener" data-i18n="card.map">Открыть в 2ГИС</a>
-        </aside>
+        <figure class="photo">
+          <div class="photo__frame">
+            <!-- Заменить на фото из 2ГИС: assets/img/hero.jpg -->
+            <div class="photo__ph" data-i18n="photo.ph">Здесь будет фото: наша семья у Эйфелевой башни</div>
+          </div>
+          <svg class="stamp" viewBox="0 0 160 160" aria-hidden="true">
+              <circle cx="80" cy="80" r="74" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="80" cy="80" r="56" fill="none" stroke="currentColor" stroke-width="1"/>
+              <defs><path id="ring" d="M80 80 m-64 0 a64 64 0 1 1 128 0 a64 64 0 1 1 -128 0"/></defs>
+              <text font-family="Golos Text, sans-serif" font-size="12.5" font-weight="600" letter-spacing="3.2" fill="currentColor"><textPath href="#ring">VISAFAST · ASTANA · VISAFAST · ASTANA ·</textPath></text>
+              <text x="80" y="76" text-anchor="middle" font-family="Literata, serif" font-size="17" font-weight="600" fill="currentColor">APPROVED</text>
+              <text x="80" y="96" text-anchor="middle" font-family="Golos Text, sans-serif" font-size="11" letter-spacing="2" fill="currentColor">VISA</text>
+            </svg>
+          <figcaption data-i18n="photo.cap">Париж. Сами путешествуем и знаем, как важна вовремя полученная виза.</figcaption>
+        </figure>
       </div>
 
       <div class="wrap">
@@ -76,6 +79,34 @@
           <li><span data-i18n="strip.uk">Великобритания</span><b data-i18n="strip.from55">от 55 000 ₸</b></li>
           <li class="strip__note"><span data-i18n="strip.fee">Консульский сбор</span><b data-i18n="strip.separate">оплачивается отдельно</b></li>
         </ul>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about__grid">
+        <div class="about__text">
+          <p class="kicker" data-i18n="about.kicker">О нас</p>
+          <h2 data-i18n="about.title">Семейный визовый центр, проверенный временем</h2>
+          <p data-i18n="about.p1">VisaFast ведёт наша семья. Мы давно работаем с визами и хорошо знаем, как меняются требования консульств, из-за чего чаще всего отказывают и как подготовиться, чтобы этого не случилось.</p>
+          <p data-i18n="about.p2">Через нас прошли сотни клиентов: студенты, семьи с детьми, предприниматели, пенсионеры. Решение по визе всегда принимает консульство. Наша задача: честно оценить шансы до подачи и подготовить документы так, чтобы к ним не возникло вопросов.</p>
+          <dl class="facts">
+            <div><dt>5,0</dt><dd data-i18n="about.f1">средняя оценка в 2ГИС</dd></div>
+            <div><dt>350+</dt><dd data-i18n="about.f2">отзывов от клиентов</dd></div>
+            <div><dt data-i18n="about.f3t">Офис и онлайн</dt><dd data-i18n="about.f3">работаем с клиентами по всему Казахстану</dd></div>
+          </dl>
+        </div>
+        <aside class="card" aria-labelledby="card-title">
+          <div class="card__head">
+            <p id="card-title" class="card__title" data-i18n="card.title">Контакты</p>
+          </div>
+          <dl class="card__rows">
+            <div><dt data-i18n="card.address">Адрес</dt><dd data-i18n="card.addressVal">Астана, ул. Бейимбет Майлина, 19, офис 304, 3 этаж</dd></div>
+            <div><dt data-i18n="card.hours">Часы</dt><dd data-i18n="card.hoursVal">Пн–Пт, 09:00–18:00</dd></div>
+            <div><dt data-i18n="card.phones">Телефоны</dt><dd><a href="tel:+77079527050">+7 707 952 70 50</a><br><a href="tel:+77075123838">+7 707 512 38 38</a></dd></div>
+            <div><dt data-i18n="card.format">Формат</dt><dd data-i18n="card.formatVal">Онлайн по всему Казахстану или лично в офисе</dd></div>
+          </dl>
+          <a class="card__link" href="https://2gis.kz/astana/firm/70000001025605617" target="_blank" rel="noopener" data-i18n="card.map">Открыть в 2ГИС</a>
+        </aside>
       </div>
     </section>
 

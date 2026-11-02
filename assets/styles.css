@@ -6,6 +6,7 @@
   --line: #CFC7B6;
   --accent: #1F3A5A;
   --accent-ink: #F2EEE6;
+  --stamp: #A4452C;
   --serif: "Literata", Georgia, serif;
   --sans: "Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
   --wrap: 1180px;
@@ -103,6 +104,38 @@ h1 {
 .rating__num { font: 500 30px/1 var(--serif); }
 .rating__txt { font-size: 15px; color: var(--ink-2); border-bottom: 1px solid var(--line); }
 .rating:hover .rating__txt { color: var(--ink); border-color: var(--ink); }
+
+/* Hero photo with stamp */
+.photo { position: relative; margin: 0; }
+.photo__frame { aspect-ratio: 4 / 5; border: 1px solid var(--ink); background: var(--paper-2); overflow: hidden; }
+.photo__frame img { width: 100%; height: 100%; object-fit: cover; }
+.photo__ph {
+  height: 100%; display: flex; align-items: flex-start; padding: 20px;
+  font: 400 15px/1.4 var(--sans); color: var(--ink-2);
+  background: repeating-linear-gradient(135deg, transparent 0 22px, rgba(28,27,24,.035) 22px 23px);
+}
+.photo .stamp {
+  position: absolute; width: 132px; height: 132px; left: -28px; bottom: 56px;
+  color: var(--stamp); transform: rotate(-14deg); opacity: .9; mix-blend-mode: multiply;
+}
+.photo figcaption { margin-top: 12px; font-size: 14px; color: var(--ink-2); max-width: 44ch; }
+@media (max-width: 979px) {
+  .photo { max-width: 520px; }
+  .photo .stamp { width: 104px; height: 104px; left: auto; right: 10px; bottom: 44px; }
+}
+
+/* About */
+.about { padding: 88px 0 72px; }
+.about__grid { display: grid; gap: 48px; }
+@media (min-width: 980px) { .about__grid { grid-template-columns: 1.35fr 1fr; gap: 72px; align-items: start; } }
+h2 { margin: 0 0 24px; font: 500 clamp(28px, 4.2vw, 42px)/1.12 var(--serif); letter-spacing: -0.015em; max-width: 20ch; text-wrap: balance; }
+.about__text > p:not(.kicker) { margin: 0 0 16px; color: var(--ink-2); max-width: 60ch; }
+.about .kicker { color: var(--stamp); font-weight: 500; }
+.facts { margin: 36px 0 0; display: grid; gap: 0; border-top: 1px solid var(--ink); }
+.facts > div { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 210px 1fr; gap: 16px; align-items: baseline; }
+.facts dt { font: 500 26px/1.1 var(--serif); }
+.facts dd { margin: 0; color: var(--ink-2); font-size: 15px; }
+@media (max-width: 479px) { .facts > div { grid-template-columns: 1fr; gap: 4px; } }
 
 /* Center card: looks like a form/document */
 .card { border: 1px solid var(--ink); background: var(--paper); }
