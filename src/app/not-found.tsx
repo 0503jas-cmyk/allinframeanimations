@@ -7,7 +7,7 @@ export default function NotFound() {
       <LogoMark className="mb-8 size-12" />
       <p className="eyebrow mb-3">404</p>
       <h1 className="text-4xl font-normal">This shelf is empty.</h1>
-      <p className="mt-3 max-w-sm text-muted">The page you&apos;re looking for doesn&apos;t exist or has moved.</p>
+      <p className="mt-3 max-w-sm text-muted">The page you’re looking for doesn’t exist or has moved.</p>
       <LinkButton href="/" className="mt-8">
         Back to Savora
       </LinkButton>

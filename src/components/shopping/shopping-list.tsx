@@ -11,7 +11,7 @@ import { findDuplicate, findInStock } from "@/lib/domain/shopping";
 import type { ShoppingItem } from "@/lib/data/queries";
 import { cx } from "@/lib/cx";
 import { Button } from "@/components/ui/button";
-import { controlClass } from "@/components/ui/field";
+import { Select, controlClass } from "@/components/ui/field";
 import { useAction } from "@/components/ui/toast";
 import { SampleTag } from "@/components/inventory/product-row";
 import { StockSheet } from "./stock-sheet";
@@ -217,21 +217,23 @@ function AddItemForm({ open, stock, today }: { open: ShoppingItem[]; stock: Stoc
           <label htmlFor="shopping-unit" className="sr-only">
             Unit
           </label>
-          <select
-            id="shopping-unit"
-            value={unitTouched ? unit : (matchCatalog(trimmed)?.unit ?? unit)}
-            onChange={(e) => {
-              setUnit(e.target.value as Unit);
-              setUnitTouched(true);
-            }}
-            className={cx(controlClass, "w-24 border-transparent bg-paper/60 hover:border-line-strong")}
-          >
-            {UNITS.map((u) => (
-              <option key={u} value={u}>
-                {UNIT_LABEL[u]}
-              </option>
-            ))}
-          </select>
+          <div className="w-24">
+            <Select
+              id="shopping-unit"
+              value={unitTouched ? unit : (matchCatalog(trimmed)?.unit ?? unit)}
+              onChange={(e) => {
+                setUnit(e.target.value as Unit);
+                setUnitTouched(true);
+              }}
+              className="border-transparent bg-paper/60 hover:border-line-strong"
+            >
+              {UNITS.map((u) => (
+                <option key={u} value={u}>
+                  {UNIT_LABEL[u]}
+                </option>
+              ))}
+            </Select>
+          </div>
           <Button type="submit" pending={pending} disabled={!trimmed || Boolean(duplicate)} className="shrink-0">
             {!pending && <Plus className="size-4" aria-hidden="true" />}
             Add

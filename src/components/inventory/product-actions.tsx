@@ -44,16 +44,17 @@ export function ProductActions({ product, today, compact = false }: { product: P
   return (
     <div className="flex items-center gap-1">
       {!compact && (
-        <Button
-          variant="secondary"
-          size="sm"
-          className="hidden sm:inline-flex"
-          pending={pending}
-          onClick={() => run(() => consumeProduct(product.id, Number(product.quantity)))}
-          aria-label={`Mark all ${product.name} as used`}
-        >
-          <Check className="size-4" aria-hidden="true" /> Used
-        </Button>
+        <span className="hidden sm:block">
+          <Button
+            variant="secondary"
+            size="sm"
+            pending={pending}
+            onClick={() => run(() => consumeProduct(product.id, Number(product.quantity)))}
+            aria-label={`Mark all ${product.name} as used`}
+          >
+            <Check className="size-4" aria-hidden="true" /> Used
+          </Button>
+        </span>
       )}
       <div ref={menuRef} className="relative">
         <button

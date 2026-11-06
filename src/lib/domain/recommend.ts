@@ -81,7 +81,7 @@ function explain(match: Omit<RecipeMatch, "reasons" | "score">): string[] {
   if (match.urgent.length > 0) {
     const parts = match.urgent
       .slice(0, 3)
-      .map((m) => `${m.label.toLowerCase()} (${daysPhrase(m.daysLeft)})`);
+      .map((m) => `${m.product.name.toLowerCase()} (${daysPhrase(m.daysLeft)})`);
     reasons.push(`Uses up ${joinNames(parts)}`);
   }
   const have = match.requiredCount - match.missing.length;

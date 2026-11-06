@@ -10,7 +10,7 @@ import { LinkButton } from "@/components/ui/button";
 import { STORAGES, STORAGE_LABEL } from "@/lib/domain/constants";
 import { formatLongDate } from "@/lib/domain/dates";
 import { getExpiry, type ExpiryStatus } from "@/lib/domain/expiry";
-import { formatMoney } from "@/lib/domain/format";
+import { formatMoney, pluralize } from "@/lib/domain/format";
 import { buildInsights, type Insight } from "@/lib/domain/insights";
 import { recommendRecipes } from "@/lib/domain/recommend";
 import { computeWasteStats } from "@/lib/domain/waste";
@@ -44,7 +44,7 @@ export default async function DashboardPage() {
             </div>
           }
         >
-          Add what&apos;s in your fridge, freezer and pantry. Savora keeps an eye on the dates and suggests what to cook first.
+          Add what’s in your fridge, freezer and pantry. Savora keeps an eye on the dates and suggests what to cook first.
         </EmptyState>
       </>
     );
@@ -68,7 +68,7 @@ export default async function DashboardPage() {
 
   return (
     <>
-      <Greeting today={today} title={headline} action={<QuickAddButton label="Add product" />} />
+      <Greeting today={today} title={headline} action={<QuickAddButton label="Add product" hideOnMobile />} />
 
       {/* Key figures */}
       <section aria-label="Overview" className="mb-10 grid grid-cols-2 overflow-hidden rounded-xl border border-line bg-card lg:grid-cols-4">
@@ -89,23 +89,22 @@ export default async function DashboardPage() {
         <WeekAhead products={products} today={today} />
       </section>
 
-      <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
-        <section aria-labelledby="cook-heading">
-          <SectionHeading id="cook-heading" eyebrow="From what you have" title="Cook next" href="/app/meals" cta="All suggestions" />
-          {suggestions.length > 0 ? (
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {suggestions.map((match, i) => (
-                <RecipeCard key={match.recipe.slug} match={match} featured={i === 0 && match.urgent.length > 0} />
-              ))}
-            </div>
-          ) : (
-            <p className="rounded-xl border border-dashed border-line-strong p-6 text-sm text-muted">
-              Add a few more ingredients and Savora will suggest meals built around them.
-            </p>
-          )}
-        </section>
+      <section className="mb-12" aria-labelledby="cook-heading">
+        <SectionHeading id="cook-heading" eyebrow="From what you have" title="Cook next" href="/app/meals" cta="All suggestions" />
+        {suggestions.length > 0 ? (
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {suggestions.map((match, i) => (
+              <RecipeCard key={match.recipe.slug} match={match} featured={i === 0 && match.urgent.length > 0} />
+            ))}
+          </div>
+        ) : (
+          <p className="rounded-xl border border-dashed border-line-strong p-6 text-sm text-muted">
+            Add a few more ingredients and Savora will suggest meals built around them.
+          </p>
+        )}
+      </section>
 
-        <aside className="flex flex-col gap-10">
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-10">
           <section aria-labelledby="insights-heading">
             <SectionHeading id="insights-heading" eyebrow="Food-saving notes" title="Worth knowing" />
             {insights.length > 0 ? (
@@ -135,7 +134,7 @@ export default async function DashboardPage() {
                     <Link href={`/app/inventory?storage=${storage}`} className="group block rounded-md">
                       <div className="mb-2 flex items-baseline justify-between text-sm">
                         <span className="font-medium group-hover:text-forest-mid">{STORAGE_LABEL[storage]}</span>
-                        <span className="tabular text-muted">{items.length} items</span>
+                        <span className="tabular text-muted">{pluralize(items.length, "item")}</span>
                       </div>
                       <div className="flex h-2 overflow-hidden rounded-full bg-line" aria-hidden="true">
                         {parts.map(({ s, n }) =>
@@ -162,7 +161,6 @@ export default async function DashboardPage() {
               </li>
             </ul>
           </section>
-        </aside>
       </div>
     </>
   );

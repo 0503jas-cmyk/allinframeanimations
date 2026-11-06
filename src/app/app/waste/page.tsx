@@ -54,7 +54,7 @@ export default async function WastePage() {
             />
           </section>
 
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
             <section aria-labelledby="trend-heading" className="rounded-xl border border-line bg-card p-5 sm:p-6">
               <p className="eyebrow mb-1.5">Trend</p>
               <h2 id="trend-heading" className="mb-5 text-xl font-medium">

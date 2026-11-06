@@ -8,18 +8,18 @@ import { cx } from "@/lib/cx";
  * Ingredient availability strip: one mark per main ingredient.
  * Filled = in stock, saffron = in stock and needs using, outline = missing.
  */
-export function IngredientDots({ match, className }: { match: RecipeMatch; className?: string }) {
+export function IngredientDots({ match, className, onDark }: { match: RecipeMatch; className?: string; onDark?: boolean }) {
   const required = match.matched.filter((m) => !m.optional);
   return (
     <div className={cx("flex flex-wrap items-center gap-1", className)} aria-hidden="true">
       {required.map((m) => (
         <span
           key={m.key}
-          className={cx("h-2 w-5 rounded-full", m.daysLeft <= USE_SOON_DAYS ? "bg-saffron" : "bg-forest-mid")}
+          className={cx("h-2 w-5 rounded-full", m.daysLeft <= USE_SOON_DAYS ? "bg-saffron" : onDark ? "bg-card/85" : "bg-forest-mid")}
         />
       ))}
       {match.missing.map((m) => (
-        <span key={m.key} className="h-2 w-5 rounded-full border border-line-strong" />
+        <span key={m.key} className={cx("h-2 w-5 rounded-full border", onDark ? "border-card/35" : "border-line-strong")} />
       ))}
     </div>
   );
@@ -57,14 +57,14 @@ export function RecipeCard({ match, featured = false }: { match: RecipeMatch; fe
 
       <div className="mt-auto pt-6">
         <div className="mb-3 flex items-center justify-between gap-3">
-          <IngredientDots match={match} />
+          <IngredientDots match={match} onDark={featured} />
           <span className={cx("text-xs tabular", featured ? "text-card/75" : "text-muted")}>
             {have}/{match.requiredCount} in stock
           </span>
         </div>
         <div
           className={cx(
-            "flex items-center gap-4 border-t pt-3 text-[0.8125rem]",
+            "flex items-center gap-4 whitespace-nowrap border-t pt-3 text-[0.8125rem]",
             featured ? "border-card/15 text-card/75" : "border-line text-muted",
           )}
         >

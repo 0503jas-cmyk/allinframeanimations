@@ -12,7 +12,7 @@ export default async function WelcomePage() {
   return (
     <div className="mx-auto max-w-2xl py-4 lg:py-10">
       <p className="eyebrow mb-4">Welcome{viewer.displayName ? `, ${viewer.displayName}` : ""}</p>
-      <h1 className="text-[2.4rem] font-normal leading-[1.05] sm:text-[3.2rem]">Let&apos;s set up your kitchen.</h1>
+      <h1 className="text-[2.4rem] font-normal leading-[1.05] sm:text-[3.2rem]">Let’s set up your kitchen.</h1>
       <p className="mb-10 mt-4 max-w-lg text-[1.0625rem] text-ink-2">
         Savora works best when it knows what you have. It only takes a minute, and you can change everything later.
       </p>

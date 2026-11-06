@@ -71,8 +71,8 @@ export function InventoryFilters({ counts }: { counts: Record<string, number> })
         })}
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_11rem_11rem_11rem]">
-        <div className="relative">
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-[minmax(0,1fr)_11rem_11rem_12.5rem]">
+        <div className="relative sm:col-span-2 lg:col-span-1">
           <label htmlFor="inventory-search" className="sr-only">
             Search products
           </label>
@@ -104,7 +104,7 @@ export function InventoryFilters({ counts }: { counts: Record<string, number> })
           ))}
         </FilterSelect>
         <FilterSelect label="Sort" value={params.get("sort") ?? "expiry"} onChange={(v) => update("sort", v === "expiry" ? "" : v)}>
-          <option value="expiry">Sort: date, soonest</option>
+          <option value="expiry">Sort: soonest date</option>
           <option value="name">Sort: name A–Z</option>
           <option value="category">Sort: category</option>
           <option value="recent">Sort: recently added</option>

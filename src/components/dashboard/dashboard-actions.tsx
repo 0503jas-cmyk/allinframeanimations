@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { useAction } from "@/components/ui/toast";
 import { useProductSheet } from "@/components/app/product-sheet";
 
-export function QuickAddButton({ label }: { label: string }) {
+export function QuickAddButton({ label, hideOnMobile = false }: { label: string; hideOnMobile?: boolean }) {
   const { openNew } = useProductSheet();
   return (
-    <Button onClick={() => openNew()} className="self-start sm:self-auto">
+    <Button onClick={() => openNew()} className={hideOnMobile ? "self-start max-sm:hidden! sm:self-auto" : "self-start sm:self-auto"}>
       <Plus className="size-[18px]" aria-hidden="true" />
       {label}
     </Button>

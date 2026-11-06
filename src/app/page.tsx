@@ -190,13 +190,13 @@ export default async function LandingPage() {
             <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:py-28">
               <div data-reveal className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end">
                 <div>
-                  <p className="eyebrow mb-4 !text-card/60">What&apos;s inside</p>
+                  <p className="eyebrow mb-4 !text-card/60">What’s inside</p>
                   <h2 id="features-heading" className="text-[2.4rem] font-light leading-[1.05] text-card sm:text-[2.9rem]">
-                    Everything a busy kitchen needs. Nothing it doesn&apos;t.
+                    Everything a busy kitchen needs. Nothing it doesn’t.
                   </h2>
                 </div>
                 <p className="max-w-md text-card/75 lg:justify-self-end">
-                  Five connected tools that share one inventory, so the shopping list knows what you have and the meal ideas know what&apos;s expiring.
+                  Five connected tools that share one inventory, so the shopping list knows what you have and the meal ideas know what’s expiring.
                 </p>
               </div>
               <ul className="grid gap-px overflow-hidden rounded-2xl border border-card/10 bg-card/10 sm:grid-cols-2 lg:grid-cols-3">
@@ -252,7 +252,7 @@ export default async function LandingPage() {
           <div data-reveal className="flex flex-col items-center rounded-[28px] bg-paper-deep px-6 py-16 text-center sm:py-20">
             <LogoMark className="mb-8 size-12" />
             <h2 id="cta-heading" className="max-w-2xl text-[2.4rem] font-light leading-[1.05] sm:text-[3.2rem]">
-              Start with what&apos;s already in your fridge.
+              Start with what’s already in your fridge.
             </h2>
             <p className="mt-4 max-w-md text-ink-2">Open the demo and look around, or create an account and add your first product in under a minute.</p>
             <div className="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">

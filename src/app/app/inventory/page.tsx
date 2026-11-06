@@ -38,7 +38,7 @@ export default async function InventoryPage({ searchParams }: PageProps<"/app/in
         eyebrow={`${everything.length} products`}
         title="Inventory"
         description="Everything in your fridge, freezer and pantry, sorted by the date that matters most."
-        actions={<QuickAddButton label="Add product" />}
+        actions={<QuickAddButton label="Add product" hideOnMobile />}
       />
       <InventoryFilters counts={counts} />
 
