@@ -4,7 +4,7 @@ Savora is a household food management app. It keeps track of the food in your fr
 
 Built for the NOTAR Academy hackathon (theme: food waste at home).
 
-- **Live app:** _deployment URL is added here once published_
+- **Live app:** https://savora-mauve.vercel.app
 - **Presentation:** [`submission/SAVORA-presentation.pdf`](submission/SAVORA-presentation.pdf)
 - **Try it:** open the app and press **Explore the live demo**. It signs you in to a private, temporary kitchen filled with sample data. No email is needed.
 
