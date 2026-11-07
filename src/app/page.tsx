@@ -70,7 +70,7 @@ export default async function LandingPage() {
               <em className="font-normal italic text-forest-mid">Waste less of it.</em>
             </h1>
             <p data-hero className="mt-7 max-w-[30rem] text-lg leading-relaxed text-ink-2">
-              Savora keeps track of the food you already have, shows what needs using first, and suggests meals built around it — so less ends up in the bin.
+              Savora keeps track of the food you already have, shows what needs using first, and suggests meals built around it.
             </p>
             <div data-hero className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-start">
               {viewer ? (
@@ -192,11 +192,11 @@ export default async function LandingPage() {
                 <div>
                   <p className="eyebrow mb-4 !text-card/60">What’s inside</p>
                   <h2 id="features-heading" className="text-[2.4rem] font-light leading-[1.05] text-card sm:text-[2.9rem]">
-                    Everything a busy kitchen needs. Nothing it doesn’t.
+                    Five tools that share one inventory.
                   </h2>
                 </div>
                 <p className="max-w-md text-card/75 lg:justify-self-end">
-                  Five connected tools that share one inventory, so the shopping list knows what you have and the meal ideas know what’s expiring.
+                  The shopping list knows what you already have, and the meal ideas know what’s about to expire, because both read the same kitchen.
                 </p>
               </div>
               <ul className="grid gap-px overflow-hidden rounded-2xl border border-card/10 bg-card/10 sm:grid-cols-2 lg:grid-cols-3">
@@ -216,7 +216,7 @@ export default async function LandingPage() {
                   Record what you throw away and why. See trends, categories and the value of what you logged.
                 </Feature>
                 <Feature icon={<BookOpen />} title="Explainable by design">
-                  No black box. Rules you can read: every suggestion and every number comes from your own data.
+                  Every suggestion says why it was picked, and every number comes from data you entered.
                 </Feature>
               </ul>
             </div>
